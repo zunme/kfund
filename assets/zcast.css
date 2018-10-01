@@ -1,0 +1,133 @@
+.note-editable * {
+      font-family: 'Noto Sans KR',sans-serif;
+}
+.note-editable.card-title
+{
+  font-size: 20px;
+#margin: 0 0 0 40px;
+text-align:center;
+}
+.note-editable.regdate{
+  text-align: right;
+  color: #9a9a9a;
+  padding-right: 40px;
+}
+.note-editable p{
+  padding:10px 0px;
+  margin:3px 0;
+  word-break:normal;
+  word-wrap: break-word;
+}
+.note-editable p.k-img-title{
+  font-size: 12px;
+  color: #AAA;
+  border-left: 5px solid #AAA;
+  margin-left: 36px;
+  margin-top: -6px;
+  margin-bottom: 26px;
+  padding: 5px 10px;
+}
+.note-editable p.k-cast-p{
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.note-editable p.k-cast-text:before{
+  content: "\f519";
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 900;
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  position: absolute;
+  left: -2px;
+  font-size: 15px;
+}
+.note-editable p.k-cast-text:after{
+clear:both;
+}
+.note-editable p.k-cast-text{
+  font-size: 16px;
+  padding-left: 20px;
+  position: relative;
+  /* padding-right: 24px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* margin-right: 20px; */
+}
+.note-editable p.k-cast-sub-head{
+  color: #093148;
+  font-weight: 500;
+  font-size: 18px;
+  padding-left: 5px;
+  margin: 10px 0 10px 17px;
+}
+.note-editable p.k-cast-sub-head:before{
+  content: "K";
+  font-family: 'Pinyon Script', cursive;
+  font-weight: bold;
+  font-weight: 900;
+  color: #FFF;
+  display: inline-block;
+  /* padding-right: 10px; */
+  vertical-align: middle;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 30px;
+  font-size: 21px;
+  background-color: #0e547b;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  margin-right: 8px;
+  margin-top: -2px;
+  margin-left: -14px;
+}
+.note-editable p.k-cast-sub-head:after{
+clear:both;
+}
+
+.note-editable p.k-threeline:before{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 60px;
+  border-bottom: 2px solid black;
+  bottom: -4px;
+  left: 0;
+}
+.note-editable p.k-threeline:after{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 40px;
+  border-bottom: 2px solid black;
+  left: 0;
+  bottom: -6px;
+}
+.note-editable p.k-threeline{
+  position: relative;
+  display: inline-block;
+  min-width: 180px;
+  border-bottom: 2px solid black;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.note-editable p img{
+  display: block;
+  #margin: 0 auto;
+  padding: 0 10px;
+  #max-width:600px;
+  width:100%;
+}

@@ -1,0 +1,885 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="./assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>엔젤펀딩</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+	<!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<style>
+	.navbar.navbar-bg {
+			color: #fff;
+	background-color: #2B2146;
+	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 12px -5px rgba(233, 30, 99, .46)
+	}
+	</style>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/css/material-kit2.css?v=1.2.1.3" rel="stylesheet"/>
+		<link href="/api/statics/js/hover-min.css" rel="stylesheet"/>
+    <style>
+
+    @media only screen and (max-width: 767px) {
+      .hidden-excpt-xs {display:inline-block;}
+			.titlerow{margin-top:20px;}
+			.info_mcard span.sinfo {    font-size: 1em;    line-height: 1.55em;}
+			.product-page .main-raised { margin: -25vh 0px 0px;  padding: 40px 20px; }
+			/*.col-xs-6{padding-left:9px;padding-right:9px}*/
+			.btn-outline-white{
+				margin-top :10px;
+				margin-bottom :10px;
+				display:block;width:100%;
+				border: 2px solid #4285f4;
+				color: #4285f4!important;
+			}
+			#chartdiv  {
+			  width: 350px;
+			  height: 400px;
+		  }
+    }
+    @media only screen and (min-width: 768px) {
+      .hidden-excpt-xs {display:none;}
+			.titlerow{margin-top:20px;}
+			.info_mcard span.sinfo {    font-size: 1.2em;    line-height: 1.55em;}
+			.product-page .main-raised { margin: -25vh 0px 0px;  padding: 40px; }
+			.btn-outline-white {
+						border: 2px solid #FFFFFF;
+						color: #FFFFFF!important;
+				}
+				#chartdiv  {
+				  width: 600px;
+				  height: 400px;
+			  }
+    }
+    @media only screen and (min-width: 992px) {
+			.titlerow{margin-top:0px;}
+    	.hidden-excpt-xs {display:none;}
+			.info_mcard span.sinfo {    font-size: 1.2em;    line-height: 1.55em;}
+			@keyframes tutsFade {
+				from{margin: 0px 0px 0px;}
+				to {
+					margin: -25vh 0px 0px;
+				}
+			}
+			.product-page .main-raised {  padding: 40px;
+				/*margin: -25vh 0px 0px; */
+				/*animation-name: tutsFade;*/
+			  animation-duration: 1s;
+			  animation-delay: .5s;
+			  animation-iteration-count: 1;
+			  animation-timing-function: linear;
+			  animation-direction: alternate;
+
+			}
+			.btn-outline-white {
+						border: 2px solid #FFFFFF;
+						color: #FFFFFF!important;
+				}
+				.nav_split_margin{margin-left:30px}
+				.containerwidth{width: 970px;}
+				#chartdiv  {
+				  width: 900px;
+				  height: 400px;
+			  }
+    }
+		.product-page .page-header { min-height: 50vh;}
+    .product-page .tab-content img {border-radius: 3px;max-width: 100%;}
+    .prd-xs-padding{padding : 3px;}
+    .product-page .page-header .container {  padding-top: 15vh;}
+    .h1{margin:0}
+    .navbar.navbar-transparent{box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);}
+		.card2 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    color: rgba(0,0,0, 0.87);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		padding-left:10px;padding-right: 10px;
+		}
+		.card2 .footer div { display: inline-block;}
+		.card2 .card-product .price { font-size: 18px; color: #9A9A9A;}
+		.card2 .footer .stats {float: right;line-height: 20px;color: #999999;}
+		.card2 .card-product .footer .stats {margin-top: 3px;}
+		.info_mcard{
+			border-radius: 6px;margin-top:5px;
+	    color: rgba(0,0,0, 0.87);
+	    background: #fff;
+	    box-shadow: 0 2px 2px 0 rgba(63, 81, 181, 0.26), 0 3px 1px -2px rgba(63, 81, 181, 0.26), 0 1px 5px 0 rgba(63, 81, 181, 0.26);
+	    padding-left: 10px;
+	    padding-right: 10px;
+			border:1px solid rgba(96, 125, 139, 0.22);
+			padding-top:12px;padding-bottom:12px;
+		}
+		.main-desc table {width:100%;}
+		.main-desc table tr td{padding:5px;min-width: 80px;}
+		.main-desc table tr{border-bottom: 1px solid #EEE;margin-top:5px;margin-bottom: 5px}
+		.btn-outline-white {
+			    background-color: transparent;
+    			padding: 12px 15px;
+			}
+		.btn-outline-white:hover{
+			background-color:transparent;
+		}
+		.header-filter[filter-color="grey"]:after {
+		    background: rgba(133, 134, 134, 0.6);
+		    /* For browsers that do not support gradients */
+		    background: -webkit-linear-gradient(60deg, rgba(133, 134, 134, 0.6), rgba(0, 0, 0, 0.95));
+		    /* For Safari 5.1 to 6.0 */
+		    background: -o-linear-gradient(60deg, rgba(133, 134, 134, 0.6), rgba(0, 0, 0, 0.95));
+		    /* For Opera 11.1 to 12.0 */
+		    background: -moz-linear-gradient(60deg, rgba(133, 134, 134, 0.6), rgba(0, 0, 0, 0.95));
+		    /* For Firefox 3.6 to 15 */
+		    background: linear-gradient(60deg, rgba(133, 134, 134, 0.6), rgba(0, 0, 0, 0.95));
+		    /* Standard syntax */
+		}
+		.info.centerinfo{
+			border-radius: 5px;
+			padding: 70px 10px 30px 10px;
+			-webkit-transform: perspective(1px) translateZ(0);
+		  transform: perspective(1px) translateZ(0);
+		  box-shadow: 0 0 1px transparent;
+		  -webkit-transition-duration: 0.3s;
+		  transition-duration: 0.3s;
+		  -webkit-transition-property: box-shadow;
+		  transition-property: box-shadow;
+		  box-shadow: inset 0 0 0 1px #e5e5e5, 0 0 1px transparent;
+		}
+		.info.centerinfo:hover, .info.centerinfo:focus, .info.centerinfo:active {
+		  box-shadow: inset 0 0 0 1px #cacaca, 0 0 1px transparent;
+		  /* Hack to improve aliasing on mobile/tablet devices */
+		}
+		.footer-black h5, .footer-black h4, .footer-black i, .footer-black .copyright {
+		    color: #c1b7b7;
+		    font-size: 14px;
+		}
+		footer-big .social-feed p {     font-size: 13px; }
+		.footer-big .social-feed p {
+		    max-width: 500px;
+		}
+  </style>
+</head>
+
+<body class="product-page">
+	<nav class="navbar navbar-unique-color-dark navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="70">
+    	<div class="container">
+        	<!-- Brand and toggle get grouped for better mobile display -->
+        	<div class="navbar-header">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+            		<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+        		</button>
+        		<a class="navbar-brand" href="./">Angel Funding PARTNERS</a>
+        	</div>
+
+        	<div class="collapse navbar-collapse">
+        		<ul class="nav navbar-nav navbar-right">
+    				<li>
+  						<a href="javascript:">
+  							<i class="material-icons">apps</i> 투자하기
+  						</a>
+  					</li>
+
+					<li class="dropdown">
+						<a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="material-icons">view_day</i> 대출하기
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu dropdown-with-icons">
+							<li>
+								<a href="../sections.html#headers">
+									<i class="material-icons">dns</i> 부동산
+								</a>
+							</li>
+							<li>
+								<a href="../sections.html#features">
+									<i class="material-icons">build</i> 개인신용
+								</a>
+							</li>
+							<li>
+								<a href="../sections.html#blogs">
+									<i class="material-icons">list</i> 사업자
+								</a>
+							</li>
+						</ul>
+					</li>
+
+          <li>
+            <a href="javascript:">
+              <i class="material-icons">apps</i> 회사소개
+            </a>
+          </li>
+
+					<li class="dropdown">
+						<a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="material-icons">view_carousel</i> 공지사항
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu dropdown-with-icons">
+							<li>
+								<a href="../examples/about-us.html">
+									<i class="material-icons">account_balance</i> 공지사항
+								</a>
+							</li>
+							<li>
+								<a href="../examples/blog-post.html">
+									<i class="material-icons">art_track</i> 언론보도
+								</a>
+							</li>
+							<li>
+								<a href="../examples/blog-posts.html">
+									<i class="material-icons">view_quilt</i> 문의하기
+								</a>
+							</li>
+						</ul>
+					</li>
+
+
+          <li>
+            <a href="javascript:">
+              <i class="material-icons">apps</i> 고객지원
+            </a>
+          </li>
+
+					<li class="nav_split_margin">
+            <a href="javascript:">
+              <i class="material-icons">person</i> 로그인
+            </a>
+          </li>
+					<li>
+						<button type="button" class="btn btn-outline-white waves-effect">회원가입</button>
+					</li>
+        		</ul>
+        	</div>
+    	</div>
+    </nav>
+
+	<div class="page-header header-filter" data-parallax="false" style="background-image: url('http://www.joseplus.com/news/data/20170328/p1065574729634594_119_thum.png');" filter-color="grey"> <!--filter-color="rose"-->
+	    <div class="container">
+<p class="h1">ANGEL FUNDING</p>
+<p class="h1">PARTNERS</p>
+<p>Discover the angel funding diffrence<p>
+	    </div>
+	</div>
+
+	<div class="section section-gray">
+	    <div class="container containerwidth">
+            <div class="main main-raised main-product">
+
+							<script src="https://d3js.org/d3.v3.min.js"></script>
+							<script src="https://bl.ocks.org/brattonc/raw/5e5ce9beee483220e2f6/liquidFillGauge.js"></script>
+							<style>
+							@keyframes tutsFadett {
+								0% {opacity: 0;}
+								50% {opacity: .5;}
+								100% {opacity: 0;}
+							}
+							#fillgauge1{
+								opacity: 0;
+								width:90% ;height=160px;top:70px;
+								position: absolute;z-index: 3;
+								animation-name: tutsFadett;
+								animation-duration: 3s;
+								/*animation-delay: .5s;*/
+								animation-iteration-count: 1;
+								animation-timing-function: linear;
+								animation-direction: alternate;
+							}
+							.anilabel{
+
+							}
+							</style>
+							<svg id="fillgauge1" onclick="gauge1.update(NewValue());"></svg>
+							<script language="JavaScript">
+    var config4 = liquidFillGaugeDefaultSettings();
+    config4.waveAnimateTime = 1000;
+    config4.waveHeight = 0.05;
+    config4.waveAnimate = true;
+    config4.waveRise = false;
+    config4.waveHeightScaling = false;
+    config4.waveOffset = 0.25;
+    config4.textSize = 0.75;
+    config4.waveCount = 3;
+		var gauge1 = loadLiquidFillGauge("fillgauge1", 80,config4);
+		function NewValue(){
+        if(Math.random() > .5){
+            return Math.round(Math.random()*100);
+        } else {
+            return (Math.random()*100).toFixed(1);
+        }
+    }
+		</script>
+                <div class="row">
+                    <div class="col-md-4">
+
+
+                                  <img src="https://fundingangel.co.kr:6003/pnpinvest/data/photoreviewers/340/%EB%A9%94%EC%9D%B8.jpg" style="position: relative;width:100%;box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.25);"/>
+                                  <span class="label label-info anilabel" style="position: absolute;top: 15px;right: 0;margin-right:2px;font-size:1.5rem;box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.8);padding: 8px 15px;border-radius: 16px;">투자진행중 <span class="count">80</span>%</span>
+                                  <div class="row" style="color:white;text-align:center;margin:0 -10px">
+                										<div class="col-md-12 col-sm-4">
+                											<button class="btn btn-primary btn-block" style="margin: 5px 0 0 0;padding: 5px 10px;font-weight: 600; font-size: 14px;word-break:keep-all">10월 29일 오전10시 오픈</button>
+                										</div>
+                										<div class="col-md-12  col-sm-4 col-xs-6">
+                                      <button class="btn btn-rose btn-block" style="margin: 5px 0 0 0;padding: 5px 10px;font-weight: 600; font-size: 14px;">스페로 케이크 7명</button>
+                										</div>
+                										<div class="col-md-12  col-sm-4 col-xs-6">
+                                      <button class="btn btn-danger btn-block" style="margin: 5px 0 0 0;padding: 5px 10px;font-weight: 600; font-size: 14px;">리워드 최대 5%</button>
+                										</div>
+                									</div>
+
+                    </div>
+                    <div class="col-md-8">
+                      <div class="row titlerow">
+                        <div class="col-sm-2 hidden-xs">
+                          <button class="btn btn-default btn-round">부동산</button>
+                        </div>
+                        <div class="col-sm-10">
+                          <h4 class="title" style="margin-top: 0;padding-left:10px;">제48호 용인시 양지면 포레스토리 (분양100%) 신탁수익권 ABL 2차<button class="btn btn-rose btn-round hidden-excpt-xs" style="margin:0 0 0 10px;padding:5px;">부동산</button></h4>
+
+                        </div>
+                      </div>
+
+											<div class="row" style="margin-top:10px">
+												<div class="col-xs-6">
+													<div class="info_mcard">
+														<div class="row text-center" style="">
+															<div class="col-xs-6" style="padding-left: 5px;padding-right: 5px;">
+																	<span class="sinfo text-rose">수익률</span>
+															</div>
+															<div class="col-xs-6" style="padding-left: 5px;padding-right: 5px;">
+																<span class="sinfo text-rose">20%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="info_mcard">
+														<div class="row text-center" style="">
+															<div class="col-xs-6" style="padding-left: 5px;padding-right: 5px;">
+																<span class="sinfo text-rose">기간</span>
+															</div>
+															<div class="col-xs-6" style="padding-left: 5px;padding-right: 5px;">
+																<span class="sinfo text-rose">3개월</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+						<div id="acordeon" class="hidden-xs">
+                            <div class="panel-group" id="accordion">
+                          <div class="panel panel-border panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h4 class="panel-title">
+                                    Description
+                                    <i class="material-icons">keyboard_arrow_down</i>
+                                    </h4>
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                              <div class="panel-body main-desc">
+																<table>
+																	<tr><td>상환예정</td><td>2018-03-31</td></tr>
+																	<tr><td>상환방식</td><td>매월이자 지급 후 원금은 만기일시 상환</td></tr>
+																	<tr><td>상환재원</td><td>신탁사가 시공사에게 지급하는 공사비로 상환재원 확보</td></tr>
+																</table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        </div><!--  end acordeon -->
+												<div class="row" style="margin-top:10px;">
+													<div class="col-xs-12">
+														<div class="row" style="font-weight: 700;">
+															<div class="col-sm-4 col-xs-6"><span class="text-info" style="padding-right:15px;">참여금액</span> 3,000만원</div>
+															<div class="col-sm-4 col-xs-6"><span class="text-info" style="padding-right:15px;">펀딩금액</span> 10,000만원</div>
+														</div>
+														<style>
+														.progress .skill {
+															 height: 35px;
+															font: normal 12px "Open Sans Web";
+															line-height: 35px;
+															padding: 0;
+															margin: 0 0 0 20px;
+															text-transform: uppercase;
+														}
+														.progress .skill .val {
+															float: right;
+															font-style: normal;
+															margin: 0 20px 0 0;
+														}
+														.progress-bar {
+															text-align: left;
+															transition-duration: 2s;
+														}
+													</style>
+														<div class="progress skill-bar" style="height:10px;border-radius:.5rem;margin-top:10px;margin-bottom:10px;">
+														    <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+														<div class="row" style="font-weight: 700;">
+															<!--div class="col-sm-4 hidden-xs">참여금액 3,000만원</div>
+															<div class="col-sm-4 hidden-xs">펀딩금액 10,000만원</div-->
+															<div class="col-xs-12" style="text-align:right;padding-right:50px;">진행률 <span class="count">80</span>%</div>
+														</div>
+													</div>
+												</div>
+                    </div>
+                </div>
+								<div class="row" style="margin-top:20px;">
+									<div class="col-xs-12" style="text-align:center;">
+											<button class="btn btn-rose btn-round" style="font-weight: 700;">자세히 보기 &nbsp;<i class="material-icons" style="font-size:3rem">info_outline</i></button>
+									</div>
+								</div>
+            </div>
+
+            <div class="features text-center">
+                <div class="row">
+    				    <div class="col-md-4">
+    					<div class="info centerinfo hvr-curl-top-left">
+    						<div class="icon icon-info">
+    							<i class="material-icons">attach_money</i>
+    						</div>
+    						<h4 class="info-title">수익성</h4>
+    						<p>어쩌구어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.</p>
+    					</div>
+    				</div>
+    				<div class="col-md-4">
+    					<div class="info centerinfo hvr-shadow-radial">
+    						<div class="icon icon-success">
+    							<i class="material-icons">verified_user</i>
+    						</div>
+    						<h4 class="info-title">안전성</h4>
+    						<p>어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.</p>
+    					</div>
+    				</div>
+
+    				<div class="col-md-4">
+    					<div class="info centerinfo hvr-curl-top-right">
+    						<div class="icon icon-rose">
+    							<i class="material-icons">favorite</i>
+    						</div>
+    						<h4 class="info-title">Popular ...</h4>
+    						<p>냉무어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.어쩌구 저쩌구.</p>
+    					</div>
+    				</div>
+
+
+                </div>
+            </div>
+
+			<div class="related-products">
+				<h3 class="title text-center">수익성</h3>
+				<div>
+					<script src="https://code.highcharts.com/highcharts.js"></script>
+					<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+					<script src="https://code.highcharts.com/modules/exporting.js"></script>
+					<style>
+					#highchartcontainer {
+							height: 400px;
+							min-width: 310px;
+							margin: 0 auto;
+					}
+					</style>
+					<div id="highchartcontainer" style="height: 400px"></div>
+					<script>
+					function hchart(){
+						Highcharts.chart('highchartcontainer', {
+								chart: {
+										type: 'column',
+										options3d: {
+												enabled: true,
+												alpha: 15,
+												beta: 15,
+												depth: 50,
+												viewDistance: 25
+										}
+								},
+								title: {
+										text: '수익성 비교'
+								},
+								subtitle: {
+										text: '엔젤펀딩 평균 수익률 18.78%'
+								},
+								plotOptions: {
+										column: {
+												depth: 25
+										}
+								},
+								xAxis: {
+										categories: null,
+										labels: {
+												skew3d: true,
+												style: {
+														fontSize: '16px'
+												},
+												title: {
+													text:null
+												}
+										}
+								},
+								yAxis: {
+										title: {
+												text: "평균 수익률 (%)"
+										}
+								},
+								series: [{
+										name: '엔젤펀딩<br>18.77%',
+										data: [18.77],
+										color: "#FF0F00"
+								},
+								{
+										name: '국내펀드<br>6%',
+										data: [ 6],
+								    "color": "#FF6600"
+								},{
+										name: '저축은행<br>2.6%',
+										data: [2.6],
+								    "color": "#FF9E01"
+								},{
+										name: '1금융권 은행적금<br>1.54%',
+										data: [ 1.54],
+								    "color": "#FCD202"
+								},
+								{
+										name: '국내 CMA<br>1.38%',
+										data: [1.38],
+								    "color": "#F8FF01"
+								}
+							]
+						});
+					}
+					</script>
+
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-3" style="text-align:center">
+
+
+
+<script src="//www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
+<script src="//www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
+<div id="chartdiv"></div>
+<script>
+var chart;
+var graph;
+var categoryAxis;
+
+var chartData =
+[
+  {
+	  "country": "엔젤펀딩<br>18.77%",
+		"visits": 18.77,
+    "color": "#FF0F00"
+	},
+	{
+		"country": "구갠펀드<br>6%",
+		"visits": 6,
+    "color": "#FF6600"
+	},
+	{
+		"country": "저축은행<br>2.6%",
+		"visits": 2.6,
+    "color": "#FF9E01"
+	},
+	{
+	  "country": "1금융권 은행적금<br>1.54%",
+		"visits": 1.54,
+    "color": "#FCD202"
+	},
+	{
+		"country": "국내 CMA<br>1.38%",
+		"visits": 1.38,
+    "color": "#F8FF01"
+	}
+];
+
+
+AmCharts.ready(function () {
+  chart = new AmCharts.AmSerialChart();
+	chart.dataProvider = chartData;
+	chart.categoryField = "country";
+  chart.position = "left";
+  chart.angle = 30;
+	chart.depth3D = 15;
+  chart.startDuration = 1;
+
+  categoryAxis = chart.categoryAxis;
+	categoryAxis.labelRotation = 45;
+  categoryAxis.dashLength = 5; //
+  categoryAxis.gridPosition = "start";
+  categoryAxis.autoGridCount = false;
+	categoryAxis.gridCount = chartData.length;
+
+
+	graph = new AmCharts.AmGraph();
+	graph.valueField = "visits";
+	graph.type = "column";
+  graph.colorField = "color";
+	graph.lineAlpha = 0;
+  graph.fillAlphas = 0.8;
+  graph.balloonText = "[[category]]: <b>[[value]]</b>";
+
+  //chart.addGraph(graph);
+
+  chart.write('chartdiv');
+});
+
+
+</script>
+
+
+
+					</div>
+
+				</div>
+			</div>
+	    </div>
+	</div>
+
+
+<footer class="footer footer-black footer-big">
+	<div class="container">
+
+		<div class="content">
+			<div class="row">
+				<div class="col-md-4">
+					<h5>(주) 엔젤펀딩파트너스</h5>
+					<div class="social-feed">
+						<div class="feed-line">
+							<i class="material-icons">face</i>
+							<p>대표 임성용, 조성환</p>
+						</div>
+						<div class="feed-line">
+							<i class="fa fa-id-card"></i>
+							<p>사업자등록 번호 293-81-00668</p>
+						</div>
+						<div class="feed-line">
+							<i class="material-icons">local_post_office</i>
+							<p>서울특별시 강남구 선릉로 90길 70 인텔빌딩 4층</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5">
+					<h5>(주) 엔젤크라우드대부</h5>
+					<div class="social-feed">
+						<div class="feed-line">
+							<i class="material-icons">face</i>
+							<p>대표 임성용, 조성환 | 사업자등록 번호 539-88-00641</p>
+						</div>
+						<div class="feed-line">
+							<i class="fa fa-id-card"></i>
+							<p>등록번호 : 2018-금감원-1331 ( P2P연계대부업 )</p>
+						</div>
+						<div class="feed-line">
+							<i class="material-icons">account_balance</i>
+							<p>등록기관 : 금융감독원 ( 1332 )</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<h5>고객센터</h5>
+					<div class="social-feed">
+						<div class="feed-line">
+							<i class="material-icons">settings_phone</i>
+							<p>Tel. 02-401-0900</p>
+						</div>
+						<div class="feed-line">
+							<i class="fa fa-fax"></i>
+							<p>Fax. 02-401-0022</p>
+						</div>
+						<div class="feed-line">
+							<i class="material-icons">contact_mail</i>
+							<p>contact@fundingangel.co.kr</p>
+						</div>
+						<div class="feed-line" style="padding-left:30px">
+							<a href="http://pf.kakao.com/_SxfBUd" style="margin-left:5px;margin-right:5px;">
+	<img class="off hvr-grow-rotate" src="https://fundingangel.co.kr:6003/pnpinvest/layouts/home/pnpinvest/img2/sns02_off.png" alt="옐로우 아이디">
+</a>
+<a href="https://www.facebook.com/%EC%97%94%EC%A0%A4%ED%8E%80%EB%94%A9%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4-1414199758637210/" style="margin-left:5px;margin-right:5px;">
+	<img class="off hvr-grow-rotate" src="https://fundingangel.co.kr:6003/pnpinvest/layouts/home/pnpinvest/img2/sns01_off.png" alt="페이스북">
+ </a>
+	 <a href=" http://blog.naver.com/fundingangel" style="margin-left:5px;margin-right:5px;">
+		 <img class="off hvr-grow-rotate" src="https://fundingangel.co.kr:6003/pnpinvest/layouts/home/pnpinvest/img2/sns03.png" alt="블로그">
+	 </a>
+						</div>
+
+						<div>
+							<p style="font-size:12px;">이용가능 시간 :09:30~18:00<br>
+							주말 및 공휴일은 운영하지 않습니다.<br>
+							운영 시간은 사정에 따라 변동 될수 있습니다.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<hr />
+		<ul class="pull-left">
+			<li>
+				<a href="#pablo">
+				   Blog
+				</a>
+			</li>
+			<li>
+				<a href="#pablo">
+					Presentation
+				</a>
+			</li>
+			<li>
+				<a href="#pablo">
+				   Discover
+				</a>
+			</li>
+			<li>
+				<a href="#pablo">
+					Payment
+				</a>
+			</li>
+			<li>
+				<a href="#pablo">
+					Contact Us
+				</a>
+			</li>
+		</ul>
+
+		<div class="copyright pull-right">
+			Copyright &copy; <script>document.write(new Date().getFullYear())</script> Creative Tim All Rights Reserved.
+		</div>
+	</div>
+</footer>
+
+</body>
+
+	<!--   Core JS Files   -->
+	<script src="./assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="./assets/js/material.min.js"></script>
+
+	<!--    Plugin for Date Time Picker and Full Calendar Plugin   -->
+	<script src="./assets/js/moment.min.js"></script>
+
+	<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/   -->
+	<script src="./assets/js/nouislider.min.js" type="text/javascript"></script>
+
+	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker   -->
+	<script src="./assets/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+
+	<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select   -->
+	<script src="./assets/js/bootstrap-selectpicker.js" type="text/javascript"></script>
+
+	<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/   -->
+	<script src="./assets/js/bootstrap-tagsinput.js"></script>
+
+	<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput   -->
+	<script src="./assets/js/jasny-bootstrap.min.js"></script>
+
+	<!--	Plugin for Product Gallery, full documentation here: https://9bitstudios.github.io/flexisel/ -->
+	<script src="./assets/js/jquery.flexisel.js"></script>
+
+	<!--    Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc    -->
+	<script src="./assets/js/material-kit2.js?v=1.2.1" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+		$("#flexiselDemo1").flexisel({
+			visibleItems: 4,
+    		itemsToScroll: 1,
+    		animationSpeed: 400,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 3
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 3
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 3
+                }
+            }
+        });
+    });
+   </script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" type="text/javascript"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js" type="text/javascript"></script>
+<script>
+$("document").ready( function () {
+	var inview = new Waypoint.Inview({
+	  element: $('#chartdiv')[0],
+	  enter: function(direction) {
+	    console.log('Enter triggered with direction ' + direction)
+	  },
+	  entered: function(direction) {
+	    console.log('Entered triggered with direction ' + direction)
+			chart.addGraph(graph);
+			inview.destroy();
+	  },
+	  exit: function(direction) {
+	    console.log('Exit triggered with direction ' + direction)
+	  },
+	  exited: function(direction) {
+	    console.log('Exited triggered with direction ' + direction)
+	  }
+	});
+	var inview2 = new Waypoint.Inview({
+	  element: $('#highchartcontainer')[0],
+	  enter: function(direction) {
+	    console.log('Enter triggered with direction ' + direction)
+	  },
+	  entered: function(direction) {
+	    console.log('Entered triggered with direction ' + direction)
+			hchart();
+			inview2.destroy();
+	  },
+	  exit: function(direction) {
+	    console.log('Exit triggered with direction ' + direction)
+	  },
+	  exited: function(direction) {
+	    console.log('Exited triggered with direction ' + direction)
+	  }
+	});
+});
+
+$(document).ready(function() {
+		 $('.progress .progress-bar').css("width",
+							 function() {
+									 return $(this).attr("aria-valuenow") + "%";
+							 }
+			 );
+			 $('.count').each(function () {
+			    $(this).prop('Counter',0).animate({
+			        Counter: $(this).text()
+			    }, {
+			        duration: 2000,
+			        easing: 'swing',
+			        step: function (now) {
+			            $(this).text(Math.ceil(now));
+			        }
+			    });
+			});
+	 });
+</script>
+</html>
