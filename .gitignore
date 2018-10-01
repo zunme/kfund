@@ -23,8 +23,6 @@ pnpinvest/data/safetyplan/*
 pnpinvest/data/security/*
 pnpinvest/data/session/*
 
-pnpinvest/layouts/*
-
 *.tar
 .htaccess
 fund/
