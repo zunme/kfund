@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* 회원가입 */
+.join_area {overflow:hidden;margin:auto;width:1200px;padding:70px 0;}
+.join_titlebox {margin:0 auto;width:1200px;}
+.join_titlebox > h3 {display:inline;color:#4a4949;font-size:25px;font-weight:normal;}
+.join_titlebox > img {padding:0 152px 0 138px;vertical-align:top;}
+.location {margin-right:130px;}
+
+/* 약관동의 */
+.term_area {margin:50px 110px 50px 138px;padding:25px;border:1px solid #e6e6e6;background:#fff;}
+h4.term_title {padding-left:5px;font-size:15px;background:url('../img/bullet3.jpg') left center no-repeat;}
+.terms_box {padding:15px;margin-top:13px;margin-bottom:10px;min-height:150px;border:1px solid #a5a5a5;}
+
+.button_area {text-align:center;}
+.btn_before {margin:0 15px;width:250px;height:40px;background:#e8e8e8;border:1px solid #cecece;}
+.btn_next,
+.btn_main
+{margin:0 15px;width:250px;height:40px;background:#08939a;border:1px solid #08939a;color:#fff;}
+
+/* 실명인증 */
+.certification {overflow:hidden;margin:50px 0 50px 250px;}
+.certification > li {float:left;width:230px;height:394px;padding:40px;text-align:center;background:url('../img/bg_box.png') no-repeat;}
+.certification > li:first-child {margin-right:80px;}
+.certification > li > h4 {margin-bottom:30px;font-size:25px;}
+.certification > li > p {margin:40px 0;line-height:150%;}
+
+/* 정보 입력 */
+table.join_form {margin:20px 0 20px 138px;}
+.join_form > caption {text-align:right;padding-left:12px;background:url('../img/bullet4.png') 868px center no-repeat;}
+.join_form tr td, 
+.join_form tr th {overflow:hidden;padding:10px;text-align:left;}
+.join_form .th_tit {background:#e6e6e6;}
+.join_form tr td > input[type="text"] {width:250px;padding:5px;}
+.join_form tr td > input[type="radio"] {margin-right:7px;}
+.join_form tr td > select {padding:5px;}
+p.tit_icon {padding-left:12px;background:url('../img/bullet4.png') left center no-repeat;}
+.join_form tr td > span.check {display:block;width:50%;float:left;}
+
+/* 가입완료 */
+.info_complete {margin:0 auto;text-align:center;padding:115px 0;}
+.welcome {width:440px;margin:0 auto;padding-bottom:15px;color:#303030;font-size:20px;border-bottom:1px solid #08939a;}
+.welcome > strong {font-weight:bold;color:#08939a;}

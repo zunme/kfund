@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@import "header.css"; /* 헤더 */
+@import "common.css"; /* 리셋, 공통 */
+@import "content.css"; /* 컨텐츠 */
+@import "footer.css"; /* 풋터 */
+@import "basic.css"; /* 기본 */
+@import "mypage.css"; /* 마이페이지 */

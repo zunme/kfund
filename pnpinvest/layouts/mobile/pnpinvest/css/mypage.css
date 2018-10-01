@@ -1,0 +1,434 @@
+@charset "utf-8";
+
+/*2016-10-18 마이페이지 개편 시작 161018*/
+div.mp_top{}
+div.mp_top div.mp_right{    padding: 40px 0 0 0;}
+div.mp_top div.mp_right img{width: 78px;display: block;margin: 5px auto;}
+div.mp_top div.mp_right p{text-align: center;color: #a6a6a6;margin: 0;line-height: 20px;}
+div.mp_top div.mp_right a.mypage_info_modify{    width: 61px;    height: 23px;    display: block;    border-radius: 3px;    background: #fff;    border: 1px solid #1094f7;    text-align: center;    font-size: 11px;    line-height: 20px;    margin: 10px auto 10px;}
+div.mp_top div.mp_right div.alert_msg{background: #fff;border: 1px solid #e0e0e0;border-radius: 3px;margin-top: 10px;}
+div.mp_top div.mp_right div.alert_msg a.btn_alert_msg_more{font-size: 11px;margin-right: 0px;display: block;width: 100%;border-top: 1px solid #e0e0e0;text-align: center;color: #333;padding: 3px 0;background: #e0e0e0;}
+div.mp_top div.mp_right div.alert_msg p{color: #303030;font-size: 12px;display: block;text-overflow: ellipsis;white-space: nowrap;width: 100%;overflow: hidden;padding: 0 7%;line-height: 30px;margin: 3px auto;background: url("../img/icon_mypage05.png") no-repeat 3px center;}
+div.mp_top div.mp_right div.account_info{background: #fff;border: 1px solid #e0e0e0;border-radius: 3px;height: 22px;margin: 20px 0;width: 100%;}
+div.mp_top div.mp_right div.account_info ul{    width: 70%;    display: block;    float: left;    padding: 3px 0 0  5px;    height: inherit;    margin: 0 auto;}
+div.mp_top div.mp_right div.account_info ul li{    float: left;    font-size: 11px;    letter-spacing: -1.9px;}
+div.mp_top div.mp_right div.account_info ul li:nth-child(even){color:#9dd2fb;}
+div.mp_top div.mp_right div.account_info a.btn_dashboard_balance{    float: right;    font-size: 12px;    background: #9dd2fb;    padding: 2px 0;    color: #fff;    width: 25%;    text-align: center;}
+div.mp_top div.lnb_menu{}
+div.mp_top div.lnb_menu ul{}
+div.mp_top div.lnb_menu ul li{border: 1px solid #e0e0e0;border-radius: 3px;color: #787878;text-align: center;}
+div.mp_top div.lnb_menu ul li a{color: #787878;/* padding: 3px 0; */}
+
+div.mp_top div.tabs-menu{
+    overflow: hidden;
+}
+
+div.design {margin-top:20px; }
+div.mp_top div.tabs-menu ul{}
+div.mp_top div.tabs-menu ul li{
+    margin: 0.5% 0.5%;
+    width: 49%;
+}
+div.mp_top div.tabs-menu ul li a{}
+
+div.mp_top div.dash{clear: both;padding-top: 20px;margin-bottom: 20px;}
+div.mp_top div.dash > div {display:none;}
+div.mp_top div.dash div#tab-1{display:block;}
+div.mp_top div.dash div.tab-content{}
+
+/*대시보드 메뉴*/
+div.lnb_menu li.lnb_mn1 {background: url("../img/icon_mypage.png") no-repeat 5px center;}
+div.lnb_menu li.lnb_mn2 {background: url("../img/icon_mypage02.png") no-repeat 5px center;}
+div.lnb_menu li.lnb_mn3 {background:url("../img/icon_mypage03.png") no-repeat 5px center;}
+div.lnb_menu li.lnb_mn4 {background:url("../img/icon_mypage04.png") no-repeat 5px center;}
+div.lnb_menu li.lnb_mn5 {background:url("../img/icon_mypage05.png") no-repeat 5px center;}
+div.lnb_menu li.lnb_mn6 {background:url("../img/icon_mypage06.png") no-repeat 5px center; background-size:20px; }
+div.lnb_menu li.lnb_mn7 {background:url("../img/icon_mypage07.png") no-repeat 5px center; background-size:20px;}
+
+/*161018 마이페이지 개편 공통*/
+div.mp_top a.btn_more{font-size:12px;color:#a6a6a6;border:1px solid #a6a6a6;border-radius:3px;padding: 5px 20px;float:right;}
+div.dashboard_my_info{width: 100%;border: 1px solid #e6e6e6;border-radius: 3px;margin: 20px 0;background: #fff;}
+div.dashboard_my_info h3{background: #f4f3f3;font-weight: normal;padding: 14px 15px;margin-bottom: 0;height: 45px;font-size:16px;}
+div.dashboard_my_info h3 span{float:left;}
+div.dashboard_my_info h3 ul{display:block;float: right;text-align: left;}
+div.dashboard_my_info h3 ul li{display:block; float:left;}
+div.dashboard_my_info h3 ul li a{    font-size: 14px;}
+div.dashboard_my_info h3 ul li a.info_current{color: #6438f7;}
+div.dashboard_my_info p{    text-align: center;    color: #008df7;    padding: 45px 0;}
+
+div.dashboard_my_info>div{margin: 0 auto;padding: 5px;} 
+
+div.dashboard_my_info div> span{color: #008df7;display: block;} 
+div.dashboard_my_info div span strong{display:inline-block;background:#008df7;border-radius:50%;width: 15px;text-align:center;font-weight: normal;color:#fff;margin-right: 3px;}
+div.dashboard_my_info div>input{    margin-left: 45px;    width: 276px;    height: 28px;    border-radius: 3px;    border: 1px solid #ddd;} 
+div.dashboard_my_info div a.my_info_submit{    display: block;    margin: 26px auto;    text-align: center;    background: #008df7;    color: #fff;    border-radius: 3px;    width: 120px;    padding: 5px 0;} 
+
+
+/*161018 마이페이지 개편 대출정보*/
+div.mp_top div.dash div.tab-content div.loan_info div.info_box1{}
+div.mp_top div.dash div.tab-content div.loan_info div.info_box1 p{}
+div.mp_top div.dash div.tab-content div.loan_info div.info_box1 ul{}
+div.mp_top div.dash div.tab-content div.loan_info div.info_box1 ul li{}
+
+div.dashboard_my_info div.dashboard_loan_info{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_loan_info h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;}
+div.dashboard_my_info div.dashboard_loan_info span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.dashboard_loan_info > div{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_loan_info > div:first-child{/* float:right; */margin-right: 20px;}
+div.dashboard_my_info div.dashboard_loan_info div table{width: 100%;font-size: 14px;}
+div.dashboard_my_info div.dashboard_loan_info div table thead th{font-size: 14px;text-align: left;background: #e0effa;color: #616161;font-weight: normal;text-align: center;padding: 10px 0;}
+div.dashboard_my_info div.dashboard_loan_info div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;}
+div.dashboard_my_info div.dashboard_loan_info div table tbody th{font-size: 13px;color: #3b3b3b;background: #e0effa;text-align:left;width: 95px;font-weight: normal;padding: 3px 0px 3px 8px;}
+
+div.dashboard_my_info div.dashboard_loan_info div table tbody td{text-align: center;padding: 10px 0;font-size: 12px;color: #a6a6a6;}
+
+div.dashboard_my_info>div.dashboard_loan_info{}
+div.dashboard_my_info>div.dashboard_loan_info ul{border-bottom: 1px solid #e9e9e9;width: 470px;margin: 0 auto;padding-bottom: 20px;}
+div.dashboard_my_info>div.dashboard_loan_info ul li{    line-height: 30px;    color: #a6a6a6;    list-style-type: square;    font-size: 13px;}
+div.dashboard_my_info>div.dashboard_loan_info label{font-size:13px;text-align:center;display:block;margin: 20px 0;color:#616161;}
+
+
+/*161018 마이페이지 개편 투자정보*/
+div.mp_top div.dash div.tab-content div.invest_info div.info_box1{}
+div.mp_top div.dash div.tab-content div.invest_info div.info_box1 p{}
+div.mp_top div.dash div.tab-content div.invest_info div.info_box1 ul{}
+div.mp_top div.dash div.tab-content div.invest_info div.info_box1 ul li{}
+
+div.dashboard_my_info div.dashboard_invest_info{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_invest_info h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;}
+div.dashboard_my_info div.dashboard_invest_info span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.dashboard_invest_info > div{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_invest_info > div:first-child{/* float:right; */margin-right: 20px;}
+div.dashboard_my_info div.dashboard_invest_info div table{width: 100%;font-size: 14px;}
+div.dashboard_my_info div.dashboard_invest_info div table thead th{font-size: 14px;text-align: left;background: #e0effa;color: #616161;font-weight: normal;text-align: center;padding: 10px 0;}
+div.dashboard_my_info div.dashboard_invest_info div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;}
+div.dashboard_my_info div.dashboard_invest_info div table tbody th{font-size: 13px;color: #3b3b3b;background: #e0effa;text-align:left;width: 95px;font-weight: normal;padding: 3px 0px 3px 8px;}
+
+div.dashboard_my_info div.dashboard_invest_info div table tbody td{text-align: center;padding: 10px 0;font-size: 12px;color: #a6a6a6;}
+
+div.dashboard_my_info>div.dashboard_invest_info{}
+div.dashboard_my_info>div.dashboard_invest_info ul{border-bottom: 1px solid #e9e9e9;width: 470px;margin: 0 auto;padding-bottom: 20px;}
+div.dashboard_my_info>div.dashboard_invest_info ul li{    line-height: 30px;    color: #a6a6a6;    list-style-type: square;    font-size: 13px;}
+div.dashboard_my_info>div.dashboard_invest_info label{font-size:13px;text-align:center;display:block;margin: 20px 0;color:#616161;}
+
+/*161018 마이페이지 개편 관심투자*/
+
+div.dashboard_my_info div.invest_interest{width: 100%;clear: both;}
+div.dashboard_my_info div.invest_interest h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;}
+div.dashboard_my_info div.invest_interest>span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.invest_interest > div{width: 100%;clear: both;}
+div.dashboard_my_info div.invest_interest > div img{width:100%;}
+div.dashboard_my_info div.invest_interest > div:first-child{/* float:right; */margin-right: 20px;}
+div.dashboard_my_info div.invest_interest div table{width: 100%;font-size: 14px;color: #787878;}
+div.dashboard_my_info div.invest_interest div table tr:nth-child(odd){background: #f4f3f3;}
+
+/*161018 마이페이지 개편 입출금내역*/
+
+div.dashboard_my_info div.dashboard_emoney{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_emoney h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;}
+div.dashboard_my_info div.dashboard_emoney>span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.dashboard_emoney > div{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_emoney table tbody{margin: 10px 0;border-bottom: 3px solid #7dc8ff;}
+div.dashboard_my_info div.dashboard_emoney div table thead th{font-size: 14px;text-align: left;background: #e0effa;color: #616161;font-weight: normal;text-align: center;padding: 10px 0;}
+div.dashboard_my_info div.dashboard_emoney div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;}
+div.dashboard_my_info div.dashboard_emoney div table tbody th{font-size: 13px;color: #3b3b3b;background: #e0effa;text-align:left;width: 95px;font-weight: normal;padding: 3px 0px 3px 8px;}
+
+div.dashboard_my_info div.dashboard_emoney div table tbody td{text-align: center;padding: 10px 0;font-size: 12px;color: #a6a6a6;}
+
+/*161018 마이페이지 개편 알림메세지*/
+
+div.dashboard_my_info div.dashboard_alert{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_alert h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;}
+div.dashboard_my_info div.dashboard_alert{font-size:12px;display: block;}
+div.dashboard_my_info div.dashboard_alert > div{width: 100%;clear: both;margin: 0 auto;border-top: 2px solid #ccc;border-bottom: 2px solid #ccc;}
+div.dashboard_my_info div.dashboard_alert > div p{margin:0;border-bottom: 1px dotted #ccc;display: inline-block;padding: 0;color: #616161;width: 100%;}
+div.dashboard_my_info div.dashboard_alert > div p:last-child{border:none;}
+div.dashboard_my_info div.dashboard_alert > div span{width:70%; float:left;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }
+div.dashboard_my_info div.dashboard_alert > div span.date{text-align: right;float: left;width: 30%;}
+
+div.dashboard_my_info div.dashboard_alert > div span.detail_alert_msg{width:100%;float: none;display: block;text-overflow: inherit;padding: 0px 0 5px 0;overflow: inherit;white-space: pre-wrap;}
+
+
+/*161018 마이페이지 개편 입출금관리*/
+div.dashboard_my_info div.dashboard_balance{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_balance > div{display: block;padding-bottom: 50px;}
+div.dashboard_my_info div.dashboard_balance > div:first-child{margin-bottom:20px;border-bottom: 1px dashed #e0e0e0;}
+div.dashboard_my_info div.dashboard_balance div table{}
+div.dashboard_my_info div.dashboard_balance div table:first-child{}
+div.dashboard_my_info div.dashboard_balance div table thead th{font-size: 13px;text-align: left;color: #616161;padding-bottom: 15px;font-weight: normal;}
+div.dashboard_my_info div.dashboard_balance div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;}
+div.dashboard_my_info div.dashboard_balance div table tbody th{font-size: 12px;color:#a6a6a6;text-align:left;font-weight: normal;width: 30%;line-height: 32px;}
+div.dashboard_my_info div.dashboard_balance div table tbody td{width:70%;}
+div.dashboard_my_info div.dashboard_balance div table tbody td select.s_bnkCd{width: 100%;border: 1px solid #e6e6e6;border-radius: 3px;color: #616161;padding-left: 5px;height: 28px;}
+div.dashboard_my_info div.dashboard_balance div table tbody td input{width: 100%;height: 17px;border-radius: 3px;border: 1px solid #e6e6e6;padding: 5px;}
+div.dashboard_my_info div.dashboard_balance div table tbody td  label{color:#a6a6a6;font-size:12px;margin-top: 15px;display: block;} 
+
+div.dashboard_my_info div.dashboard_balance div table tbody td input[type="checkbox"]{width:15px;margin: 0;}
+div.dashboard_my_info div.dashboard_balance div table tbody td input.modify_pw{width:277px;}
+div.dashboard_my_info div.dashboard_balance div table tbody td input.confirm_number{width: 100%;margin-top: 5px;height: 30px;}
+div.dashboard_my_info div.dashboard_balance div table a{display:block;float: right;}
+div.dashboard_my_info div.dashboard_balance div table a.btn_confirm_phonenumber{    border: 1px solid #6438f7;    padding: 5px 15px;    font-size: 13px;    border-radius: 3px;    color: #6438f7;}
+div.dashboard_my_info div.dashboard_balance div table a.btn_submit_dashboard_info_modify{background:#6438f7;padding: 5px 15px;font-size: 13px;border-radius: 3px;color: #fff;margin-top: 6px;}
+div.dashboard_my_info div.dashboard_balance a.btn_info_account{clear: both;display: block;width: 83px;height: 33px;background: #6438f7;text-align: center;border-radius: 3px;font-size: 13px;float: right;margin-top: 16px;line-height: 33px;color: #fff;}
+div.dashboard_my_info div.dashboard_balance a.btn_make_account{margin-left:10px; width:120px;height: 33px;background: #6438f7;text-align: center;border-radius: 3px;font-size: 13px;float: right;line-height: 33px;color: #fff;}
+
+/*161018 마이페이지 개편 정보수정*/
+
+div.dashboard_my_info div.dashboard_info_modify{width: 100%;clear: both;padding: 5px;}
+div.dashboard_my_info div.dashboard_info_modify > div{width: 100%;display: block;}
+div.dashboard_my_info div.dashboard_info_modify div table{    width: 100%;    display: block;}
+div.dashboard_my_info div.dashboard_info_modify div table:first-child{}
+div.dashboard_my_info div.dashboard_info_modify div table thead th{font-size: 13px;color: #616161;font-weight: normal;text-align: left;padding-bottom: 15px;}
+
+div.dashboard_my_info div.dashboard_info_modify div table tbody th{font-size: 13px;color:#a6a6a6;text-align:left;font-weight: normal;width: 30%;letter-spacing: -1.1px;padding: 16px 0px;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td{font-size: 13px;width: 70%;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td select{width: 24%;height: 28px;border-radius: 3px;border: 1px solid #e6e6e6;padding: 5px;margin-right: 5px;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td input{width: 35%;height: 28px;border-radius: 3px;border: 1px solid #e6e6e6;padding: 5px;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td input.birth{width: 99%;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td label{color:#616161;font-size: 12px;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td input[type="checkbox"]{width:15px;margin-right: 5px;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td input.modify_pw{width: 100%;}
+div.dashboard_my_info div.dashboard_info_modify div table tbody td input.confirm_number{width: 70%;margin-top: 5px;}
+div.dashboard_my_info div.dashboard_info_modify div table a{display:block;float: right;}
+div.dashboard_my_info div.dashboard_info_modify div table a.btn_confirm_phonenumber{    border: 1px solid #6438f7;    padding: 5px 15px;    font-size: 13px;    border-radius: 3px;    color: #6438f7;}
+div.dashboard_my_info div.dashboard_info_modify div table a.btn_submit_dashboard_info_modify{background:#6438f7;padding: 5px 15px;font-size: 13px;border-radius: 3px;color: #fff;margin-top: 6px;}
+div.dashboard_my_info div.dashboard_info_modify a.modify_submit{clear: both;display: block;margin: 0 auto;width: 83px;height: 33px;background: #6438f7;text-align: center;border-radius: 3px;font-size: 13px;line-height: 33px;color: #fff;}
+
+/*161018 마이페이지 개편 출금계좌 정보 mypage_confirm_center*/
+
+div.dashboard_my_info div.dashboard_info_account{padding: 5px;}
+div.dashboard_my_info div.dashboard_info_account > div{display: block;padding-bottom: 40px;}
+div.dashboard_my_info div.dashboard_info_account > div:first-child{}
+div.dashboard_my_info div.dashboard_info_account div table{}
+div.dashboard_my_info div.dashboard_info_account div table:first-child{}
+div.dashboard_my_info div.dashboard_info_account div table thead th{font-size: 13px;text-align: left;font-weight: normal;color: #616161;padding-bottom: 15px;}
+div.dashboard_my_info div.dashboard_info_account div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;}
+div.dashboard_my_info div.dashboard_info_account div table tbody th{font-size: 13px;color:#a6a6a6;text-align:left;width: 28%;font-weight: normal;padding: 10px 0px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td{padding: 6px 0;width: 90%;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td select{width: 100%;height: 28px;border-radius: 3px;border: 1px solid #e6e6e6;padding: 5px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input{width: 100%;height: 30px;border-radius: 3px;border: 1px solid #e6e6e6;padding: 5px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td label{color:#616161;font-size:14px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input[type="checkbox"]{width:15px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input.modify_pw{width:277px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input.confirm_number{width: 100%;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input.confirm_number.rrn1{width: 45%;float:left;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td span{display:inline-block;float:left;color: #616161;line-height: 30px;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input.confirm_number.rrn2{width: 50%;float:left;}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input.confirm_number.address{    /* margin-bottom: 12px; */}
+div.dashboard_my_info div.dashboard_info_account div table tbody td input.confirm_number.post_number{width: 50%;}
+div.dashboard_my_info div.dashboard_info_account div table a{display:block;float: right;}
+div.dashboard_my_info div.dashboard_info_account div table a.account_verify{background: #f29913;display:block;font-size: 11px;padding: 10px;text-align: center;color: #fff;margin-top: -3px;border-radius: 3px;}
+div.dashboard_my_info div.dashboard_info_account div table a.find_post{background: #929292;border-radius:3px;color:#fff;width: 47%;text-align: center;height: 30px;line-height: 30px;}
+div.dashboard_my_info div.dashboard_info_account div table a.btn_confirm_phonenumber{    border: 1px solid #6438f7;    padding: 5px 15px;    font-size: 13px;    border-radius: 3px;    color: #6438f7;}
+div.dashboard_my_info div.dashboard_info_account div table a.btn_submit_dashboard_info_modify{background:#6438f7;padding: 5px 15px;font-size: 13px;border-radius: 3px;color: #fff;margin-top: 6px;}
+div.dashboard_my_info div.dashboard_info_account a.btn_info_account{clear: both;display: block;width: 83px;height: 33px;background: #6438f7;text-align: center;border-radius: 3px;font-size: 13px;float: right;line-height: 33px;color: #fff;}
+
+
+
+/*161018 마이페이지 개편 회원탈퇴 mypage_out*/
+div.dashboard_my_info>div.dashboard_info_out{    width: 100%;}
+div.dashboard_my_info>div.dashboard_info_out ul{border-bottom: 1px solid #e9e9e9;width: 85%;margin: 0 auto;padding-bottom: 20px;}
+div.dashboard_my_info>div.dashboard_info_out ul li{line-height: 30px;color: #a6a6a6;list-style-type: square;font-size: 13px;letter-spacing: -1px;}
+div.dashboard_my_info>div.dashboard_info_out label{font-size:13px;text-align:center;display:block;margin: 20px 0;color:#616161;}
+div.dashboard_my_info>div.dashboard_info_out label input[type="checkbox"]{margin:0;}
+div.dashboard_my_info>div.dashboard_info_out a{display:block;margin: 0 auto;width: 40%;background:#6438f7;text-align:center;color:#fff;font-size:13px;padding:10px;border-radius:3px;}
+
+
+/*170209 자동투자 메뉴 추가*/
+/*자동투자 설정 tab7*/
+div.dashboard_my_info div.dashboard_auto_invest_setting{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_auto_invest_setting h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;overflow: hidden;}
+div.dashboard_my_info div.dashboard_auto_invest_setting>span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.dashboard_auto_invest_setting > div{width: 100%;/* clear: both; */overflow: hidden;padding-bottom: 20px;}
+
+/*자동투자 설정 tab7 > 자동투자예치금, 자동투자 신청현황*/
+div.dashboard_auto_invest_setting div table {width:100%;display: table !important; margin-top:10px; }
+div.dashboard_auto_invest_setting div table:first-child{}
+div.dashboard_auto_invest_setting div table thead th{font-size: 16px;text-align: left;font-weight: normal;color: #616161;padding-bottom: 15px;}
+div.dashboard_auto_invest_setting div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;line-height: 18px;}
+div.dashboard_auto_invest_setting div table tbody th{font-size:14px;color:#a6a6a6;text-align:left;display:inline-block;width: 95px;font-weight: normal;padding: 10px 0px;}
+div.dashboard_auto_invest_setting div table td {background:#fafafa;padding:5px;text-align:right;font-size:16px;color:#616161;border-top:1px solid #cecece;border-bottom:1px solid #cecece;}
+div.dashboard_auto_invest_setting div table td span {color:#008df7;display: inline-block !important;text-align: right !important; margin-right:15px; }
+a.btn_auto_invest {clear: both;display: block;width: 50%;height: 33px;background: #008df7;text-align: center;border-radius: 3px;font-size: 13px;float: right;line-height: 33px;color: #fff;margin-top:20px !important;box-shadow: 0 3px #2e628a;}
+
+/*자동투자 설정 tab7 >자동투자 신청*/
+div.auto_invest_apply {/* width: 94.5% !important; */background:#fafafa;padding: 40px 10px !important;/* margin: 25px; */overflow: hidden;text-align:center;}
+div.auto_invest_apply p {font-size:14px;color:#7e7e7e !important;padding:0 !important;line-height: 1.5em;}
+div.auto_invest_apply p:first-child {font-size:20px; color:#2c2c2c !important; font-weight:bold; }
+div.auto_invest_apply p:nth-child(2) {font-size:16px; color:#008df7 !important; font-weight:bold; }
+div.auto_invest_apply span {width:95%; margin:30px auto; display:inline-block; border-bottom:1px dashed #cbcbcb; }
+div.auto_invest_apply a {display:block;width: 90%;margin:0 auto;padding: 20px 0;font-size:20px;text-align:center;color:#008df7;border:1px solid #008df7;border-bottom:3px solid #008df7;border-radius:5px;}
+div.auto_invest_apply a img {margin:-3px 5px 0 0; }
+
+/*자동투자 예치금 설정하러가기 mypage_auto_invest_set*/
+div.dashboard_my_info div.dashboard_auto_invest{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_auto_invest h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;overflow: hidden;}
+div.dashboard_my_info div.dashboard_auto_invest>span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.dashboard_auto_invest > div{width: 100%;clear: both; overflow: hidden;padding-bottom: 20px;}
+
+/*자동투자 예치금 설정 설정하러가기 mypage_auto_invest_set > 자동투자 예치금*/
+div.dashboard_my_info div.dashboard_auto_invest table tbody{margin: 10px 0;/*border-bottom: 3px solid #7dc8ff;*/}
+div.dashboard_my_info div.dashboard_auto_invest div table thead th{font-size: 14px;text-align: left;background: #e0effa;color: #616161;font-weight: normal;text-align: center;padding: 10px 0;}
+div.dashboard_my_info div.dashboard_auto_invest div table thead th.caption{font-size:12px;border-bottom: 1px dashed #cecece;text-align:left;}
+div.dashboard_my_info div.dashboard_auto_invest div table tbody th{font-size: 13px;color: #3b3b3b;background: #e0effa;text-align:left;width: 95px;font-weight: normal;padding: 3px 0px 3px 8px;}
+div.dashboard_my_info div.dashboard_auto_invest div table tbody td{text-align: center;padding: 6px 0;font-size: 13px;color: #a6a6a6;}
+div.dashboard_my_info div.dashboard_auto_invest div table tbody td input {width: 88%;border:1px solid #e6e6e6;border-radius:3px;padding: 5px 10px;font-size: 14px;float: left;}
+div.dashboard_my_info div.dashboard_auto_invest div table tbody td span {line-height:2.5em;}
+
+/*자동투자 예치금 설정 설정하러가기 mypage_auto_invest_set > 자동투자 설정*/
+div.dashboard_my_info div.dashboard_auto_invest div.auto_set {background:#fafafa;width: 100%;text-align:center;padding: 15px;margin: 10px 0;}
+div.dashboard_my_info div.dashboard_auto_invest div.auto_set ul {width: 100%;margin:0 auto;}
+div.dashboard_my_info div.dashboard_auto_invest div.auto_set ul li {/* float:left; *//* width:50%; */text-align: left;font-size:14px;color:#616161;  }
+div.dashboard_my_info div.dashboard_auto_invest div.auto_set ul li:first-child {margin-bottom:10px; }
+div.dashboard_my_info div.dashboard_auto_invest div.auto_set ul li input {width: 100px;border:1px solid #e6e6e6;border-radius:5px;background:#fff;padding:5px 10px;margin:0 10px;}
+div.dashboard_my_info div.dashboard_auto_invest div.auto_set_txt p {padding: 0 5px 0 13px !important;color: #ff0000;text-align: left;font-size: 12px;text-indent: -13px;}
+
+/*자동투자 예치금 설정 설정하러가기 mypage_auto_invest_set > 서비스 이용 상태*/
+div.dashboard_my_info div.dashboard_auto_invest div.service_txt p {text-align: left;color: #616161;padding: 0;/* line-height: 1.5em; */margin: 5px 0;}
+div.dashboard_my_info div.dashboard_auto_invest div.service_txt p.red {color:#ff0000;font-size:12px;text-indent: -13px;padding-left: 13px;}
+
+
+/*자동투자 신청현황 신청내역보러가기 mypage_auto_invest_list*/
+div.dashboard_my_info div.dashboard_auto_invest div.auto_invest_list p {padding:0;text-align:left;font-size:12px;margin: 8px 0;overflow: hidden;width: 100%;}
+div.dashboard_my_info div.dashboard_auto_invest div.auto_invest_list table {width:100%; }
+a.btn_auto_list {display:block;width: 48%;margin:0 auto;padding: 5px;border:1px solid #008df7;color:#008df7;box-shadow: 0 3px #008df7;text-align:center;border-radius:5px;font-size:14px;}
+a.btn_more{font-size:12px;color:#a6a6a6;border:1px solid #a6a6a6;border-radius:3px;padding: 5px 20px;float:right;}
+
+/*자동투자 신청 mypage_auto_invest_apply */
+div.dashboard_my_info div.dashboard_auto_invest_apply{width: 100%;clear: both;}
+div.dashboard_my_info div.dashboard_auto_invest_apply h3{background: none;padding: 0;text-indent: 0;float: none;height: inherit;font-size: 13px;width: 100%;overflow: hidden;}
+div.dashboard_my_info div.dashboard_auto_invest_apply>span{font-size:12px;padding: 15px 0;display: block;}
+div.dashboard_my_info div.dashboard_auto_invest_apply > div{width: 100%;clear: both;overflow: hidden;padding-bottom: 20px;}
+
+/*자동투자 신청 mypage_auto_invest_apply > 투자조건 설정*/
+div.dashboard_my_info div.dashboard_auto_invest_apply table {width:100%;margin: 10px 0;}
+div.dashboard_my_info div.dashboard_auto_invest_apply thead th {border-top:1px solid #cecece;background:#fafafa;padding: 5px 18px;font-size:14px;font-weight:500;color:#616161;}
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody th {color:#cecece;font-weight:500;text-align: center;}
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td {padding: 5px 0;text-align: center;}
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td.pdr {padding:5px 20px; }
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td input {width:100%;padding: 5px 10px;border: 1px solid #c7c7c7;border-radius: 5px;}
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td select {width:100%; padding: 5px 10px;border: 1px solid #c7c7c7;border-radius: 5px;}
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td span {float:right;}
+
+div.dashboard_my_info div.dashboard_auto_invest_apply div.auto_invest_notice {/* width: 100% !important; */margin:10px 0;border-top:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;background: #fff !important;padding: 10px !important;text-align: left;}
+div.dashboard_my_info div.dashboard_auto_invest_apply div.auto_invest_notice p {color:#616161 !important;font-size:14px !important;padding: 0;margin: 0;text-align: left;}
+
+div.dashboard_my_info div.dashboard_auto_invest_apply div.auto_invest_agree {width:100% !important; background:none !important;  }
+div.dashboard_my_info div.dashboard_auto_invest_apply div.auto_invest_agree p.agree {text-align:center !important;font-size:14px;color:#616161 !important;padding: 10px 0;margin: 0;}
+
+table.all {border-bottom:1px solid #008df7; margin-bottom:10px }
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td p.product_title {width: 100%;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;/* line-height: 1.5em; */font-size: 14px;padding:0;margin: 0;}
+div.dashboard_my_info div.dashboard_auto_invest_apply tbody td p.product_title a {color: #454545;}
+
+
+div.pf_pop {padding:20px; background:#dedede; }
+div.pf_pop_inner {width:100%;  }
+div.pf_pop_inner h3 {width: 80%;padding:14px 0;background:#008df7;color:#fff;border-radius:5px 5px 0 0;font-size:20px;font-weight:600;text-align:center;margin: 0;}
+div.pf_pop_inner div {padding: 10px;}
+div.pf_pop_inner div:nth-child(1n) {background:#f8f8f8; }
+div.pf_pop_inner div:nth-child(2n) {background:#eeeeee; }
+div.pf_pop_inner div h4 {font-size:22px; color:#595959; }
+div.pf_pop_inner div h4 img {margin:-3px 20px 0 0 ; }
+div.pf_pop_inner div h4 span {font-size:14px;color:#008df7;margin: 13px 0 0 0;font-weight: 500;display: block;line-height: 1.5em;}
+div.pf_pop_inner div p {font-size:14px;color:#595959;margin-top:15px;text-indent: 0px;text-align: justify;line-height: 1.5em;}
+
+a.port_pop {display:inline-block;width: 22px;height: 22px;padding: 3px;line-height: 16px;text-align: center;margin: 3px 0 0 7px;background:#008df7;color:#fff;border-radius:50%;}
+
+
+
+/*161011 원천징수 호버*/
+
+strong.help span {
+    right: -32px;
+    display: block;
+    position: absolute;
+    font-size: 12px;
+    bottom: 28px;
+    /* left: 50px; */
+    padding: 8px;
+    word-break: break-all;
+    width: 240px;
+    background: black;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    pointer-events: none;
+    line-height: 1.4em;
+}
+
+strong.help span:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+strong.help {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url('/img/help_q.png') center center, #666666;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: bottom;
+    position: absolute;
+    filter: alpha(opacity=50);
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    line-height: 17px;
+}
+
+
+strong.help:hover span {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+strong.help:before {
+    color: white;
+    margin: -4px 0 0 5px;
+    font-size: 12px;
+    vertical-align: 10%;
+}
+
+
+
+
+/*2016-10-18 마이페이지 개편 끝*/
+
+		/*수정 2017-07-013*/
+div.dashboard div.dashboard_content div.dashboard_my_info div.dashboard_balance > div:nth-of-type(2){/* float:right; */margin-right: 20px;}
+ a.btn_make_account01,
+ a.btn_make_account02
+{/*clear: both;*/display: block;width: 100%;padding:10px 0; background: #ff9000;text-align: center;border-radius: 3px;font-size: 14px;color: #fff;margin-top: 20px;}
+div.dashboard div.dashboard_content div.dashboard_my_info div.dashboard_balance  .depositbox{overflow:hidden; width:400px;}
+div.dashboard div.dashboard_content div.dashboard_my_info div.dashboard_balance  .depositbox a:nth-of-type(1)
+{    margin-top: 50px;  background:#ff9000; }
+
+div.my_tap_div1{position:relative; }
+div.my_tap_div2{position:relative;}
+
+ul.my_tap_ul{overflow:hidden; position:absolute; right:0;  top:0px}
+ul.my_tap_ul li{float:left; font-size:14px; color:#ff9000; width:120px; border:1px solid #ff9000;  padding:4px 0;  text-align:center; border-radius:5px;  }
+ul.my_tap_ul li:nth-of-type(1){margin-right:10px;  }
+ul.my_tap_ul li.on{background:#ff9000; color:#fff;  }
+
+
+
+
+
+
+

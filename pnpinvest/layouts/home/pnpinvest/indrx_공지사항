@@ -1,0 +1,56 @@
+<div class="section04">
+                  <div class="section04Inner">
+				    <div class="notice">
+					   <h3>공지사항</h3>
+						  <ul>
+								<?php 
+								$sql = "select * from mari_write where w_table = 'notice' order by w_id desc limit 4";
+								$notice = sql_query($sql);
+								for($i=0; $n_list = sql_fetch_array($notice); $i++){
+							?>
+									  <li><a href="{MARI_HOME_URL}/?mode=bbs_view&type=view&table=notice&id=<?php echo $n_list[w_id]; ?>" style="color:#0e3094">
+											 &bull; <?php echo cut_str($n_list['w_subject'],15, '...')?>
+									  
+											 </a>
+											</li>
+											<!--<li><a href="">
+												   &bull; 공지사항 테스트 글 입니다.공지사항 테스트 글 입니다.
+													</a>
+											</li>
+											<li><a href="">
+												   &bull; 공지사항 테스트 글 입니다.공지사항 테스트 글 입니다.
+													</a>
+											</li>
+											<li><a href="">
+												   &bull; 공지사항 테스트 글 입니다.공지사항 테스트 글 입니다.
+													</a>
+											</li>
+											<li><a href="">
+												   &bull; 공지사항 테스트 글 입니다.공지사항 테스트 글 입니다.
+													</a>
+											</li>-->
+										
+							 <?php }?>		
+								</ul>
+					</div>
+
+					<div class="yellowinfo">
+                        <h3>펀딩 이용안내</h3>
+						<ul>
+						    <li><a href="?mode=guide_invest"><img src="{MARI_HOMESKIN_URL}/img2/guideicon01.png"> <p>가이드</p></a></li>
+							<li><a href="?mode=guide"><img src="{MARI_HOMESKIN_URL}/img2/guideicon02.png"> <p>자주하는 질문</p></a></li>
+							<li><a href="?mode=company_intro"><img src="{MARI_HOMESKIN_URL}/img2/guideicon03.png"> <p>회사소개</p></a></li>
+						 </ul>
+					</div>
+					<div class="yellowcontack">
+					  <h3>상담센터</h3>
+					    <ul>
+						  <li><p><img src="{MARI_HOMESKIN_URL}/img2/guideicon04.png">상담전화 </p><p>02.123.4567</p></li>
+						  <li><p><img src="{MARI_HOMESKIN_URL}/img2/guideicon05.png">E-MAIL </p><p class="emaillist">marster@yellowfunding.com</p></li>
+						  <li><p><img src="{MARI_HOMESKIN_URL}/img2/guideicon06.png">운영시간</p><p>09:00~18:00</p></li>
+						</ul>
+					</div>
+				 
+				 
+				 </div><!--section04Inner-->
+              

@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+div.header_inner {width:1200px; margin:0 auto; position:relative; height:63px; padding:10px 0;}
+div.header_inner:after {content:""; display:block; clear:both;}
+
+h1.logo {width:103px; height:63px; float:left;}
+
+ul.gnb {float:left; padding:22px 0 0 15px; height:21px;}
+ul.gnb:after {content:""; display:block; clear:both;}
+ul.gnb > li {float:left; margin-left:100px;}
+ul.gnb > li > a {color:#303030; font-size:18px;}
+
+ul.member_mn {position:absolute; top:37px; right:0; height:15px;}
+ul.member_mn:after {content:""; display:block; clear:both;}
+ul.member_mn > li {float:left; padding:0 15px; background:url("../img/line1.png") no-repeat right center;}
+ul.member_mn > li > a {font-size:13px;}
+
+.join1 a {color:#04b9c2; padding-left:18px; background:url("../img/icon1.png") no-repeat 0 center;}
+.login1 {padding-right:0 !important; background:none !important;}
+.login1 a {color:#504f4f; padding-left:17px; background:url("../img/icon2.png") no-repeat 0 center;}
