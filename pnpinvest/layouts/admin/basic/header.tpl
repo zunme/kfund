@@ -272,6 +272,12 @@ function ftp_add_Ok(f)
 							</ul>
 						</li>
 						<?php }?>
+            <li class="gnb_1dli">
+							<a href="javascript:;" onClick='repayschedule()' class="gnb_1da">정산스케쥴</a>
+							<ul class="gnb_2dul">
+								<li class="gnb_2dli"><a href="javascript:;" onClick='repayschedule()' class="gnb_2da">정산스케쥴</a></li>
+							</ul>
+						</li>
 						<li class="gnb_1dli">
 							<a href="{MARI_HOME_URL}/?cms=setting_main" class="gnb_1da">환경설정</a>
 							<ul class="gnb_2dul">
