@@ -1,4 +1,4 @@
-﻿{# new_header}
+{# new_header}
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
 <div id="container" class="sub center">
 	<div class="company_01">
@@ -452,7 +452,7 @@
 	<img src="img/pp01_2.png" alt="대표님">
         <div class="box-title">Chief Executive Officer <br>
 	Kim Hyun Chul<br>
-	<p style="font-size:15px;line-height:26px;color:#c2dcdb">
+	<p style="font-size:15px;line-height:26px;color:#bccaccb3">
 	- 자산운용사 (부동산 시행, 개발)</p></div>
       </div>
     </div>
@@ -461,7 +461,7 @@
 	<img src="img/pp02.jpg" alt="김영일">
         <div class="box-title">Chief Operating Officer <br>
 	Kim Young Il<br>
-	<p style="font-size:15px;line-height:26px;color:#c2dcdb">
+	<p style="font-size:15px;line-height:26px;color:#bccaccb3">
 	- 삼성생명 융자 Risk Management</p></div>
       </div>
     </div>
@@ -470,7 +470,7 @@
 	<img src="img/pp03.jpg" alt="임용환">
         <div class="box-title">Chief Marketing Officer<br>
 	Lim Yong Hwan <br>
-	<p style="font-size:15px;line-height:27px;color:#c2dcdb">
+	<p style="font-size:15px;line-height:27px;color:#bccaccb3">
 	- 종합광고대행사 운영</p></div>
       </div>
     </div>
@@ -479,7 +479,7 @@
 	<img src="img/pp04.jpg" alt="최봉용">
         <div class="box-title">Head of Business Development <br>
 	Choi Bong Yong<br>
-	<p style="font-size:15px;line-height:27px;color:#c2dcdb">
+	<p style="font-size:15px;line-height:27px;color:#bccaccb3">
 	- 신협 대부계</p></div>
       </div>
     </div>
@@ -488,7 +488,7 @@
 	<img src="img/pp05.jpg" alt="정진식">
         <div class="box-title">Head of Alternative Investment <br>
 	Jung Jean Shik <br>
-	<p style="font-size:15px;line-height:26px;color:#c2dcdb">
+	<p style="font-size:15px;line-height:26px;color:#bccaccb3">
 	- 공영토건/오리온메가마크 (시행,개발)</p></div>
       </div>
     </div>
@@ -497,7 +497,7 @@
 	<img src="img/pp06.jpg" alt="박영태">
         <div class="box-title">Head of Risk <br>
 	Park Young Tae<br>
-	<p style="font-size:15px;line-height:26px;color:#c2dcdb">
+	<p style="font-size:15px;line-height:26px;color:#bccaccb3">
 	- 저축은행/새마을금고 중앙회</p></div>
       </div>
     </div>
@@ -513,23 +513,32 @@
  	<img src="img/pp09.jpg" alt="최용원">
         <div class="box-title">NPL Investment <br>
     	Choi Yong Won<br>
-		<p style="font-size:15px;line-height:26px;color:#c2dcdb">
-	- 한미 금융그룹 (NPL 담당)</p></div>
+		<p style="font-size:15px;line-height:26px;color:#bccaccb3">
+	- 한미 금융그룸 (NPL 담당)</p></div>
       </div>
     </div>
+
     <div class="col-sm-4 colimgbox">
       <div class="box_a">
-	  
+
 	<img src="img/pp10.jpg" alt="명소민">
         <div class="box-title">Head of Design <br>
 	Myeong So Min </div>
       </div>
-    </div> 
-
+    </div>
+		<div class="col-sm-4 colimgbox">
+			<div class="box">
+	<img src="img/pp12.jpg" alt="박인범">
+				<div class="box-title">Head of Alternative Investment <br>
+			Park In Bum<br>
+		<p style="font-size:15px;line-height:26px;color:#bccaccb3">
+	- 한미금융그룹 (투자 및 자산관리)</p></div>
+			</div>
+		</div>
     </div>
 
 
- <!--   <div class="col-sm-4 colimgbox">
+<!--  <div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp11.png" alt="추가인재">
         <div class="box-title">Recruitment of talent</div>
