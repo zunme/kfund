@@ -292,7 +292,120 @@ include_once(MARI_EDITOR_LIB);
 					<tr>
 						<th>첨부파일</th>
 						<td>
-							<table class="type2" style="max-width:500px">
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
+							<script src="/assets/alertify/alertify.min.js"></script>
+							<link rel="stylesheet" href="/assets/alertify/alertify.css" />
+							<style>
+							tr.myDragClass td {
+							    /*position: fixed;*/
+							    color: yellow;
+							    text-shadow: 0 0 10px black, 0 0 10px black, 0 0 8px black, 0 0 6px black, 0 0 6px black;
+							    background-color: #999;
+							    -webkit-box-shadow: 0 12px 14px -12px #111 inset, 0 -2px 2px -1px #333 inset;
+							}
+							tr.myDragClass td:first-child {
+							    -webkit-box-shadow: 0 12px 14px -12px #111 inset, 12px 0 14px -12px #111 inset, 0 -2px 2px -1px #333 inset;
+							}
+							tr.myDragClass td:last-child {
+							    -webkit-box-shadow: 0 12px 14px -12px #111 inset, -12px 0 14px -12px #111 inset, 0 -2px 2px -1px #333 inset;
+							}
+							.tDnD_whileDrag {
+							    /*z-index: 500;*/
+							    /*width: 90%;*/
+							    /*margin: -10px;*/
+							    /*display: table-cell;*/
+							    /*color: transparent;*/
+							    /*width: 0px*/
+							}
+							.tDnD_whileDrag td {
+							    background-color: #eee;
+							    /*-webkit-box-shadow: 11px 5px 12px 2px #333, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;*/
+							    -webkit-box-shadow: 6px 3px 5px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;
+							    /*-moz-box-shadow: 6px 4px 5px 1px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;*/
+							    /*-box-shadow: 6px 4px 5px 1px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;*/
+							}
+							/*.tDnD_whileDrag td:first-child {*/
+
+							/*-webkit-box-shadow: 5px 4px 5px 1px #111, 0 1px 0 #ccc inset, 1px -1px 0 #ccc inset;*/
+
+							/*-moz-box-shadow: 6px 3px 5px 2px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset, 1px 0 0 #ccc inset;*/
+
+							/*-box-shadow: 6px 3px 5px 2px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset, 1px 0 0 #ccc inset;*/
+
+							/*}*/
+							 .tDnD_whileDrag td:last-child {
+							    /*-webkit-box-shadow: 8px 7px 12px 0 #333, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;*/
+							    -webkit-box-shadow: 1px 8px 6px -4px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;
+							    /*-moz-box-shadow: 0 9px 4px -4px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset, -1px 0 0 #ccc inset;*/
+							    /*-box-shadow: 0 9px 4px -4px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset, -1px 0 0 #ccc inset;*/
+							}
+							/*-webkit-box-shadow:  0 0 40px white, 10px 10px 15px black;*/
+
+							/*-moz-box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;*/
+
+							/*-webkit-box-shadow: 0px 0px 40px 1px white, 0px 1px 1px 1px black;*/
+
+							/*box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;*/
+
+							/*}*/
+
+							/*.tDnD_whileDrag {*/
+
+							/*background-color: black;*/
+
+							/*position: relative;*/
+
+							/*display: block;*/
+
+							/*-moz-box-shadow: 0px 0px 40px 1px white, 0px 1px 1px 1px black;*/
+
+							/*-webkit-box-shadow: 0px 0px 40px 1px white, 0px 1px 1px 1px black;*/
+
+							/*box-shadow:        0px 0px 40px 1px white, 0px 1px 1px 1px black ;*/
+
+							/*-webkit-box-shadow: 0 15px 10px -10px black, 0 1px 4px black, 0 0 10px darkgray inset;*/
+
+							/*-webkit-box-shadow: 0 15px 10px -10px black, 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;*/
+
+							/*-moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;*/
+
+							/*box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;*/
+
+							/*width: 90%;*/
+
+							/*height: 90%;*/
+
+							/*width: 100%;*/
+
+							/*overflow: visible;*/
+
+							/*z-index: 10000;*/
+
+							/*opacity: .4;*/
+
+							/*border-collapse: separate;*/
+
+							/*filter:Alpha(Opacity=50);*/
+
+							/*width: auto;*/
+
+							/*}*/
+
+							/*tr.alt td {*/
+
+							/*width:200px*/
+
+							/*-ms-transform:rotate(1deg;*/
+
+							/*-moz-transform: rotate(0deg);*/
+
+							/*-webkit-transform:rotate(0deg);*/
+
+							/*-o-transform:rotate(0deg);*/
+
+							/*}*/
+							</style>
+							<table id="filetable" class="type2" style="max-width:500px">
 								<colgroup>
 									<col width="50px" />
 									<col width="" />
@@ -316,7 +429,7 @@ include_once(MARI_EDITOR_LIB);
 									  $num=$i+1;
 							?>
 								<input type="hidden" name="file_idx" value="<?php echo $row['file_idx']?>">
-								<tr>
+								<tr id="fi_<?php echo $row['file_idx']?>">
 									<td><?php echo $num;?></td>
 									<td><a href="{MARI_DATA_URL}/file/<?php echo $loan_id?>/<?php echo $row['file_name'];?>" download target="_blank"><?php echo $row[file_name];?></a></td>
 									<td>
@@ -347,7 +460,36 @@ include_once(MARI_EDITOR_LIB);
 
 								</tbody>
 							</table>
+							<script>
+							function resortfile(jsonsort){
+								var obj = JSON.parse(jsonsort)
+								obj.loanid = <?php echo $loan_id?>;
+								$.ajax({
+									type : 'POST',
+									url : '/api/index.php/fileupload/officesort',
+									dataType : 'json',
+									data :obj,
+									success : function(result) {
+										if(result.code=='OK') {
+											alertify.success("순서를 변경하였습니다.");
+										}
+										else alert("저장중 오류가 발생하였습니다.\n".result.msg);
+									}
+									,error : function () {
+										alert("저장중 오류가 발생하였습니다.");
+									}
+								});
 
+							}
+							$(document).ready(function() {
+						    $("#filetable").tableDnD({
+									onDragClass: "tDnD_whileDrag",
+									onDrop: function(table, row) {
+										resortfile($.tableDnD.jsonize());
+									}
+								});
+							});
+							</script>
 <!-- 첨부파일 수정.taq -->
 <link rel="stylesheet" href="/api/statics/fileuploader/css/jquery.fileupload.css">
 							<script src="/api/statics/fileuploader/js/jquery.iframe-transport.js"></script>
@@ -466,9 +608,14 @@ margin-top: 5px;
 															if(file.error != ''){
 																$('#files').append('<p><span style="color:blue;">'+file.file_name+'</span><br><span style="padding-left:20px;">[ERROR] '+file.error+'</span></p>');
 															}else  {
-																$("#mytable").append("<tr><td>added</td><td>"+file.file_name+"</td><td><a href='/pnpinvest/?update=invest_file_setup&amp;type=d&amp;loan_id=<?php echo $loan_id;?>&amp;file_idx="+file.fileid+"'><img src='/pnpinvest/layouts/admin/basic/img/delete2_btn.png' alt='삭제'></a></td>");
+																$("#mytable").append("<tr id='fi_"+file.fileid+"'><td>added</td><td>"+file.file_name+"</td><td><a href='/pnpinvest/?update=invest_file_setup&amp;type=d&amp;loan_id=<?php echo $loan_id;?>&amp;file_idx="+file.fileid+"'><img src='/pnpinvest/layouts/admin/basic/img/delete2_btn.png' alt='삭제'></a></td>");
 																//$('<p/>').text(file.file_name).appendTo('#files');
-
+																$("#filetable").tableDnD({
+																	onDragClass: "tDnD_whileDrag",
+																	onDrop: function(table, row) {
+																		resortfile($.tableDnD.jsonize());
+																	}
+																});
 															}
 							            });
 							        },

@@ -73,12 +73,38 @@ class Fileupload extends CI_Controller {
       $this->db->insert('mari_invest_file', array('loan_id'=>$loanid, 'file_name'=>$data['file_name'], 'file_regidate'=>date('Y-m-d H:i:s')));
       $data['error']='';
       $data['fileid'] = $this->db->insert_id();
+			$this->db->query("set @loan_id=?;", array($loanid));
+			$this->db->query("set @rank:=0;");
+			$sql = "update mari_invest_file
+							set sortnum = @rank:=@rank+1
+							where loan_id = @loan_id
+							order by sortnum, file_idx";
+			$this->db->query($sql);
+			$sortnum = $this->db->query("select sortnum from mari_invest_file where file_idx = ? ", array($data['fileid']) )->row_array();
+			$data['sortnum']=$sortnum['sortnum'];
       $files['files'][] = $data;
     }
       echo json_encode($files);return;
       $path = "../pnpinvest/data/file/".$loanid."/".$filename;
       var_dump(move_uploaded_file($_FILES['userfile']['tmp_name'], $path));
      //$filename = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "",  str_ireplace(" ", "", $filename) );
+	}
+	function officesort() {
+		$loanid = (int) ($this->input->post('loanid'));
+		if($loanid < 1){
+			echo json_encode(array("code"=>404, "msg"=>"LOAN ID ERROR"));return;
+		}
+		$sort = array();
+		foreach ($this->input->post('filetable') as $val ) {
+			$sort[] = str_replace("fi_",'', $val);
+		}
+		$this->db->query("set @rank:=0;");
+		$sql = "update mari_invest_file
+						set sortnum = @rank:=@rank+1
+						where loan_id = ".$loanid."
+						order by field (file_idx, ".implode(',', $sort)." )";
+		$this->db->query($sql);
+		echo json_encode(array("code"=>"OK", "msg"=>""));return;
 	}
   function gallery() {
     $loanid = (int) ($this->input->post('loanid'));
