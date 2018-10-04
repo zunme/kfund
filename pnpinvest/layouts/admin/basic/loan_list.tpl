@@ -147,7 +147,10 @@ i.islinked {color:#E67229}
 						</td>
 						<td><?php echo substr($row['i_regdatetime'],0,10); ?></td>
 						<td><?php if(!$t_odinterestcount){?>0일<?php }else{?><?php echo $t_odinterestcount; ?>일<?php }?></td>
-						<td><a href="{MARI_HOME_URL}/?cms=loan_form&type=m&i_id=<?php echo $row['i_id']; ?>&i_loan_type=<?php echo $row[i_loan_type]?>"><img src="{MARI_ADMINSKIN_URL}/img/view2_btn.png" alt="보기" /></a></td>
+						<td>
+							<a href="{MARI_HOME_URL}/?cms=loan_form&type=m&i_id=<?php echo $row['i_id']; ?>&i_loan_type=<?php echo $row[i_loan_type]?>"><img src="{MARI_ADMINSKIN_URL}/img/view2_btn.png" alt="보기" /></a>
+							<i class="fa fa-copy triggerModal" href="/api/index.php/copyloan?i_id=<?php echo $row['i_id']; ?>" aria-hidden="true" title="복사를 합니다."></i>
+						</td>
 					</tr>
     <?php
     }
