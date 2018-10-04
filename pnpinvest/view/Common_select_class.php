@@ -2425,7 +2425,7 @@ faq
 
 
 		/*첨부파일*/
-		$sql = "select file_name, loan_id from mari_invest_file where loan_id = '$loan_id' order by sortnum, file_idx";
+		$sql = "select file_name, loan_id from mari_invest_file where loan_id = '$loan_id'";
 		$file_list = sql_query($sql);
 
 		$sql = "select count(file_idx) as cnt from mari_invest_file where loan_id = '$loan_id'";
