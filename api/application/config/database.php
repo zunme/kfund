@@ -64,7 +64,7 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-$db['real']['hostname'] = '112.175.14.20';
+$db['real']['hostname'] = 'localhost';
 $db['real']['username'] = 'user01';
 $db['real']['password'] = 'user015754!@#';
 $db['real']['database'] = 'user01';
