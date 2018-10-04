@@ -465,7 +465,7 @@
 	- 삼성생명 융자 Risk Management</p></div>
       </div>
     </div>
-      <div class="col-sm-4 colimgbox">
+      <!--<div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp03.jpg" alt="임용환">
         <div class="box-title">Chief Marketing Officer<br>
@@ -473,7 +473,7 @@
 	<p style="font-size:15px;line-height:27px;color:#89afb7">
 	- 종합광고대행사 운영</p></div>
       </div>
-    </div>
+    </div>-->
       <div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp04.jpg" alt="최봉용">
@@ -483,7 +483,7 @@
 	- 신협 대부계</p></div>
       </div>
     </div>
-<div class="col-sm-4 colimgbox">
+<!--<div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp05.jpg" alt="정진식">
         <div class="box-title">Head of Alternative Investment <br>
@@ -491,7 +491,7 @@
 	<p style="font-size:15px;line-height:26px;color:#89afb7">
 	- 공영토건/오리온메가마크 (시행,개발)</p></div>
       </div>
-    </div>
+    </div>-->
     <div class="col-sm-4 colimgbox">
       <div class="box">
 	<img src="img/pp06.jpg" alt="박영태">
