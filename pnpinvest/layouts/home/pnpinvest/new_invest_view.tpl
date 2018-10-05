@@ -1572,7 +1572,7 @@ table.product_table tbody tr td:first-child{
 
               var geocoder = new daum.maps.services.Geocoder();
 			  // 하드코딩을 mapContainer 바꾸면 될듯..
-              geocoder.addressSearch('서울시 서초구 사임당로 174', function(result, status) {
+              geocoder.addressSearch('<?php echo $loa['i_locaty']?>', function(result, status) {
 
                   // 정상적으로 검색이 완료됐으면
                    if (status === daum.maps.services.Status.OK) {
@@ -1587,7 +1587,7 @@ table.product_table tbody tr td:first-child{
 
                       // 인포윈도우로 장소에 대한 설명을 표시합니다
                       var infowindow = new daum.maps.InfoWindow({
-                          content: '<div style="width:150px;text-align:center;padding:6px 0;">서울시 서초구 사임당로 174</div>'
+                          content: '<div style="width:150px;text-align:center;padding:6px 0;"><?php echo $loa['i_locaty']?></div>'
                       });
                       infowindow.open(map, marker);
 
