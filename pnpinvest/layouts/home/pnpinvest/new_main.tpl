@@ -706,7 +706,7 @@ h1.masking {
 .top_safety_box{
   margin: auto;
   position: absolute;
-  width:550px;
+/*  width:550px;*/
   height:90px;
   top: 50%;
   left: 50%;
@@ -776,7 +776,7 @@ h1.masking {
               <img src="/pnpinvest/img/top_safety_icon.png">
             </div>
             <div class="top_satety_title float-left">
-              <div class="top_satety_title_first"><span class="bold">S</span>afe <span class="bold">G</span>uide <span class="bold">P</span>lan</div>
+              <div class="top_satety_title_first"><span class="bold">S</span>afe <span class="bold">C</span>are</div>
               <div class="top_satety_title_second">투자금 안심케어</div>
             </div>
             <div class="top_safety_btn float-left">
