@@ -660,7 +660,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=safetyguide">
-                    <i class="material-icons">art_track</i> safetyguide
+                    <i class="material-icons">art_track</i> 안심케어
                   </a>
                 </li>
               </ul>
@@ -1096,14 +1096,14 @@ left: 50px;
 
 <div id="pageheader" class="page-header header-filter clear-filter header-small " data-parallax="false" filter-color="center_gradient">
   <div class="header-title">
-    Safe Guide
+    안심케어
   </div>
 </div>
 
 
 <div class="safety_split_box bg_color1 ss-style-doublediagonal.">
   <div class="container">
-    <div class="safety_split_box_head"><i class="fas fa-shield-alt"></i> 세이프 가이드 <span>S</span>TART</div>
+    <div class="safety_split_box_head"><i class="fas fa-shield-alt"></i> 안심케어 <span>S</span>TART</div>
     <div class="row">
       <div class="col-md-4 center">
         <div class="safety_split_in_box">
@@ -1149,7 +1149,7 @@ left: 50px;
 
 <div class="safety_split_box bg_color1 triangletop">
   <div class="container">
-  <div class="safety_split_box_head"><i class="material-icons">security</i> 세이프 가이드 <span>T</span>ARGET</div>
+  <div class="safety_split_box_head"><i class="material-icons">security</i> 안심케어 <span>T</span>ARGET</div>
     <div class="row">
       <div class="col-md-4 center">
         <div class="safety_split_in_box">
@@ -1182,7 +1182,7 @@ left: 50px;
 
 <div class="safety_split_box bg_color1 trianglebottom">
   <div class="container">
-    <div class="safety_split_box_head"><i class="fas fa-user-shield"></i> 세이프 가이드 <span>A</span>FTER</div>
+    <div class="safety_split_box_head"><i class="fas fa-user-shield"></i> 안심케어 <span>A</span>FTER</div>
     <div class="row">
       <div class="col-md-offset-3 col-md-6 col-xs-12">
         <div class="round-box pboxline1">
@@ -1258,7 +1258,7 @@ left: 50px;
 <div class="main_join t2" style="background-color: #396a9e;">
 		<div class="container">
 		 <div class="pboxline1">
-                              	<span>케이펀딩 안전가이드플랜 운영</span> </div>
+                              	<span>케이펀딩 안심케어 운영</span> </div>
                	 <div class="pboxline2">케이펀딩의 적립 금액은 투자 상품이 마감 뒤 확인 가능합니다.<br>
 				적립금은 회사 운영 계좌와 완전히 분리되며, 적립금의 납입과 원금 손실 보전을 위한 용도 외에는 입출금은 일어나지 않습니다.
         <br><span style="font-size: 20px;color: red;"><i class="fas fa-asterisk"></i> 추후 케이펀딩에서 출자금과 한도금액등을 확대할 예정입니다.</span>

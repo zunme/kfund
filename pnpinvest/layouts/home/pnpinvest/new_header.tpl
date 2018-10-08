@@ -680,7 +680,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
                 </li>
                 <li>
                   <a href="/pnpinvest/?mode=safetyguide">
-                    <i class="material-icons">art_track</i> safetyguide
+                    <i class="material-icons">art_track</i> 안심케어
                   </a>
                 </li>
               </ul>
