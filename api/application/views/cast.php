@@ -528,10 +528,23 @@ user-select: none;
                 <i class="material-icons">store</i> 대출신청
               </a>
             </li>
-            <li>
-              <a href="/pnpinvest/?mode=companyintro01">
+            <li class="dropdown">
+              <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="material-icons">apps</i> 회사소개
+                <b class="caret"></b>
               </a>
+              <ul class="dropdown-menu dropdown-with-icons">
+                <li>
+                  <a href="/pnpinvest/?mode=companyintro01">
+                    <i class="material-icons">apps</i> 회사소개
+                  </a>
+                </li>
+                <li>
+                  <a href="/pnpinvest/?mode=safetyguide">
+                    <i class="material-icons">art_track</i> 안심케어
+                  </a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href="/api/cast">

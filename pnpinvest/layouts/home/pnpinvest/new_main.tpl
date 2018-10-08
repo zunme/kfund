@@ -777,7 +777,7 @@ h1.masking {
             </div>
             <div class="top_satety_title float-left">
               <div class="top_satety_title_first"><span class="bold">S</span>afe <span class="bold">G</span>uide <span class="bold">P</span>lan</div>
-              <div class="top_satety_title_second">투자금 안전 시스템</div>
+              <div class="top_satety_title_second">투자금 안심케어</div>
             </div>
             <div class="top_safety_btn float-left">
               <a href="/pnpinvest/?mode=safetyguide" class="btn top_safety_button">상세보기</a>
@@ -1727,7 +1727,7 @@ overflow-y: hidden;
   <div>
     <div class="container safeguideplan">
       <div class="safeguideplan-head">
-        Safe Guide Plan
+        안심케어
       </div>
       <div>
         <div class="row">
