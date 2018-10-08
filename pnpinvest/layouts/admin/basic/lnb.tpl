@@ -88,6 +88,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 					<li><a href="{MARI_HOME_URL}/?cms=withdrawal_list">출금신청</a></li>
 					<li><a href="{MARI_HOME_URL}/?cms=charge_list">충전내역</a></li>
 					<li><a href="{MARI_HOME_URL}/?cms=sales_report">매출리포트</a></li>
+					<div class="lnb_mn lnb_menu01"><a href="javascript:;" onClick='investcheck()' >투자체크</a></div>
 				</ul>
 				<?php } if($au[au_sales]=='1'){ ?>
 				<div class="lnb_mn lnb_menu06"><a href="#">회계관리</a></div>
@@ -140,6 +141,8 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 					<li><a href="{MARI_HOME_URL}/?cms=reservation_send">푸시관리</a></li>
 				</ul>
 				<?php }?>
+				<div class="lnb_mn lnb_menu01"><a href="javascript:;" onClick='repayschedule()' >정산스케쥴</a></div>
+
 				<div class="lnb_mn lnb_menu01"><a href="#">환경설정</a></div>
 				<?php if($cms=="setting1" || $cms == "advice_list" || $cms=="setting2" || $cms=="setting3" || $cms=="setting4"){?>
 				<ul class="sub_lnb  sub_lnb_on">
@@ -155,3 +158,13 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 				</ul>
 
 			</div><!-- /lnb -->
+<script>
+function repayschedule(){
+	$("#container").empty().css('background-color','#dcf5f2').html('<iframe src="/api/index.php/repayschedule" width="100%" height="1014px"/>');
+	$("#left_container").height('1014px');
+}
+function investcheck(){
+	$("#container").empty().css('background-color','#dcf5f2').html('<iframe src="/api/index.php/investcheck" width="100%" height="1014px"/>');
+	$("#left_container").height('1014px');
+}
+</script>

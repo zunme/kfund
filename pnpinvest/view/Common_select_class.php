@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 @extract($_POST);
 @extract($_SERVER);
 $timetoday = mktime();
-$date = date("Y-m-d H:i:s", $timetoday); 
+$date = date("Y-m-d H:i:s", $timetoday);
 $ip=$_SERVER['REMOTE_ADDR'];
 
 // 기본환경설정
@@ -37,19 +37,19 @@ $now_year = date("Y");
 $now_age = (int)substr($user['m_birth'],0,4);
 $m_age = $now_year - $now_age + 1;
 /*입찰합계구하기*/
-$sql="select sum(i_pay) from mari_invest"; 
+$sql="select sum(i_pay) from mari_invest";
 $top=sql_query($sql, false);
 $t_pay = mysql_result($top, 0, 0);
 
 /*누적대출금*/
-$sql="select sum(i_loan_pay) from mari_loan where i_loanapproval='Y'"; 
+$sql="select sum(i_loan_pay) from mari_loan where i_loanapproval='Y'";
 $l_top=sql_query($sql, false);
 if($l_top){
 	$t_loan_pay = mysql_result($l_top, 0, 0);
 }
 
 /*상환중인대출
-$sql="select sum(i_loan_pay) from mari_order where user_id = '$user[m_id]'"; 
+$sql="select sum(i_loan_pay) from mari_order where user_id = '$user[m_id]'";
 $o_top=sql_query($sql, false);
 $t_order_pay = mysql_result($o_top, 0, 0);
 */
@@ -72,12 +72,12 @@ if($laons_plus['cnt']){
 }
 
 /*개인입찰합계구하기*/
-$sql="select sum(i_pay) from mari_invest where m_id = '$user[m_id]'"; 
+$sql="select sum(i_pay) from mari_invest where m_id = '$user[m_id]'";
 $top2=sql_query($sql, false);
 $t_pay2 = mysql_result($top2, 0, 0);
 
 /*개인누적대출금*/
-$sql="select sum(i_loan_pay) from mari_loan where m_id = '$user[m_id]' and i_loanapproval='Y'"; 
+$sql="select sum(i_loan_pay) from mari_loan where m_id = '$user[m_id]' and i_loanapproval='Y'";
 $l_top2=sql_query($sql, false);
 if($l_top2){
 	$t_loan_pay2 = mysql_result($l_top2, 0, 0);
@@ -99,7 +99,7 @@ if($laons_plus2['cnt']){
 }
 
 /*누적 대출상환금*/
-$sql="select sum(o_investamount) from mari_order where o_status='입금완료'"; 
+$sql="select sum(o_investamount) from mari_order where o_status='입금완료'";
 $lb_top=sql_query($sql, false);
 if($lb_top){
 $Loanrepayments = mysql_result($lb_top, 0, 0);
@@ -214,7 +214,7 @@ $today = sql_fetch($sql, false);
 
 /*날짜 자르기*/
 $datetime=$today['i_invest_sday'];
-$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime); 
+$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime);
 $Y_date = date("Y", strtotime( $datetime ) );
 $M_date = date("m", strtotime( $datetime ) );
 $D_date = date("d", strtotime( $datetime ) );
@@ -262,24 +262,24 @@ main 메인테스트
 		$sql = " select * from mari_loan where i_view='Y'  order by i_id desc limit 3";
 		$result = sql_query($sql, false);
 
-		
+
 		$sql = " select  * from mari_write where w_table ='media' order by w_datetime desc limit 2";
 		$result1 = sql_query($sql, false);
-		
+
 		$sql = " select * from mari_loan where i_recom='Y' and i_view='Y' order by i_regdatetime desc limit 3";
 		$result3 = sql_query($sql, false);
-	
-	
+
+
 		/*누적 대출상환금*/
-		$sql="select sum(o_investamount) from mari_order where o_status='입금완료'"; 
+		$sql="select sum(o_investamount) from mari_order where o_status='입금완료'";
 		$lb_top=sql_query($sql, false);
 		$Loanrepayments = mysql_result($lb_top, 0, 0);
 
 		/*개인누적 대출상환금*/
-		$sql="select sum(o_investamount) from mari_order where o_status='입금완료' and user_id = '$user[m_id]'"; 
+		$sql="select sum(o_investamount) from mari_order where o_status='입금완료' and user_id = '$user[m_id]'";
 		$lb_top2=sql_query($sql, false);
 		$Loanrepayments2 = mysql_result($lb_top2, 0, 0);
-	
+
 
 		/*투자인원 구하기*/
 		$sql = " select count(*) as cnt from mari_invest where loan_id='$loan_id' order by i_pay desc";
@@ -289,7 +289,7 @@ main 메인테스트
 
 		$sql = "select * from  mari_inset";
 		$allpay = sql_fetch($sql, false);
-		
+
 		$sql = "select * from mari_advice";
 		$adv = sql_query($sql);
 			$header = "main";
@@ -302,15 +302,15 @@ main 메인테스트
 
 
 		/*입찰합계구하기*/
-		$sql="select sum(i_pay) from mari_invest"; 
+		$sql="select sum(i_pay) from mari_invest";
 		$top=sql_query($sql, false);
 		$t_pay = mysql_result($top, 0, 0);
 
 
 
 /*2018-01-03 평균 수익률 이경희*/
-		$sql  = "SELECT i_id, i_loan_pay, i_year_plus, i_subject, i_loanexecutiondate, i_look 
-				FROM mari_loan 
+		$sql  = "SELECT i_id, i_loan_pay, i_year_plus, i_subject, i_loanexecutiondate, i_look
+				FROM mari_loan
 				WHERE i_loan_pay != '0' AND i_year_plus != '0'
 				  AND (i_look = 'C' OR i_look = 'D' OR i_look = 'F') ";
 		$totalAverage = sql_query($sql, false);
@@ -318,13 +318,13 @@ main 메인테스트
 		$sql = "SELECT COUNT(*) AS cnt FROM mari_loan WHERE i_loan_pay!='0' AND i_year_plus!=0 AND (i_look='C' OR i_look='D' OR i_look='F') ";
 		$y_count = sql_fetch($sql);
 		$total_y_count = $y_count['cnt'];
-		
+
 //		if($totalAverage['i_look']=="C" || $totalAverage['i_look']=="D" || $totalAverage['i_look']=="F"){
 			for($a=0; $average_t = sql_fetch_array($totalAverage); $a++){
 				if($average_t['i_loanexecutiondate']=="0000-00-00 00:00:00"){
 				}else{
 					$y_average += $average_t['i_year_plus'];
-					
+
 					$Result_average = $y_average / $total_y_count;
 				}
 			}
@@ -338,66 +338,66 @@ main 메인테스트
 회원가입 STEP
 ************************************************/
 case "join1":
-    session_start(); 
-		if ($member_ck) alert('이미 로그인 중입니다.'); 
-//		if(!extension_loaded('IPINClient')) { 
-//			dl('IPINClient.' . PHP_SHLIB_SUFFIX); 
-//		} 
-//		$module = 'IPINClient'; 
-//		$sSiteCode = "BF960"; 
-//		$sSitePw = "FVaPgJqa5nCY"; 
-//		$sReturnURL = "".MARI_HOME_URL."/?mode=join-ipin-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2.""; 
-//		$sCPRequest = "".MARI_HOME_URL."/?mode=join-ipin-return"; 
-//		if (extension_loaded($module)) { 
-//			$sCPRequest = get_request_no($sSiteCode); 
-//		} else { 
-//			$sCPRequest = "Module get_request_no is not compiled into PHP"; 
-//		} 
-//		$_SESSION['CPREQUEST'] = $sCPRequest; 
-//		$sEncData = ""; 
-//		$sRtnMsg = ""; 
-//		if (extension_loaded($module)) { 
-//			$sEncData = get_request_data($sSiteCode, $sSitePw, $sCPRequest, $sReturnURL); 
-//		} else { 
-//			$sEncData = "Module get_request_data is not compiled into PHP"; 
-//		} 
-//		if ($sEncData == -9) { 
-//			$sRtnMsg = "입력값 오류 : 암호화 처리시, 필요한 파라미터값의 정보를 정확하게 입력해 주시기 바랍니다."; 
-//		} else { 
-//			$sRtnMsg = "$sEncData 변수에 암호화 데이타가 확인되면 정상, 정상이 아닌 경우 리턴코드 확인 후 NICE평가정보 개발 담당자에게 문의해 주세요."; 
-//		} 
-		if(!extension_loaded('CPClient')) { 
-			dl('CPClient.' . PHP_SHLIB_SUFFIX); 
-		} 
-		$module = 'CPClient'; 
-		$sitecode = "BE429"; 
-		$sitepasswd = "52OzHsPatLhc"; 
-		$authtype = ""; 
-		$popgubun = "N"; 
-		$customize = ""; 
-		$reqseq = "REQ_0123456789"; 
-		if (extension_loaded($module)) { 
-			//$reqseq = get_cprequest_no($sitecode); 
+    session_start();
+		if ($member_ck) alert('이미 로그인 중입니다.');
+//		if(!extension_loaded('IPINClient')) {
+//			dl('IPINClient.' . PHP_SHLIB_SUFFIX);
+//		}
+//		$module = 'IPINClient';
+//		$sSiteCode = "BF960";
+//		$sSitePw = "FVaPgJqa5nCY";
+//		$sReturnURL = "".MARI_HOME_URL."/?mode=join-ipin-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2."";
+//		$sCPRequest = "".MARI_HOME_URL."/?mode=join-ipin-return";
+//		if (extension_loaded($module)) {
+//			$sCPRequest = get_request_no($sSiteCode);
+//		} else {
+//			$sCPRequest = "Module get_request_no is not compiled into PHP";
+//		}
+//		$_SESSION['CPREQUEST'] = $sCPRequest;
+//		$sEncData = "";
+//		$sRtnMsg = "";
+//		if (extension_loaded($module)) {
+//			$sEncData = get_request_data($sSiteCode, $sSitePw, $sCPRequest, $sReturnURL);
+//		} else {
+//			$sEncData = "Module get_request_data is not compiled into PHP";
+//		}
+//		if ($sEncData == -9) {
+//			$sRtnMsg = "입력값 오류 : 암호화 처리시, 필요한 파라미터값의 정보를 정확하게 입력해 주시기 바랍니다.";
+//		} else {
+//			$sRtnMsg = "$sEncData 변수에 암호화 데이타가 확인되면 정상, 정상이 아닌 경우 리턴코드 확인 후 NICE평가정보 개발 담당자에게 문의해 주세요.";
+//		}
+		if(!extension_loaded('CPClient')) {
+			dl('CPClient.' . PHP_SHLIB_SUFFIX);
+		}
+		$module = 'CPClient';
+		$sitecode = "BE429";
+		$sitepasswd = "52OzHsPatLhc";
+		$authtype = "";
+		$popgubun = "N";
+		$customize = "";
+		$reqseq = "REQ_0123456789";
+		if (extension_loaded($module)) {
+			//$reqseq = get_cprequest_no($sitecode);
 		} else {
-			$reqseq = "Module get_request_no is not compiled into PHP"; 
-		} 
-		$returnurl = "".MARI_HOME_URL."/?mode=join-self-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2.""; 
-		$errorurl = "".MARI_HOME_URL."/?mode=join-self-return"; 
-		$_SESSION["REQ_SEQ"] = $reqseq; 
-		$plaindata = "7:REQ_SEQ" . strlen($reqseq) . ":" . $reqseq . "8:SITECODE" . strlen($sitecode) . ":" . $sitecode . "9:AUTH_TYPE" . strlen($authtype) . ":". $authtype . "7:RTN_URL" . strlen($returnurl) . ":" . $returnurl . "7:ERR_URL" . strlen($errorurl) . ":" . $errorurl . "11:POPUP_GUBUN" . strlen($popgubun) . ":" . $popgubun . "9:CUSTOMIZE" . strlen($customize) . ":" . $customize ; 
-		//$enc_data = get_encode_data($sitecode, $sitepasswd, $plaindata); 
-		if( $enc_data == -1 ) { 
-			$returnMsg = "암/복호화 시스템 오류입니다."; 
-			$enc_data = ""; 
-		} else if( $enc_data== -2 ) { 
-			$returnMsg = "암호화 처리 오류입니다."; 
-			$enc_data = ""; 
-		} else if( $enc_data== -3 ) { 
-			$returnMsg = "암호화 데이터 오류 입니다."; 
-			$enc_data = ""; 
-		} else if( $enc_data== -9 ) { 
-			$returnMsg = "입력값 오류 입니다."; 
-			$enc_data = ""; 
+			$reqseq = "Module get_request_no is not compiled into PHP";
+		}
+		$returnurl = "".MARI_HOME_URL."/?mode=join-self-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2."";
+		$errorurl = "".MARI_HOME_URL."/?mode=join-self-return";
+		$_SESSION["REQ_SEQ"] = $reqseq;
+		$plaindata = "7:REQ_SEQ" . strlen($reqseq) . ":" . $reqseq . "8:SITECODE" . strlen($sitecode) . ":" . $sitecode . "9:AUTH_TYPE" . strlen($authtype) . ":". $authtype . "7:RTN_URL" . strlen($returnurl) . ":" . $returnurl . "7:ERR_URL" . strlen($errorurl) . ":" . $errorurl . "11:POPUP_GUBUN" . strlen($popgubun) . ":" . $popgubun . "9:CUSTOMIZE" . strlen($customize) . ":" . $customize ;
+		//$enc_data = get_encode_data($sitecode, $sitepasswd, $plaindata);
+		if( $enc_data == -1 ) {
+			$returnMsg = "암/복호화 시스템 오류입니다.";
+			$enc_data = "";
+		} else if( $enc_data== -2 ) {
+			$returnMsg = "암호화 처리 오류입니다.";
+			$enc_data = "";
+		} else if( $enc_data== -3 ) {
+			$returnMsg = "암호화 데이터 오류 입니다.";
+			$enc_data = "";
+		} else if( $enc_data== -9 ) {
+			$returnMsg = "입력값 오류 입니다.";
+			$enc_data = "";
 		}
 
 break;
@@ -422,16 +422,16 @@ break;
 
 	/********************************************************************************************************************************************
 		NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
-		
+
 		서비스명 : 가상주민번호서비스 (IPIN) 서비스
 		페이지명 : 가상주민번호서비스 (IPIN) 호출 페이지
-		
+
 		[ PHP 확장모듈 설치 안내 ]
 		1.	Php.ini 파일의 설정 내용 중 확장모듈 경로(extension_dir)로 지정된 위치에 첨부된 IPINClient.so 파일을 복사합니다.
 		2.	Php.ini 파일에 다음과 같은 설정을 추가 합니다.
 				extension=IPINClient.so
 		3.	아파치 재 시작 합니다.
-		
+
 	*********************************************************************************************************************************************/
 	/*****************************
 
@@ -447,32 +447,32 @@ break;
 	//$sSitePw					= "Sodi1234";			// IPIN 서비스 사이트 패스워드	(NICE평가정보에서 발급한 사이트패스워드)
 	$sSiteCode					= "BY60";			// IPIN 서비스 사이트 코드		(NICE평가정보에서 발급한 사이트코드)
 	$sSitePw					= "Kingk19!";			// IPIN 서비스 사이트 패스워드	(NICE평가정보에서 발급한 사이트패스워드)
-	
+
 	$sReturnURL					= "".MARI_HOME_URL."/?mode=join-ipin-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2."";			// 하단내용 참조
 	$sCPRequest					= "".MARI_HOME_URL."/?mode=join-ipin-return";			// 하단내용 참조
-	
+
 //	if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
 //		$sCPRequest = get_request_no($sSiteCode);
 //	} else {
 //		$sCPRequest = "Module get_request_no is not compiled into PHP";
 //	}
-	
+
 	// 현재 예제로 저장한 세션은 ipin_result.php 페이지에서 데이타 위변조 방지를 위해 확인하기 위함입니다.
 	// 필수사항은 아니며, 보안을 위한 권고사항입니다.
 	$_SESSION['CPREQUEST'] = $sCPRequest;
-    
+
     $sEncData					= "";			// 암호화 된 데이타
 	$sRtnMsg					= "";			// 처리결과 메세지
-	
+
     // 리턴 결과값에 따라, 프로세스 진행여부를 파악합니다.
 
-  
+
 //		if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
 //			$sEncData = get_request_data($sSiteCode, $sSitePw, $sCPRequest, $sReturnURL);
 //		} else {
 //			$sEncData = "Module get_request_data is not compiled into PHP";
 //		}
-    
+
     // 리턴 결과값에 따른 처리사항
     if ($sEncData == -9)
     {
@@ -482,42 +482,42 @@ break;
     }
 
 	/*
-	
+
 	┌ sReturnURL 변수에 대한 설명  ─────────────────────────────────────────────────────
 		NICE평가정보 팝업에서 인증받은 사용자 정보를 암호화하여 귀사로 리턴합니다.
 		따라서 암호화된 결과 데이타를 리턴받으실 URL 정의해 주세요.
-		
+
 		* URL 은 http 부터 입력해 주셔야하며, 외부에서도 접속이 유효한 정보여야 합니다.
 		* 당사에서 배포해드린 샘플페이지 중, ipin_process.jsp 페이지가 사용자 정보를 리턴받는 예제 페이지입니다.
-		
+
 		아래는 URL 예제이며, 귀사의 서비스 도메인과 서버에 업로드 된 샘플페이지 위치에 따라 경로를 설정하시기 바랍니다.
 		예 - http://www.test.co.kr/ipin_process.jsp, https://www.test.co.kr/ipin_process.jsp, https://test.co.kr/ipin_process.jsp
 	└────────────────────────────────────────────────────────────────────
-	
+
 	┌ sCPRequest 변수에 대한 설명  ─────────────────────────────────────────────────────
 		[CP 요청번호]로 귀사에서 데이타를 임의로 정의하거나, 당사에서 배포된 모듈로 데이타를 생성할 수 있습니다. (최대 30byte 까지만 가능)
-		
+
 		CP 요청번호는 인증 완료 후, 암호화된 결과 데이타에 함께 제공되며
 		데이타 위변조 방지 및 특정 사용자가 요청한 것임을 확인하기 위한 목적으로 이용하실 수 있습니다.
-		
+
 		따라서 귀사의 프로세스에 응용하여 이용할 수 있는 데이타이기에, 필수값은 아닙니다.
 	└─────────
 
 
     /**************************************************************************************************************
     NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
-    
+
     서비스명 :  체크플러스 - 안심본인인증 서비스
     페이지명 :  체크플러스 - 메인 호출 페이지
-    보안을 위해 제공해드리는 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다. 
-    
+    보안을 위해 제공해드리는 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다.
+
     [ PHP 확장모듈 설치 안내 ]
 		1.	Php.ini 파일의 설정 내용 중 확장모듈 경로(extension_dir)로 지정된 위치에 첨부된 CPClient.so 파일을 복사합니다.
 		2.	Php.ini 파일에 다음과 같은 설정을 추가 합니다.
 				extension=CPClient.so
 		3.	아파치 재 시작 합니다.
     **************************************************************************************************************/
-    
+
 
 	  //아파치에서 모듈 로드가 되지 않았을경우 동적으로 모듈을 로드합니다.
 
@@ -525,29 +525,29 @@ break;
     //$sitepasswd = "1oTqvwP9oZZs";			// NICE로부터 부여받은 사이트 패스워드
     $sitecode = "BC600";				// NICE로부터 부여받은 사이트 코드
     $sitepasswd = "RmtejQLO7WNH";			// NICE로부터 부여받은 사이트 패스워드
-    
+
     $authtype = "";      	// 없으면 기본 선택화면, X: 공인인증서, M: 핸드폰, C: 카드
-    	
+
 		$popgubun 	= "N";		//Y : 취소버튼 있음 / N : 취소버튼 없음
 		$customize 	= "";			//없으면 기본 웹페이지 / Mobile : 모바일페이지
-		
-		 
+
+
     $reqseq = "REQ_0123456789";     // 요청 번호, 이는 성공/실패후에 같은 값으로 되돌려주게 되므로
-    
+
     // 업체에서 적절하게 변경하여 쓰거나, 아래와 같이 생성한다.
 //		if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
 //			$reqseq = get_cprequest_no($sitecode);
 //		} else {
 //			$reqseq = "Module get_request_no is not compiled into PHP";
 //		}
-    
-    
+
+
     // CheckPlus(본인인증) 처리 후, 결과 데이타를 리턴 받기위해 다음예제와 같이 http부터 입력합니다.
     $returnurl = "".MARI_HOME_URL."/?mode=join-self-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2."";	// 성공시 이동될 URL
     $errorurl = "".MARI_HOME_URL."/?mode=join-self-return";		// 실패시 이동될 URL
-	
+
     // reqseq값은 성공페이지로 갈 경우 검증을 위하여 세션에 담아둔다.
-    
+
     $_SESSION["REQ_SEQ"] = $reqseq;
 
     // 입력될 plain 데이타를 만든다.
@@ -558,8 +558,8 @@ break;
 			    			  "7:ERR_URL" . strlen($errorurl) . ":" . $errorurl .
 			    			  "11:POPUP_GUBUN" . strlen($popgubun) . ":" . $popgubun .
 			    			  "9:CUSTOMIZE" . strlen($customize) . ":" . $customize ;
-    
-    
+
+
 		//if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
 			//$enc_data = get_encode_data($sitecode, $sitepasswd, $plaindata);
 		//} else {
@@ -622,24 +622,24 @@ break;
 
 	/********************************************************************************************************************************************
 		NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
-		
+
 		서비스명 : 가상주민번호서비스 (IPIN) 서비스
 		페이지명 : 가상주민번호서비스 (IPIN) 호출 페이지
-		
+
 		[ PHP 확장모듈 설치 안내 ]
 		1.	Php.ini 파일의 설정 내용 중 확장모듈 경로(extension_dir)로 지정된 위치에 첨부된 IPINClient.so 파일을 복사합니다.
 		2.	Php.ini 파일에 다음과 같은 설정을 추가 합니다.
 				extension=IPINClient.so
 		3.	아파치 재 시작 합니다.
-		
+
 	*********************************************************************************************************************************************/
 	/*****************************
 
 	*****************************/
-    
+
 
 	  //아파치에서 모듈 로드가 되지 않았을경우 동적으로 모듈을 로드합니다.
-	
+
 		/*
 		if(!extension_loaded('CPClient')) {
 			dl('CPClient.' . PHP_SHLIB_SUFFIX);
@@ -649,30 +649,30 @@ break;
 
     $sitecode = "BC600";				// NICE로부터 부여받은 사이트 코드
     $sitepasswd = "RmtejQLO7WNH";			// NICE로부터 부여받은 사이트 패스워드
-    
-    
+
+
     $authtype = "";      	// 없으면 기본 선택화면, X: 공인인증서, M: 핸드폰, C: 카드
-    	
+
 		$popgubun 	= "N";		//Y : 취소버튼 있음 / N : 취소버튼 없음
 		$customize 	= "";			//없으면 기본 웹페이지 / Mobile : 모바일페이지
-		
-		 
+
+
     $reqseq = "REQ_0123456789";     // 요청 번호, 이는 성공/실패후에 같은 값으로 되돌려주게 되므로
-    
+
     // 업체에서 적절하게 변경하여 쓰거나, 아래와 같이 생성한다.
 		if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
 			$reqseq = get_cprequest_no($sitecode);
 		} else {
 			$reqseq = "Module get_request_no is not compiled into PHP";
 		}
-    
-    
+
+
     // CheckPlus(본인인증) 처리 후, 결과 데이타를 리턴 받기위해 다음예제와 같이 http부터 입력합니다.
     $returnurl = "".MARI_HOME_URL."/?mode=join-self-return&retInfo=Y&agreement1=".$agreement1."&agreement2=".$agreement2."";	// 성공시 이동될 URL
     $errorurl = "".MARI_HOME_URL."/?mode=join-self-return";		// 실패시 이동될 URL
-	
+
     // reqseq값은 성공페이지로 갈 경우 검증을 위하여 세션에 담아둔다.
-    
+
     $_SESSION["REQ_SEQ"] = $reqseq;
 
     // 입력될 plain 데이타를 만든다.
@@ -683,8 +683,8 @@ break;
 			    			  "7:ERR_URL" . strlen($errorurl) . ":" . $errorurl .
 			    			  "11:POPUP_GUBUN" . strlen($popgubun) . ":" . $popgubun .
 			    			  "9:CUSTOMIZE" . strlen($customize) . ":" . $customize ;
-    
-    
+
+
 		//if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
 			$enc_data = get_encode_data($sitecode, $sitepasswd, $plaindata);
 		//} else {
@@ -751,7 +751,7 @@ break;
 //	 $mobile_agent = '/(Android|BlackBerry|SymbianOS|SCH-M\d+|Opera Mini|Windows CE|Nokia|SonyEricsson|webOS|PalmOS|iPod|iPhone)/';
 //	/*모바일 모드일 경우*/
 //	if(preg_match($mobile_agent, $_SERVER['HTTP_USER_AGENT'])){
-//		
+//
 //	}else{
 //		//if($agreement1 == 'yes'){}else{ alert('이용약관에 동의하셔야 합니다.'); location('?mode=join1'); exit; }
 //		//if($agreement2 =='yes'){ }else{alert('개인정보 수집 및 이용에 동의하셔야 합니다.'); location('?mode=join1'); exit; }
@@ -759,38 +759,38 @@ break;
 //
 //    //**************************************************************************************************************
 //    //NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
-//    
+//
 //    //서비스명 :  체크플러스 - 안심본인인증 서비스
 //    //페이지명 :  체크플러스 - 결과 페이지
-//    
-//    //보안을 위해 제공해드리는 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다. 
+//
+//    //보안을 위해 제공해드리는 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다.
 //    //**************************************************************************************************************
-//    
+//
 //		/*
 //		if(!extension_loaded('CPClient')) {
 //			dl('CPClient.' . PHP_SHLIB_SUFFIX);
 //		}
 //		$module = 'CPClient';
 //		*/
-//	
+//
 //    $sitecode = "AD150";					// NICE로부터 부여받은 사이트 코드
 //    $sitepasswd = "1oTqvwP9oZZs";				// NICE로부터 부여받은 사이트 패스워드
-//    
-//    
+//
+//
 //    $enc_data = $_POST["EncodeData"];		// 암호화된 결과 데이타
-//    $sReserved1 = $_POST['param_r1'];		
+//    $sReserved1 = $_POST['param_r1'];
 //		$sReserved2 = $_POST['param_r2'];
 //		$sReserved3 = $_POST['param_r3'];
 //
 //		//////////////////////////////////////////////// 문자열 점검///////////////////////////////////////////////
-//    if(preg_match('~[^0-9a-zA-Z+/=]~', $enc_data, $match)) {echo "입력 값 확인이 필요합니다 : ".$match[0]; exit;} // 문자열 점검 추가. 
+//    if(preg_match('~[^0-9a-zA-Z+/=]~', $enc_data, $match)) {echo "입력 값 확인이 필요합니다 : ".$match[0]; exit;} // 문자열 점검 추가.
 //    if(base64_encode(base64_decode($enc_data))!=$enc_data) {echo "입력 값 확인이 필요합니다"; exit;}
-//    
+//
 //    if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved1, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 //    if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved2, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 //    if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved3, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 //		///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//		
+//
 //    if ($enc_data != "") {
 //
 //				if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
@@ -798,7 +798,7 @@ break;
 //				} else {
 //					$plaindata = "Module get_response_data is not compiled into PHP";
 //				}
-//        
+//
 //        //echo "[plaindata]  " . $plaindata . "<br>";
 //
 //        if ($plaindata == -1){
@@ -815,7 +815,7 @@ break;
 //            $returnMsg  = "사이트 비밀번호 오류";
 //        }else{
 //            // 복호화가 정상적일 경우 데이터를 파싱합니다.
-//              
+//
 //            $requestnumber = GetValue($plaindata , "REQ_SEQ");
 //            $responsenumber = GetValue($plaindata , "RES_SEQ");
 //            $authtype = GetValue($plaindata , "AUTH_TYPE");
@@ -844,18 +844,18 @@ break;
 //
 //	/********************************************************************************************************************************************
 //		NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
-//		
+//
 //		서비스명 : 가상주민번호서비스 (IPIN) 서비스
 //		페이지명 : 가상주민번호서비스 (IPIN) 사용자 인증 정보 결과 페이지
-//		
+//
 //				   수신받은 데이터(인증결과)를 복호화하여 사용자 정보를 확인합니다.
-//				   
-//			   
+//
+//
 //	*********************************************************************************************************************************************/
 //	/*****************************
 //
 //	*****************************/
-//	
+//
 ////아파치에서 모듈 로드가 되지 않았을경우 동적으로 모듈을 로드합니다.
 //
 //	if(!extension_loaded('IPINClient')) {
@@ -866,34 +866,34 @@ break;
 //
 //	$sSiteCode					= "AK24";			// IPIN 서비스 사이트 코드		(NICE평가정보에서 발급한 사이트코드)
 //	$sSitePw					= "Sodi1234";			// IPIN 서비스 사이트 패스워드	(NICE평가정보에서 발급한 사이트패스워드)
-//	
+//
 //	$sEncData					= "";			// 암호화 된 사용자 인증 정보
 //	$sDecData					= "";			// 복호화 된 사용자 인증 정보
-//	
+//
 //	$sRtnMsg					= "";			// 처리결과 메세지
-//		
+//
 //  $sEncData = $_POST['enc_data'];	// ipin_process.php 에서 리턴받은 암호화 된 사용자 인증 정보
-//  
+//
 ///*
 //		//////////////////////////////////////////////// 문자열 점검///////////////////////////////////////////////
 //    if(preg_match('~[^0-9a-zA-Z+/=]~', $sEncData, $match)) {echo "입력 값 확인이 필요합니다"; exit;}
 //    if(base64_encode(base64_decode($sEncData))!=$sEncData) {echo "입력 값 확인이 필요합니다!"; exit;}
-//    ///////////////////////////////////////////////////////////////////////////////////////////////////////////  
-//	
+//    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
 //	// ipin_main.php 에서 저장한 세션 정보를 추출합니다.
 //	// 데이타 위변조 방지를 위해 확인하기 위함이므로, 필수사항은 아니며 보안을 위한 권고사항입니다.
 //	$sCPRequest = $_SESSION['CPREQUEST'];
-//    
+//
 //    if ($sEncData != "") {
 //    */
 //    	// 사용자 정보를 복호화 합니다.
 //    	/*
-//			if (extension_loaded($module)) {  // 동적으로 모듈 로드 했을경우 
+//			if (extension_loaded($module)) {  // 동적으로 모듈 로드 했을경우
 //				$sDecData = get_response_data($sSiteCode, $sSitePw, $sEncData);
 //			} else {
 //				$sDecData = "Module get_response_data is not compiled into PHP";
 //			}
-//			
+//
 //    	if ($sDecData == -9) {
 //    		$sRtnMsg = "입력값 오류 : 복호화 처리시, 필요한 파라미터값의 정보를 정확하게 입력해 주시기 바랍니다.";
 //    	} else if ($sDecData == -12) {
@@ -908,17 +908,17 @@ break;
 //			/*
 //    		$arrData = split("\^", $sDecData);
 //    		$iCount = count($arrData);
-//    		
+//
 //    		if ($iCount >= 5) {
 //				*/
-//    		
+//
 //    			/*
 //					다음과 같이 사용자 정보를 추출할 수 있습니다.
 //					사용자에게 보여주는 정보는, '이름' 데이타만 노출 가능합니다.
-//				
+//
 //					사용자 정보를 다른 페이지에서 이용하실 경우에는
 //					보안을 위하여 암호화 데이타($sEncData)를 통신하여 복호화 후 이용하실것을 권장합니다. (현재 페이지와 같은 처리방식)
-//					
+//
 //					만약, 복호화된 정보를 통신해야 하는 경우엔 데이타가 유출되지 않도록 주의해 주세요. (세션처리 권장)
 //					form 태그의 hidden 처리는 데이타 유출 위험이 높으므로 권장하지 않습니다.
 //				*/
@@ -926,11 +926,11 @@ break;
 //				$strResultCode	= $arrData[0];			// 결과코드
 //				if ($strResultCode == 1) {
 //					$strCPRequest	= $arrData[8];			// CP 요청번호
-//					
+//
 //					if ($sCPRequest == $strCPRequest) {
-//				
+//
 //						$sRtnMsg = "사용자 인증 성공";
-//						
+//
 //						$strVno      		= $arrData[1];	// 가상주민번호 (13자리이며, 숫자 또는 문자 포함)
 //						$strUserName		= $arrData[2];	// 이름
 //						$strDupInfo			= $arrData[3];	// 중복가입 확인값 (64Byte 고유값)
@@ -938,18 +938,18 @@ break;
 //					    $strGender			= $arrData[5];	// 성별 코드 (개발 가이드 참조)
 //					    $strBirthDate		= $arrData[6];	// 생년월일 (YYYYMMDD)
 //					    $strNationalInfo	= $arrData[7];	// 내/외국인 정보 (개발 가이드 참조)
-//					
+//
 //					} else {
 //						$sRtnMsg = "CP 요청번호 불일치 : 세션에 넣은 $sCPRequest 데이타를 확인해 주시기 바랍니다.";
 //					}
 //				} else {
 //					$sRtnMsg = "리턴값 확인 후, NICE평가정보 개발 담당자에게 문의해 주세요. [$strResultCode]";
 //				}
-//    		
+//
 //    		} else {
 //    			$sRtnMsg = "리턴값 확인 후, NICE평가정보 개발 담당자에게 문의해 주세요.";
 //    		}
-//    	
+//
 //    	}
 //    } else {
 //    	$sRtnMsg = "처리할 암호화 데이타가 없습니다.";
@@ -960,7 +960,7 @@ break;
 //		/*인증결과*/
 //		$m_blindness_use=$m_blindness;
 //		$m_ipin_use=$m_ipin_use;
-//		
+//
 //		setcookie('m_name',$m_name,time()+1,'/');
 //		setcookie('m_id',$m_id,time()+1,'/');
 //		setcookie('m_nick',$m_nick,time()+1,'/');
@@ -992,7 +992,7 @@ break;
 회원가입(법인)
 ************************************************/
 	case "join3_enterprise":
-		
+
 		setcookie('m_name',$m_name,time()+1,'/');
 		setcookie('m_id',$m_id,time()+1,'/');
 		setcookie('m_nick',$m_nick,time()+1,'/');
@@ -1104,7 +1104,7 @@ break;
 
 
 		/*전화번호 분리*/
-		$m_tel = $mmo['m_tel'];		
+		$m_tel = $mmo['m_tel'];
 		if(substr($m_tel,0,2)=="02"){
 			$tel1=substr($m_tel,0,2);
 			$tel2=substr($m_tel,2,4);
@@ -1258,7 +1258,7 @@ break;
 	case "mypage_balance":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		$sql = "select  * from mari_seyfert where m_id='$user[m_id]' and s_memuse='Y'";
 		$seyck = sql_fetch($sql, false);
 
@@ -1292,7 +1292,7 @@ break;
 
 
 				}
-				
+
 
 				/*seyfert가상계좌 시스템 사용여부*/
 				if($config['c_seyfertck']=="Y"){
@@ -1431,7 +1431,7 @@ faq
 
 	case "guide":
 
-		
+
 		if($sort=="invest" || !$sort){
 			$sql = "select * from mari_faq where f_sort = '1'";
 			$ff = sql_query($sql,false);
@@ -1492,7 +1492,7 @@ faq
 		$enc_reqInfo = exec("/usr/local/ipin/SciSecuX SEED 1 1 $enc_reqInfo ");
 		$returnval = "{'enc_reqInfo':'".$enc_reqInfo."','msg':'2'}";
 		header("Content-Type: text/html; charset=euc-kr");
-		echo $returnval; 
+		echo $returnval;
 	break;
 
 /************************************************
@@ -1502,34 +1502,34 @@ faq
 	case "join-ipin-return":
 
 
-	//보안을 위해 제공해드리는 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다. 
+	//보안을 위해 제공해드리는 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다.
 
 		/********************************************************************************************************************************************
 			NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
-			
+
 			서비스명 : 가상주민번호서비스 (IPIN) 서비스
 			페이지명 : 가상주민번호서비스 (IPIN) 사용자 인증 정보 처리 페이지
-			
+
 					   수신받은 데이터(인증결과)를 메인화면으로 되돌려주고, close를 하는 역활을 합니다.
 		*********************************************************************************************************************************************/
-		
+
 		// 사용자 정보 및 CP 요청번호를 암호화한 데이타입니다. (ipin_main.php 페이지에서 암호화된 데이타와는 다릅니다.)
 		$sResponseData = $_POST['enc_data'];
-		
+
 		// ipin_main.php 페이지에서 설정한 데이타가 있다면, 아래와 같이 확인가능합니다.
 		$sReservedParam1  = $_POST['param_r1'];
 		$sReservedParam2  = $_POST['param_r2'];
 		$sReservedParam3  = $_POST['param_r3'];
-		
+
 			//////////////////////////////////////////////// 문자열 점검///////////////////////////////////////////////
 		if(preg_match('~[^0-9a-zA-Z+/=]~', $sResponseData, $match)) {echo "입력 값 확인이 필요합니다"; exit;}
 		if(base64_encode(base64_decode($sResponseData))!=$sResponseData) {echo "입력 값 확인이 필요합니다!"; exit;}
-		
+
 		if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReservedParam1, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 		if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReservedParam2, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 		if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReservedParam3, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 			///////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
+
 		// 암호화된 사용자 정보가 존재하는 경우
 		if ($sResponseData != "") {
 
@@ -1626,7 +1626,7 @@ faq
 				goto_url(MARI_HOME_URL.'/?mode=join3');
 			} else {
 				alert('아이핀 인증 실패!!','?mode=join1');
-			exit;				
+			exit;
 		}
 	break;
 
@@ -1637,7 +1637,7 @@ faq
 ************************************************/
 
 	case "join-self-pcc":
-		session_start(); 
+		session_start();
 
 		mb_http_output ('UTF-8');
 		$reqNum		= $_POST["reqnum"];
@@ -1663,7 +1663,7 @@ faq
 		$returnval = "{'enc_reqInfo':'".$enc_reqInfo."','msg':'1'}";
 
 		header("Content-Type: text/html; charset=euc-kr");
-		echo $returnval; 
+		echo $returnval;
 	break;
 
 
@@ -1699,7 +1699,7 @@ faq
 		//01. 쿠키값 확인
 		$iv = "";
 		if (isset($_COOKIE["REQNUM"])) {
-			$iv = $_COOKIE["REQNUM"]; 
+			$iv = $_COOKIE["REQNUM"];
 			//쿠키 삭제
 			setcookie("REQNUM", "", time()-600);
 		} else {
@@ -1708,9 +1708,9 @@ faq
 		}
 
 		// 파라메터로 받은 요청결과
-		$enc_retInfo = $_REQUEST["retInfo"];       
+		$enc_retInfo = $_REQUEST["retInfo"];
 
-		//02. 요청결과 복호화	
+		//02. 요청결과 복호화
 		$dec_retInfo = exec("/usr/local/pccV3/SciSecuX SEED 2 0 $iv $enc_retInfo ");//암호화모듈 설치시 생성된 SciSecuX 파일이 있는 리눅스 경로를 설정해주세요.
 
 		//데이터 조합 : "본인확인1차암호화값/위변조검증값/암복화확장변수"
@@ -1739,7 +1739,7 @@ faq
 		$fgnGbn		= $split_dec_retInfo[3];		//내외국인 구분값
 		$di			= $split_dec_retInfo[4];		//DI
 		$ci1		= $split_dec_retInfo[5];		//CI1
-		$ci2		= $split_dec_retInfo[6];		//CI2	
+		$ci2		= $split_dec_retInfo[6];		//CI2
 		$civersion	= $split_dec_retInfo[7];		//CI Version
 		$reqNum		= $split_dec_retInfo[8];		//요청번호
 		$result		= $split_dec_retInfo[9];		//본인확인 결과 (Y/N)
@@ -1769,7 +1769,7 @@ faq
 			goto_url(MARI_HOME_URL.'/?mode=join3');
 		} else {
 			alert('본인확인(휴대폰 인증) 실패!!','?mode=join1');
-			exit;				
+			exit;
 		}
 	break;
 
@@ -1883,7 +1883,7 @@ faq
 			setcookie('id_save','',0,'/');
 			setcookie('pw_save','',0,'/');
 			setcookie('auto_login','',0,'/');
-		}      
+		}
 
 
 
@@ -1975,7 +1975,7 @@ faq
 		if($_POST[call]=='idChk'&&$_POST[val]){
 				$sql="select m_id from mari_member where m_id='".$val."' limit 1 ";
 				$dd = sql_fetch($sql, false);
-				if($dd[m_id])echo $dd[m_id];		
+				if($dd[m_id])echo $dd[m_id];
 				else echo '';
 		}
 	break;
@@ -1987,15 +1987,15 @@ faq
 	case "invest":
 
 		/*투자리스트 1차 카테고리*/
-		$sql="select * from mari_category order by ca_pk asc"; 
+		$sql="select * from mari_category order by ca_pk asc";
 		$depth_list=sql_query($sql, false);
 
 		/*투자리스트 2차 카테고리*/
-		$sql="select * from mari_category where ca_id='$ca_id' order by ca_pk asc"; 
+		$sql="select * from mari_category where ca_id='$ca_id' order by ca_pk asc";
 		$depth_sublist=sql_query($sql, false);
 
 		/*투자리스트 3차 카테고리*/
-		$sql="select * from mari_category where ca_id='$ca_id' and ca_sub_id='$ca_sub_id' order by ca_pk asc"; 
+		$sql="select * from mari_category where ca_id='$ca_id' and ca_sub_id='$ca_sub_id' order by ca_pk asc";
 		$depth_ssublist=sql_query($sql, false);
 
 		$sql = "select * from mari_invest_progress where loan_id = '$i_id'";
@@ -2036,7 +2036,7 @@ faq
 
 		$sst = "i_id";
 		$sod = "desc";
-		
+
 		$sql_order = "order by $sst $sod ";
 
 		$sql = " select count(*) as cnt $sql_common  $sql_search ".$list_view." $cate_sort ".$look_sort." $sql_order ";
@@ -2047,7 +2047,7 @@ faq
 		$total_page  = ceil($total_count / $rows);  // 전체 페이지 계산
 		if ($page < 1) $page = 1; // 페이지가 없으면 첫 페이지 (1 페이지)
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
-										
+
 		$sql = " select * $sql_common  $sql_search ".$list_view." $cate_sort ".$look_sort." $sql_order limit $from_record, $rows ";
 		$result = sql_query($sql, false);
 
@@ -2057,14 +2057,14 @@ faq
 		$total_pro = $pro_cnt['cnt'];
 
 		$colspan = 16;
-					
+
 		$sql = "select * from mari_loan where i_id = '$loan_id'";
 		$stest = sql_fetch($sql, false);
 
 
 /*2018-01-03 평균 수익률 이경희*/
-		$sql  = "SELECT i_id, i_loan_pay, i_year_plus, i_subject, i_loanexecutiondate, i_look 
-				FROM mari_loan 
+		$sql  = "SELECT i_id, i_loan_pay, i_year_plus, i_subject, i_loanexecutiondate, i_look
+				FROM mari_loan
 				WHERE i_loan_pay != '0' AND i_year_plus != '0'
 				  AND (i_look = 'C' OR i_look = 'D' OR i_look = 'F') ";
 		$totalAverage = sql_query($sql, false);
@@ -2072,13 +2072,13 @@ faq
 		$sql = "SELECT COUNT(*) AS cnt FROM mari_loan WHERE i_loan_pay!='0' AND i_year_plus!=0 AND (i_look='C' OR i_look='D' OR i_look='F') ";
 		$y_count = sql_fetch($sql);
 		$total_y_count = $y_count['cnt'];
-		
+
 //		if($totalAverage['i_look']=="C" || $totalAverage['i_look']=="D" || $totalAverage['i_look']=="F"){
 			for($a=0; $average_t = sql_fetch_array($totalAverage); $a++){
 				if($average_t['i_loanexecutiondate']=="0000-00-00 00:00:00"){
 				}else{
 					$y_average += $average_t['i_year_plus'];
-					
+
 					$Result_average = $y_average / $total_y_count;
 				}
 			}
@@ -2097,8 +2097,8 @@ faq
 마이페이지 입찰/정산 현황(모바일)
 ************************************************/
 
-	case "invest_info":		
-		
+	case "invest_info":
+
 		/*입찰정보
 		$sql = " select * from mari_invest where m_id='$user[m_id]'  order by i_regdatetime desc limit 6";
 		$laon = sql_query($sql);*/
@@ -2127,9 +2127,9 @@ faq
 		if ($page < 1) $page = 1; // 페이지가 없으면 첫 페이지 (1 페이지)
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_count asc, o_collectiondate desc limit $from_record, $rows ";
-		$order_s = sql_query($sql);		
-	
-		/*투자 정산정보*/		
+		$order_s = sql_query($sql);
+
+		/*투자 정산정보*/
 		//$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_count asc, o_collectiondate desc limit 6";
 		//$order_s = sql_query($sql);
 
@@ -2153,8 +2153,8 @@ faq
 마이페이지 대출/상환 현황(모바일)
 ************************************************/
 
-	case "loan_info":		
-		
+	case "loan_info":
+
 		/*대출현황
 		$sql = " select * from mari_loan where m_id='$user[m_id]'  order  by i_regdatetime desc limit 6";
 		$laons = sql_query($sql);
@@ -2170,12 +2170,12 @@ faq
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = " select * from mari_loan where m_id='$user[m_id]'  order  by i_regdatetime desc limit $from_record, $rows ";
 		$laons = sql_query($sql);
-		
+
 		/*입금현황
 		$sql = " select * from mari_order   where  user_id='$user[m_id]' group by o_count order by o_count asc, o_datetime desc limit 6";
 		$order = sql_query($sql);
 		*/
-		
+
 		/*입금현황*/
 		$sql = " select count(*) as cnt from mari_order  where  user_id='$user[m_id]' group by o_count order by o_count asc, o_datetime desc";
 		$order_count = sql_fetch($sql);
@@ -2193,7 +2193,7 @@ faq
 ************************************************/
 
 	case "emoney":
-		
+
 		/*적립금내역*/
 		$sql = " select count(*) as cnt from mari_emoney where  m_id='$user[m_id]' order by m_id asc, p_datetime desc";
 		$emoney_count = sql_fetch($sql);
@@ -2224,8 +2224,8 @@ faq
 		/*위시리스트에 등록내역*/
 		$sql = " select  loan_id from  mari_wishlist where m_id='$user[m_id]' and loan_id='$loan_id'";
 		$wish = sql_fetch($sql, false);
-		
-		
+
+
 		/*제출가능 서류 나눔*/
 		$out_paper = explode("|",$loa[i_out_paper]);
 		/*공통*/
@@ -2252,7 +2252,7 @@ faq
 		$invest_cn = $incn['cnt'];
 
 		/*투자참여인원 리스트*/
-		$sql="select m_name, i_pay, i_regdatetime from mari_invest  where loan_id='$loan_id' order by i_regdatetime desc"; 
+		$sql="select m_name, i_pay, i_regdatetime from mari_invest  where loan_id='$loan_id' order by i_regdatetime desc";
 		$play_list=sql_query($sql, false);
 
 
@@ -2264,7 +2264,7 @@ faq
 
 		/*날짜 자르기*/
 		$datetime=$sex['m_birth'];
-		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime); 
+		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime);
 		$Y_date = date("Y", strtotime( $datetime ) );
 		$M_date = date("m", strtotime( $datetime ) );
 		$D_date = date("d", strtotime( $datetime ) );
@@ -2280,7 +2280,7 @@ faq
 		$face_img = "".MARI_HOMESKIN_URL."/img/invest_img1.png";
 
 		/*대출총액의 투자금액 백분율구하기*/
-		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 		$top=sql_query($sql, false);
 		$order = mysql_result($top, 0, 0);
 		$total=$loa[i_loan_pay];
@@ -2303,17 +2303,17 @@ faq
 		$ddy = ( strtotime($edate) - strtotime($date) ) / 86400;
 		$dday=floor($ddy);
 
-		$ln_money=$loa['i_loan_pay']; //대출금액 
-		$ln_kigan=$loa['i_loan_day']; //대출기간 
-		$ln_iyul=$loa['i_year_plus']; //대출이율 
+		$ln_money=$loa['i_loan_pay']; //대출금액
+		$ln_kigan=$loa['i_loan_day']; //대출기간
+		$ln_iyul=$loa['i_year_plus']; //대출이율
 
 
 		/*매월이율*/
-		$month_eja= ($ln_iyul/100)*(1/12); 
+		$month_eja= ($ln_iyul/100)*(1/12);
 
-		/*월불입금*/ 
+		/*월불입금*/
 	if($ln_iyul){
-		$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money )/( pow(1+$month_eja,$ln_kigan) - 1); 
+		$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money )/( pow(1+$month_eja,$ln_kigan) - 1);
 	}
 
 	/*월이자계산*/
@@ -2321,8 +2321,8 @@ faq
 
 		$일년이자 = $ln_money*($ln_iyul/100);
 		$첫달이자 = substr(floor($일년이자/12),0,-1)."0";
-		$rate = (($ln_iyul/100)/12); 
-		$상환금 = floor($ln_money*$rate*pow((1+$rate),$ln_kigan)/(pow((1+$rate),$ln_kigan)-1)); 
+		$rate = (($ln_iyul/100)/12);
+		$상환금 = floor($ln_money*$rate*pow((1+$rate),$ln_kigan)/(pow((1+$rate),$ln_kigan)-1));
 
 	}else if($loa['i_repay']=="만기일시상환"){
 		$일년이자 = $ln_money*($ln_iyul/100);
@@ -2331,15 +2331,15 @@ faq
 
 
 
-		/*총이자금액*/ 
-		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0 
-			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금 
-		//($month_money*12)-$ln_money = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $ln_money; 
+		/*총이자금액*/
+		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0
+			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금
+		//($month_money*12)-$ln_money = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $ln_money;
 	if($ln_iyul){
-		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $ln_money; 
+		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $ln_money;
 	}
 		/*소수점이하 제거*/
-		/*월불입금*/ 
+		/*월불입금*/
 		$mh_money=floor($month_money);
 
 
@@ -2364,14 +2364,14 @@ faq
 
 		$sql = " select  * from  mari_category where ca_id= '$loa[i_payment]'";
 		$cate = sql_fetch($sql, false);
-		
-		
-					
+
+
+
 		/*상품*/
 		$sql = " select  * from  mari_category where ca_id= '$loa[i_payment]'";
 		$cate = sql_fetch($sql, false);
 
-	
+
 		if($loa['i_creditpoint_two']=="1"){
 			$gauge = 98;
 		}else if($loa['i_creditpoint_two']=="2"){
@@ -2393,15 +2393,15 @@ faq
 		}else if($loa['i_creditpoint_two']=="10"){
 			$gauge = 0;
 		}
-		
+
 		/*평수계산*/
 		$area_num = $loa['i_area'] / 3.305785;
-		
+
 		//별
 		$half = '<img src="'.MARI_HOMESKIN_URL.'/img/half.png" >';
 		$full = '<img src="'.MARI_HOMESKIN_URL.'/img/selected.png" >';
 		$empty = '<img src="'.MARI_HOMESKIN_URL.'/img/not-selected.png" >';
-		
+
 		 /*신용등급 게이지*/
 		if($iv['i_grade']=="A1") $per = 7;
 		else if($iv['i_grade']=="A2") $per = 39.7;
@@ -2425,7 +2425,7 @@ faq
 
 
 		/*첨부파일*/
-		$sql = "select file_name, loan_id from mari_invest_file where loan_id = '$loan_id'";
+		$sql = "select file_name, loan_id from mari_invest_file where loan_id = '$loan_id' order by sortnum, file_idx";
 		$file_list = sql_query($sql);
 
 		$sql = "select count(file_idx) as cnt from mari_invest_file where loan_id = '$loan_id'";
@@ -2441,7 +2441,7 @@ faq
 		$sql = "select * from mari_invest_file where loan_id = '$loan_id' and file_type != '' order by file_idx asc" ;
 		$proof_file = sql_query($sql);
 
-	
+
 	break;
 
 
@@ -2459,9 +2459,9 @@ faq
 		/*대출 상세정보*/
 		$sql = "select  * from  mari_loan where i_id='$loan_id'";
 		$loa = sql_fetch($sql, false);
-		
-		$ln_kigan=$loa['i_loan_day']; //대출기간 
-		$ln_iyul=$loa['i_year_plus']; //대출이율 
+
+		$ln_kigan=$loa['i_loan_day']; //대출기간
+		$ln_iyul=$loa['i_year_plus']; //대출이율
 
 		if(!$loan_pay){
 			$loan_pay="10000000";
@@ -2510,7 +2510,7 @@ faq
 		$invest_cn = $incn['cnt'];
 
 		/*투자참여인원 리스트*/
-		$sql="select m_name, i_pay, i_regdatetime from mari_invest  where loan_id='$loan_id' order by i_regdatetime desc"; 
+		$sql="select m_name, i_pay, i_regdatetime from mari_invest  where loan_id='$loan_id' order by i_regdatetime desc";
 		$play_list=sql_query($sql, false);
 
 
@@ -2522,7 +2522,7 @@ faq
 
 		/*날짜 자르기*/
 		$datetime=$sex['m_birth'];
-		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime); 
+		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime);
 		$Y_date = date("Y", strtotime( $datetime ) );
 		$M_date = date("m", strtotime( $datetime ) );
 		$D_date = date("d", strtotime( $datetime ) );
@@ -2538,7 +2538,7 @@ faq
 		$face_img = "".MARI_HOMESKIN_URL."/img/invest_img1.png";
 
 		/*대출총액의 투자금액 백분율구하기*/
-		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 		$top=sql_query($sql, false);
 		$order = mysql_result($top, 0, 0);
 		$total=$loa[i_loan_pay];
@@ -2561,26 +2561,26 @@ faq
 		$ddy = ( strtotime($edate) - strtotime($date) ) / 86400;
 		$dday=floor($ddy);
 
-		$ln_money=$loa['i_loan_pay']; //대출금액 
-		$ln_kigan=$loa['i_loan_day']; //대출기간 
-		$ln_iyul=$loa['i_year_plus']; //대출이율 
+		$ln_money=$loa['i_loan_pay']; //대출금액
+		$ln_kigan=$loa['i_loan_day']; //대출기간
+		$ln_iyul=$loa['i_year_plus']; //대출이율
 
 
 		/*매월이율*/
-		$month_eja= ($ln_iyul/100)*(1/12); 
+		$month_eja= ($ln_iyul/100)*(1/12);
 
-		/*월불입금*/ 
-		$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money )/( pow(1+$month_eja,$ln_kigan) - 1); 
+		/*월불입금*/
+		$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money )/( pow(1+$month_eja,$ln_kigan) - 1);
 
 
-		/*총이자금액*/ 
-		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0 
-			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금 
-		//($month_money*12)-$ln_money = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $ln_money; 
-		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $ln_money; 
+		/*총이자금액*/
+		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0
+			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금
+		//($month_money*12)-$ln_money = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $ln_money;
+		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $ln_money;
 
 		/*소수점이하 제거*/
-		/*월불입금*/ 
+		/*월불입금*/
 		$mh_money=floor($month_money);
 
 
@@ -2597,18 +2597,18 @@ faq
 
 		$sql = "select  * from  mari_category order by ca_subject asc";
 		$cate1 = sql_query($sql, false);
-		
+
 		$sql = " select  * from  mari_category where ca_id= '$loa[i_payment]'";
 		$cate = sql_fetch($sql, false);
-	
+
 		/*위시리스트에 등록내역*/
 		$sql = " select  loan_id from  mari_wishlist where m_id='$user[m_id]' and loan_id='$loan_id'";
 		$wish = sql_fetch($sql, false);
-		
+
 		/*신용등급 게이지*/
 		$sql = "select * from mari_loan where i_id = '$loan_id'";
 		$loa2 = sql_fetch($sql);
-		
+
 		if($loa2['i_creditpoint_one'] == 1000){
 			$gauge1 = 98;
 		}else{
@@ -2636,7 +2636,7 @@ faq
 		}else{
 			$gauge2 = 0;
 		}
-		
+
 		/*신용등급*/
 		if($loa2['i_creditpoint_two'] == 1 || $loa2['i_creditpoint_two'] == 2){
 			$credit_grade = 'A';
@@ -2678,9 +2678,9 @@ faq
 		/*수수료설정*/
 		$sql = "select  i_profit, i_withholding_personal, i_withholding_burr from  mari_inset";
 		$inv = sql_fetch($sql, false);
-			
+
 		/*현재투자금액*/
-		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 		$top=sql_query($sql, false);
 		$orders = mysql_result($top, 0, 0);
 
@@ -2697,7 +2697,7 @@ faq
 		$invest_pay=$loa['i_loan_pay']-$orders;
 
 		/*포인트합계구하기*/
-		$sql="select sum(p_emoney) from mari_emoney where  m_id='$user[m_id]'"; 
+		$sql="select sum(p_emoney) from mari_emoney where  m_id='$user[m_id]'";
 		$top=sql_query($sql);
 		$t_emoney = mysql_result($top, 0, 0);
 
@@ -2741,8 +2741,8 @@ faq
 ************************************************/
 
 	case "investment":
-		 
-		
+
+
 		/*대출 상세정보*/
 		$sql = "select  * from  mari_loan where i_id='$loan_id'";
 		$loa = sql_fetch($sql, false);
@@ -2755,7 +2755,7 @@ faq
 		$sql = "select  i_profit, i_withholding_personal, i_withholding_burr from  mari_inset";
 		$inv = sql_fetch($sql, false);
 		/*현재투자금액*/
-		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 		$top=sql_query($sql, false);
 		$orders = mysql_result($top, 0, 0);
 
@@ -2763,10 +2763,10 @@ faq
 		$invest_pay=$loa['i_loan_pay']-$orders;
 
 		/*포인트합계구하기*/
-		$sql="select sum(p_emoney) from mari_emoney where  m_id='$user[m_id]'"; 
+		$sql="select sum(p_emoney) from mari_emoney where  m_id='$user[m_id]'";
 		$top=sql_query($sql);
 		$t_emoney = mysql_result($top, 0, 0);
-		
+
 break;
 
 
@@ -2815,10 +2815,10 @@ break;
 	case "loan_real":
 	case "loan_credit":
 	case "loan_business":
-		
+
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*키발급조회 가장최신것*/
 		$sql = "select  sSafekey from  mari_safekey where m_id='".$user[m_id]."' order by sAuthTime desc";
 		$keyck = sql_fetch($sql, false);
@@ -2853,7 +2853,7 @@ break;
 
 		/*날짜 자르기*/
 		$datetime=$sex['m_birth'];
-		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime); 
+		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime);
 		$Y_dates = date("Y", strtotime( $datetime ) );
 		$M_dates = date("m", strtotime( $datetime ) );
 		$D_dates = date("d", strtotime( $datetime ) );
@@ -2881,21 +2881,21 @@ if($nice=="2"){
 
 	$sitecode = $config[c_company_code];				// NICE로부터 부여받은 사이트 코드
 	$sitepasswd = $config[c_pw_code];			// NICE로부터 부여받은 사이트 패스워드
-    
+
     $enc_data = $_POST["EncodeData"];		// 암호화된 결과 데이타
-    $sReserved1 = $_POST['param_r1'];		
+    $sReserved1 = $_POST['param_r1'];
 		$sReserved2 = $_POST['param_r2'];
 		$sReserved3 = $_POST['param_r3'];
 
 		//////////////////////////////////////////////// 문자열 점검///////////////////////////////////////////////
-    if(preg_match('~[^0-9a-zA-Z+/=]~', $enc_data, $match)) {echo "입력 값 확인이 필요합니다 : ".$match[0]; exit;} // 문자열 점검 추가. 
+    if(preg_match('~[^0-9a-zA-Z+/=]~', $enc_data, $match)) {echo "입력 값 확인이 필요합니다 : ".$match[0]; exit;} // 문자열 점검 추가.
     if(base64_encode(base64_decode($enc_data))!=$enc_data) {echo "입력 값 확인이 필요합니다"; exit;}
-    
+
     if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved1, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
     if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved2, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
     if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved3, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
+
     if ($enc_data != "") {
 
 				if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
@@ -2903,7 +2903,7 @@ if($nice=="2"){
 				} else {
 					$plaindata = "Module get_response_data is not compiled into PHP";
 				}
-        
+
         //echo "[plaindata]  " . $plaindata . "<br>";
 
         if ($plaindata == -1){
@@ -2920,21 +2920,21 @@ if($nice=="2"){
             $returnMsg  = "사이트 비밀번호 오류";
         }else{
             // 복호화가 정상적일 경우 데이터를 파싱합니다.
-            
+
             $sRequestNumber = GetValue($plaindata , "REQ_SEQ");
             $sResponseNumber = GetValue($plaindata , "RES_SEQ");
             $sReturnCode = GetValue($plaindata , "RETURN_CODE");
             $sRequestTime = GetValue($plaindata , "REQ_DATETIME");
-            $sAuthTime = GetValue($plaindata , "AUTH_DATETIME");          
+            $sAuthTime = GetValue($plaindata , "AUTH_DATETIME");
             $sAuthType = GetValue($plaindata , "AUTH_TYPE");
             $sAgree1Map = GetValue($plaindata , "AGREE1_MAP");
             $sAgree2Map = GetValue($plaindata , "AGREE2_MAP");
             $sAgree3Map = GetValue($plaindata , "AGREE3_MAP");
-            $sCi = GetValue($plaindata , "CI");	
+            $sCi = GetValue($plaindata , "CI");
             $sSafekey = GetValue($plaindata , "SAFE_KEY");
-            
-            
-            
+
+
+
 
             if(strcmp($_SESSION["REQ_SEQ"], $sRequestNumber) != 0)
             {
@@ -2945,12 +2945,12 @@ if($nice=="2"){
 			            $sReturnCode = "";
 			            $sReturnMsg = "";
 			            $sRequestTime = "";
-			            $sAuthTime = "";          
+			            $sAuthTime = "";
 			            $sAuthType = "";
 			            $sAgree1Map = "";
 			            $sAgree2Map = "";
 			            $sAgree3Map = "";
-			            $sCi = "";	
+			            $sCi = "";
             }
         }
     }
@@ -3018,21 +3018,21 @@ if($nice=="2"){
 	$sitecode = $config[c_company_code];				// NICE로부터 부여받은 사이트 코드
 	$sitepasswd = $config[c_pw_code];			// NICE로부터 부여받은 사이트 패스워드
 
-		
+
     $enc_data = $_POST["EncodeData"];		// 암호화된 결과 데이타
-    $sReserved1 = $_POST['param_r1'];		
+    $sReserved1 = $_POST['param_r1'];
 		$sReserved2 = $_POST['param_r2'];
 		$sReserved3 = $_POST['param_r3'];
 
 		//////////////////////////////////////////////// 문자열 점검///////////////////////////////////////////////
-    if(preg_match('~[^0-9a-zA-Z+/=]~', $enc_data, $match)) {echo "입력 값 확인이 필요합니다 : ".$match[0]; exit;} // 문자열 점검 추가. 
+    if(preg_match('~[^0-9a-zA-Z+/=]~', $enc_data, $match)) {echo "입력 값 확인이 필요합니다 : ".$match[0]; exit;} // 문자열 점검 추가.
     if(base64_encode(base64_decode($enc_data))!=$enc_data) {echo "입력 값 확인이 필요합니다"; exit;}
-    
+
     if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved1, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
     if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved2, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
     if(preg_match("/[#\&\\+\-%@=\/\\\:;,\.\'\"\^`~\_|\!\/\?\*$#<>()\[\]\{\}]/i", $sReserved3, $match)) {echo "문자열 점검 : ".$match[0]; exit;}
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
+
     if ($enc_data != "") {
 
 				//if (extension_loaded($module)) {// 동적으로 모듈 로드 했을경우
@@ -3056,13 +3056,13 @@ if($nice=="2"){
             $returnMsg  = "사이트 비밀번호 오류";
         }else{
             // 복호화가 정상적일 경우 데이터를 파싱합니다.
-            
+
             $sRequestNumber = GetValue($plaindata , "REQ_SEQ");
             $sReturnCode = GetValue($plaindata , "RETURN_CODE");
             $sReturnMsg = GetValue($plaindata , "RETURN_MSG");
             $sReturnMsg = GetValue($plaindata , "REQ_DATETIME");
             $sAuthType = GetValue($plaindata , "AUTH_TYPE");
-            
+
         }
     }
 
@@ -3104,7 +3104,7 @@ if($nice=="2"){
 
 	session_start();
 
-	$m_birth = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $user[m_birth]); 
+	$m_birth = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $user[m_birth]);
 
 	$m_name = iconv("UTF-8", "EUC-KR", $user[m_name]);
 
@@ -3114,7 +3114,7 @@ if($nice=="2"){
 	}else{
 		$m_sex="0";
 	}
-	
+
 	/*
 	if(!extension_loaded('CPClient')) {
 		dl('CPClient.' . PHP_SHLIB_SUFFIX);
@@ -3137,7 +3137,7 @@ if($nice=="2"){
 	$_SESSION["REQ_SEQ"] = $reqseq;
 
 	/*
-		요청일시 생성 yyyyMMddHHmmss		
+		요청일시 생성 yyyyMMddHHmmss
 	*/
 	$req_datetime  = date("YmdHis");
 
@@ -3145,7 +3145,7 @@ if($nice=="2"){
 		값은 총 3자리로 첫번째자리는 휴대폰인증사용여부, 두번째자리는 신용카드인증사용여부, 세번째자리는 공인인증서인증사용여부를 입력합니다.
 		값은 반드시 3자리로 입력해 주셔야 됩니다.
 		사용인 경우는 1,미사용인 경우는 0으로 표기합니다.
-		예) 휴대폰인증사용,신용카드인증미사용,공인인증서인증사용 인 경우 
+		예) 휴대폰인증사용,신용카드인증미사용,공인인증서인증사용 인 경우
 		    sAuthType = "101";
 	*/
 	$sAuthType = "101";
@@ -3170,13 +3170,13 @@ if($nice=="2"){
 	*/
 	$username = $m_name;
 
-	
+
 	/*
-		동의문에 대한 사용여부를 결정하는 코드입니다.		
-		동의문종류 
+		동의문에 대한 사용여부를 결정하는 코드입니다.
+		동의문종류
 		- 신용인증송부 서비스 신청 동의
-		
-		예) 신용인증송부 서비스 신청 동의를 원하는 경우 
+
+		예) 신용인증송부 서비스 신청 동의를 원하는 경우
 			agree1_map = "1000000000";
 			신용인증송부 서비스 신청 동의 원하지 않을 경우
 			agree1_map = "0000000000";
@@ -3186,7 +3186,7 @@ if($nice=="2"){
 	/*
 		동의문에 대한 사용여부를 결정하는 코드입니다.
 		업체에서 사전에 등록한 동의문정보를 기준으로 작성해주시면됩니다.
-		동의문종류 		
+		동의문종류
 		- 업체 필수 동의 (업체에서 제공하는 필수 동의문)
 		- 업체 선택 동의 (업체에서 제공하는 선택 동의문)
 		각 동의문은 최대 10개까지 등록이 가능합니다.
@@ -3199,11 +3199,11 @@ if($nice=="2"){
 	*/
 	$agree2_map = "0000000000"; // 업체 필수 동의문
 	$agree3_map = "0000000000"; // 업체 선택 동의문
-	
+
 	/*
 		결과로 CI값을 결과값으로 받을지를 결정
 		Y : CI를 결과값으로 받음, N : CI를 결과값으로 받지 않음
-		
+
 		CI는 본인확인을 정상적으로 성공한 경우만 받을 수 있습니다.
 	*/
 	$cigubun 	= "N";
@@ -3218,12 +3218,12 @@ if($nice=="2"){
 		안심키 결과 데이타를 리턴 받기위해 다음예제와 같이 http부터 입력합니다.
 		받을 page는 https://~, http://~ 부터 입력해 주시기 바랍니다.
 		부모창에 페이지와 결과페이지에 도메인은 반드시 일치하도록 입력해 주시기 바랍니다.
-	*/ 
+	*/
 	$sReturnUrl = MARI_HOME_URL."/?mode=loan&nice=2";      // 성공시 이동될 URL
 	$sErrorUrl = MARI_HOME_URL."/?mode=loan&nice=3";         // 실패시 이동될 URL
 
 	// 입력될 plain 데이타를 만든다.
-	$sPlainData =	"7:REQ_SEQ" . strlen($reqseq) . ":" . $reqseq .  
+	$sPlainData =	"7:REQ_SEQ" . strlen($reqseq) . ":" . $reqseq .
 					"12:REQ_DATETIME" . strlen($req_datetime) . ":" . $req_datetime .
 					"8:SITECODE" . strlen($sitecode) . ":" . $sitecode .
 					"9:AUTH_TYPE" . strlen($sAuthType) . ":" . $sAuthType .
@@ -3401,7 +3401,7 @@ if($nice=="2"){
 		$emoney = sql_query($sql);
 
 		/*포인트합계구하기*/
-		$sql="select sum(p_emoney) from mari_emoney where  m_id='$user[m_id]'"; 
+		$sql="select sum(p_emoney) from mari_emoney where  m_id='$user[m_id]'";
 		$top=sql_query($sql);
 		$t_emoney = mysql_result($top, 0, 0);
 
@@ -3422,17 +3422,17 @@ if($nice=="2"){
 		$sql = "select  i_profit, i_withholding_personal, i_withholding_burr from  mari_inset";
 		$inset = sql_fetch($sql, false);
 		/*월투자수익금*/
-		$sql="select sum(o_investamount) from mari_order where sale_id='$user[m_id]' and o_salestatus='정산완료'"; 
+		$sql="select sum(o_investamount) from mari_order where sale_id='$user[m_id]' and o_salestatus='정산완료'";
 		$order_sum=sql_query($sql, false);
 		$totalsum = mysql_result($order_sum, 0, 0);
 
 		/*투자원금*/
-		$sql="select sum(i_pay) from mari_invest where m_id='$user[m_id]'"; 
+		$sql="select sum(i_pay) from mari_invest where m_id='$user[m_id]'";
 		$order_sum_a=sql_query($sql, false);
 		$totalsum_a = mysql_result($order_sum_a, 0, 0);
 
 		/*투자일수구하기*/
-		$sql="select sum(i_max_pay) from mari_invest where m_id='$user[m_id]'"; 
+		$sql="select sum(i_max_pay) from mari_invest where m_id='$user[m_id]'";
 		$order_sum_day=sql_query($sql, false);
 		$totalsum_day = mysql_result($order_sum_day, 0, 0);
 		$day_sum=$totalsum_day*30;
@@ -3473,25 +3473,25 @@ if($nice=="2"){
 		}
 
 		/*입찰합계구하기*/
-		$sql="select sum(i_pay) from mari_invest where m_id='$user[m_id]'"; 
+		$sql="select sum(i_pay) from mari_invest where m_id='$user[m_id]'";
 		$top=sql_query($sql, false);
 		$t_pay = mysql_result($top, 0, 0);
 
 		/*누적투자회수금*/
-		$sql="select sum(o_mh_money) from mari_order where user_id = '$user[m_id]'"; 
+		$sql="select sum(o_mh_money) from mari_order where user_id = '$user[m_id]'";
 		$e_top=sql_query($sql, false);
 		$e_pay = mysql_result($e_top, 0, 0);
 
 		/*대출이율합계구하기*/
-		$sql="select sum(i_year_plus) from mari_loan where i_view = 'Y'"; 
+		$sql="select sum(i_year_plus) from mari_loan where i_view = 'Y'";
 		$top_p=sql_query($sql, false);
 		$t_plus = mysql_result($top_p, 0, 0);
-		
+
 		/*대출건수구하기*/
 		$sql = " select count(*) as cnt from mari_loan where i_view='Y'";
 		$laons_plus = sql_fetch($sql);
 		$total_plus= $laons_plus['cnt'];
-		/*평균내기*/	
+		/*평균내기*/
 		if($total_plus=="0"){
 		}else{
 			if($top_plus){
@@ -3500,17 +3500,17 @@ if($nice=="2"){
 		}
 
 		/*누적투자회원금*/
-		$sql="select sum(o_ln_money_to) from mari_order where sale_id='$user[m_id]'"; 
+		$sql="select sum(o_ln_money_to) from mari_order where sale_id='$user[m_id]'";
 		$f_top=sql_query($sql, false);
 		$Recoveryofprincipal = mysql_result($f_top, 0, 0);
 
 		/*누적수익금*/
-		$sql="select sum(o_investamount) from mari_order where sale_id='$user[m_id]'"; 
+		$sql="select sum(o_investamount) from mari_order where sale_id='$user[m_id]'";
 		$g_top=sql_query($sql, false);
 		$Cumulativeearnings = mysql_result($g_top, 0, 0);
 
 		/*잔여상환금*/
-		$sql="select sum(o_investamount) from mari_order where sale_id='$user[m_id]' and (o_salestatus='정산대기' or o_salestatus='연체중')"; 
+		$sql="select sum(o_investamount) from mari_order where sale_id='$user[m_id]' and (o_salestatus='정산대기' or o_salestatus='연체중')";
 		$h_top=sql_query($sql, false);
 		$Theremainingprincipal = mysql_result($h_top, 0, 0);
 
@@ -3531,7 +3531,7 @@ if($nice=="2"){
 			/*상환완료자건  2016-11-14 임근호 변경 현재 상환완료됬으며 접속자의 투자내역이 있을경우*/
 			//2차수정 161130동욱
 			$sql = " select * from mari_invest_progress  where loan_id='$t_cnt[loan_id]' and i_look='F'";
-			$j_top = sql_fetch($sql);	
+			$j_top = sql_fetch($sql);
 			if($j_top[loan_id]){
 				$Ofrepaymentout_count++;
 			}
@@ -3549,12 +3549,12 @@ if($nice=="2"){
 
 
 		/*누적 대출금액*/
-		$sql="select sum(i_loan_pay) from mari_loan where m_id='$user[m_id]' and i_look='Y'"; 
+		$sql="select sum(i_loan_pay) from mari_loan where m_id='$user[m_id]' and i_look='Y'";
 		$la_top=sql_query($sql, false);
 		$Loanamount = mysql_result($la_top, 0, 0);
 
 		/*누적 대출상환금*/
-		$sql="select sum(o_investamount) from mari_order where user_id='$user[m_id]' and o_status='입금완료'"; 
+		$sql="select sum(o_investamount) from mari_order where user_id='$user[m_id]' and o_status='입금완료'";
 		$lb_top=sql_query($sql, false);
 		$Loanrepayments = mysql_result($lb_top, 0, 0);
 
@@ -3571,7 +3571,7 @@ if($nice=="2"){
 		$lc_top = sql_fetch($sql);
 		$Loanrepayment_count = $lc_top['cnt'];
 
-		
+
 		/*상환완료대출건*/
 		$sql = " select count(*) as cnt from mari_order  where user_id='$user[m_id]' and o_status='입금완료'";
 		$rec_c = sql_fetch($sql);
@@ -3582,7 +3582,7 @@ if($nice=="2"){
 		$rei_c = sql_fetch($sql);
 		$repaying_count = $rei_c['cnt'];
 
-		
+
 
 		/*투자한 이력이 있을경우 본인계좌는 등록되므로 체크가능*/
 		$sql = "select  i_pay from mari_invest where m_id='$user[m_id]'";
@@ -3601,7 +3601,7 @@ if($nice=="2"){
 		/*가상계좌정보*/
 		$sql = "select  * from mari_seyfert where m_id='$user[m_id]' and s_memuse='Y'";
 		$seyck = sql_fetch($sql, false);
-		
+
 		/*알림메시지*/
 		$sql = " select * from mari_push_msg where m_id='".$user[m_id]."'  order by pm_redatetime desc limit 1";
 		$push_list = sql_query($sql, false);
@@ -3631,7 +3631,7 @@ if($nice=="2"){
 
 
 				}
-				
+
 
 				/*seyfert가상계좌 시스템 사용여부*/
 				if($config['c_seyfertck']=="Y"){
@@ -3675,7 +3675,7 @@ if($nice=="2"){
 	case "mypage_loan":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*계좌정보*/
 		$sql = "select i_not_bank, i_not_bankacc from  mari_pg";
 		$bk = sql_fetch($sql, false);
@@ -3686,19 +3686,19 @@ if($nice=="2"){
 
 
 		/*대출신청정보*/
-			
+
 		$sql = " select * from mari_loan where m_id='$user[m_id]'  order  by i_regdatetime desc limit 6";
 		$laons = sql_query($sql);
-	
+
 		/*입금현황*/
-			
+
 		$sql = " select * from mari_order   where  user_id='$user[m_id]' group by o_count order by o_count asc, o_datetime desc";
 		$order = sql_query($sql);
-		
+
 	break;
 
 /************************************************
-마이페이지 정산현황  
+마이페이지 정산현황
 ************************************************/
 	case "mypage_investment":
 		/*로그인 체크여부*/
@@ -3706,7 +3706,7 @@ if($nice=="2"){
 	break;
 
 /************************************************
-마이페이지 입찰현황  
+마이페이지 입찰현황
 ************************************************/
 	case "mypage_tenderstatus":
 		/*로그인 체크여부*/
@@ -3719,7 +3719,7 @@ if($nice=="2"){
 	case "mypage_loanstatus":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 	break;
 
 /************************************************
@@ -3728,7 +3728,7 @@ if($nice=="2"){
 	case "mypage_depositstatus":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 	break;
 
 /************************************************
@@ -3737,7 +3737,7 @@ if($nice=="2"){
 	case "mypage_loan_info":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*대출신청현황*/
 		$sql = " select count(*) as cnt from mari_loan where m_id='$user[m_id]'";
 		$laons_count = sql_fetch($sql);
@@ -3748,7 +3748,7 @@ if($nice=="2"){
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = " select * from mari_loan where m_id='$user[m_id]' order by i_regdatetime desc limit $from_record, $rows ";
 		$laons = sql_query($sql);
-		
+
 		/*입금현황*/
 		$sql = " select count(*) as cnt from mari_order  where  user_id='$user[m_id]' group by o_count order by o_count asc, o_datetime desc";
 		$order_count = sql_fetch($sql);
@@ -3771,7 +3771,7 @@ if($nice=="2"){
 	case "mypage_invest_info":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*입찰정보*/
 		$sql = " select count(*) as cnt from mari_invest where m_id='$user[m_id]'";
 		$laon_count = sql_fetch($sql);
@@ -3792,8 +3792,8 @@ if($nice=="2"){
 		if ($page < 1) $page = 1; // 페이지가 없으면 첫 페이지 (1 페이지)
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_count asc, o_collectiondate desc limit $from_record, $rows ";
-		$order_s = sql_query($sql);	
-		
+		$order_s = sql_query($sql);
+
 		/*원천징수현황*/
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_collectiondate desc limit 6";
 		$order_w = sql_query($sql);
@@ -3813,7 +3813,7 @@ if($nice=="2"){
 		$total_invest= $invest_count['cnt'];
 
 		/*투자자 총 투자금액*/
-		$sql="select sum(i_pay) from mari_invest where m_id='$user[m_id]'"; 
+		$sql="select sum(i_pay) from mari_invest where m_id='$user[m_id]'";
 		$player_top=sql_query($sql, false);
 		$playeramount = mysql_result($player_top, 0, 0);
 
@@ -3868,7 +3868,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 	case "mypage_withholding_list":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-						
+
 		/*원천징수현황*/
 		$sql = " select count(*) as cnt from mari_order  where sale_id='$user[m_id]' order by o_collectiondate desc";
 		$order_count = sql_fetch($sql);
@@ -3892,7 +3892,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 	case "mypage_loan_info_credit":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*대출신청현황*/
 		$sql = " select count(*) as cnt from mari_loan where m_id='$user[m_id]'";
 		$laons_count = sql_fetch($sql);
@@ -3903,7 +3903,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = " select * from mari_loan where m_id='$user[m_id]' and i_loan_type = 'credit' order  by i_regdatetime desc limit $from_record, $rows ";
 		$laons = sql_query($sql);
-		
+
 		/*입금현황*/
 		$sql = " select count(*) as cnt from mari_order  where  user_id='$user[m_id]' group by o_count order by o_count asc, o_datetime desc";
 		$order_count = sql_fetch($sql);
@@ -3923,7 +3923,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 	case "mypage_invest_info_credit":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*입찰정보*/
 		$sql = " select count(*) as cnt from mari_invest where m_id='$user[m_id]'";
 		$laon_count = sql_fetch($sql);
@@ -3944,8 +3944,8 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 		if ($page < 1) $page = 1; // 페이지가 없으면 첫 페이지 (1 페이지)
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' and i_loan_type = 'credit' order by o_count asc, o_collectiondate desc limit $from_record, $rows ";
-		$order_s = sql_query($sql);	
-		
+		$order_s = sql_query($sql);
+
 		/*원천징수현황*/
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' and i_loan_type = 'credit' order by o_collectiondate desc limit 6";
 		$order_w = sql_query($sql);
@@ -3957,9 +3957,9 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 마이페이지 입찰/정산 현황(모바일)
 ************************************************/
 
-	case "mypage_invest":						
+	case "mypage_invest":
 
-		/*입찰정보*/		
+		/*입찰정보*/
 		$sql = " select * from mari_invest where m_id='$user[m_id]'  order by i_regdatetime desc limit 6";
 		$laon = sql_query($sql);
 
@@ -3967,14 +3967,14 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_count asc, o_collectiondate desc limit 6";
 		$order_s = sql_query($sql);
 
-		
+
 		/*계좌정보*/
 		$sql = "select i_not_bank, i_not_bankacc from  mari_pg";
 		$bk = sql_fetch($sql, false);
 
 		/*my계좌정보*/
 		$sql = "select * from  mari_char where m_id='$user[m_id]' and c_fin='N' order by c_regdatetime desc limit 1";
-		$myemoney = sql_fetch($sql, false);		
+		$myemoney = sql_fetch($sql, false);
 
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_collectiondate desc limit 6";
 		$order_w = sql_query($sql);
@@ -4010,7 +4010,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 				$loa = sql_fetch($sql, false);
 
 				/*대출총액의 투자금액 백분율구하기*/
-				$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+				$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 				$top=sql_query($sql, false);
 				$order = mysql_result($top, 0, 0);
 				$total=$loa[i_loan_pay];
@@ -4022,24 +4022,24 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 					alert_close('투자금액이 100%이상 초과하여 해당금액으로 투자가 불가능합니다.남은 투자가능 금액을 확인하신후 계산하여 주시기 바랍니다.');
 				}
 			}
-			$ln_money=$i_pay; //투자금액 
-			$ln_kigan=$i_loan_day; //대출기간 
-			$ln_iyul=$i_year_plus; //대출이율 
+			$ln_money=$i_pay; //투자금액
+			$ln_kigan=$i_loan_day; //대출기간
+			$ln_iyul=$i_year_plus; //대출이율
 
 
 			/*매월이율*/
-			$month_eja= ($ln_iyul/100)*(1/12); 
+			$month_eja= ($ln_iyul/100)*(1/12);
 
-			/*월불입금*/ 
-			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1); 
+			/*월불입금*/
+			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1);
 
 			/*월불입금 총계*/
 			$month_total=$month_money*$ln_kigan;
 
 			/*소수점이하 제거*/
-			/*월불입금*/ 
+			/*월불입금*/
 			$mh_money=ceil($month_money);
-			/*월불입금 총계*/ 
+			/*월불입금 총계*/
 			$mh_total=ceil($month_total);
 
 			$psale_money=$mh_money-$month_profit;
@@ -4048,31 +4048,31 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 			$sale_money=ceil($psale_money);
 			$sale_totalmoney=ceil($psale_totalmoney);
 		}else if($stype=="loan"){
-			$ln_money=$i_loan_pay; //대출금액 
-			$ln_kigan=$i_loan_day; //대출기간 
-			$ln_iyul=$i_year_plus; //대출이율 
+			$ln_money=$i_loan_pay; //대출금액
+			$ln_kigan=$i_loan_day; //대출기간
+			$ln_iyul=$i_year_plus; //대출이율
 
 
 			/*매월이율*/
-			$month_eja= ($ln_iyul/100)*(1/12); 
+			$month_eja= ($ln_iyul/100)*(1/12);
 
-			/*월불입금*/ 
-			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1); 
+			/*월불입금*/
+			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1);
 
 			/*월불입금 총계*/
 			$month_total=$month_money*$ln_kigan;
 
 			/*소수점이하 제거*/
-			/*월불입금*/ 
+			/*월불입금*/
 			$mh_money=ceil($month_money);
-			/*월불입금 총계*/ 
+			/*월불입금 총계*/
 			$mh_total=ceil($month_total);
 
 			/*월불입 수익금계산*/
 			$month_profit=$mh_money*$is_ck['i_profit'];
 			/*월불입 수익총계계산*/
 			$total_profit=$mh_total*$is_ck['i_profit'];
-			
+
 			$psale_money=$mh_money-$month_profit;
 			$psale_totalmoney=$mh_total-$total_profit;
 			/*월불입금, 수익총계 소수점이하제거*/
@@ -4100,7 +4100,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 				$loa = sql_fetch($sql, false);
 
 				/*대출총액의 투자금액 백분율구하기*/
-				$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+				$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 				$top=sql_query($sql, false);
 				$order = mysql_result($top, 0, 0);
 				$total=$loa[i_loan_pay];
@@ -4112,24 +4112,24 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 					alert_close('투자금액이 100%이상 초과하여 해당금액으로 투자가 불가능합니다.남은 투자가능 금액을 확인하신후 계산하여 주시기 바랍니다.');
 				}
 			}
-			$ln_money=$i_pay; //투자금액 
-			$ln_kigan=$i_loan_day; //대출기간 
-			$ln_iyul=$i_year_plus; //대출이율 
+			$ln_money=$i_pay; //투자금액
+			$ln_kigan=$i_loan_day; //대출기간
+			$ln_iyul=$i_year_plus; //대출이율
 
 
 			/*매월이율*/
-			$month_eja= ($ln_iyul/100)*(1/12); 
+			$month_eja= ($ln_iyul/100)*(1/12);
 
-			/*월불입금*/ 
-			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1); 
+			/*월불입금*/
+			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1);
 
 			/*월불입금 총계*/
 			$month_total=$month_money*$ln_kigan;
 
 			/*소수점이하 제거*/
-			/*월불입금*/ 
+			/*월불입금*/
 			$mh_money=ceil($month_money);
-			/*월불입금 총계*/ 
+			/*월불입금 총계*/
 			$mh_total=ceil($month_total);
 
 			$psale_money=$mh_money-$month_profit;
@@ -4183,9 +4183,9 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 
 		$sql = " select * from mari_invest where m_id='$user[m_id]'  order by i_regdatetime desc limit 6";
 		$laon = sql_query($sql);
-	
+
 		/*투자 정산정보*/
-	
+
 		$sql = " select * from mari_order where  sale_id='$user[m_id]' order by o_count asc, o_collectiondate desc limit 6";
 		$order_s = sql_query($sql);
 
@@ -4223,8 +4223,8 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -4425,7 +4425,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 		/*댓글*/
 		$sql = " select * from mari_comment where w_id='$id' ";
 		$ment = sql_query($sql);
-		
+
 		/*수정할 댓글*/
 		$sql = "select * from mari_comment where co_id = '$co_id' and w_id = '$id' and w_table = '$table'";
 		$ment_modi = sql_fetch($sql);
@@ -4484,7 +4484,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 		/*게시판 환경설정*/
 		$sql = " select  * from  mari_board where bo_table='$table'";
 		$bbs_config = sql_fetch($sql, false);
-		/*권한체크*/	
+		/*권한체크*/
 
 		$sql = "select * from mari_write where w_table = 'interview' order by w_datetime desc";
 		$result = sql_query($sql);
@@ -4547,7 +4547,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 	$i_pay = (string)$i_pay;
 	$i_pay = preg_replace("/[^0-9]/", "",$i_pay);
 	$i_pay = (int)$i_pay;
-			
+
 	$i_loan_pay = (string)$i_loan_pay;
 	$i_loan_pay = preg_replace("/[^0-9]/", "",$i_loan_pay);
 	$i_loan_pay = (int)$i_loan_pay;
@@ -4572,7 +4572,7 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 				$loa = sql_fetch($sql, false);
 
 				/*대출총액의 투자금액 백분율구하기*/
-				$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+				$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 				$top=sql_query($sql, false);
 				$order = mysql_result($top, 0, 0);
 				$total=$loa[i_loan_pay];
@@ -4584,24 +4584,24 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 					alert_close('투자금액이 100%이상 초과하여 해당금액으로 투자가 불가능합니다.남은 투자가능 금액을 확인하신후 계산하여 주시기 바랍니다.');
 				}
 			}
-			$ln_money=$i_pay; //투자금액 
-			$ln_kigan=$i_loan_day; //대출기간 
-			$ln_iyul=$i_year_plus; //대출이율 
+			$ln_money=$i_pay; //투자금액
+			$ln_kigan=$i_loan_day; //대출기간
+			$ln_iyul=$i_year_plus; //대출이율
 
 
 			/*매월이율*/
-			$month_eja= ($ln_iyul/100)*(1/12); 
+			$month_eja= ($ln_iyul/100)*(1/12);
 
-			/*월불입금*/ 
-			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1); 
+			/*월불입금*/
+			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1);
 
 			/*월불입금 총계*/
 			$month_total=$month_money*$ln_kigan;
 
 			/*소수점이하 제거*/
-			/*월불입금*/ 
+			/*월불입금*/
 			$mh_money=ceil($month_money);
-			/*월불입금 총계*/ 
+			/*월불입금 총계*/
 			$mh_total=ceil($month_total);
 
 			$psale_money=$mh_money-$month_profit;
@@ -4610,31 +4610,31 @@ step3 정산스케쥴>메인>정산스케쥴상세 2017-02-01 전체업데이트
 			$sale_money=ceil($psale_money);
 			$sale_totalmoney=ceil($psale_totalmoney);
 		}else if($stype=="loan"){
-			$ln_money=$i_loan_pay; //대출금액 
-			$ln_kigan=$i_loan_day; //대출기간 
-			$ln_iyul=$i_year_plus; //대출이율 
+			$ln_money=$i_loan_pay; //대출금액
+			$ln_kigan=$i_loan_day; //대출기간
+			$ln_iyul=$i_year_plus; //대출이율
 
 
 			/*매월이율*/
-			$month_eja= ($ln_iyul/100)*(1/12); 
+			$month_eja= ($ln_iyul/100)*(1/12);
 
-			/*월불입금*/ 
-			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1); 
+			/*월불입금*/
+			$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money)/( pow(1+$month_eja,$ln_kigan) - 1);
 
 			/*월불입금 총계*/
 			$month_total=$month_money*$ln_kigan;
 
 			/*소수점이하 제거*/
-			/*월불입금*/ 
+			/*월불입금*/
 			$mh_money=ceil($month_money);
-			/*월불입금 총계*/ 
+			/*월불입금 총계*/
 			$mh_total=ceil($month_total);
 
 			/*월불입 수익금계산*/
 			$month_profit=$mh_money*$is_ck['i_profit'];
 			/*월불입 수익총계계산*/
 			$total_profit=$mh_total*$is_ck['i_profit'];
-			
+
 			$psale_money=$mh_money-$month_profit;
 			$psale_totalmoney=$mh_total-$total_profit;
 			/*월불입금, 수익총계 소수점이하제거*/
@@ -4651,12 +4651,12 @@ DANAL PG를이용한 가상계좌발급진행
 	case "virtualaccount_input":
 		/*다날 플러그인*/
 		include_once(MARI_PLUGIN_PATH.'/pg/danal/function.php');
-		
+
 		/*주문번호생성*/
 		$ORDERCODE = "bank".time().rand(111,999);
 
 		$REQ_DATA = array();
-		
+
 		/*
 		 * CP 정보
 		 * CPID						: 다날에서 발급 한 CPID
@@ -4666,7 +4666,7 @@ DANAL PG를이용한 가상계좌발급진행
 		$REQ_DATA["CPID"]			= $ID;
 		$REQ_DATA["CPPWD"]			= $PWD;
 		$REQ_DATA["ACCOUNTHOLDER"]	= $user['m_name'];
-		
+
 		/*
 		 * 결제 정보
 		 * AMOUNT					: 입금 요청 금액
@@ -4675,13 +4675,13 @@ DANAL PG를이용한 가상계좌발급진행
 		 * 							  ( 데이터 형식 : YYYYMMDD / 예 : 2015년 3월 30일 설정 시 20150330 )
 		 * ORDERID					: 가맹점 주문번호
 		 * BYPASSVALUE				: 추가 필드 값(ex) Field1=abc;Field2=def; )
-		 */	
+		 */
 		$REQ_DATA["AMOUNT"]			= $AMOUNT;
 		$REQ_DATA["ITEMNAME"]		= "상품결제";
 		$REQ_DATA["EXPIREDATE"]		= date("Ymd", strtotime(" + 10 day ") );
 		$REQ_DATA["ORDERID"]		= $ORDERCODE;
 		$REQ_DATA["BYPASSVALUE"]	= "Field1=abc;Field2=def";
-		
+
 		/*
 		 * 고객 정보
 		 * ISNOTICRYPTO				: Noti 암호화 유무(Default : Y / N)
@@ -4691,7 +4691,7 @@ DANAL PG를이용한 가상계좌발급진행
 		$REQ_DATA["ISNOTICRYPTO"]	= "Y";
 		$REQ_DATA["USERID"]			= $user['m_id'];
 		$REQ_DATA["USERIP"]			= $ip;
-		
+
 		/*
 		 * URL 정보
 		 * RETURNURL				: 결제 완료 시 호출 페이지( Full URL )
@@ -4709,9 +4709,9 @@ DANAL PG를이용한 가상계좌발급진행
 		 */
 		$REQ_DATA["TXTYPE"]			= "AUTH";
 		$REQ_DATA["CHARSET"]		= $CHARSET;
-		
+
 		$RES_DATA = CallTrans($REQ_DATA, false);
-		
+
 		if($RES_DATA['RETURNCODE'] == "0000"){
 
 		echo"<form name=\"Ready\" action=\"https://web.teledit.com/Danal/VAccount/web/Start.php\" method=\"post\">";
@@ -4720,7 +4720,7 @@ DANAL PG를이용한 가상계좌발급진행
 		$data = array();
 		$data = MakeDataArray($REQ_DATA, $data, array("TXTYPE"), "", $IssueDate, false);
 		$data = MakeDataArray($RES_DATA, $data, array("RETURNCODE", "RETURNMSG"), "", $IssueDate, false);
-		
+
 		/*
 		 * 부가 데이터
 		 * BgColor					: 결제 화면 색깔 설정( 상세 색깔 번호는 매뉴얼 참고 )
@@ -4729,7 +4729,7 @@ DANAL PG를이용한 가상계좌발급진행
 		 * ExceptBank				: 발급 화면 처리 불가 은행 설정( 구분자 : ‘:’ )
 		 * USERMAIL					: 구매자 메일 주소( 입력 시 표준 발급 창 내 표기 )
 		 */
-		
+
 		/*
 			$data["BgColor"] 		= "";
 			$data["USERMAIL"] 		= "";
@@ -4737,7 +4737,7 @@ DANAL PG를이용한 가상계좌발급진행
 			$data["ExceptBank"] 	= "";
 			$data["CIURL"] 			= "https://localhost/VAccount/img/CI.png";
 		*/
-		
+
 		$datastr =  MakeDataString($data, array(), "", $IssueDate, true);
 
 		/*파라메타*/
@@ -4792,13 +4792,13 @@ DANAL PG를이용한 가상계좌발급진행
 대출신청 new1
 ************************************************/
 case "loan_step1":
-	
+
 	/*로그인 체크여부*/
 	$login_ck="YES";
 
 	$sql = " select * from mari_loan where m_id='$user[m_id]' and i_sep='1' and i_step3_ck='N' order by i_id desc";
 	$at= sql_fetch($sql, false);
-		
+
 
 		/*우편번호 분리*/
 		$m_zip = $user['m_zip'];
@@ -4827,7 +4827,7 @@ case "loan_step1":
 
 		/*날짜 자르기*/
 		$datetime=$sex['m_birth'];
-		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime); 
+		$datetime = preg_replace ("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $datetime);
 		$Y_dates = date("Y", strtotime( $datetime ) );
 		$M_dates = date("m", strtotime( $datetime ) );
 		$D_dates = date("d", strtotime( $datetime ) );
@@ -4853,8 +4853,8 @@ break;
 대출신청 new3
 ************************************************/
 case "loan_step3":
- 
-		
+
+
 	/*로그인 체크여부*/
 	$login_ck="YES";
 
@@ -4865,7 +4865,7 @@ case "loan_step3":
 	$sql = "select  * from  mari_debt where m_id='".$user[m_id]."' limit 1";
 	$deb = sql_fetch($sql, false);
 
- 
+
 break;
 
 
@@ -4887,7 +4887,7 @@ break;
 	$sql = "select  * from  mari_category where ca_num='1' order by ca_subject asc";
 	$cate1 = sql_query($sql, false);
 
-	
+
 		if($type=="o"){
 		}else if($type=="y"){
 			if($bbs_config['bo_comment_level']>$user['m_level']){
@@ -5097,28 +5097,28 @@ json 데이터제공 1.투모다
 대출정보 마이페이지(170201동욱)
 ************************************************/
 	case "mypage_loan_manage":
-		
+
 		//상환정보
 		$sql = "select * from mari_pg";
 		$pg = sql_fetch($sql);
 
 		//대출금액합산
-		$sql="select sum(i_loan_pay) from mari_loan where m_id = '$user[m_id]'"; 
+		$sql="select sum(i_loan_pay) from mari_loan where m_id = '$user[m_id]'";
 		$l_pay=sql_query($sql, false);
 		$total_loan_pay = mysql_result($l_pay, 0, 0);
-		
+
 		//대출횟수 카운트
 		$sql = "select count(*) as cnt from mari_loan where m_id = '$user[m_id]'";
 		$l_cnt = sql_fetch($sql);
 		$total_loan_cnt = $l_cnt['cnt'];
-		
+
 		//연체금액합산
-		$sql="select sum(o_odinterest) from mari_order where user_id = '$user[m_id]' and o_status = '연체중' "; 
+		$sql="select sum(o_odinterest) from mari_order where user_id = '$user[m_id]' and o_status = '연체중' ";
 		$over_pay=sql_query($sql, false);
 		$total_over_pay = mysql_result($over_pay, 0, 0);
 
 		//대출상환금액합산
-		$sql="select sum(o_ln_money_to) from mari_order where user_id='$user[m_id]' and o_status='입금완료'"; 
+		$sql="select sum(o_ln_money_to) from mari_order where user_id='$user[m_id]' and o_status='입금완료'";
 		$lb_pay=sql_query($sql, false);
 		$total_lb_pay = mysql_result($lb_pay, 0, 0);
 
@@ -5207,7 +5207,7 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 		$acc_iv_mem_total = $acc_iv_mem['cnt'];
 
 		//누적투자금액
-		$sql="select sum(i_pay) from mari_invest"; 
+		$sql="select sum(i_pay) from mari_invest";
 		$acc_iv_pay=sql_query($sql, false);
 		$acc_iv_pay_total = mysql_result($acc_iv_pay, 0, 0);
 
@@ -5224,16 +5224,16 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 			$sql = "select sum(i_pay) from mari_invest where m_id = '$row[m_id]'";
 			$iv_pay_avg = sql_query($sql, false);
 			$iv_pay_avg_sum = mysql_result($iv_pay_avg, 0, 0);
-			
+
 			//개인별 평균투자금액
 			$iv_avg_indi = $iv_pay_avg_sum / $iv_avg_total;
-			
+
 			//개인별 평균투자금액 합산
 			$iv_avg_sum += $iv_avg_indi;
 		}
 		//평균투자금액(인당) = 개인별 평균투자금액 합산 / 투자자수
 		//$iv_avg_total_res = $iv_avg_sum / $acc_iv_mem_total;
-		
+
 		$iv_avg_total_res = $iv_avg_sum / $acc_iv_mem_total;
 		//누적대출건수
 		$sql = "select count(*) as cnt from mari_loan";
@@ -5253,22 +5253,22 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 			$sql = "select sum(i_pay) from mari_invest where loan_id = '$row[loan_id]'";
 			$iv_pdt_pay = sql_query($sql, false);
 			$iv_pdt_sum = mysql_result($iv_pdt_pay, 0, 0);
-			
+
 			//상품별 평균투자금액
 			$iv_avg_pdt = $iv_pdt_sum / $iv_pdt_total;
-			
+
 			//상품별 평균투자금액 합산
 			$iv_avg_pdt_sum += $iv_avg_pdt;
 		}
 		//평균투자금액(건수) = 상품별투자금액합산 / 대출건수
 		$iv_pdt_avg_res = $iv_avg_pdt_sum / $acc_loa_total;
 
-		
+
 		//수익률 합산
 		$sql = "select sum(i_year_plus) from mari_loan";
 		$profit_sum = sql_query($sql, false);
 		$profit_total = mysql_result($profit_sum, 0, 0);
-		
+
 		//평균수익률 = 수익률합산 / 누적대출건
 		$profit_avg = $profit_total / $acc_loa_total;
 
@@ -5283,7 +5283,7 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 		$loa_pay_total = mysql_result($loa_pay_sum, 0, 0);
 
 		//누적상환금액
-		$sql="select sum(o_investamount) from mari_order where o_status='입금완료'"; 
+		$sql="select sum(o_investamount) from mari_order where o_status='입금완료'";
 		$repay_sum=sql_query($sql, false);
 		$repay_total = mysql_result($repay_sum, 0, 0);
 
@@ -5294,10 +5294,10 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 		$sql = "select count(i_id) as cnt from mari_loan where i_loanapproval = 'Y'";
 		$agree_loa = sql_fetch($sql);
 		$agree_total = $agree_loa['cnt'];
-		
+
 		//대출승인률 = (승인건수 / 대출건수) * 100
 		$agree_per = ($agree_total / $acc_loa_total) * 100;
-		
+
 		//펀딩마감 상품건수
 		$sql = "select count(i_id) as cnt from mari_loan where i_look = 'C'";
 		$end_loa_cnt = sql_fetch($sql);
@@ -5312,7 +5312,7 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 		$sql = "select count(i_id) as cnt from mari_loan where i_look = 'F'";
 		$finish_loa_cnt = sql_fetch($sql);
 		$finish_loa_total = $finish_loa_cnt['cnt'];
-		
+
 		//투자자연령비율(20대)
 		$sql = "select * from mari_invest group by m_id";
 		$age_per = sql_query($sql);
@@ -5331,7 +5331,7 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 			if($age_30th[m_id]){
 				$age_30th_cnt++;
 			}
-			
+
 			$sql = "select * from mari_member where m_id = '$row[m_id]' and (m_birth < '1979-01-01' and m_birth >= '1969-01-01')";
 			$age_40th = sql_fetch($sql);
 			//40대 카운트
@@ -5339,7 +5339,7 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 				$age_40th_cnt++;
 			}
 
-			
+
 			$sql = "select * from mari_member where m_id = '$row[m_id]' and (m_birth < '1969-01-01' and m_birth >= '1959-01-01')";
 			$age_50th = sql_fetch($sql);
 			//50대 카운트
@@ -5352,9 +5352,9 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 			//60대 카운트
 			if($age_60th[m_id]){
 				$age_60th_cnt++;
-			}							
+			}
 		}
-		
+
 		$age_20th_per =  floor(($age_20th_cnt / $acc_iv_mem_total) * 100);
 		$age_30th_per =  floor(($age_30th_cnt / $acc_iv_mem_total) * 100);
 		$age_40th_per =  floor(($age_40th_cnt / $acc_iv_mem_total) * 100);
@@ -5365,7 +5365,7 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 		$sql = "select count(o_id) as cnt from mari_order";
 		$order_cnt = sql_fetch($sql);
 		$order_total_cnt = $order_cnt['cnt'];
-		
+
 		//투자수익금액 100이상 200이하 카운트 (단위 : 만원)
 		$sql = "select count(*) as cnt from mari_order where (o_mh_money >= 1000000 and o_mh_money < 2000000)";
 		$profits_cnt_1 = sql_fetch($sql);
@@ -5382,15 +5382,15 @@ MYPAGE SMS 알림메세지내역 2017-02-08 임근호
 		$sql = "select count(*) as cnt from mari_order where (o_mh_money >= 5000000)";
 		$profits_cnt_4 = sql_fetch($sql);
 
-		$profits_1 = ($profits_cnt_1['cnt'] / $order_total_cnt) * 100; 
-		$profits_2 = ($profits_cnt_2['cnt'] / $order_total_cnt) * 100; 
-		$profits_3 = ($profits_cnt_3['cnt'] / $order_total_cnt) * 100; 
-		$profits_4 = ($profits_cnt_4['cnt'] / $order_total_cnt) * 100; 
-		
+		$profits_1 = ($profits_cnt_1['cnt'] / $order_total_cnt) * 100;
+		$profits_2 = ($profits_cnt_2['cnt'] / $order_total_cnt) * 100;
+		$profits_3 = ($profits_cnt_3['cnt'] / $order_total_cnt) * 100;
+		$profits_4 = ($profits_cnt_4['cnt'] / $order_total_cnt) * 100;
+
 		/*대시보드 날짜검색*/
 		if($searchlogs=="Y"){
 			$ltimetoday = "".$loydate."-".$lomdate."-".$loddate."";
-			$logdate = $ltimetoday; 
+			$logdate = $ltimetoday;
 			$baklogdate=date("Y-m-d", strtotime($ltimetoday."-1day"));
 		}else{
 			$logM = date("m", $timetoday);
@@ -5648,10 +5648,10 @@ ADMIN MAINPAGE
 		$lognon_cn = $incn['cnt'];
 		/*회원접속구하기*/
 		$mem_con=$logtop_cn-$lognon_cn;
-		
+
 		/*플레이플랫폼 연결
 		include_once(MARI_SQL_PATH.'/master_connect.php');
-		
+
 		$sql = "select * from mari_write where w_table = 'notice' order by w_datetime desc";
 		$noti = mysql_query($sql);
 		*/
@@ -5864,17 +5864,17 @@ ADMIN MAINPAGE
 
 
 /************************************************
-회원 리스트 
+회원 리스트
 ************************************************/
 
 	case "member_list":
-		
+
 		/*접근권한
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);*/
 		if($au[au_member]=='1' && $au_member_sub01 == '1'){
-		
-	
+
+
 		$sql_common = " from mari_member ";
 
 		$sql_search = " where (1) ";
@@ -5923,7 +5923,7 @@ ADMIN MAINPAGE
 		$m_cnt = sql_fetch($sql);
 		$total_member = $m_cnt['cnt'];
 
-		
+
 
 		}else{
 			alert('접근권한이 없습니다.','?cms=admin');
@@ -5940,7 +5940,7 @@ ADMIN MAINPAGE
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
 		if($au[au_member]=='1' && $au_member_sub03 == '3'){
-		
+
 		$sql_common = " from mari_member_leave ";
 
 		$sql_search = " where (1) ";
@@ -6024,7 +6024,7 @@ e-머니 리스트
 		$colspan = 16;
 
 		/*포인트합계구하기*/
-		$sql="select sum(p_emoney) from mari_emoney;"; 
+		$sql="select sum(p_emoney) from mari_emoney;";
 		$top=sql_query($sql);
 		$t_emoney = mysql_result($top, 0, 0);
 
@@ -6035,7 +6035,7 @@ e-머니 리스트
 
 
 /************************************************
-회원수정폼 
+회원수정폼
 ************************************************/
 
 	case "member_form":
@@ -6058,7 +6058,7 @@ e-머니 리스트
 		$hp3=substr($m_hp,-4);
 
 		/*전화번호 분리*/
-		$m_tel = $mem['m_tel'];		
+		$m_tel = $mem['m_tel'];
 		if(substr($m_tel,0,2)=="02"){
 			$tel1=substr($m_tel,0,2);
 			$tel2=substr($m_tel,2,4);
@@ -6083,12 +6083,12 @@ e-머니 리스트
 
 
 		/*누적투자금액(입찰후 결제완료 합계구하기)*/
-		$sql="select sum(i_pay) from mari_invest where m_id='$mem[m_id]'"; 
+		$sql="select sum(i_pay) from mari_invest where m_id='$mem[m_id]'";
 		$top=sql_query($sql, false);
 		$order_pay = mysql_result($top, 0, 0);
 
 		/*누적대출금액*/
-		$sql="select sum(i_loan_pay) from mari_loan where m_id='$mem[m_id]'"; 
+		$sql="select sum(i_loan_pay) from mari_loan where m_id='$mem[m_id]'";
 		$la_top=sql_query($sql, false);
 		$loan_pay = mysql_result($la_top, 0, 0);
 		}else{
@@ -6176,26 +6176,26 @@ SMS 예약발송리스트
 
 		$colspan = 16;
 	break;
-	
+
 	case "mail_form":
 
 		$sql = " select  * from  mari_mail  where mr_id='$mr_id'";
 		$mv = sql_fetch($sql, false);
 
 	break;
- 
+
 
 
 /************************************************
 신용 대출신청 리스트
 ************************************************/
 	case "loan_list":
-	
+
 		/*접근권한*/
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
 		if($au[au_loan]=='1' && $au_loan_sub01 =='1'){
-			
+
 		$sql_common = " from mari_loan ";
 
 		$sql_search = " where (1) ";
@@ -6215,10 +6215,10 @@ SMS 예약발송리스트
 		$sql_order = " order by $sst $sod ";
 
 
-		
+
 		$sql = " select count(*) as cnt $sql_common $sql_search $sql_order ";
 		$row = sql_fetch($sql);
-		
+
 
 		$total_count = $row['cnt'];
 
@@ -6235,7 +6235,7 @@ SMS 예약발송리스트
 		$colspan = 16;
 
 		}else{
-			alert('접근권한이 없습니다.'); 
+			alert('접근권한이 없습니다.');
 		}
 	break;
 
@@ -6289,36 +6289,36 @@ SMS 예약발송리스트
 		$deb = sql_fetch($sql, false);
 
 
-		$ln_money=$loa['i_loan_pay']; //대출금액 
+		$ln_money=$loa['i_loan_pay']; //대출금액
 	if($loa['i_repay']=="만기일시상환선취"){
-		$ln_kigan=$loa['i_loan_day']+1; //대출기간 
+		$ln_kigan=$loa['i_loan_day']+1; //대출기간
 	}else{
-		$ln_kigan=$loa['i_loan_day']; //대출기간 
+		$ln_kigan=$loa['i_loan_day']; //대출기간
 	}
-		$ln_iyul=$loa['i_year_plus']; //대출이율 
+		$ln_iyul=$loa['i_year_plus']; //대출이율
 
 		if($type=="m"){
 		/*매월이율*/
-		$month_eja= ($ln_iyul/100)*(1/12); 
+		$month_eja= ($ln_iyul/100)*(1/12);
 
-		/*월불입금*/ 
-		$month_money = floor($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money )/( pow(1+$month_eja,$ln_kigan) - 1); 
+		/*월불입금*/
+		$month_money = floor($month_eja * pow(1+$month_eja,$ln_kigan) * $ln_money )/( pow(1+$month_eja,$ln_kigan) - 1);
 
 		/*월불입금 총계*/
 		$month_total=$month_money*$loa['i_loan_day'];
 
-		/*총이자금액*/ 
-		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0 
-			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금 
-		//($month_money*12)-$ln_money = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $ln_money; 
-		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $ln_money; 
-		
-		$ln_type=$loa['i_loan_type']; //대출금액 
+		/*총이자금액*/
+		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0
+			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금
+		//($month_money*12)-$ln_money = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $ln_money;
+		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $ln_money;
+
+		$ln_type=$loa['i_loan_type']; //대출금액
 
 		/*소수점이하 제거*/
-		/*월불입금*/ 
+		/*월불입금*/
 		$mh_money=floor($month_money);
-		/*월불입금 총계*/ 
+		/*월불입금 총계*/
 		$mh_total=floor($month_total);
 		}
 
@@ -6339,7 +6339,7 @@ SMS 예약발송리스트
 			alert('접근권한이 없습니다.');
 		}
 	break;
-	
+
 
 
 
@@ -6384,14 +6384,14 @@ SMS 예약발송리스트
 		$invest_cn = $incn['cnt'];
 
 		/*투자참여인원 리스트*/
-		$sql="select m_name, i_pay, i_regdatetime from mari_invest  where loan_id='$loan_id' order by i_regdatetime desc"; 
+		$sql="select m_name, i_pay, i_regdatetime from mari_invest  where loan_id='$loan_id' order by i_regdatetime desc";
 		$play_list=sql_query($sql, false);
 
 		$sql = " select it_id, it_item_name from mari_contact_item  order by it_item_name asc";
 		$result = sql_query($sql, false);
 
 		/*대출총액의 투자금액 백분율구하기*/
-		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'"; 
+		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 		$top=sql_query($sql, false);
 		$order = mysql_result($top, 0, 0);
 		$total=$iv['i_invest_pay'];
@@ -6413,11 +6413,11 @@ SMS 예약발송리스트
 
 		$sql = "select  * from  mari_category where ca_num='1' order by ca_subject asc";
 		$cate1 = sql_query($sql, false);
-		
+
 		/*변호사 리스트 출력*/
 		$sql = "select * from mari_lawyer order by ly_id desc";
 		$lawyer = sql_query($sql);
-		
+
 		/*변호사 리스트 출력*/
 		$sql = "select * from mari_lawyer_appr where loan_id = '$loan_id' order by la_id desc";
 		$ly_appr = sql_query($sql);
@@ -6428,7 +6428,7 @@ SMS 예약발송리스트
 
 
 		/*첨부파일리스트*/
-		$sql = "select * from mari_invest_file where loan_id = '$loan_id'";
+		$sql = "select * from mari_invest_file where loan_id = '$loan_id' order by sortnum, file_idx";
 		$file_list = sql_query($sql);
 
 		/*첨부파일카운트*/
@@ -6467,10 +6467,10 @@ SMS 예약발송리스트
 
 		$sql_order = " order by $sst $sod ";
 
-		
+
 		$sql = " select count(*) as cnt $sql_common $sql_search $sql_order ";
 		$row = sql_fetch($sql);
-		
+
 
 		$total_count = $row['cnt'];
 
@@ -6497,7 +6497,7 @@ SMS 예약발송리스트
 /************************************************
 투자신청 리스트
 ************************************************/
-	
+
 	case "invest_list":
 
 		/*접근권한*/
@@ -6538,7 +6538,7 @@ SMS 예약발송리스트
 		$colspan = 16;
 
 		/*입찰합계구하기*/
-		$sql="select sum(i_pay) from mari_invest"; 
+		$sql="select sum(i_pay) from mari_invest";
 		$top=sql_query($sql, false);
 		$t_pay = mysql_result($top, 0, 0);
 
@@ -6594,7 +6594,7 @@ SMS 예약발송리스트
 		$colspan = 16;
 
 		/*입찰후 결제완료 합계구하기*/
-		$sql="select sum(i_pay) from mari_invest where i_pay_ment='Y'"; 
+		$sql="select sum(i_pay) from mari_invest where i_pay_ment='Y'";
 		$top=sql_query($sql, false);
 		$order_pay = mysql_result($top, 0, 0);
 		/*결제상세*/
@@ -6615,44 +6615,44 @@ SMS 예약발송리스트
 		$is_ck = sql_fetch($sql, false);
 
 		/*연체횟수 중복제외구하기(합계)*/
-		$sql="select sum(distinct(o_odinterestcount)) from mari_order where loan_id='$loan_id' and user_id='$iv[user_id]' and o_status='연체' "; 
+		$sql="select sum(distinct(o_odinterestcount)) from mari_order where loan_id='$loan_id' and user_id='$iv[user_id]' and o_status='연체' ";
 		$odinterestcount=sql_query($sql, false);
 		$t_odinterestcount = mysql_result($odinterestcount, 0, 0);
 
-		$ln_money=$loan['i_loan_pay']; //대출금액 
-		$ln_kigan=$loan['i_loan_day']; //대출기간 
-		$ln_iyul=$loan['i_year_plus']; //대출이율 
+		$ln_money=$loan['i_loan_pay']; //대출금액
+		$ln_kigan=$loan['i_loan_day']; //대출기간
+		$ln_iyul=$loan['i_year_plus']; //대출이율
 		$order_pay_add=$iv['i_pay']; //투자금액
 		if(!$loan_id){
 		}else{
 		/*매월이율*/
-		$month_eja= ($ln_iyul/100)*(1/12); 
+		$month_eja= ($ln_iyul/100)*(1/12);
 
-		/*월불입금*/ 
+		/*월불입금*/
 		if($ln_iyul){
-		$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $order_pay_add)/( pow(1+$month_eja,$ln_kigan) - 1); 
+		$month_money = ($month_eja * pow(1+$month_eja,$ln_kigan) * $order_pay_add)/( pow(1+$month_eja,$ln_kigan) - 1);
 		}
 		/*월불입금 총계*/
 		$month_total=$month_money*$loan['i_loan_day'];
 
-		/*총이자금액*/ 
-		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0 
-			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금 
-		//($month_money*12)-$order_pay_add = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $order_pay_add; 
+		/*총이자금액*/
+		//q *12-p0 = {12*r*(1+r)^12/[(1+r)^12-1]-1} * p0
+			//매달내야하는금액 * 12 - 대출원금 = {12*월이율*(1+월이율)^12/[(1+월이율)^12-1]-1} * 대출원금
+		//($month_money*12)-$order_pay_add = ( (12*$month_eja*pow(1+$month_eja,12)) / ((pow(1+$month_eja,12)-1)) -1) * $order_pay_add;
 		if($ln_iyul){
-		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $order_pay_add; 
+		$all_eja = ( (12 * $month_eja * pow(1+$month_eja,12) ) / ( (pow(1+$month_eja,12) -1)) -1 ) * $order_pay_add;
 		}
 		/*소수점이하 제거*/
-		/*월불입금*/ 
+		/*월불입금*/
 		$mh_money=ceil($month_money);
-		/*월불입금 총계*/ 
+		/*월불입금 총계*/
 		$mh_total=ceil($month_total);
 
 		/*월불입 수익금계산*/
 		$month_profit=$mh_money*$is_ck['i_profit'];
 		/*월불입 수익총계계산*/
 		$total_profit=$mh_total*$is_ck['i_profit'];
-		
+
 		$psale_money=$mh_money-$month_profit;
 		$psale_totalmoney=$mh_total-$total_profit;
 		/*월불입금, 수익총계 소수점이하제거*/
@@ -6675,7 +6675,7 @@ SMS 예약발송리스트
 ************************************************/
 
 	case "invest_pay_setup":
-		
+
 		/*접근권한*/
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
@@ -6750,7 +6750,7 @@ SMS 예약발송리스트
 ************************************************/
 
 	case "withdrawal_list":
-		
+
 		/*접근권한*/
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
@@ -6854,7 +6854,7 @@ SMS 예약발송리스트
 
 	case "setting1":
 
-		
+
 		$sql = "select  * from  mari_config";
 		$conl = sql_fetch($sql, false);
 	/*권한일단제거
@@ -6898,7 +6898,7 @@ SMS 예약발송리스트
 ************************************************/
 	case "setting3":
 
-		
+
 		$sql = "select  * from  mari_config";
 		$conl = sql_fetch($sql, false);
 	/*권한일단제거
@@ -6918,7 +6918,7 @@ SNS/메일수신설정
 ************************************************/
 	case "setting4":
 
-		
+
 		$sql = "select  * from  mari_config";
 		$conl = sql_fetch($sql, false);
 	/*권한일단제거
@@ -6992,7 +6992,7 @@ ADMIN 로그아웃
 			$sql = "select o_investamount, o_collectiondate from mari_order where o_salestatus='정산완료' order by o_collectiondate desc";
 			$order = sql_query($sql, false);
 	*/
-		
+
 		/*접근권한*/
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
@@ -7009,15 +7009,15 @@ ADMIN 로그아웃
 
 
 		/*결제대기합계구하기*/
-		$sql="select sum(i_pay) from mari_invest where  i_pay_ment='N' and (i_regdatetime >=  '".date("Y-m-d",strtotime($Year."-".$Month."-01"))." 00:00:00' and i_regdatetime <= '".date("Y-m-d",strtotime($Year."-".$Month."-".$maxDate))." 23:59:59')"; 
+		$sql="select sum(i_pay) from mari_invest where  i_pay_ment='N' and (i_regdatetime >=  '".date("Y-m-d",strtotime($Year."-".$Month."-01"))." 00:00:00' and i_regdatetime <= '".date("Y-m-d",strtotime($Year."-".$Month."-".$maxDate))." 23:59:59')";
 		$top1=sql_query($sql, false);
 		$iamount = mysql_result($top1, 0, 0);
 		/*결제완료합계구하기*/
-		$sql="select sum(i_pay) from mari_invest where  i_pay_ment='Y' and (i_regdatetime >=  '".date("Y-m-d",strtotime($Year."-".$Month."-01"))." 00:00:00' and i_regdatetime <= '".date("Y-m-d",strtotime($Year."-".$Month."-".$maxDate))." 23:59:59')"; 
+		$sql="select sum(i_pay) from mari_invest where  i_pay_ment='Y' and (i_regdatetime >=  '".date("Y-m-d",strtotime($Year."-".$Month."-01"))." 00:00:00' and i_regdatetime <= '".date("Y-m-d",strtotime($Year."-".$Month."-".$maxDate))." 23:59:59')";
 		$top2=sql_query($sql, false);
 		$pgamount = mysql_result($top2, 0, 0);
 		/*입찰합계구하기*/
-		$sql="select sum(i_pay) from mari_invest where (i_regdatetime >=  '".date("Y-m-d",strtotime($Year."-".$Month."-01"))." 00:00:00' and i_regdatetime <= '".date("Y-m-d",strtotime($Year."-".$Month."-".$maxDate))." 23:59:59')"; 
+		$sql="select sum(i_pay) from mari_invest where (i_regdatetime >=  '".date("Y-m-d",strtotime($Year."-".$Month."-01"))." 00:00:00' and i_regdatetime <= '".date("Y-m-d",strtotime($Year."-".$Month."-".$maxDate))." 23:59:59')";
 		$top=sql_query($sql, false);
 		$totalamount = mysql_result($top, 0, 0);
 
@@ -7028,7 +7028,7 @@ ADMIN 로그아웃
 
 
 		/*
-		$sql="select sum(i_pay) from mari_invest"; 
+		$sql="select sum(i_pay) from mari_invest";
 		$top=sql_query($sql, false);
 		$t_pay = mysql_result($top, 0, 0);
 		*/
@@ -7199,7 +7199,7 @@ SMS관리
 		for ($i=0; $save_row=sql_fetch_array($result,FALSE); $i++) {
 			$list[$i] = $save_row;
 		}
-					
+
 		$list_total = count($list);
 
 	break;
@@ -7282,7 +7282,7 @@ LMS관리
 		for ($i=0; $save_row=sql_fetch_array($result,FALSE); $i++) {
 			$list[$i] = $save_row;
 		}
-					
+
 		$list_total = count($list);
 
 	break;
@@ -7306,10 +7306,10 @@ SMS 저장메세지 ajax
 			sql_query($sql_insert);
 			break;
 			//메세지수정
-			case "modify":			
+			case "modify":
 			$date = date("Y-m-d H:i:s");
 			$sql_update = "
-			UPDATE mari_smsmsg set 
+			UPDATE mari_smsmsg set
 				msg		= '$msg',
 				date	= '$date'
 			WHERE sm_idx=$idx
@@ -7318,7 +7318,7 @@ SMS 저장메세지 ajax
 			break;
 
 			//메세지삭제
-			case "del":			
+			case "del":
 			$sql_del = "
 			DELETE FROM mari_smsmsg
 			WHERE sm_idx=$idx
@@ -7329,13 +7329,13 @@ SMS 저장메세지 ajax
 		}
 
 			if($sm_type > 4){
-				$w_query = " where sm_type=$sm_type ";	
+				$w_query = " where sm_type=$sm_type ";
 				$byte = 1500;
 			}else{
-				$w_query = " where sm_type=4 ";	
+				$w_query = " where sm_type=4 ";
 				$byte = 80;
 			}
-			
+
 			$sql = " select count(*) as cnt from mari_smsmsg $w_query";
 			$row = sql_fetch($sql);
 			$total_count = $row[cnt];
@@ -7514,7 +7514,7 @@ SMS 설정, SMS 자동발송설정
 사이트자체 로그분석
 ************************************************/
 	case "site_analytics":
-		
+
 	/*접근권한*/
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
@@ -7592,7 +7592,7 @@ SMS 설정, SMS 자동발송설정
 
 		/*월별 집계*/
 		}else if($stype=="month"){
-			$date = date("Y", $timetoday); 
+			$date = date("Y", $timetoday);
 			if($inquiry=="Y"){
 			}else{
 				$s_date="".$date."-01-01";
@@ -7628,7 +7628,7 @@ SMS 설정, SMS 자동발송설정
 
 		/*년별 집계*/
 		}else if($stype=="year"){
-			$date = date("Y", $timetoday); 
+			$date = date("Y", $timetoday);
 			if($inquiry=="Y"){
 			}else{
 				$s_date="2014-01-01";
@@ -7900,7 +7900,7 @@ sns 페이스북 연동설정
 ************************************************/
 
 	case "category_form":
-		
+
 		if($type=="add"){
 			$sql = " select  * from  mari_category  where ca_pk='$ca_pk' and ca_sub_id='$ca_sub_id'";
 			$gro = sql_fetch($sql, false);
@@ -7995,8 +7995,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8128,7 +8128,7 @@ case "payment_deal_list":
 	case "withholding_list":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*접근권한*/
 		if($au[au_sales]=='1' && $au_sales_sub04 =='4'){
 
@@ -8136,8 +8136,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8238,8 +8238,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8318,7 +8318,7 @@ case "payment_deal_list":
 		$sql= "select sum(m_emoney) from mari_member";
 		$top=sql_query($sql);
 		$t_emoney = mysql_result($top, 0, 0);
-		
+
 		}else{
 			alert('접근권한이 없습니다.');
 		}
@@ -8332,7 +8332,7 @@ case "payment_deal_list":
 	case "complete_settlement":
 		/*로그인 체크여부*/
 		$login_ck="YES";
-		
+
 		/*접근권한*/
 		if($au[au_sales]=='1' && $au_sales_sub04 =='4'){
 
@@ -8340,8 +8340,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8443,8 +8443,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8540,8 +8540,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8634,8 +8634,8 @@ case "payment_deal_list":
 			$s_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m')),1, intval(date('Y'))));
 			$e_date= date("Y-m-d", mktime(0, 0, 0, intval(date('m'))+1, 0, intval(date('Y'))));
 		}else if($date_m=="date_today"){
-			$s_date= date("Y-m-d", $timetoday); 
-			$e_date= date("Y-m-d", $timetoday); 
+			$s_date= date("Y-m-d", $timetoday);
+			$e_date= date("Y-m-d", $timetoday);
 		}else if($date_m=="date_lastmonth"){
 			$y = date('Y');
 			$t = time() - date("d")*86400;
@@ -8719,22 +8719,22 @@ case "payment_deal_list":
 회원권한 관리
 ************************************************/
 	case "member_authority":
-	
-		
+
+
 
 		/*접근권한*/
 		$sql = "select * from mari_authority  where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
-		
+
 		if($au['au_member']=='1' && $au_member_sub06 =='6'){
 			$sql = "select * from mari_authority order by au_regidate desc";
 			$au = sql_query($sql, false);
-			
+
 			$sql = "select * from mari_authority where au_id = '$au_id'";
 			$au1 = sql_fetch($sql, false);
 			/*회원관리권한*/
 			$au_member_sub = explode("|",$au1[au_member_sub]);
-					
+
 			$au_member_sub01 = $au_member_sub[0]; //회원목록
 			$au_member_sub02 = $au_member_sub[1]; //회원등급
 			$au_member_sub03 = $au_member_sub[2]; //탈퇴회원&복구
@@ -8766,18 +8766,18 @@ case "payment_deal_list":
 			$au_sales_sub03 = $au_sales_sub[2]; //수납처리
 			$au_sales_sub04 = $au_sales_sub[3]; //정산완료
 			$au_sales_sub05 = $au_sales_sub[4]; //투자결제완료
-			
+
 		}else{
 			alert('접근권한이 없습니다.');
 		}
-		
-		
+
+
 	break;
 /************************************************
 Q&A 리스트
 ************************************************/
 	case "faq_list":
-		
+
 		$sql = "select count(*) as cnt from mari_faq";
 		$faq_count = sql_fetch($sql);
 		$total_faq= $faq_count['cnt'];
@@ -8794,23 +8794,23 @@ Q&A 리스트
 Q&A 리스트
 ************************************************/
 	case "faq_view":
-	
+
 		$sql = "select * from mari_faq where f_id = '$f_id'";
 		$faq = sql_fetch($sql,false);
-		
+
 	break;
 
 
 /************************************************
 유지보수
 ************************************************/
-	case "conservatism":		
+	case "conservatism":
 
 		include_once(MARI_SQL_PATH.'/master_connect.php');
 
 		$sql = "select * from mari_conservatism where ftp_id = '$ftp_id' and cv_id = '$cv_id'";
 		$cv = mysql_query($sql);
-		
+
 	break;
 
 
@@ -8819,14 +8819,14 @@ Q&A 리스트
 /************************************************
 플랫폼(관리자)게시판 팝업창
 ************************************************/
-	case "board_pop":		
+	case "board_pop":
 
 		include_once(MARI_SQL_PATH.'/master_connect.php');
 
 		$sql = "select * from mari_write where w_table = '$w_table' and w_id = '$w_id'";
 		$plat = sql_fetch($sql,false);
-		
-		
+
+
 	break;
 
 	case "board_pop2":
@@ -8842,7 +8842,7 @@ Q&A 리스트
 /************************************************
 회원조회 팝업창
 ************************************************/
-	case "inquery_pop":				
+	case "inquery_pop":
 
 		$sql_common = " from mari_member ";
 
@@ -8854,7 +8854,7 @@ Q&A 리스트
 
 			$sql_search .= " ) ";
 		}
-		
+
 		$sql = "select count(*) as cnt from mari_member";
 		$de_count = sql_fetch($sql);
 		$total_de=$de_count['cnt'];
@@ -8863,7 +8863,7 @@ Q&A 리스트
 		if ($page < 1) $page = 1; // 페이지가 없으면 첫 페이지 (1 페이지)
 		$from_record = ($page - 1) * $rows; // 시작 열을 구함
 		$sql = "select * from mari_member $sql_search order by m_no desc limit ".$from_record.", $rows";
-		$imem = sql_query($sql,false);		
+		$imem = sql_query($sql,false);
 
 	break;
 
@@ -8885,7 +8885,7 @@ Q&A 리스트
 /************************************************
 변호사 리스트
 ************************************************/
-	case "lawyer_list":				
+	case "lawyer_list":
 
 		$sql = "select * from mari_lawyer order by ly_regidate desc";
 		$lay = sql_query($sql, false);
@@ -8895,7 +8895,7 @@ Q&A 리스트
 /************************************************
 변호사 작성/수정
 ************************************************/
-	case "lawyer_write":				
+	case "lawyer_write":
 
 		$sql = "select * from mari_lawyer where ly_id = '$ly_id'";
 		$lay = sql_fetch($sql, false);
@@ -8905,15 +8905,15 @@ Q&A 리스트
 /************************************************
 가상계좌목록
 ************************************************/
-	case "illusion_acc_list":				
+	case "illusion_acc_list":
 
-	
+
 		/*접근권한*/
 		$sql = "select * from mari_authority where m_id = '$user[m_id]'";
 		$au = sql_fetch($sql, false);
 		if($au[au_member]=='1'){
-		
-		
+
+
 		$sql_common = " from mari_seyfert ";
 
 		$sql_search = " where (1) ";
@@ -8944,7 +8944,7 @@ Q&A 리스트
 		$sql = " select * from mari_seyfert $sql_search $sql_order limit $from_record, $rows ";
 		$acc_list = sql_query($sql);
 
-		
+
 		}
 
 	break;
