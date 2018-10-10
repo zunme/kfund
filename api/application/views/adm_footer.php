@@ -155,6 +155,7 @@
   </div>
 </div>
 <div id="izimodal"></div>
+<div id="izimodal80"></div>
 <!-- jQuery -->
 <script src="/pnpinvest/layouts/home/pnpinvest/gentelella/default.js?v=20180105110142"></script>
 <!-- Custom Theme Scripts -->
@@ -397,6 +398,16 @@ $(document).ready(function() {
     console.log("modal");
   	$("#izimodal").iziModal('open',event);
   });
+
+  $("#izimodal80").iziModal({
+    width:'80%',
+    iframe: true,
+    iframeHeight: 850,
+  });
+  $('.triggerModal80').on('click', function (event) {
+    $("#izimodal80").iziModal('open',event);
+  });
+
   // 이체하기. END
   intervalfunc();
 });

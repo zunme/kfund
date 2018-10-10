@@ -99,6 +99,7 @@
 @media only screen and (min-width: 1600px) {
   .modal-dialog { width: 1500px; }
 }
+.nullmenu{padding :5px 0 15px 30px;color:white;}
     </style>
   </head>
 
@@ -128,6 +129,11 @@
                 <ul class="nav side-menu">
                   <li><a href="/api/index.php/adm"><i class="fa fa-home"></i> Home</a></li>
                   <!--li><a href="/api/index.php/adm/tranceform"><i class="fa fa-bank"></i> 이체</a></li-->
+                </ul>
+                <h3>ETC</h3>
+                <ul class="nav side-menu">
+                  <li><span href="/api/index.php/investcheck" class="triggerModal80 nullmenu">가상투자</span></li>
+                  <li><span href="/api/index.php/eventcheck" class="triggerModal80 nullmenu">eventcheck</span></li>
                 </ul>
               </div>
 
