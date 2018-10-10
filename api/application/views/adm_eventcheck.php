@@ -1,3 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>태기드민 </title>
+
+    <!-- Bootstrap -->
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css?v=20180105110142" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/font-awesome/css/font-awesome.min.css?v=20180105110142" rel="stylesheet">
+    <!-- merge -->
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/styles.css?v=20180105110142" rel="stylesheet">
+    <!-- NProgress -->
+    <!--link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet"-->
+    <!-- iCheck -->
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/iCheck/skins/flat/green.css?v=20180105110142" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <!--link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"-->
+    <!-- JQVMap Not USE-->
+    <!--link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/-->
+    <!-- bootstrap-daterangepicker -->
+    <!--link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet"-->
+
+    <!-- Datatables -->
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/datatables.net-bs/css/dataTables.bootstrap.merge.min.css?v=20180105110142" rel="stylesheet">
+    <!--link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet"-->
+
+    <!-- Custom Theme Style -->
+    <link href="/pnpinvest/layouts/home/pnpinvest/gentelella/build/css/custom.min.css" rel="stylesheet">
+    <style>
+    td.details-control {
+        background: url('/pnpinvest/layouts/home/pnpinvest/DataTables/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+    tr.shown td.details-control {
+        background: url('/pnpinvest/layouts/home/pnpinvest/DataTables/details_close.png') no-repeat center center;
+    }
+    .linked_class, span.memauthcancel { color: #008EFC; cursor:pointer;}
+    span.memauth { color: #FF0042; cursor:pointer;}
+    .loading {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 1032;
+      opacity: 1;
+      transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+    .loading.hide {
+      display: none;
+    }
+    .loading .loading-container {
+      z-index: 1033;
+      display: block;
+      position: relative;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .loading .loading-container .loader {
+      width: 40px;
+    }
+    .loading .loading-container p {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+@media only screen and (max-width: 767px) {
+  .modal-dialog { width: 400px; }
+}
+@media only screen and (min-width: 768px) {
+  .modal-dialog { width: 660px; }
+}
+@media only screen and (min-width: 900px) {
+  .modal-dialog { width: 800px; }
+}
+@media only screen and (min-width: 1200px) {
+  .modal-dialog { width: 1100px; }
+}
+@media only screen and (min-width: 1400px) {
+  .modal-dialog { width: 1300px; }
+}
+@media only screen and (min-width: 1600px) {
+  .modal-dialog { width: 1500px; }
+}
+    </style>
+  </head>
+
+  <body class="nav-md">
+    <div id="mainpreloader" class="loading">
+        <div class="loading-container">
+            <p>K Funding</p>
+            <img class="loader" src="/api/statics/img/rubik.svg"/>
+        </div>
+    </div>
+    <div class="container body">
+      <div class="main_container">
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+
 <script src="/pnpinvest/layouts/home/pnpinvest/gentelella/default.js?v=20180105110142"></script>
 <!-- Custom Theme Scripts -->
 <script src="/pnpinvest/layouts/home/pnpinvest/gentelella/build/js/custom.min.js?v=20180105110142"></script>
@@ -32,6 +151,9 @@
 <style>
   i.addevent{color: blue;}
   a.collapse-link{padding-left: 10px; padding-right:10px;}
+  .nav-md .container.body .right_col {
+    margin-left: 0
+}
 </style>
 <div class="row">
 
@@ -449,13 +571,6 @@ $("document").ready( function() {
 </div>
 <!-- /page content -->
 
-<!-- footer content -->
-<footer>
-  <div class="pull-right">
-    Admin
-  </div>
-  <div class="clearfix"></div>
-</footer>
 <!-- /footer content -->
 </div>
 </div>
