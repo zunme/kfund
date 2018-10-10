@@ -4,7 +4,7 @@ class Eventcheck extends Adm {
   function index(){
       $list = $this->db->order_by('eventid', 'desc')->get('z_event_check_cfg')->result_array();
       $reserv_template = explode('@@val=', $this->load->view('adm_header_reserv_template', array("reservlist"=>$this->basic->reservlist()), true) );
-      $this->load->view('adm_header', array("errmsglist"=>$this->jungsanerrorlist(), "reservtemplate"=>$reserv_template ));
+      //$this->load->view('adm_header', array("errmsglist"=>$this->jungsanerrorlist(), "reservtemplate"=>$reserv_template ));
       $this->load->view('adm_eventcheck', array('list'=>$list));
       //$this->load->view('adm_footer');//$this->load->view('adm_footer',array('js'=>''));
     }
