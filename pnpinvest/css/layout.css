@@ -37,7 +37,7 @@
 
 .fintech .container {text-align:center;}
 .main_product .container {max-width:1100px;}
-.main_product .item {padding:0 50px 50px;}
+.main_product .item {padding:0 30px 30px;}
 .main_product .timeout {width:100%;height:25px;font-size:15px;line-height:25px;text-align:center;margin-bottom:30px;}
 .main_product .timeout .clock {display:inline-block;width:25px;height:25px;margin-right:10px;vertical-align:top;background:url('../img/clock_g.png') center no-repeat;}
 .main_product .item_wrap {transition:.3s ease-out;position:relative;background-color:#fff;padding:20px;overflow:hidden;border:1px solid #ccc;}
@@ -45,14 +45,14 @@
 .main_product h4 {text-align:left;font-size:18px;font-weight:bold;margin-bottom:15px;height:80px;overflow:hidden;}
 .main_product h4 a:hover,.main_product h4 a:focus {text-decoration:underline;}
 .main_product h4 span {display:block;}
-.main_product .info1 {width:52%;position:relative;}
-.main_product .info1 .img_wrap {height:300px;}
+.main_product .info1 {width:55%;position:relative;}
+.main_product .info1 .img_wrap {height:295px;}
 .main_product .info1 .txt {margin-top:5px;background:#333;color:#fff;line-height:45px;padding:0 10px;overflow:hidden;}
-.main_product .info1 .item_con {width:140px;height:40px;line-height:40px;position:absolute;z-index:50;top:13px;right:13px;display:inline-block;font-size:18px;border-radius:5px;text-align:center;}/*padding:5px 10px;*/
+.main_product .info1 .item_con {width:140px;height:40px;line-height:40px;position:absolute;z-index:50;top:8px;right:8px;display:inline-block;font-size:18px;border-radius:5px;text-align:center;}/*padding:5px 10px;*/
 .main_product .info1 .ing {border:1px solid #061551;color:#061551;background-color:#fff;}
 .main_product .info1 .end {border:1px solid #666;color:#fff;background-color:#666;}
-.main_product .info2 {width:45%;overflow:hidden;}
-.main_product .summary {width:50%;line-height:30px;text-align:left;margin-top:10px;}
+.main_product .info2 {width:43%;overflow:hidden;}
+.main_product .summary {width:50%;line-height:30px;text-align:left;margin-top:5px;}
 .main_product .summary > li {padding-left:50px;background-position:left center;background-repeat:no-repeat;line-height:22px;margin-bottom:24px;}
 .main_product .summary > li:last-child {margin-bottom:0;}
 .main_product .summary .sm_1 {background-image:url(../img/lic_01.png);}
@@ -61,14 +61,14 @@
 .main_product .summary .sm_4 {background-image:url(../img/lic_04.png);}
 .main_product .summary .sm_5 {background-image:url(../img/lic_05.png);}
 .main_product .summary dt {color:#061551;}
-.main_product .donut {width:42%;margin-right:4%;max-width:210px;overflow:hidden;position:relative;}
+.main_product .donut {width:42%;margin-right:6%;margin-top:-3px;max-width:210px;overflow:hidden;position:relative;}
 .main_product .donut_progress {position:relative;width:100%;padding-top:100%;border-radius:50%;background-color:#dedede;overflow:hidden;}
 .main_product .donut_progress .fill {position:absolute;bottom:0;left:0;width:100%;background-color:#d7132f;}
 .main_product .donut_txt {position:absolute;text-align:center;width:70%;height:70%;margin:15%;top:0;left:0;border-radius:50%;background-color:#fff;}
-.main_product .donut_txt span {display:block;margin-top:30%;}
+.main_product .donut_txt span {display:block;margin-top:19%;}
 .main_product .donut_txt strong {font-size:32px;color:#061551;}
-.main_product .event {width:49%;max-width:210px;margin-top:20px;}
-.main_product .event span {width:100%;display:inline-block;line-height:36px;font-size:16px;color:#fff;}
+.main_product .event {width:54%;max-width:210px;margin-top:-79px;}
+.main_product .event span {width:100%;display:inline-block;line-height:36px;font-size:16px;color:#fff;margin-top:5px;}
 .main_product .event1 {background-color:#f7af06;margin-right:2%;}
 .main_product .event2 {background-color:#ff391f;margin-top:10px;}
 
@@ -712,7 +712,7 @@ div.zabuto_calendar .table tr td:last-child div.day {color:#2100b8;}
 .invest_write .iw_title .iw_term {font-size:12px;}
 .invest_write .iw_title2 {width:150px;height:30px;line-height:30px;color:#fff;background-color:#061551;text-align:center;margin:50px 0 24px;}
 .invest_write .iw_progress {text-align:right;}
-.invest_write .iw_progress .progress {width:100%;background-color:#fff;border:1px solid #eee;} 
+.invest_write .iw_progress .progress {width:100%;background-color:#fff;border:1px solid #eee;}
 .invest_write .iw_progress .progress .p_bar {border-radius:6px;}
 .invest_write .iw_progress .iw_con {font-size:12px;}
 .invest_write .iw_progress .iw_con strong {color:#061551;}
