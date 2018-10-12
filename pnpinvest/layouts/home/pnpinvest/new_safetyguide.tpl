@@ -1138,8 +1138,12 @@ left: 50px;
       </div>
     </div>
         <div class="center">
+          <?php
+            $sql = "select * from z_main_design where idx=1 limit 1";
+            $main_design = sql_fetch($sql);
+          ?>
       <a class="btn now_planbtn modal-link-" href="javascript:;" data-title="Safety Guide Plan" data-url2="/api/safetyguide" data-img="/pnpinvest/data/safetyplan/a0f0fc2eadda657e66d16cbaa87681d3.jpg" >
-        현재 : 50,000,000원 <i class="fab fa-superpowers"></i></a>
+        현재 : <?php echo number_format($main_design['nowplan']) ?>원 <i class="fab fa-superpowers"></i></a>
     </div>
   </div>
 </div>
