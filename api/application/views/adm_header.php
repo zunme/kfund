@@ -134,6 +134,7 @@
                 <ul class="nav side-menu">
                   <li><span href="/api/index.php/investcheck" class="triggerModal80 nullmenu">가상투자</span></li>
                   <li><span href="/api/index.php/eventcheck" class="triggerModal80 nullmenu">eventcheck</span></li>
+                  <li><span href="/api/index.php/design/main" class="triggerModal nullmenu">안심케어</span></li>
                 </ul>
               </div>
 

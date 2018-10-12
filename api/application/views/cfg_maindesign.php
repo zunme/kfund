@@ -97,7 +97,7 @@
    <link rel="stylesheet" href="/api/statics/fileuploader/css/jquery.fileupload.css">
 </head>
 <body>
-  <table>
+  <table style="    width: 500px;    margin: 10px auto;">
     <tr>
       <th>SAFETY GUIDE<br>현재금액</th>
       <td>
