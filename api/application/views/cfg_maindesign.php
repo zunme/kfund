@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
   <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Pinyon+Script|Playball" />
@@ -34,58 +34,7 @@
    position: relative;
    overflow:hidden;
  }
- <?php
- function returnhex($hex, $opt='1'){
-   list($r, $g, $b) = sscanf($hex, "%02x%02x%02x");
-   return "rgba($r, $g, $b, $opt)";
- }
- $sql = "select * from z_color_list";
- $colorlist = $this->db->query($sql)->result_array();
-//while ( $colorlist=sql_fetch_array($result) ){
- /*
-  $colorlist["gradient"] = array( "#45dbff", "#45dbff" );
-   $colorlist["pupple"] = array( "#840d79", "#d02cb4" );
-   $colorlist["WarmFlame"] = array( "#ff9a9e", "#fad0c4" );
-   $colorlist["JuicyPeach"] = array( "#ffecd2", "#fcb69f" );
-   $colorlist["LadyLips"] = array( "#ff9a9e", "#fecfef" );
-   $colorlist["WinterNeva"] = array( "#a1c4fd", "#c2e9fb" );
-   $colorlist["HeavyRain"] = array( "#cfd9df", "#e2ebf0" );
-   $colorlist["CloudyKnoxville"] = array( "#fdfbfb", "#ebedee" );
-   $colorlist["SaintPetersberg"] = array( "#f5f7fa", "#c3cfe2" );
-   $colorlist["PlumPlate"] = array( "#667eea", "#764ba2" );
-   $colorlist["EverlastingSky"] = array( "#fdfcfb", "#e2d1c3" );
-   $colorlist["HappyFisher"] = array( "#89f7fe", "#66a6ff" );
-   $colorlist["FlyHigh"] = array( "#48c6ef", "#6f86d6" );
-   $colorlist["FreshMilk"] = array( "#feada6", "#f5efef" );
-   $colorlist["GreatWhale"] = array( "#a3bded", "#6991c7" );
-   $colorlist["AquaSplash"] = array( "#13547a", "#80d0c7" );
-   $colorlist["CleanMirror"] = array( "#93a5cf", "#e4efe9" );
-   $colorlist["CochitiLake"] = array( "#93a5cf", "#e4efe9" );
-   $colorlist["PassionateBed"] = array( "#ff758c", "#ff7eb3" );
-   $colorlist["EternalConstance"] = array( "#09203f", "#537895" );
-   $colorlist["Nega"] = array( "#ee9ca7", "#ffdde1" );
-   $colorlist["GentleCare"] = array( "#ffc3a0", "#ffafbd" );
-   $colorlist["MorningSalad"] = array( "#B7F8DB", "#50A7C2" );
-*/
 
-   foreach ($colorlist as $colname => $colors){
-     ?>
-     .header-filter[filter-color="<?php echo $colors['name']?>"]:after {
-       background: <?php echo $colors[0]?> ; /* Old browsers */
-       background: -moz-linear-gradient(-45deg, <?php echo returnhex($colors['start_color'],'1') ?> 0%, <?php echo returnhex($colors['end_color'],'1') ?> 100%); /* FF3.6-15 */
-       background: -webkit-linear-gradient(-45deg, <?php echo returnhex($colors['start_color'],'1') ?> 0%,<?php echo returnhex($colors['end_color'],'1') ?> 100%); /* Chrome10-25,Safari5.1-6 */
-       background: linear-gradient(135deg, <?php echo returnhex($colors['start_color'],'1') ?> 0%,<?php echo returnhex($colors['end_color'],'1') ?> 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#<?php echo $colors['start_color']?>', endColorstr='#<?php echo $colors['end_color']?>',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-     }
-     .header-filter[filter-color="center_<?php echo $colors['colorno']?>"]:after {
-        background: -moz-linear-gradient(left, <?php echo returnhex($colors['start_color'],$colors['start_opt']) ?> 0%, <?php echo returnhex($colors['mid1_color'],$colors['mid1_opt']) ?> <?php echo $colors['mid1_pos']?>%,<?php echo returnhex($colors['mid2_color'],$colors['mid2_opt']) ?> <?php echo $colors['mid2_pos']?>%,<?php echo returnhex($colors['end_color'],$colors['end_opt']) ?> 100%);
-        background: -webkit-linear-gradient(left, <?php echo returnhex($colors['start_color'],$colors['start_opt']) ?> 0%,<?php echo returnhex($colors['mid1_color'],$colors['mid1_opt']) ?> <?php echo $colors['mid1_pos']?>%,<?php echo returnhex($colors['mid2_color'],$colors['mid2_opt']) ?> <?php echo $colors['mid2_pos']?>%, <?php echo returnhex($colors['end_color'],$colors['end_opt']) ?> 100%);
-        background: linear-gradient(to right,<?php echo returnhex($colors['start_color'],$colors['start_opt']) ?> 0%,<?php echo returnhex($colors['mid1_color'],$colors['mid1_opt']) ?> <?php echo $colors['mid1_pos']?>%,<?php echo returnhex($colors['mid2_color'],$colors['mid2_opt']) ?> <?php echo $colors['mid2_pos']?>%, <?php echo returnhex($colors['end_color'],$colors['end_opt']) ?> 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#<?php echo $colors['start_color']?>', endColorstr='<?php echo $colors['end_color']?>',GradientType=1 );
-    }
-     <?
-   }
- ?>
 .colorcode{
   display: inline-block;
     width: 100px;
@@ -101,7 +50,7 @@
     <tr>
       <th>SAFETY GUIDE<br>현재금액</th>
       <td>
-        <input type="text" name="safetyplan_now" value="<?php echo $data['nowplan']?>"><span style="padding-right:10px;">원</span>
+        <input type="text" name="safetyplan_now" id="safetyplan_now" value="<?php echo $data['nowplan']?>"><span style="padding-right:10px;">원</span>
         <a href="javascript:;" onClick="save_plan_now()" class="btn btn-info">금액저장하기</a>
       </td>
     </tr>
@@ -126,70 +75,177 @@
         </div>
       </td>
     </tr>
+    <tr>
+      <th>로그 합계</th>
+      <td id="logtotal"></td>
+    </tr>
   </table>
-  <center>
-    <table>
-        <?php
-          $sum = 0;
-          foreach ($history as $row) {
-            $sum += $row['safety'];
-        ?>
-      <tr>
-        <td><?php echo $row['safetydate']?></td>
-        <td><?php echo $row['safety_type']?></td>
-        <td><?php echo $row['o_count'] > 0 ? $row['o_count']."회차":""; ?></td>
-        <td class="text-right"><?php echo number_format($row['safety'])?> 원</td>
-        <td><?php echo $row['i_invest_name']?></td>
-      </tr>
-        <?php } ?>
-        <tr><td colspan=3>총 : </td><td class="text-right"><?php echo number_format( $sum)?> 원</td><td></td></tr>
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <table id="example2" class="display" style="width:100%">
+      <colgroup>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col width="110px"/>
+        <col />
+      </colgroup>
+      <thead>
+            <tr>
+                <th></th>
+                <th>일자</th>
+                <th>타입</th>
+                <th>회차</th>
+                <th>금액</th>
+                <th>내용</th>
+                <th>적용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+              $sum = $i= 0;
+              foreach ($history as $row) {
+                $sum += $row['safety'];
+            ?>
+          <tr>
+            <td><?php echo ++$i?></td>
+            <td><?php echo $row['safetydate']?></td>
+            <td><?php echo $row['safety_type']?></td>
+            <td><?php echo $row['o_count'] > 0 && $row['loan_id'] > 11  ? $row['o_count']."회차":""; ?></td>
+            <td class="text-right">
+              <?php
+              if ( $row['confirm'] == 'N'){
+              ?>
+              <input type=text class="safety_added" value="<?php echo ($row['safety'])?>">
+              <?php
+              }else {
+                echo ($row['safety']);
+              }
+              ?>
+            </td>
+            <td><?php echo $row['detail']?></td>
+            <td>
+              <?php
+              if ( $row['confirm'] == 'N'){
+              ?>
+              <a href="javascript:;" class="btn btn-primary" data-historyidx="<?php echo $row['history_idx']?>" onClick="history_confirm(this)">적용하기</a>
+              <?php
+              }else {
+                ?>
+                적용완료
+                <?php
+              }
+              ?>
+            </td>
+          </tr>
+            <?php } ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4" style="text-align:right">Total:</th>
+                <th style="text-align:right"></th>
+                <th></th>
+            </tr>
+        </tfoot>
     </table>
-</center>
-  <!--
-<div style="margin: 20px 10px;">
-  <div>
-    <p>filter:<span id="filterd"></span></p>
-    <div id="pageheader"
-    class="page-header header-filter clear-filter header-small"
-     data-parallax="true"
-     filter-color="center_<?php echo $data['main_filter']?>"
-     style="width:100vw;height:40vh;background-image:url('<?php echo $data['main_img']?>'); background-position: center center;    background-size: cover;">
-    <div id="afterdiv"></div>
-    </div>
-  </div>
-  <div>
-
-    <div>
-      <div>
-        시작 - 색상<input type='color' name="start_color" value="#ea0437"/>  , pos<input type="text" name="start_pos" value="0" style="width:50px;">%
-        <br>
-        중간 - 색상<input type='color' name="mid1_color" value="#FFFFF"/>  , pos<input type="text" name="mid1_pos" value="40" style="width:50px;">%
-        <br>
-        중간 - 색상<input type='color' name="mid2_color" value="#FFFFF"/>  , pos<input type="text" name="mid2_pos" value="60" style="width:50px;">%
-        <br>
-        종료 - 색상<input type='color' name="end_color" value="#ea0437"/>  , pos<input type="text" name="end_pos" value="100" style="width:50px;">%
-      </div>
-      <a class="btn btn-primary" href="javascript:;" onClick="applycolor()">테스트</a>
-    </div>
-
-  </div>
-  <div>
-    <?php foreach ($colorlist as $colname => $colors){ ?>
-      <div class="colorcode header-filter" filter-color="center_<?php echo $colors['colorno']?>" onClick="preview('center_<?php echo $colors['colorno']?>')">
-        <div><?php echo $colors['colorno']?></div>
-      </div>
-    <?php } ?>
   </div>
 </div>
--->
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 	<script src="/api/statics/fileuploader/js/jquery.iframe-transport.js"></script>
 	<script src="/api/statics/fileuploader/js/jquery.fileupload.js"></script>
   <script src="https://bgrins.github.io/spectrum/spectrum.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
   <script>
+  function ajaxerror( jqXHR, exception ){
+      var msg = '';
+      if (jqXHR.status === 0) {
+          msg = 'Not connect.\n Verify Network.';
+      } else if (jqXHR.status == 404) {
+          msg = 'Requested page not found. [404]';
+      } else if (jqXHR.status == 500) {
+          msg = 'Internal Server Error [500].';
+      } else if (exception === 'parsererror') {
+          msg = 'Requested JSON parse failed.';
+      } else if (exception === 'timeout') {
+          msg = 'Time out error.';
+      } else if (exception === 'abort') {
+          msg = 'Ajax request aborted.';
+      } else {
+          msg = 'Uncaught Error.\n' + jqXHR.responseText;
+      }
+      alert(msg);
+    }
+
+  function history_confirm (bt) {
+    var history_idx = $(bt).data('historyidx');
+    var won = $(bt).parent().parent().children('td:nth-child(5)').children("input").val();
+    $.ajax({
+      type : 'post',
+      url : '/api/index.php/design/confirmlog',
+      data:{history_idx:history_idx, won :won},
+      dataType : 'json',
+      success : function(result) {
+        if(result.code==200){
+          $(bt).parent().parent().children('td:nth-child(5)').html(won);
+          $(bt).parent().html("적용완료");
+          $("#safetyplan_now").val( result.data);
+        }else alert(result.msg);
+      },
+          error: function (jqXHR, exception) {
+            ajaxerror( jqXHR, exception )
+          }
+
+    });
+  }
+
+  $(document).ready(function() {
+      $('#example2').DataTable( {
+          "footerCallback": function ( row, data, start, end, display ) {
+              var api = this.api(), data;
+
+              // Remove the formatting to get integer data for summation
+              var intVal = function ( i ) {
+                  return typeof i === 'string' ?
+                      i.replace(/[\$,]/g, '')*1 :
+                      typeof i === 'number' ?
+                          i : 0;
+              };
+
+              // Total over all pages
+              total = api
+                  .column( 4 )
+                  .data()
+                  .reduce( function (a, b) {
+                      return intVal(a) + intVal(b);
+                  }, 0 );
+
+              // Total over this page
+              pageTotal = api
+                  .column( 4, { page: 'current'} )
+                  .data()
+                  .reduce( function (a, b) {
+                      return intVal(a) + intVal(b);
+                  }, 0 );
+
+              // Update footer
+              $( api.column( 4 ).footer() ).html(
+                  total+ "원" //+' ( $'+ total +' total)'
+              );
+              $( api.column( 5 ).footer() ).html(
+                  '( 현 페이지 : '+ pageTotal +' 원)'
+              );
+              $("#logtotal").html(total+ "원")
+          }
+      } );
+  } );
+
   $(function () {
     'use strict';
+    console.log("start")
     $('#fileupload').fileupload({
         url: "/api/design/safetyimage",
 				//url:"/api/statics/fileuploader/test.html",
