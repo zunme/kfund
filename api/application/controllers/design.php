@@ -13,14 +13,19 @@ class  Design extends Adm {
 	}
  function confirmlog() {
    $won = preg_replace("/[^\d]/","",$this->input->post('won') );
-   $sql = "update z_safetyguide_log set safety = ? , confirm ='Y' where history_idx = ?";
-   if( !$this->db->query( $sql, array($won,$this->input->post('history_idx') ) ) ) {
+   if( $this->input->post('won') !='undefined' && $won > 0 ){
+     $this->db->set('safety', $won);
+   }
+   $res = $this->db->set('confirm','Y')->where('history_idx',$this->input->post('history_idx'))
+          ->update('z_safetyguide_log');
+   if( !$res ) {
     echo json_encode(array("code"=>500, 'msg'=> $this->input->post('history_idx')." 데이터를 ".$won."원으로 업데이트 시 에러 발생")) ;
     return;
   }
   $sum = $this->db->query("select sum(safety) as now_safety from  z_safetyguide_log where confirm='Y'")->row_array();
   $this->db->query("update z_main_design set nowplan = ? where idx = 1", array($sum['now_safety']) );
-  echo json_encode( array('code'=> 200, 'data'=> $sum['now_safety']));
+  $total = $this->db->query("select sum(safety) as total from  z_safetyguide_log")->row_array();
+  echo json_encode( array('code'=> 200, 'data'=> $sum['now_safety'], 'total'=> $total['total']));
  }
   public function main() {
     $sql = "

@@ -114,17 +114,7 @@
             <td><?php echo $row['safetydate']?></td>
             <td><?php echo $row['safety_type']?></td>
             <td><?php echo $row['o_count'] > 0 && $row['loan_id'] > 11  ? $row['o_count']."회차":""; ?></td>
-            <td class="text-right">
-              <?php
-              if ( $row['confirm'] == 'N'){
-              ?>
-              <input type=text class="safety_added" value="<?php echo ($row['safety'])?>">
-              <?php
-              }else {
-                echo ($row['safety']);
-              }
-              ?>
-            </td>
+            <td class="text-right <?php echo $row['confirm'] == 'N' ? 'editcol':''?>"><?php echo ($row['safety'])?></td>
             <td><?php echo $row['detail']?></td>
             <td>
               <?php
@@ -145,7 +135,7 @@
         <tfoot>
             <tr>
                 <th colspan="4" style="text-align:right">Total:</th>
-                <th style="text-align:right"></th>
+                <th style="text-align:right" id="logtotal2"></th>
                 <th></th>
             </tr>
         </tfoot>
@@ -193,6 +183,9 @@
           $(bt).parent().parent().children('td:nth-child(5)').html(won);
           $(bt).parent().html("적용완료");
           $("#safetyplan_now").val( result.data);
+          $("#logtotal").html( result.total + " 원");
+          $("#logtotal2").html( result.total + " 원");
+
         }else alert(result.msg);
       },
           error: function (jqXHR, exception) {
@@ -204,6 +197,14 @@
 
   $(document).ready(function() {
       $('#example2').DataTable( {
+        fnRowCallback: function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+            $('td', nRow).on('click', function() {
+                if( $(this).hasClass('editcol') ) {
+                  $(this).html('<input type="text" class="safety_added" value="'+ $(this).text()+'">');
+                  $(this).removeClass("editcol");
+                }
+            });
+        },
           "footerCallback": function ( row, data, start, end, display ) {
               var api = this.api(), data;
 
@@ -235,9 +236,7 @@
               $( api.column( 4 ).footer() ).html(
                   total+ "원" //+' ( $'+ total +' total)'
               );
-              $( api.column( 5 ).footer() ).html(
-                  '( 현 페이지 : '+ pageTotal +' 원)'
-              );
+              //$( api.column( 5 ).footer() ).html('( 현 페이지 : '+ pageTotal +' 원)');
               $("#logtotal").html(total+ "원")
           }
       } );
@@ -245,7 +244,6 @@
 
   $(function () {
     'use strict';
-    console.log("start")
     $('#fileupload').fileupload({
         url: "/api/design/safetyimage",
 				//url:"/api/statics/fileuploader/test.html",
