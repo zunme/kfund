@@ -127,6 +127,24 @@
       </td>
     </tr>
   </table>
+  <center>
+    <table>
+        <?php
+          $sum = 0;
+          foreach ($history as $row) {
+            $sum += $row['safety'];
+        ?>
+      <tr>
+        <td><?php echo $row['safetydate']?></td>
+        <td><?php echo $row['safety_type']?></td>
+        <td><?php echo $row['o_count'] > 0 ? $row['o_count']."회차":""; ?></td>
+        <td class="text-right"><?php echo number_format($row['safety'])?> 원</td>
+        <td><?php echo $row['i_invest_name']?></td>
+      </tr>
+        <?php } ?>
+        <tr><td colspan=3>총 : </td><td class="text-right"><?php echo number_format( $sum)?> 원</td><td></td></tr>
+    </table>
+</center>
   <!--
 <div style="margin: 20px 10px;">
   <div>
