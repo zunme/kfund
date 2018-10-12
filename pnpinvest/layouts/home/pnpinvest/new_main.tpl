@@ -1066,7 +1066,7 @@ $("document").ready(function() {
 
     <div class="container safeguideplan" id="safeguideplandiv" style="padding-bottom:0">
       <div class="safeguideplan-head" style="text-align:left;">
-          Fintech
+          투자상품
         </div>
     </div>
 			<div class="main_product">
@@ -1175,7 +1175,7 @@ $("document").ready(function() {
           background-color: #006691;
         }
       </style>
-			<a class="btn t4 f1 w200 " href="/pnpinvest/?mode=invest" style="border: 1px solid #006691;">투자상품 전체보기</a>
+			<a class="btn t4 f1 w200 " href="/pnpinvest/?mode=invest" style="border: 1px solid #006691;font-size:20px;padding:10px 30px;">투자상품 전체보기</a>
 		</div>
 	</div>
 <!-- / Fintech -->
