@@ -180,6 +180,9 @@ $allpay = sql_fetch($sql);
 	where i_view='Y' and i_id > $startloan
 	";
 	$allpay['percent'] = sql_fetch($sql);
+  $sql = " select count(1) as cnt from mari_invest";
+  $allpay['nujuk'] = sql_fetch($sql);
+
 	$InstanceCache->set('allpay', $allpay, 300);
 }
 

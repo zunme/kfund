@@ -127,6 +127,7 @@
       </td>
     </tr>
   </table>
+  <!--
 <div style="margin: 20px 10px;">
   <div>
     <p>filter:<span id="filterd"></span></p>
@@ -162,7 +163,7 @@
     <?php } ?>
   </div>
 </div>
-
+-->
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 	<script src="/api/statics/fileuploader/js/jquery.iframe-transport.js"></script>
 	<script src="/api/statics/fileuploader/js/jquery.fileupload.js"></script>
