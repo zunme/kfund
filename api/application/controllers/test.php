@@ -18,6 +18,7 @@ class Test extends CI_Controller {
   function index(){
   //  $sunapdate = new sunapdate;
   //  $sunapdate->set('2017-12-31','2018-02-02','2018-01-31');
+  $this->load->view('oauthtest.php');
   }
   function nice() {
     session_start();
