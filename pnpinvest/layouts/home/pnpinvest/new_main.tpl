@@ -1175,7 +1175,7 @@ $("document").ready(function() {
           background-color: #006691;
         }
       </style>
-			<a class="btn t4 f1 w200 " href="/pnpinvest/?mode=invest" style="border: 1px solid #006691;font-size:20px;padding:10px 30px;">투자상품 전체보기</a>
+			<a class="btn t4 f1 w200 " href="/pnpinvest/?mode=invest" style="border: 1px solid #006691;font-size:20px;padding:10px 30px;margin-top:10px;margin-bottom:20px;">투자상품 전체보기</a>
 		</div>
 	</div>
 <!-- / Fintech -->
