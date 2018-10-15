@@ -92,7 +92,7 @@ if( count($z_loaninfo)< 1)    {
 $allpay = $InstanceCache->get('allpay');
 $startloan = 11;
 
-if (is_null($allpay)) {
+if (is_null($allpay) ||( isset($_GET['cache']) && $_GET['cache']=='refresh' ) ) {
 
 //New
 $sql = "
