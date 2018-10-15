@@ -183,7 +183,7 @@ $allpay = sql_fetch($sql);
   $sql = " select count(1) as cnt from mari_invest";
   $allpay['nujuk'] = sql_fetch($sql);
 
-	$InstanceCache->set('allpay', $allpay, 300);
+	$InstanceCache->set('allpay', $allpay, 100);
 }
 
 ?>
