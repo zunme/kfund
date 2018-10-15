@@ -212,8 +212,7 @@ if( $baseinfo['mobileno'] !='') {
               <? } else { ?>
               <input class="input t1 w3" type="text" name="hp3" >
               <?php } ?>
-              <!--label for="m_sms"><input type="checkbox" name="m_sms" id="m_sms" class="ml15" value="1" checked=""> SMS수신동의</label-->
-              <input type="hidden" name="m_sms" id="m_sms" value="1">
+              <label for="m_sms"><input type="checkbox" name="m_sms" id="m_sms" class="ml15" value="1" checked=""> SMS수신동의</label>
 						</p>
 
 					</div>
