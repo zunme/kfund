@@ -28,5 +28,6 @@
   //]]>
 </script>
 
+<a href="https://kauth.kakao.com/oauth/authorize?client_id=e745adefbea5731ddb751ed16bd1e3e4&redirect_uri=<?php urlencode("/api/index.php/test/oauth")?>&response_type=code">로그인하기</a>
 </body>
 </html>
