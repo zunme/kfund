@@ -87,6 +87,10 @@ echo 'loginpage';
     $remain = $won;
     $pay = (int)(floor( $won/$totalcnt));
 
+    $pay_months = explode(',', $loan['pay_months']);
+    if( count($pay_months) < $totalcnt-1 || count($pay_months) == 0 ){
+      $pay_months = array();
+    }
     foreach ($timetable as $row ){
       $row['diff'] = $row['diffdate'];
       $row['end'] = $row['holiday'];
@@ -99,7 +103,7 @@ echo 'loginpage';
       $row['withholding2'] = (int)( $row['ija'] *  $inset['i_withholding_v'] /10)*10;
       $row['withholding'] = $row['withholding1'] + $row['withholding2'];
       /* / */
-      $rep = ($row['num'] == $totalcnt) ? $remain : $pay;
+      $rep = ($row['num'] == $totalcnt) ? $remain : ( isset($pay_months[ ( (int)$row['num']- 1) ] ) ?  (int)(floor($pay_months[((int)$row['num']- 1)]/100*$won)) :  $pay)  ;
       $row['pay'] = $rep;
 
       $remain -= $rep ;
