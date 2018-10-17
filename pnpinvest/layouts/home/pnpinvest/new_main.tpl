@@ -1111,7 +1111,9 @@ $("document").ready(function() {
                     break;
                   }
                 ?>
-							<p class="img_wrap"><span class="img img_w"><img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt></span></p>
+                <a href="/pnpinvest/?mode=invest_view&loan_id=<?php echo $row['i_id']?>">
+    							<p class="img_wrap"><span class="img img_w"><img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt></span></p>
+                </a>
 							<p class="txt"><span class="date fl"><?php $row['i_mainimg_txt1_date']?><?php echo $row['i_mainimg_txt1']?></span><span class="time fr"> <?php echo $row['i_mainimg_txt2']?></span></p>
 						</div>
 						<div class="item_info info2 fr">
