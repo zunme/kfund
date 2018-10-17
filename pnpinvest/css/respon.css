@@ -673,8 +673,9 @@
 @media all and (max-width:400px) {
 /* main */
 .main_product .item {padding:0 0 10px;}
+.main_product .info1 .item {line-height:32px;}
 .main_product .summary {width:52%;}
-.main_product .donut {width:44%;margin-top:-68%;margin-right:6%;}
+.main_product .donut {width:44%;margin-top:-66%;margin-right:5%;}
 .main_product .event {width:56%;margin-right:1;}
 .main_product .summary > li {background-size:28px;padding-left:35px;line-height:20px;}
 /*.main_product .donut_txt span {margin-top:20px;}*/
@@ -685,7 +686,7 @@
 .invest_top .item {padding:0 25px 50px;}
 .invest_top .summary {width:48%;}
 .invest_top .donut,
-.invest_top .event {width:52%;margin-right:0;}
+.invest_top .event {width:54%;margin-right:0;}
 .invest_top .summary > li {background-size:28px;padding-left:35px;line-height:20px;}
 .invest_top .donut_txt span {margin-top:20px;}
 .invest_top .donut_txt strong {font-size:24px;}
