@@ -331,37 +331,38 @@ $result = sql_query($sql, false);
 				<!-- Item Start -->
 				<li>
 					<div class="item">
-<?php
-//N 대기, Y 진행중, C 마감, D 이자, F 완료
-  switch( $row['i_look']){
-    case ('N') :
-?>
-    <span class="item_con end">투자대기</span>
-<?php
-    break;
-    case ('Y') :
-?>
-    <span class="item_con ing">투자모집</span>
-<?php
-    break;
-    case ('C') :
-?>
-    <span class="item_con end">투자마감</span>
-<?php
-    break;
-    case ('D') :
-?>
-    <span class="item_con end">이자상환</span>
-<?php
-    break;
-    default:
-?>
-    <span class="item_con end">상환완료</span>
-<?php
-    break;
-  }
-?>
+
 						<div class="item_info info1 fl">
+              <?php
+              //N 대기, Y 진행중, C 마감, D 이자, F 완료
+                switch( $row['i_look']){
+                  case ('N') :
+              ?>
+                  <span class="item_con end">투자대기</span>
+              <?php
+                  break;
+                  case ('Y') :
+              ?>
+                  <span class="item_con ing">투자모집</span>
+              <?php
+                  break;
+                  case ('C') :
+              ?>
+                  <span class="item_con end">투자마감</span>
+              <?php
+                  break;
+                  case ('D') :
+              ?>
+                  <span class="item_con end">이자상환</span>
+              <?php
+                  break;
+                  default:
+              ?>
+                  <span class="item_con end">상환완료</span>
+              <?php
+                  break;
+                }
+              ?>
 							<div class="img_wrap">
 								<p class="img">
 									<img src="/pnpinvest/data/photoreviewers/<?php echo $row['i_id']?>/<?php echo $row['mainpost']?>" alt>
