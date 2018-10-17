@@ -29,6 +29,97 @@ class Main extends CI_Controller {
   public function login(){
 echo 'loginpage';
   }
+  public function calcabout2(){
+    $inset = $this->mainbase->inset();
+    $loanid = $this->input->get('loanid');
+    $won = ((int)$this->input->get('won') > 0  ) ? $this->input->get('won') : 0 ;
+    $won = str_replace(',' , '', $won);
+    if((int)$won < 0){
+      if($this->input->get('type') == 'htmlpc') {echo "
+        <script>
+          alert('계산 최소 금액은 5,000,000 입니다.');
+          $('input[name=loan_pay]').val('5,000,000');
+        </script>";}
+      $won = 5000000;
+    }
+    $tmp = $this->mainbase->loaninfo_for_calc($loanid);
+    $tmp['won'] = $won;
+    $inset = $this->mainbase->getMemberlimit($this->user);
+
+    $tmp['profit'] = is_null($tmp['default_profit']) ? $inset['i_profit'] : $tmp['default_profit'];
+    $tmp['withholding'] = $inset['i_withholding'] + $inset['i_withholding_v'];
+    $tmp['i_withholding'] = $inset['i_withholding']*100;
+    $tmp['i_withholding_v'] = $inset['i_withholding_v']*100;
+    $tmp['invest_flag'] = $inset['invest_flag'];
+    $sql = "
+      select
+      date_format( i_loanexecutiondate,'%Y-%m-%d') as startd1
+      , date_format( date_add(now() , interval 0 day ),'%Y-%m-%d') as startd2
+      ,a.*, b.* from mari_loan a
+      left join mari_loan_ext b on a.i_id = b.fk_mari_loan_id
+      where i_id = ?
+    ";
+    $loan = $this->db->query($sql, array($this->input->get('loanid')))->row_array();
+    if(!isset($loan['i_id'])){
+      return;
+    }
+    //i_repay 일만기일시상환.. , i_repay_day 매월상환일, i_loan_day:개월 ,
+    //i_loanexecutiondate 실행일, i_reimbursement_date 만기일 , i_year_plus 이율
+    //$cfg = array('start'=>'2018-01-31', 'end'=>'2018-03-11','month'=>'1', 'dayofeverymonth'=>'17')
+    $cfg['start'] = $loan['startd1'] =='0000-00-00' ? $loan['startd2'] : $loan['startd1'];
+     $loan['i_reimbursement_date']='';
+    if( $loan['i_reimbursement_date'] != '' ) {
+      $cfg['end'] = $loan['i_reimbursement_date'];
+      $cfg['dayofeverymonth'] = $loan['i_repay_day'];
+    }
+    else $cfg['month'] = $loan['i_loan_day'];
+    //$cfg['dayofeverymonth'] = $loan['i_repay_day'];
+    //var_dump($cfg);
+    $this->load->library('calcinterest');
+    $this->calcinterest->setDate($cfg);
+    $timetable = $this->calcinterest->makeTimetable();
+    //var_dump($tmp);
+    //var_dump($timetable);
+    $data = array();
+    $total = array('ija'=>0, 'profit'=>0,'withholding'=>0,'tot'=>0);
+    $totalcnt = count($timetable);
+
+    $remain = $won;
+    $pay = (int)(floor( $won/$totalcnt));
+
+    foreach ($timetable as $row ){
+      $row['diff'] = $row['diffdate'];
+      $row['end'] = $row['holiday'];
+
+      /*계산 */
+      $row['ija'] = round( (int)$remain*(float)$tmp['i_year_plus']/100/365*(int)$row['diffdate'] );
+      $row['profit'] = floor( $remain * $tmp['profit']*12/365* (int)$row['diffdate'] );
+      //$inset['i_withholding'] + $inset['i_withholding_v'];
+      $row['withholding1'] = (int)( $row['ija'] *  $inset['i_withholding'] /10)*10;
+      $row['withholding2'] = (int)( $row['ija'] *  $inset['i_withholding_v'] /10)*10;
+      $row['withholding'] = $row['withholding1'] + $row['withholding2'];
+      /* / */
+      $rep = ($row['num'] == $totalcnt) ? $remain : $pay;
+      $row['pay'] = $rep;
+
+      $remain -= $rep ;
+      $row['remain'] = $remain;
+
+      $row['tot'] = $row['ija'] - $row['profit'] - $row['withholding'];
+
+      $data[] = $row;
+
+      $total['ija'] += $row['ija'];
+      $total['profit'] += $row['profit'];
+      $total['withholding'] += $row['withholding'];
+      $total['tot'] += $row['tot'];
+    }
+
+    $result = array( 'code'=>200, 'info'=>$tmp, 'calc'=>$data, 'total'=>$total );
+    if($this->input->get("type")=="htmlpc") $this->load->view('calcabout', $result);
+    else if( $this->input->get("type")=="json" ) echo json_encode($result);
+  }
+
   public function calcabout(){
     $inset = $this->mainbase->inset();
     $loanid = $this->input->get('loanid');
@@ -43,7 +134,6 @@ echo 'loginpage';
       $won = 5000000;
     }
     $tmp = $this->mainbase->loaninfo_for_calc($loanid);
-
     $tmp['won'] = $won;
     $inset = $this->mainbase->getMemberlimit($this->user);
 
@@ -52,6 +142,10 @@ echo 'loginpage';
     $tmp['i_withholding'] = $inset['i_withholding']*100;
     $tmp['i_withholding_v'] = $inset['i_withholding_v']*100;
     $tmp['invest_flag'] = $inset['invest_flag'];
+    if($tmp['i_repay']!="일만기일시상환"){
+      $this->calcabout2($tmp, $inset);
+      return;
+    }
     $data = array();
     $total = array('ija'=>0, 'profit'=>0,'withholding'=>0,'tot'=>0);
 
