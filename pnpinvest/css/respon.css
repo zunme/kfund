@@ -10,18 +10,9 @@
 .invest_view .aside .btn {width:40%;max-width:150px;}
 .invest_alarm {display:block;}
 .invest_top h4 {font-size: 18px;font-weight: bold;height:80px;margin-top:10px;overflow: hidden;text-align: left;}
+.invest_all .folditem {margin:0 auto;transition: 0.2s ease-out;display: block;width:150px;text-align: center;cursor: pointer;color:#061551; font-size: 18px;line-height: 24px;border-bottom: 1px solid #061551; margin-bottom:30px;}
 
-.product .item .item_info .img_wrap {width:100%;height:100%;}
-.product > li {position: relative;padding:1px 50px 0px;}
-.product .item {position: relative;background-color: #fff;border:1px solid #cecece;padding:15px;overflow:hidden;transition:0.2s ease-out;}
-.product .item .item_info {width:49%;position: relative;}
-.product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 18px;width:140px;height:40px;line-height: 40px;text-align: center;}
-.product .item .item_info .img_wrap {width:100%;height:100%}
-.product .info1 .txt {margin-top:5px; background:#7c7b7b; color:#fff; line-height: 40px; padding:0 10px; overflow:hidden;}
-.product .summary {line-height: 50px;margin: 0 auto 5px; text-align: left;margin-top: 25px; margin-bottom: 25px;}
-.product .item_event {float: left;display: inline-block;width:49%;line-height: 40px;font-size: 16px;font-weight:bold;color:#fff;margin-top:16px;text-align:center;}
-.product .item_progress > div {display:inline-block;width:85%;}
-.product .item_progress .ib {width:14%;}
+
 
 
 
