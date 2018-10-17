@@ -11,9 +11,52 @@ class  Design extends Adm {
 	{
 		;
 	}
-
+ function confirmlog() {
+   $won = preg_replace("/[^\d]/","",$this->input->post('won') );
+   if( $this->input->post('won') !='undefined' && $won > 0 ){
+     $this->db->set('safety', $won);
+   }
+   $res = $this->db->set('confirm','Y')->where('history_idx',$this->input->post('history_idx'))
+          ->update('z_safetyguide_log');
+   if( !$res ) {
+    echo json_encode(array("code"=>500, 'msg'=> $this->input->post('history_idx')." 데이터를 ".$won."원으로 업데이트 시 에러 발생")) ;
+    return;
+  }
+  $sum = $this->db->query("select sum(safety) as now_safety from  z_safetyguide_log where confirm='Y'")->row_array();
+  $this->db->query("update z_main_design set nowplan = ? where idx = 1", array($sum['now_safety']) );
+  $total = $this->db->query("select sum(safety) as total from  z_safetyguide_log")->row_array();
+  echo json_encode( array('code'=> 200, 'data'=> $sum['now_safety'], 'total'=> $total['total']));
+ }
   public function main() {
-      $this->load->view('cfg_maindesign.php', array("data"=> $this->db->get_where('z_main_design', array('idx'=> 1) )->row_array() ));
+    $sql = "
+    insert IGNORE into z_safetyguide_log
+    select 0 as history_idx, unioned.*,'N' as confirm, inv.i_invest_name
+    from
+    (
+    	select susuryo.loan_id,'수수료' as safety_type, susuryo.o_count, susuryo.safety, b.acceptance_date as safetydate from
+    	(select a.loan_id,a.o_count,a.history_idx, sum(a.susuryoPayed) as safety from z_invest_sunap_detail a group by a.loan_id, a.history_idx) susuryo
+    	join z_invest_sunap b on susuryo.history_idx = b.idx
+    	union all
+    	select
+    		b.loan_id,'투자' as safety_type, 0 as o_count
+    		,floor(sum(b.i_pay)/1000*3) as safety, date_format(i_regdatetime, '%Y-%m-%d') as safetydate
+    	from
+    		(select loan_id from mari_invest_progress a where loan_id > 11 and i_view ='Y' and i_look in('D','F')) loan
+    	join mari_invest b on loan.loan_id = b.loan_id
+    	group by b.loan_id
+    ) unioned
+    join mari_invest_progress inv on unioned.loan_id = inv.loan_id
+     ;
+    ";
+    $this->db->query($sql);
+    $sql = "
+    select
+    	a.*
+    from z_safetyguide_log a
+    order by a.safetydate desc
+    ";
+    $history = $this->db->query($sql)->result_array();
+      $this->load->view('cfg_maindesign.php', array("history"=>$history,"data"=> $this->db->get_where('z_main_design', array('idx'=> 1) )->row_array() ));
   }
   public function safetyimage() {
     $config['upload_path'] = "../pnpinvest/data/safetyplan";

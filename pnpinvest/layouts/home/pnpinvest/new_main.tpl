@@ -92,7 +92,7 @@ if( count($z_loaninfo)< 1)    {
 $allpay = $InstanceCache->get('allpay');
 $startloan = 11;
 
-if (is_null($allpay)) {
+if (is_null($allpay) ||( isset($_GET['cache']) && $_GET['cache']=='refresh' ) ) {
 
 //New
 $sql = "
@@ -180,7 +180,10 @@ $allpay = sql_fetch($sql);
 	where i_view='Y' and i_id > $startloan
 	";
 	$allpay['percent'] = sql_fetch($sql);
-	$InstanceCache->set('allpay', $allpay, 300);
+  $sql = " select count(1) as cnt from mari_invest";
+  $allpay['nujuk'] = sql_fetch($sql);
+
+	$InstanceCache->set('allpay', $allpay, 100);
 }
 
 ?>

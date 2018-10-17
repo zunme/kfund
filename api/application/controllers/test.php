@@ -1,9 +1,24 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Test extends CI_Controller {
+  function oauth() {
+    $this->load->driver('cache', array('adapter' => 'file'));
+
+    if ( isset($_GET) && count($_GET) > 0 )
+    {
+      var_dump(count($_GET) );
+         $this->cache->save('foo', array( "code"=>"get", "data"=>$_GET), 300);
+    } else if ( isset($_POST) && count($_POST) > 0)
+    {
+            var_dump(count($_GET) );
+         $this->cache->save('foo', array( "code"=>"post", "data"=>$_POST), 300);
+    } else var_dump( $this->cache->get('foo') );
+  }
+
   function index(){
-    $sunapdate = new sunapdate;
-    $sunapdate->set('2017-12-31','2018-02-02','2018-01-31');
+  //  $sunapdate = new sunapdate;
+  //  $sunapdate->set('2017-12-31','2018-02-02','2018-01-31');
+  $this->load->view('oauthtest.php');
   }
   function nice() {
     session_start();
