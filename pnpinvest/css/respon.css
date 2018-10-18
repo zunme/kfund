@@ -1128,13 +1128,13 @@
 .invest_top .item {padding:0 10px 50px;}
 .invest_top .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 34px;text-align: center;}
 .invest_top .summary {width:48%;margin-top:-25px;}
-.invest_top .donut {width:46%;margin-right:3%;margin-top:-4px;}
-.invest_top .event {width:50%;margin-right:0;}
+.invest_top .donut {width:50%;margin-right:0%;margin-top:-2px;}
+.invest_top .event {width:50%;margin-right:0;margin-top:18px;}
 .invest_top .summary > li {background-size:28px;padding-left:35px;line-height:20px;}
 .invest_top .donut_txt span {margin-top:20px;}
 .invest_top .donut_txt strong {font-size:30px;}
 .invest_top .event span {font-size:12px;}
-.invest_top .event2 {margin-top:5px;}
+.invest_top .event2 {margin-top:6px;}
 
 .my_info_01 .name span {width:70px;font-size:18px;}
 
