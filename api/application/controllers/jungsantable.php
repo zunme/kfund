@@ -41,12 +41,31 @@ class jungsantable extends CI_Controller {
         when ( mem.m_signpurpose ='I2') then inset.i_withholding_incomeloan + inset.i_withholding_incomeloan_v
         else inset.i_withholding_personal + inset.i_withholding_personal_v
         end as withholdingp
+        , case
+              when ( mem.m_level > 2 ) then inset.i_withholding_burr
+              when ( mem.m_signpurpose ='I') then inset.i_withholding_in
+              when ( mem.m_signpurpose ='P') then inset.i_withholding_pro
+              when ( mem.m_signpurpose ='L2') then inset.i_withholding_personalloan
+              when ( mem.m_signpurpose ='C2') then inset.i_withholding_corporateloan
+              when ( mem.m_signpurpose ='I2') then inset.i_withholding_incomeloan
+              else inset.i_withholding_personal
+              end as tax1
+        ,  case
+              when ( mem.m_level > 2 ) then  inset.i_withholding_burr_v
+              when ( mem.m_signpurpose ='I') then inset.i_withholding_in_v
+              when ( mem.m_signpurpose ='P') then inset.i_withholding_pro_v
+              when ( mem.m_signpurpose ='L2') then inset.i_withholding_personalloan_v
+              when ( mem.m_signpurpose ='C2') then inset.i_withholding_corporateloan_v
+              when ( mem.m_signpurpose ='I2') then inset.i_withholding_incomeloan_v
+              else inset.i_withholding_personal_v
+              end as tax2
     from mari_member mem
       join mari_inset inset
     where mem.m_id = ?
     ";
     $row = $this->db->query($sql, array($this->userid) )->row_array();
     $withholdingp = (isset($row['withholdingp'])) ? $row['withholdingp'] : '0.275';
+    $tax1 = $row['tax1'];$tax2 = $row['tax2'];
     $sql = "
       select ifnull( ext.default_profit , inset.i_profit ) default_susuryo, loa.*
       from mari_loan loa
@@ -62,9 +81,7 @@ class jungsantable extends CI_Controller {
         left join mari_loan_ext b on a.i_id = b.fk_mari_loan_id
         where a.i_id = ?";
     $loaninfo = $this->db->query($sql, array( $this->input->get('loanid') ))->row_array();
-    $timetable =  $jungsantb->history($loaninfo, $this->input->get('won'), $this->userid,$withholdingp, $default_susuryo)  ;
-    var_dump($loaninfo);
-    var_dump($timetable);
+    $timetable =  $jungsantb->history($loaninfo, $this->input->get('won'), $this->userid,$withholdingp, $default_susuryo,$tax1, $tax2)  ;
   }
 
 
@@ -133,6 +150,24 @@ class jungsantable extends CI_Controller {
     		when ( mem.m_signpurpose ='I2') then inset.i_withholding_incomeloan + inset.i_withholding_incomeloan_v
     		else inset.i_withholding_personal + inset.i_withholding_personal_v
     		end as withholdingp
+        , case
+              when ( mem.m_level > 2 ) then inset.i_withholding_burr
+              when ( mem.m_signpurpose ='I') then inset.i_withholding_in
+              when ( mem.m_signpurpose ='P') then inset.i_withholding_pro
+              when ( mem.m_signpurpose ='L2') then inset.i_withholding_personalloan
+              when ( mem.m_signpurpose ='C2') then inset.i_withholding_corporateloan
+              when ( mem.m_signpurpose ='I2') then inset.i_withholding_incomeloan
+              else inset.i_withholding_personal
+              end as tax1
+        ,  case
+              when ( mem.m_level > 2 ) then  inset.i_withholding_burr_v
+              when ( mem.m_signpurpose ='I') then inset.i_withholding_in_v
+              when ( mem.m_signpurpose ='P') then inset.i_withholding_pro_v
+              when ( mem.m_signpurpose ='L2') then inset.i_withholding_personalloan_v
+              when ( mem.m_signpurpose ='C2') then inset.i_withholding_corporateloan_v
+              when ( mem.m_signpurpose ='I2') then inset.i_withholding_incomeloan_v
+              else inset.i_withholding_personal_v
+              end as tax2
     from mari_invest inv
     join mari_loan loa on inv.loan_id = loa.i_id
     join mari_member mem on inv.m_id = mem.m_id
@@ -165,7 +200,7 @@ where a.loan_id =? and a.sale_id = ? order by a.o_count";
               left join mari_loan_ext b on a.i_id = b.fk_mari_loan_id
               where a.i_id = ?";
           $loaninfo = $this->db->query($sql, array( $row['loan_id']))->row_array();
-          $timetable = array_merge($timetable, $jungsantb->history($loaninfo, $row['i_pay'], $this->userid,$row['withholdingp'], $row['default_susuryo']) ) ;
+          $timetable = array_merge($timetable, $jungsantb->history($loaninfo, $row['i_pay'], $this->userid,$row['withholdingp'], $row['default_susuryo'], $row['tax1'], $row['tax2']) ) ;
         }else {
           //만기일시상환
           $sql = "select
@@ -221,7 +256,7 @@ class jungsantb {
     date_default_timezone_set('Asia/Seoul');
     $this->CI=& get_instance();
   }
-  function history(&$loaninfo,$i_pay ,$userid, $withholdingp=0.275,$susuryo=0 ){
+  function history(&$loaninfo,$i_pay ,$userid, $withholdingp=0.275,$susuryo=0 , $tax1=0.25, $tax2=0.025){
     $timetable = $this->timetable($loaninfo);
     $realtime = $this->CI->db->query ('select *, date_format(o_collectiondate,"%Y-%m-%d" ) as repay_date  from view_jungsan where loan_id =? and sale_id = ? order by o_count', array($loaninfo['i_id'], $userid ) )->result_array();
 
@@ -275,7 +310,7 @@ class jungsantb {
         $row ['invtotal'] = $row ['inv'] + $row ['Delinquency'];
         $row ['remaining_amount'] = ( $idx == count($timetable)-1 ) ? 0: $remain;
         $row ['susuryo'] = $tmpsusuryo;
-        $row ['o_withholding'] = floor($row ['invtotal']*$withholdingp/10)*10;
+        $row ['o_withholding'] = floor($row ['invtotal']*$tax1/10)*10 + floor($row ['invtotal']*$tax2/10)*10;
         $row ['p_emoney'] = $row['wongum'] + $row ['invtotal'] - $row ['susuryo'] - $row ['o_withholding'];
       }
     }
