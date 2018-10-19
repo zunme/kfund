@@ -749,9 +749,9 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 
 
 @media all and (max-width:400px) {
-.product > li {padding:0; margin-bottom:30px;}
-.product .summary {width:98%; line-height: 30px; margin: 5px auto 5px; text-align: left;}
-.product .summary .sm_1 {margin-bottom:22px;}
+.product > li {padding:0; margin-bottom:20px;}
+.product .summary {width:98%; line-height: 30px; margin: 5px auto 15px; text-align: left;}
+.product .summary .sm_1 {margin-bottom:15px;}
 .product .item {position:relative;background-color: #fff;border:1px solid #cecece; padding:10px; overflow:hidden; transition:0.2s ease-out;}
 .product .info1 .img_wrap{width:100%;height:100%;}
 .product .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 34px;text-align: center;}
