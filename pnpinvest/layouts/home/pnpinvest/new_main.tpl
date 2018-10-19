@@ -249,9 +249,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- '/pnpinvest/img/main_top_new.jpg' -->
 <div id="pageheader" class="page-header header-filter clear-filter header-small " data-parallax="true" filter-color="center_gradient" style="width:100vw;background-image: url('/assets/img/mainbg_0705.jpg');background-position: center right;background-size: cover;">
-
-
-
   <style>
   /* svg */
   #pieces {
