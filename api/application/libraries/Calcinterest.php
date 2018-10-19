@@ -100,10 +100,10 @@ class Calcinterest {
   }
   //ADD MONTHS
   function addMonts($timestamp,$intval){
-    $day = date('d', $timestamp);
+    //$day = date('d', $timestamp);
     $tmp = strtotime('+'.(int)$intval.' month', strtotime(date('Y-m',$timestamp).'-01') );
     $last = $this->lastDay($tmp);
-    $day = ($day > $last) ? $last : $day;
+    $day = ($this->dayofeverymonth > $last) ? $last : $this->dayofeverymonth;
     return strtotime(date('Y-m', $tmp).'-'.$day);
   }
   function getDiffDate($start_timestamp, $end_timestamp){
