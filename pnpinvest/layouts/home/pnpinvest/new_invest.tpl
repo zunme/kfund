@@ -584,7 +584,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 }
 ?>
 <style>
-
+.invest_top .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 18px;width:140px;height:40px;line-height: 38px;text-align: center;}
 
 
 .product > li {padding:30px 50px 0; margin-bottom:0px;}
@@ -631,6 +631,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 }
 @media all and (max-width:950px) {
 .product .summary {width:98%; line-height: 30px; margin: 18px auto 18px; text-align: left;}
+	.invest_top .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 32px;text-align: center;}
 }
 @media all and (max-width:940px) {
 .product .summary {width:98%; line-height: 30px; margin: 16px auto 17px; text-align: left;}
@@ -678,6 +679,8 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product .summary {width:98%; line-height: 30px; margin: 12px auto 12px; text-align: left;}
 }
 @media all and (max-width:800px) {
+.invest_top .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 18px;width:140px;height:40px;line-height: 38px;text-align: center;}
+
 .product .summary .sm_1 {margin-bottom:15px;}
 .product .summary {width:98%; line-height: 30px; margin: 14px auto 14px; text-align: left;}
 .product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 14px;width:110px;height:34px;line-height: 30px;text-align: center;}
@@ -729,6 +732,8 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product.gallery .item_progress > div {width:89%;}
 }
 @media all and (max-width:550px) {
+	.invest_top .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 32px;text-align: center;}
+
 .product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 32px;text-align: center;}
 .product.gallery .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 16px;text-align: center;}
 }
@@ -753,11 +758,12 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 
 .product .item h4 {margin:10px 0 0;height:65px;overflow:hidden;}
 .product .item .item_info .item_progress .progress {margin-bottom:0px;}
-.product .item_progress .ib {width:100%;}
-.progress {margin-bottom:0px;}
-.product .item_progress > div {width:100%;}
-.product.gallery .item_progress > div {width:100%;}
 
+.progress {margin-bottom:0px;}
+.product .item_progress .ib {width:14%;}
+.product .item_progress > div {width:85%;}
+.product.gallery .item_progress .ib {width:14%;}
+.product.gallery .item_progress > div {width:85%;}
 .invest_top .summary > li {background-size:28px;padding-left:35px;line-height:20px;margin-bottom:15px;}
 .invest_top .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 35px;text-align: center;}
 .invest_top .donut_txt span {margin-top:18px;}
