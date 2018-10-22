@@ -2939,7 +2939,7 @@ function graphdraw() {
 .main_product .item {padding:0 0 10px;}
 .main_product .summary {width:52%;}
 .main_product .donut {width:44%;margin-top:-68%;margin-right:5%;}
-.main_product .event {width:54%;margin-right:1;margin-top:-72px; }
+.main_product .event {width:54%;margin-right:1;margin-top:-68px; }
 .main_product .summary > li {background-size:28px;padding-left:35px;line-height:20px;}
 /*.main_product .donut_txt span {margin-top:20px;}*/
 .main_product .donut_txt strong {font-size:30px;}
