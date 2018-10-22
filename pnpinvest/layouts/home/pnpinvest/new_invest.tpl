@@ -585,6 +585,7 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 ?>
 <style>
 .invest_top .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 18px;width:140px;height:40px;line-height: 38px;text-align: center;}
+.invest_all .folditem {width:150px;}
 
 
 .product > li {padding:30px 50px 0; margin-bottom:0px;}
