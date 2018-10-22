@@ -501,13 +501,20 @@
 	- 저축은행/새마을금고 중앙회</p></div>
       </div>
     </div>
+
+
     <div class="col-sm-4 colimgbox">
-      <div class="box_a">
+ <div class="box">
 	<img src="img/pp07.jpg" alt="임성택">
+
         <div class="box-title">Chief Technology Officer <br>
-	Lim Sung Taek</div>
-      </div>
+	Lim Sung Taek<br>
+	<p style="font-size:15px;line-height:26px;color:#89afb7">
+- kt cloud Mysql DBA</p></div>
     </div>
+    </div>
+
+
     <div class="col-sm-4 colimgbox">
       <div class="box">
  	<img src="img/pp09.jpg" alt="최용원">
@@ -518,14 +525,20 @@
       </div>
     </div>
 
-    <div class="col-sm-4 colimgbox">
-      <div class="box_a">
 
+
+    <div class="col-sm-4 colimgbox">
+			      <div class="box">
 	<img src="img/pp10.jpg" alt="명소민">
         <div class="box-title">Head of Design <br>
-	Myeong So Min </div>
-      </div>
+
+	Myeong So Min <br>
+	<p style="font-size:15px;line-height:26px;color:#89afb7">
+- 게임ui / 웹디자인</p></div>
     </div>
+    </div>
+
+
 		<div class="col-sm-4 colimgbox">
 			<div class="box">
 	<img src="img/pp12.jpg" alt="박인범">
