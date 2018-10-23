@@ -534,7 +534,7 @@
 
 	Myeong So Min <br>
 	<p style="font-size:15px;line-height:26px;color:#89afb7">
-- 게임ui / 웹디자인</p></div>
+- 게임UI/UX, 웹디자인</p></div>
     </div>
     </div>
 
