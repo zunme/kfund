@@ -141,8 +141,44 @@ if(!$isauthed) { ?>
 				</ul>
 				<p class="progress"><span class="p_bar" style="width:<?php echo $order_pay?>%;"><span></p>
 				<p class="guide"><?php echo (isset($extinfo['descript']) ? nl2br($extinfo['descript']) :'')?></p>
-          <p class="guide"style="border-top:1px solid #b7b7b7;">해당상품은 총 3.2억원중 케이펀딩(1.6억)과 펀디드(1.6억)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.<br><img src="img/pundid.png" style="margin-top:20px;" ></p>
+        <?php if ($loa['i_id'] == '18') { ?>
+          <!--
+          <p class="guide"style="border-top:1px solid #b7b7b7;">해당상품은 총 3.2억원중 케이펀딩(1.6억)과 펀디드(1.6억)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.<br>
+            <a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a>
+          </p>
+        -->
+        <?php } ?>
 			</div>
+      <?php if ($loa['i_id'] == '18') { ?>
+      <!-- temporary division -->
+      <style>
+          .with_companys{
+            margin: 10px auto;
+            padding: 25px 30px 25px;
+            line-height: 24px;
+            font-size: 16px;
+            border:2px solid #061451;
+          }
+          .with_companys_head{
+            max-width:650px;
+            margin : 0 auto;
+          }
+          .with_companys_bottom{
+            padding-top:20px;
+            text-align:center;
+          }
+      </style>
+      <div class="with_companys">
+        <div class="with_companys_head">
+        해당상품은 총 3.2억원중 케이펀딩(1.6억)과 펀디드(1.6억)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.
+        </div>
+        <div class="with_companys_bottom">
+          <a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a>
+        </div>
+      </div>
+      <!-- / temporary division -->
+      <?php } ?>
+
 			<!-- 따라다니는 영역 -->
 			<div class="aside">
 				<ul class="info">
