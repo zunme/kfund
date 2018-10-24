@@ -40,7 +40,7 @@
 }
 </style>
 <footer id="ft">
-	<div style="background-color:#020d2b;border-bottom:1px solid #292929;">
+	<div style="background-color:#020d2b;border-bottom:1px solid #292929;padding-left:14px;">
 		<ul class="footer_line_ul" style="margin: 0 auto;">
 			<li class="modal-link" data-title="서비스 이용 약관" data-url="/pnpinvest/css/con01.htm" >서비스이용약관</li>
 			<li>|</li>
@@ -54,10 +54,9 @@
 
 
 	<style>
-	.newfooter{
-		padding-top :15px;
-		padding-bottom :15px;
-	}
+#ft .container {padding:15px 30px 25px;overflow:hidden;}
+
+	.newfooter{padding-top :15px;padding-bottom :15px;}
 
 	.newfooter .row{
 		margin-top:15px;
@@ -108,15 +107,15 @@
 	.splitdiv div{display:inline-block}
 	.splitdiv .splitline{padding-left:10px;padding-right:10px;}
 	.newcol .imgdiv{
-		    text-align: center;
+		    text-align: left;
 		margin-bottom:10px;
 	}
 .newcol .imgdiv img{
 	padding-right:10px;
 }
-@media (max-width: 1034px){
+@media (max-width: 1120px){
 	.newcol.desc{
-		#margin-left:200px;
+		margin-left:203px;
 	}
 }
 @media (max-width: 992px){
@@ -124,11 +123,17 @@
 		margin-left: 204px;
 	}
 }
-	@media (max-width: 560px){
+@media (max-width: 780px){
+	.p2plogo{
+		margin-top: 40px;
+	}
+}
+	@media (max-width: 611px){
+		.footer_time{padding-left:10px;font-size: 16px;}
 		.newfooter .row{
 			#width: 450px;
-			margin-left: auto;
-			margin-right: auto;
+			#margin-left: auto;
+			#margin-right: auto;
 		}
 		.newcol{
 			margin-left:auto;margin-right:auto;width:100%;
@@ -150,10 +155,12 @@
 			margin-left:0;
 		}
 	}
+	.newfooter .row:last-child {margin-top:-30px;}
 .row.lastdesc p{
 	font-size: 14px;
 	font-weight: normal;
 	color : #b5b3b3;
+	padding-left:12px;
 }
 
 	</style>
@@ -180,7 +187,7 @@
 				</div>
 				<div>E-mail.help@kfunding.co.kr</div>
 			</div>
-			<div class="newcol desc" style="padding-right:30px;">
+			<div class="newcol desc" style="text-indent:-8px;padding-left:25px;">
 				<div>
 					<p><i class="far fa-check-circle"></i> 광고 제안은 메일로 보내주시길 바라며, 전화문의는 절대 사절합니다.</p>
 					<p><i class="far fa-check-circle"></i> 주말 및 공휴일은 운영하지 않습니다.</p>
@@ -190,7 +197,7 @@
 		</div>
 
 
-		<div class="row" style="margin-bottom:5px;">
+		<div class="row">
 			<div class="newcol first">
 				<div class="roundbar">
 					<p class="round">케이펀딩 회사정보</p>
@@ -222,16 +229,16 @@
 			</div>
 		</div>
 
-		<div class="row lastdesc" style="text-align: left;">
-			<div style="display:inline-block;margin:0 auto;text-align:left;  position: relative;padding-right: 30px;float:left;padding-top:20px;">
+		<div class="row lastdesc" style="text-align: left;text-indent:-8px;">
+			<div style="display:inline-block;margin:0 auto;text-align:left;  position: relative;padding-left: 15px;float:left;padding-right:10px;">
 				<p><i class="far fa-comment"></i> 대출금리 연 19.9%이내 (연체금리 연 24% 이내) 플랫폼 이용료 외 기타 부대비용은 없습니다.</p>
 				<p><i class="far fa-comment"></i> 중개수수료를 요구하거나 받는 행위는 불법입니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.</p>
 				<p><i class="far fa-comment"></i> 대출 시 귀하의 신용등급이 하락할 수 있습니다.</p>
 				<p><i class="far fa-comment"></i> 채무의 조기상환수수료율 등 조기상환조건 없습니다. 중개수수료를 요구하거나 받는 행위는 불법 입니다.</p>
 				<p class="blue" style="color:white"><i class="far fa-comment"></i> 저희 케이펀딩은 투자원금과 수익을 보장하지 않으며 투자 손실에 대한 책임은 모두 투자자에게 있습니다.</p>
 			</div>
-			<div style="float:right;position:relative;">
-				<a href="http://p2plending.or.kr/" target="_blank"><img src="/pnpinvest/img/k_p2p_logo.png" style="padding-right: 30px;"></a>
+			<div class="p2plogo"style="float:right;position:relative;">
+				<a href="http://p2plending.or.kr/" target="_blank"><img src="/pnpinvest/img/k_p2p_logo.png" style="width:120px;"></a>
 			</div>
 			<div style="clear:both"></div>
 				<!--a class="kcfa" href="http://crowdfunding.or.kr/" ><img src="/pnpinvest/img/crelogo.png" alt="한국크라우드 펀딩협회"></a-->
@@ -335,19 +342,6 @@ if(!wcs_add) var wcs_add = {};
 wcs_add["wa"] = "9d1c0cd58e8b30";
 wcs_do();
 </script>
-<style>
-.newcol .imgdiv {text-align:left; margin-bottom:10px;}
-.newfooter .row:last-child {margin-top:0px;margin-left:0px;}
 
-
-@media all and (max-width:400px) {
-#ft .container {padding:15px 10px 15px;}
-.footer_time {padding-left:10px;font-size:16px;}
-.newcol .imgdiv {text-align:left; margin-bottom:10px;}
-.newcol.desc {margin-left:0;padding-right:30px;}
-.newfooter .row {margin-top:15px;margin-bottom:30px;padding-bottom:22px;}
-.newfooter .row:last-child {margin-top:0px;}
-}
-</style>
 </body>
 </html>
