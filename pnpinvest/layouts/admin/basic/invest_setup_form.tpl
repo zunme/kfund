@@ -1,6 +1,22 @@
 <?php
 include(MARI_VIEW_PATH.'/Common_select_class.php');
 include_once(MARI_EDITOR_LIB);
+function tohtmlstring($str){
+	if($str != strip_tags($str)) return stripslashes($str);
+	else {
+		$tmparr = preg_split('/\r\n|\r|\n/', $str);
+		echo("
+		================ tohtmlstring ================
+		");
+		var_dump($tmparr);
+		$str ='';
+		foreach($tmparr as $row){
+			$str .= "<p>".$row."</p>";
+		}
+		var_dump($str);
+		return $str;
+	}
+}
 ?>
 <!--
 ┏━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -1080,7 +1096,7 @@ margin-top: 5px;
 
 					<span class="btn btn-success fileinput-button">
 							<i class="glyphicon glyphicon-plus"></i>
-							<span>리워드이미지업로드(gif,jpg,png)</span>
+							<span>투자요약이미지업로드(gif,jpg,png)</span>
 							<!-- The file input field used as target for the file upload widget -->
 							<input id="rewardfileupload" type="file" name="userfile" multiple>
 					</span>
@@ -1092,7 +1108,7 @@ margin-top: 5px;
 						<?php
 						if( isset($loan_ext['reward'] ) && $loan_ext['reward'] !='' ){
 							?>
-							<a class="btn btn-preview" id="reward-preview" data-fancybox="gallery" href="/pnpinvest/data/file/<?php echo $loan_id;?>/<?php echo $loan_ext['reward']?>">리워드 파일 보기</a>
+							<a class="btn btn-preview" id="reward-preview" data-fancybox="gallery" href="/pnpinvest/data/file/<?php echo $loan_id;?>/<?php echo $loan_ext['reward']?>">투자요약 파일 보기</a>
 							<?php
 						}else echo "<a class='btn btn-preview'>업로드된 파일이 없습니다.</a>";
 						?>
@@ -1167,7 +1183,7 @@ margin-top: 5px;
 
 					<span class="btn btn-success fileinput-button">
 							<i class="glyphicon glyphicon-plus"></i>
-							<span>이벤트이미지업로드(gif,jpg,png)</span>
+							<span>신용정보이미지업로드(gif,jpg,png)</span>
 							<!-- The file input field used as target for the file upload widget -->
 							<input id="eventfileupload" type="file" name="userfile" multiple>
 					</span>
@@ -1179,7 +1195,7 @@ margin-top: 5px;
 						<?php
 						if( isset($loan_ext['eventfile'] ) && $loan_ext['eventfile'] !='' ){
 							?>
-							<a class="btn btn-preview" data-fancybox="gallery" href="/pnpinvest/data/file/<?php echo $loan_id;?>/<?php echo $loan_ext['eventfile']?>">이벤트 파일 보기</a>
+							<a class="btn btn-preview" data-fancybox="gallery" href="/pnpinvest/data/file/<?php echo $loan_id;?>/<?php echo $loan_ext['eventfile']?>">신용정보 파일 보기</a>
 							<?php
 						}else echo "<a class='btn btn-preview'>업로드된 파일이 없습니다.</a>";
 						?>
@@ -1269,6 +1285,29 @@ margin-top: 5px;
 				</table>
 			</div>
 		</div>
+		<script>
+			function save_defeditor( descname ) {
+				var editor_data = oEditors.getById[descname].getIR();
+
+				oEditors.getById[descname].exec('UPDATE_CONTENTS_FIELD', []);
+				if(jQuery.inArray(document.getElementById(descname).value.toLowerCase().replace(/^\s*|\s*$/g, ''), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<div><br></div>','<p></p>','<br>','']) != -1){
+					document.getElementById(descname).value='';
+				}
+
+				if( confirm("저장하시겠습니까?") ){
+					$.ajax({
+						type : 'POST',
+						url : '/api/index.php/admext/extdescsave',
+						dataType : 'json',
+						data :{loanid:"<?php echo $loan_id?>",desctype:descname,desc:editor_data},
+						success : function(result) {
+							if(result.code=='OK') alert("저장하였습니다.");
+							else alert("저장중 오류가 발생하였습니다.");
+						}
+					});
+				}
+			}
+		</script>
 
 		<div style="max-width:1150px;;padding:10px;margin-bottom:5px;">
 			<div style="border:1px solid #999;border-radius:10px;min-height:50px;padding:30px 20px;text-align:center;margin-left:50px;">
@@ -1278,7 +1317,19 @@ margin-top: 5px;
 					<tr>
 						<td style="border:none;text-align:center;padding:30px 20px;vertical-align: top;"><label style="font-size: 14px;font-weight: bold;">투자개요</label></td>
 						<td style="border:none;padding:0 0 20px 30px;">
-							<textarea name="gaeyo" style="height:120px;width:800px;"  onChange="showbt('tujabt')" onKeyDown="showbt('tujabt')"><?php echo isset($loan_ext['fk_mari_loan_id']) ? stripslashes($loan_ext['gaeyo']): ""?></textarea>
+							<!-- textarea name="gaeyo" style="height:120px;width:800px;"  onChange="showbt('tujabt')" onKeyDown="showbt('tujabt')">
+							<?php echo isset($loan_ext['fk_mari_loan_id']) ? stripslashes($loan_ext['gaeyo']): ""?>
+							</textarea-->
+								<?php
+								$editor_desctype="gaeyo";
+								if( isset($loan_ext['fk_mari_loan_id']) ) {
+								 	$text_cont = tohtmlstring($loan_ext[$editor_desctype]);
+								}else $text_cont = '';
+								?>
+								<?php echo editor_html($editor_desctype , $text_cont) ?>
+								<div style="margin-top:10px;margin-bottom5px;text-align:center">
+									<a class="btn btn-preview" href="javascript:;" onClick="save_defeditor('<?php echo $editor_desctype?>')" style="display: inline;">저장하기</a>
+								</div>
 						</td>
 						<td rowspan="4" style="border:none;text-align:right;width:110px;">
 							<a id="tujabt" class="btn btn-preview hidebt" href="javascript:;" style="padding:60px 12px;" onClick="saveext1()">저장하기</a>
@@ -1287,19 +1338,46 @@ margin-top: 5px;
 					<tr>
 						<td style="border:none;text-align:center;padding:30px 20px;vertical-align: top;"><label style="font-size: 14px;font-weight: bold;">영업상황</label></td>
 						<td style="border:none;padding:0 0 20px 30px;">
-							<textarea name="sanghwang" style="height:120px;width:800px;" onChange="showbt('tujabt')" onKeyDown="showbt('tujabt')"><?php echo isset($loan_ext['fk_mari_loan_id']) ? stripslashes($loan_ext['sanghwang']): ""?></textarea>
+							<?php
+							$editor_desctype="sanghwang";
+							if( isset($loan_ext['fk_mari_loan_id']) ) {
+								$text_cont = tohtmlstring($loan_ext[$editor_desctype]);
+							}else $text_cont = '';
+							?>
+							<?php echo editor_html($editor_desctype , $text_cont) ?>
+							<div style="margin-top:10px;margin-bottom5px;text-align:center">
+								<a class="btn btn-preview" href="javascript:;" onClick="save_defeditor('<?php echo $editor_desctype?>')" style="display: inline;">저장하기</a>
+							</div>
 						</td>
 					</tr>
 					<tr>
 						<td style="border:none;text-align:center;padding:30px 20px;vertical-align: top;"><label style="font-size: 14px;font-weight: bold;">담보력</label></td>
 						<td style="border:none;padding:0 0 20px 30px;">
-							<textarea name="dambo" style="height:120px;width:800px;" onChange="showbt('tujabt')" onKeyDown="showbt('tujabt')"><?php echo isset($loan_ext['fk_mari_loan_id']) ? stripslashes($loan_ext['dambo']): ""?></textarea>
+							<?php
+							$editor_desctype="dambo";
+							if( isset($loan_ext['fk_mari_loan_id']) ) {
+								$text_cont = tohtmlstring($loan_ext[$editor_desctype]);
+							}else $text_cont = '';
+							?>
+							<?php echo editor_html($editor_desctype , $text_cont) ?>
+							<div style="margin-top:10px;margin-bottom5px;text-align:center">
+								<a class="btn btn-preview" href="javascript:;" onClick="save_defeditor('<?php echo $editor_desctype?>')" style="display: inline;">저장하기</a>
+							</div>
 						</td>
 					</tr>
 					<tr>
-						<td style="border:none;text-align:center;padding:30px 20px 0 20px;vertical-align: top;"><label style="font-size: 14px;font-weight: bold;">투자자<br>보호장치</label></td>
+						<td style="border:none;text-align:center;padding:30px 20px 0 20px;vertical-align: top;"><label style="font-size: 14px;font-weight: bold;">채권<br>회수방안</label></td>
 						<td style="border:none;padding:0 0 0 20px ;">
-							<textarea name="boho" style="height:120px;width:800px;" onChange="showbt('tujabt')" onKeyDown="showbt('tujabt')"><?php echo isset($loan_ext['fk_mari_loan_id']) ? stripslashes($loan_ext['boho']): ""?></textarea>
+							<?php
+							$editor_desctype="boho";
+							if( isset($loan_ext['fk_mari_loan_id']) ) {
+								$text_cont = tohtmlstring($loan_ext[$editor_desctype]);
+							}else $text_cont = '';
+							?>
+							<?php echo editor_html($editor_desctype , $text_cont) ?>
+							<div style="margin-top:10px;margin-bottom5px;text-align:center">
+								<a class="btn btn-preview" href="javascript:;" onClick="save_defeditor('<?php echo $editor_desctype?>')" style="display: inline;">저장하기</a>
+							</div>
 						</td>
 					</tr>
 				</table>

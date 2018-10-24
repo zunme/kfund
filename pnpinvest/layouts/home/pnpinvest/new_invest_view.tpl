@@ -1,4 +1,9 @@
 <?php
+function tohtmlstring($str){
+	if($str != strip_tags($str)) return stripslashes($str);
+	else return nl2br($str);
+}
+
 if ($loa['i_look']=='F'){ return;}
 
 ?>
@@ -1450,7 +1455,7 @@ table.product_table tbody tr td:first-child{
 								<tr>
 									<th><span class="chk_number">1</span></th>
 									<th>투자개요</th>
-									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ? nl2br($extinfo['gaeyo']): ''?></td>
+									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ?  tohtmlstring($extinfo['gaeyo']) : ''?></td>
 								</tr>
 								</tbody>
 								</table>
@@ -1468,7 +1473,9 @@ table.product_table tbody tr td:first-child{
 								<tr>
 									<th><span class="chk_number">2</span></th>
 									<th>영업상황</th>
-									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ? nl2br($extinfo['sanghwang']): ''?></td>
+									<td>
+                    <?php echo ( isset($extinfo['sanghwang']) && $extinfo['sanghwang']!='' ) ? ( tohtmlstring($extinfo['sanghwang']) ) : ''?>
+                  </td>
 								</tr>
 								</tbody>
 								</table>
@@ -1485,7 +1492,9 @@ table.product_table tbody tr td:first-child{
 								<tr>
 									<th><span class="chk_number">3</span></th>
 									<th>담보력</th>
-									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ? nl2br($extinfo['dambo']): ''?></td>
+									<td>
+                    <?php echo ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
+                  </td>
 								</tr>
 								</tbody>
 								</table>
@@ -1502,7 +1511,9 @@ table.product_table tbody tr td:first-child{
 								<tr>
 									<th><span class="chk_number">4</span></th>
 									<th>채권회수방안</th>
-									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ? nl2br($extinfo['boho']): ''?></td>
+									<td>
+                    <?php echo ( isset($extinfo['boho']) && $extinfo['boho']!='' ) ? ( tohtmlstring($extinfo['boho']) ) : ''?>
+                  </td>
 								</tr>
 							</tbody>
 						</table>

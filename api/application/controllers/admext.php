@@ -319,7 +319,34 @@ class Admext extends CI_Controller {
 		if($res) echo json_encode(array('code'=>'OK'));
 		else echo json_encode(array('code'=>'ERROR', 'msg'=>'DB UPDATE ERROR'));
 	}
+	function extdescsave(){
+		$loanid = (int) ($this->input->post('loanid'));
+		$desctype = $this->input->post('desctype');
 
+		if($loanid < 1){
+			$ret['code'] = "ERROR";
+			$ret['msg'] = "LOAN ID ERROR";
+			echo json_encode($files);return;
+		}
+		$this->load->helper('security');
+
+		/*if( !get_magic_quotes_gpc() ){
+			$data = array(
+				$desctype => addslashes($this->input->post('desc'))
+			);
+		}else */
+		$data = array($desctype => $this->input->post('desc'));
+
+		$row = $this->db->get_where('mari_loan_ext', array('fk_mari_loan_id'=>$loanid))->row_array();
+		if(isset($row['fk_mari_loan_id']) ){
+			$res = $this->db->where('fk_mari_loan_id',$loanid)->update ('mari_loan_ext', $data );
+		}else {
+			$data['fk_mari_loan_id'] = $loanid;
+			$res = $this->db->insert ('mari_loan_ext',$data ) ;
+		}
+		if($res) echo json_encode(array('code'=>'OK'));
+		else echo json_encode(array('code'=>'ERROR', 'msg'=>'DB UPDATE ERROR'));
+	}
   function jinhaeng() {
     $loanid = (int) ($this->input->post('loanid'));
     if($loanid < 1){
