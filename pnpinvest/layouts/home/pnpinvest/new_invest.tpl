@@ -110,6 +110,10 @@ $result = sql_query($sql, false);
 <link rel="stylesheet" href="js/owl/assets/owl.theme.default.min.css">
 <link rel="stylesheet" href="/pnpinvest/layouts/home/pnpinvest/simplomodal/learn.css" type="text/css" media="screen" title="no title" charset="utf-8">
 <script src="js/owl/owl.carousel.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" >
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" type="text/javascript"></script>
+
 <!-- /////////////////////////////// 본문 시작 /////////////////////////////// -->
 <style>
 .product.gallery .item .item_con {
@@ -121,7 +125,14 @@ $result = sql_query($sql, false);
 </style>
 <div id="container" class="sub">
 	<!-- Sub title -->
-	<h2 class="subtitle t1 invest_list"><span class="motion" data-animation="flash">투자하기</span></h2>
+	<h2 class="subtitle t1 invest_list">
+      <span class="motion" data-animation="flash" style="position:relative">투자하기
+      <span class="triggeriziModal" href="/api/index.php/consulting">법인/전문투자상담</span>
+      </span>
+
+
+
+  </h2>
 	<!-- 금일 상품 -->
 	<div class="invest_top">
 		<h3 class="skip">금일 상품</h3>
@@ -423,6 +434,8 @@ $result = sql_query($sql, false);
 		</div>
 	</div>
 </div>
+<div id="izimodal"></div>
+
 <!-- /////////////////////////////// 본문 끝 /////////////////////////////// -->
 <script>
 $("document").ready( function() {
@@ -430,6 +443,15 @@ $("document").ready( function() {
     checkstatus(this);
 		$(this).fadeIn("slow");
   });
+  $("#izimodal").iziModal({
+    iframe: true,
+    iframeHeight: 500,
+  });
+  $('.triggeriziModal').on('click', function (event) {
+    console.log("modal");
+  	$("#izimodal").iziModal('open',event);
+  });
+
 });
 function CountDown(duration, display,start) {
     if (!isNaN(duration)) {
