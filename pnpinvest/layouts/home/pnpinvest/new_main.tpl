@@ -2774,6 +2774,7 @@ function graphdraw() {
 .main_product .info1 .img_wrap {width:100%;height:100%;}
 .main_product .summary > li {padding-left:50px;background-position:left center;background-repeat:no-repeat;line-height: 22px;margin-bottom:30px;}
 .main_product .donut {width:44%;margin-top:6px;margin-right:5%;max-width:210px;overflow:hidden;position: relative;}
+.main_product .item .item_con {position:absolute;z-index: 10;top:8px;right:8px;border-radius: 5px;font-size: 18px;width:140px;height:40px;line-height: 36px;text-align: center;}
 
 @media all and (max-width:880px) {
   .main_product .info1 .img_wrap {width:100%;height:100%;}
