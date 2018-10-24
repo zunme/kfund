@@ -127,7 +127,7 @@ $result = sql_query($sql, false);
 	<!-- Sub title -->
 	<h2 class="subtitle t1 invest_list">
       <span class="motion" data-animation="flash" style="position:relative">투자하기
-      <span class="triggeriziModal" href="/api/index.php/consulting">법인/전문투자상담</span>
+      <!--span class="triggeriziModal" href="/api/index.php/consulting">법인/전문투자상담</span-->
       </span>
 
 
