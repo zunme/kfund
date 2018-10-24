@@ -2944,6 +2944,8 @@ function graphdraw() {
 /*.main_product .donut_txt span {margin-top:20px;}*/
 .main_product .donut_txt strong {font-size:30px;}
 .main_product .event span {font-size:12px;}
+.main_product .timeout {margin-top:10px; margin-bottom:10px;}
+.main_product .timeout .clock {background-size:80%; margin-right:0px;}
 
 
 

@@ -769,6 +769,8 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .invest_top .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 35px;text-align: center;}
 .invest_top .donut_txt span {margin-top:18px;}
 .invest_top .donut_txt strong {font-size:30px; margin-top:5%;}
+.invest_top .timeout {color:#fff; font-size:14px;margin-bottom:10px;}
+.invest_top .timeout .clock {background-size: 76%;margin-right:0px;}
 
 
 
