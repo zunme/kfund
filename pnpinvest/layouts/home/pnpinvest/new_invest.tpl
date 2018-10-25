@@ -127,9 +127,56 @@ $result = sql_query($sql, false);
 	<!-- Sub title -->
 	<h2 class="subtitle t1 invest_list">
       <span class="motion" data-animation="flash" style="position:relative">투자하기
-      <!--span class="triggeriziModal" href="/api/index.php/consulting">법인/전문투자상담</span-->
+      <span class="triggeriziModal-btn hvr-buzz-out" href="/api/index.php/consulting" style="font-size: 16px;">법인 / 전문 투자상담</span>
       </span>
+<style>
+.triggeriziModal-btn{
+color: white;
+border: 1px solid #FFF;
+border-radius: 5px;
+text-transform: uppercase;
+letter-spacing: 0;
+will-change: box-shadow, transform;
+transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+padding: 12px 16px;
+margin-top:-5px;
+margin-left:5px;
+font-weight: 400;
+text-align: center;
+white-space: nowrap;
+touch-action: manipulation;
+cursor: pointer;
+user-select: none;
+box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12);
 
+}
+
+@media all and (max-width:500px) {
+.subtitle {font-size: 24px;}
+.triggeriziModal-btn{
+margin-left: 120px;
+margin-right:120px;
+margin-top:15px;
+padding: 12px 18px;
+}
+@media all and (max-width:430px) {
+.subtitle {font-size: 24px;}
+.triggeriziModal-btn{
+margin-left: 90px;
+margin-right:90px;
+margin-top:15px;
+padding: 12px 18px;
+}
+@media all and (max-width:400px) {
+.subtitle {font-size: 24px;}
+.triggeriziModal-btn{
+margin-left: 70px;
+margin-right:70px;
+margin-top:15px;
+padding: 12px 18px;
+}
+}
+</style>
 
 
   </h2>
