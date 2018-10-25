@@ -17,7 +17,94 @@
 
 <link rel="SHORTCUT ICON" href="https://www.kfunding.co.kr/pnpinvest/data/favicon/web_logo.png">
 <meta name="google-site-verification" content="wFlJBNsJ9EcCuDtiz8gnIcdhqess5G-zrN6iGCyLbqs" />
+<style>
+.save-completed{display:none}
+</style>
 </head>
 <body>
+  <section class="save-main-section">
+      <div>법인투자 1:1 상담</div>
+      <div>아래 정보를 입력후 제출해 주시면 빠른 연락 드리겠습니다.</div>
+      <div>
+        <form name="consulting_form">
+          <table>
+            <tr>
+              <th>법인명</th>
+              <td><input type="text" name="company_name"></td>
+            </tr>
+            <tr>
+              <th>담당자명</th>
+              <td><input type="text" name="manager_name"></td>
+            </tr>
+            <tr>
+              <th>담당자 연락처</th>
+              <td><input type="text" id="hp" name="manager_tel"></td>
+            </tr>
+            <tr>
+              <th>P2P투자경험</th>
+              <td>
+                <input type="radio" value="Y" name="inv_exp"> 있음
+                <input type="radio" value="N" name="inv_exp"> 없음
+              </td>
+            </tr>
+          </table>
+          <div>
+            <input type="checkbox" id="agreement" name="agreement" value="Y"> 개인정보 수집 및 이용에 동의 합니다.
+          </div>
+        </form>
+
+        <div>
+          <a href="javascript:;" onClick="test()">상담신청</a>
+        </div>
+      </div>
+  </section>
+  <section class="save-completed">
+    <div>상담신청을 완료하였습니다</div>
+    <div>빠른 연락 드리겠습니다.</div>
+  </section>
+
+<script type="text/javascript" src="/pnpinvest/js/jquery-1.11.0.min.js"></script>
+<script>
+function test() {
+  $(".save-main-section").hide();
+  $(".save-completed").show();
+}
+function save(){
+  var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+  if($("input[name=manager_name]").val() =='' ){
+    $("input[name=manager_name]").focus();
+    alert("담당자명을 입력하여주세요");return false;
+  }
+  if ( !regExp.test( $("#hp").val() ) ) {
+    $("input[name=manager_tel]").focus();
+    alert("잘못된 전화번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+    return false;
+  }
+  if( !$("input:checkbox[id='agreement']").is(":checked") ){
+    alert("개인정보 수집 및 이용에 동의해주세요");
+    return false;
+  }
+  if( confirm("상담 신청을 하시겠습니까?")){
+    $.ajax({
+      url:"/api/index.php/consulting/save/",
+      type : 'POST',
+      data:$("form[name=consulting_form]").serialize(),
+      dataType : 'json',
+      success : function(result) {
+        if(result.code==200){
+          $(".save-main-section").hide();
+          $(".save-completed").show();
+        }else alert(result.msg);
+      },
+      error: function(request, status, error) {
+        alert("잠시 후에 시도해 주세요");
+       console.log(request + "/" + status + "/" + error);
+      }
+    });
+  }
+}
+</script>
+
+
 </body>
 </html>
