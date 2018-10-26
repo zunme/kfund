@@ -100,6 +100,8 @@
 @media only screen and (min-width: 1600px) {
   .modal-dialog { width: 1500px; }
 }
+.izimodal2{height: 400px;}
+.duptable{margin:10px;width:100%;}
     </style>
   </head>
 
@@ -154,6 +156,7 @@
   .nav-md .container.body .right_col {
     margin-left: 0
 }
+.badge{margin-left: 10px;}
 </style>
 <div class="row">
 
@@ -232,7 +235,6 @@
       </table>
 
 </div>
-
 
 <script>
 var table;
@@ -438,7 +440,7 @@ function maketable(data){
     }
 
     var tr = $('<tr>').append(
-      $('<td>').html("<a>"+item.m_id+"</a>")
+      $('<td>').html("<a>"+item.m_id+"</a><span class='badge' data-dupinfo='"+item.dupinfo+"' onClick='check_dup(this)'>"+item.cnt+"</span>")
       ,$('<td>').html("<a>"+item.m_name+"</a>")
       ,$('<td>').html("<a>"+item.m_hp+"</a>")
       ,$('<td class="hidden">').html("<a>("+item.m_zip+")"+item.m_addr1+' '+ item.m_addr2 +"</a>")
@@ -560,13 +562,37 @@ $("document").ready( function() {
     iframe: true,
     iframeHeight: 500,
   });
+  $("#izimodal2").iziModal({
+    width:800,
+    height:400,
+    zindex:1040,
+  });
+  $("#openbadge").on('click', function (event) {
+    $("#izimodal2").iziModal('open',event);
+  });
   $('.triggerModal').on('click', function (event) {
-    console.log("modal");
     $("#izimodal").iziModal('open',event);
   });
 
   $("#mainpreloader").fadeOut( "slow");
 });
+function check_dup(badge){
+  var dupinfo = $(badge).data("dupinfo");
+      $("#izimodal2").empty();
+  $.ajax({
+    type : 'get',
+    url : '/api/index.php/eventcheck/getdup',
+    dataType : 'html',
+    data : {dupinfo : dupinfo },
+    success : function(result) {
+      $("#izimodal2").html(result);
+      $("#openbadge").trigger("click");
+    },
+    error: function (jqXHR, exception) {
+      ajaxerror( jqXHR, exception )
+    }
+  });
+}
 </script>
 </div>
 <!-- /page content -->
@@ -575,8 +601,9 @@ $("document").ready( function() {
 </div>
 </div>
 
-
+<div id="openbadge"></div>
 <div id="izimodal"></div>
+<div id="izimodal2" class="izimodal2"></div>
 
 </body>
 </html>

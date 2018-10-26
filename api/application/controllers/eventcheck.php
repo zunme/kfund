@@ -68,12 +68,44 @@ class Eventcheck extends Adm {
       select *
       from mari_member a
       left join z_event_list b on b.eventid = ? and a.m_no = b.mem_no
+      left join z_nice_log c on a.m_id = c.m_id
+      left join (
+      	select dupinfo, count(1) as cnt from z_nice_log where actiontype='join' and m_id !='' group by dupinfo
+      ) d on c.dupinfo = d.dupinfo
       where a.m_datetime >= ?
       and m_emoney >= ?
       order by m_no
       ";
       $list = $this->db->query($sql, array($eventid, $eventcfg['startdate'], $eventcfg['charge']) )->result_array();
       echo json_encode(array('code'=>200, 'cfg'=>$eventcfg, 'data'=>$list));
+    }
+    public function getdup(){
+      $dupinfo = $this->input->get('dupinfo');
+      $sql = "
+        select
+        '회원' as ismem, a.name, a.mobileno,  a.ip, b.m_id , m_name, m_hp , m_datetime as ondate
+        from
+        (select * from z_nice_log where dupinfo=? and actiontype='join' and cstatus = 'Y' and m_id !='' and m_id is not null) a
+        join mari_member b on a.m_id = b.m_id
+        union
+        select
+        '탈퇴' as ismem, c.name, c.mobileno,  c.ip,
+        s.s_id as m_id,  s_name as m_name, s_hp as m_hp, s_leave_date as ondate
+        from
+        (select * from z_nice_log where dupinfo=? and actiontype='join' and cstatus = 'Y' and m_id !='' and m_id is not null) c
+        join mari_member_leave s on c.m_id = s.s_id
+      ";
+       $list = $this->db->query($sql, array($dupinfo, $dupinfo) )->result_array();
+       $tmp = "<table class='duptable'>";
+       foreach($list as $row){
+         $tmp .= "<tr>";
+         foreach($row as $idx=>$val){
+           $tmp .="<td>".$val."</td>";
+         }
+         $tmp .= "</tr>";
+       }
+       $tmp .= "</table>";
+       echo $tmp;
     }
     public function savetype() {
       $info = $this->db->get_where('z_event_list', array('eventid'=>$this->input->post('eventid'), 'mem_no'=>$this->input->post('m_no')) )->row_array();
