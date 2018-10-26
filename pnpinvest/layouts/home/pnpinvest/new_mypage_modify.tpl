@@ -61,7 +61,7 @@ $hp2 = substr($user['m_hp'],3,-4);
 $hp3 = substr($user['m_hp'],-4,4);
 $birth = explode('-',$user['m_birth']);
 $m_reginum1=$m_reginum2='';
-if (ereg('^[[:digit:]]{6}[1-4][[:digit:]]{6}$', $user['m_reginum'])) {
+if (ereg('^[[:digit:]]{6}[1-6][[:digit:]]{6}$', $user['m_reginum'])) {
   $m_reginum1 = substr($user['m_reginum'],0,6);
   $m_reginum2 = substr($user['m_reginum'],-7,7);
 }
