@@ -127,10 +127,10 @@ $result = sql_query($sql, false);
 	<!-- Sub title -->
 	<h2 class="subtitle t1 invest_list">
       <span class="motion" data-animation="flash" style="position:relative">투자하기
-      <span class="triggeriziModal-btn hvr-buzz-out" href="/api/index.php/consulting" style="font-size: 16px;">법인 / 전문 투자상담</span>
+      <span class="triggeriziModal hvr-buzz-out" href="/api/index.php/consulting" style="font-size: 16px;">법인 / 전문 투자상담</span>
       </span>
 <style>
-.triggeriziModal-btn{
+.triggeriziModal{
 color: white;
 border: 1px solid #FFF;
 border-radius: 5px;
@@ -153,7 +153,7 @@ box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153,
 
 @media all and (max-width:500px) {
 .subtitle {font-size: 24px;}
-.triggeriziModal-btn{
+.triggeriziModal{
 margin-left: 120px;
 margin-right:120px;
 margin-top:15px;
@@ -161,7 +161,7 @@ padding: 12px 18px;
 }
 @media all and (max-width:430px) {
 .subtitle {font-size: 24px;}
-.triggeriziModal-btn{
+.triggeriziModal{
 margin-left: 90px;
 margin-right:90px;
 margin-top:15px;
@@ -169,7 +169,7 @@ padding: 12px 18px;
 }
 @media all and (max-width:400px) {
 .subtitle {font-size: 24px;}
-.triggeriziModal-btn{
+.triggeriziModal{
 margin-left: 70px;
 margin-right:70px;
 margin-top:15px;
@@ -677,6 +677,13 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product.gallery .summary > li {display:inline-block;min-width:45%;padding-left: 40px;background-position:left center;background-repeat: no-repeat;line-height: 22px;}
 .product.gallery .item_progress .ib {width:16%;}
 .product.gallery .item_progress > div {display:inline-inline-block;width:82%;}
+
+
+
+
+
+
+
 @media all and (max-width:1010px) {
 .product .summary {width:98%; line-height: 30px; margin: 28px auto 28px; text-align: left;}
 }
@@ -801,6 +808,11 @@ function paginate($item_per_page, $current_page, $total_records, $total_pages, $
 .product.gallery .item_progress .ib {width:10%;}
 .product.gallery .item_progress > div {width:89%;}
 }
+
+@media all and (max-width:635px) {
+.iziModal {width:94%; margin:auto;}
+}
+
 @media all and (max-width:550px) {
 	.invest_top .item .item_con {position:absolute;z-index: 10;top:5px;right:5px;border-radius: 5px;font-size: 16px;width:120px;height:36px;line-height: 32px;text-align: center;}
 

@@ -22,46 +22,50 @@
 </style>
 </head>
 <body>
+
   <section class="save-main-section">
-      <div>법인투자 1:1 상담</div>
-      <div>아래 정보를 입력후 제출해 주시면 빠른 연락 드리겠습니다.</div>
-      <div>
-        <form name="consulting_form">
-          <table>
-            <tr>
-              <th>법인명</th>
-              <td><input type="text" name="company_name"></td>
+
+      <div class="popuptitle">법인투자 1:1 상담</div>
+      <div class="popupcall">아래 정보를 입력후 제출해 주시면 빠른 연락 드리겠습니다.</div>
+      <div class="popupin">
+        <form name="consulting_form" class="popupform">
+          <table class="popuptable">
+            <tr class="popuptr" >
+              <th class="popupth">법인명</th>
+              <td><input type="text" class="popupinput" name="company_name"></td>
             </tr>
-            <tr>
-              <th>담당자명</th>
-              <td><input type="text" name="manager_name"></td>
+            <tr class="popuptr">
+              <th class="popupth">담당자명</th>
+              <td><input type="text" class="popupinput" name="manager_name"></td>
             </tr>
-            <tr>
-              <th>담당자 연락처</th>
-              <td><input type="text" id="hp" name="manager_tel"></td>
+            <tr class="popuptr">
+              <th class="popupth">담당자 연락처</th>
+              <td><input type="text" id="hp" class="popupinput" name="manager_tel"></td>
             </tr>
-            <tr>
-              <th>P2P투자경험</th>
-              <td>
+            <tr class="popuptr">
+              <th class="popupth">P2P투자경험</th>
+              <td class="popuptd2">
                 <input type="radio" value="Y" name="inv_exp"> 있음
-                <input type="radio" value="N" name="inv_exp"> 없음
+                <input type="radio" class="popupradio" value="N" name="inv_exp"> 없음
               </td>
             </tr>
           </table>
-          <div>
+          <div class="popupcheck">
             <input type="checkbox" id="agreement" name="agreement" value="Y"> 개인정보 수집 및 이용에 동의 합니다.
           </div>
         </form>
 
         <div>
-          <a href="javascript:;" onClick="test()">상담신청</a>
+          <a class="popupbtn" href="javascript:;" onClick="test()">상담신청</a>
         </div>
       </div>
+    </div>
   </section>
   <section class="save-completed">
-    <div>상담신청을 완료하였습니다</div>
-    <div>빠른 연락 드리겠습니다.</div>
+    <div class="popup2">상담신청을 완료하였습니다</div>
+    <div class="popup2">빠른 연락 드리겠습니다.</div>
   </section>
+
 
 <script type="text/javascript" src="/pnpinvest/js/jquery-1.11.0.min.js"></script>
 <script>
@@ -104,7 +108,49 @@ function save(){
   }
 }
 </script>
+<style>
 
+.save-main-section {text-align: center; }
 
+.popuptitle {width:100%; font-size: 40px; text-align: center;background-color:#e0abab;height:120px;line-height:115px;}
+.popupcall{font-size: 16px; text-align: center;margin-top:24px;}
+.popupform {margin-bottom:40px;}
+.popuptable {margin: 25px auto 12px; text-align: left;}
+.popuptr {height: 40px;}
+.popupth {padding-right: 25px;}
+.popuptd2 {text-align: center;}
+.popupinput{border: 1px solid #ccc;color: #333;padding: 0 6px;height: 34px;line-height: 34px;width: 100%;}
+.popupradio {margin-left:10px;}
+.popupcheck {text-align: center;}
+.popupbtn {border: 1px solid #006691;font-size: 20px;padding: 10px 30px;margin-top: 20px;margin-bottom: 30px;
+text-decoration: none;color: #fff;background: #006691;border-radius: 6px;}
+
+.save-completed {text-align: center; margin-top:201px; line-height:40px;font-size:24px;}
+
+@media all and (max-width:479px) {
+.save-main-section .closebtn {position: absolute; top:0;border: 1px solid #868686;font-size: 24px;padding: 3px 16px 6px 16px;
+  margin-top: 20px;margin-bottom: 30px;text-decoration: none;color: #fff;background: #868686;border-radius: 4px;margin-top:5px;margin-left:242px;}
+.popuptitle {width:100%; font-size: 30px; text-align: center;background-color:#e0abab;height:120px;line-height:115px;}
+.popupcall{font-size: 16px; text-align: center;margin-top:24px; padding-left:10px; padding-right:10px;word-break:keep-all;}
+.popupform {margin-bottom:28px;}
+.popuptable {margin: 20px auto 12px; text-align: left;padding-right:10px;}
+.popupth {padding-right: 10px;}
+.popupbtn {border: 1px solid #006691;font-size: 20px;padding: 8px 28px;margin-top: 20px;margin-bottom: 30px;
+text-decoration: none;color: #fff;background: #006691;border-radius: 6px;}
+.save-completed {text-align: center; margin-top:201px; line-height:40px;font-size:18px;}
+}
+@media all and (max-width:400px) {
+
+.popuptitle {width:100%; font-size: 30px; text-align: center;background-color:#e0abab;height:120px;line-height:115px;}
+.popupcall{font-size: 16px; text-align: center;margin-top:20px; padding-left:10px; padding-right:10px;word-break:keep-all;}
+.popupform {margin-bottom:28px;}
+.popuptable {margin: 16px auto 12px; text-align: left;}
+.popupth {padding-right: 10px;font-size:16px;}
+.popupbtn {border: 1px solid #006691;font-size: 20px;padding: 8px 28px;margin-top: 20px;margin-bottom: 30px;
+text-decoration: none;color: #fff;background: #006691;border-radius: 6px;}
+.save-completed {text-align: center; margin-top:201px; line-height:40px;font-size:16px;}
+.popupinput{border: 1px solid #ccc;color: #333;padding:0;height: 34px;line-height: 34px;width: 100%;}
+}
+</style>
 </body>
 </html>
