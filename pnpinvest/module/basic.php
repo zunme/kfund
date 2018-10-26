@@ -227,7 +227,7 @@
           //$maximum = $is_ck['i_maximum'];
           if ($cate_label=='부동산') {
               $maximum = "10000000";
-              if( $progress['total'] >= 10000000){
+              if( $progress['total'] >= 20000000){
                 $avail = 0;
               }else{
                 $avail = $progress['budongsan'] >= 10000000 ? 0 : 10000000 - $progress['budongsan'];
