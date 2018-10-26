@@ -17,12 +17,31 @@
 
 <link rel="SHORTCUT ICON" href="https://www.kfunding.co.kr/pnpinvest/data/favicon/web_logo.png">
 <meta name="google-site-verification" content="wFlJBNsJ9EcCuDtiz8gnIcdhqess5G-zrN6iGCyLbqs" />
+<link rel="stylesheet" href="/assets/font-awesome/latest/css/font-awesome.min.css" />
 <style>
 .save-completed{display:none}
+.icon-close {
+    background: #e91e63;
+    margin-bottom: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 5px 18px 3px rgba(0, 0, 0, 0.14), 0 6px 20px 3px rgba(0, 0, 0, 0.12), -4px 5px 18px 0px rgba(0, 0, 0, 0.2);
+}
 </style>
 </head>
 <body>
-
+  <section class="head-section">
+    <button data-izimodal-close="" class="icon-close"><i class="fa fa-times"></i></button>
+  </section>
   <section class="save-main-section">
 
       <div class="popuptitle">법인투자 1:1 상담</div>
@@ -107,6 +126,11 @@ function save(){
     });
   }
 }
+$('body').on('click', 'button.icon-close', {}, function() {
+    window.parent.$('#izimodal').iziModal('close', {
+        transition: 'bounceOutDown' // Options
+    });
+  });
 </script>
 <style>
 

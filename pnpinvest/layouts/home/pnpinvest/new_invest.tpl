@@ -493,6 +493,8 @@ $("document").ready( function() {
   $("#izimodal").iziModal({
     iframe: true,
     iframeHeight: 500,
+    overlayClose: false,
+    overlayColor: 'rgba(0, 0, 0, 0.6)'
   });
   $('.triggeriziModal').on('click', function (event) {
     console.log("modal");
