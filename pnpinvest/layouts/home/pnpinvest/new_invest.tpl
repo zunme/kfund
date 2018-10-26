@@ -129,9 +129,9 @@ $result = sql_query($sql, false);
       <span class="motion" data-animation="flash">투자하기
 
       </span>
-        <span class="triggeriziModal hvr-buzz-out" href="/api/index.php/consulting" style="font-size: 16px;">법인 / 전문 투자상담</span>
+        <span class="triggeriziModal hvr-buzz-out" href="/api/index.php/consulting" style="font-size: 15px;">법인 / 전문 투자상담</span>
 <style>
-
+.subtitle {overflow: hidden;}
 .motion {position:relative;}
 .triggeriziModal{
   position: absolute;
@@ -142,9 +142,9 @@ text-transform: uppercase;
 letter-spacing: 0;
 will-change: box-shadow, transform;
 transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-padding: 10px 14px;
-margin-top:-5px;
-margin-left:265px;
+padding: 7px 8px;
+
+margin-left:283px;
 font-weight: 400;
 text-align: center;
 white-space: nowrap;
@@ -157,23 +157,26 @@ box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153,
 @media all and (max-width:1120px) {
 .motion {position:relative; margin-right:330px; margin-left:330px;}
 .subtitle {font-size: 24px;}
-.triggeriziModal{position: relative;margin-left: 290px;margin-right:290px;margin-top:15px;padding: 10px 14px;}
+.triggeriziModal{position: relative;margin-left: 290px;margin-right:290px;margin-top:15px;padding: 7px 8px;}
 }
 
 @media all and (max-width:1000px) {
 .motion {position:relative; margin-right:330px; margin-left:330px;}
-.subtitle {font-size: 24px;}
-.triggeriziModal{position: relative;margin-left: 290px;margin-right:290px;margin-top:15px;padding: 10px 14px;}
+.subtitle {font-size: 24px;margin-top:-10px;padding-bottom:20px;}
+#container h2.subtitle {margin-top: 0;padding: 100px 0 100px 0;}
+.subtitle {overflow: none;}
+.subtitle.invest_list {margin-bottom:-110px;}
+.triggeriziModal{position: relative;margin-left: 290px;margin-right:290px;margin-top:15px;padding: 7px 8px;margin-bottom:15px;}
 }
 @media all and (max-width:800px) {
   .motion {position:relative;margin-right:0px; margin-left:0px;}
 .subtitle {font-size: 24px;}
 .triggeriziModal{
   position: relative;
-margin-left: 270px;
-margin-right:270px;
+margin-left: 275px;
+margin-right:275px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 @media all and (max-width:735px) {
@@ -181,10 +184,10 @@ padding: 10px 14px;
 .subtitle {font-size: 24px;}
 .triggeriziModal{
   position: relative;
-margin-left: 230px;
-margin-right:230px;
+margin-left: 240px;
+margin-right:240px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 @media all and (max-width:645px) {
@@ -192,10 +195,10 @@ padding: 10px 14px;
 .subtitle {font-size: 24px;}
 .triggeriziModal{
   position: relative;
-margin-left: 185px;
-margin-right:185px;
+margin-left: 195px;
+margin-right:195px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 
@@ -204,10 +207,10 @@ padding: 10px 14px;
 .subtitle {font-size: 24px;}
 .triggeriziModal{
   position: relative;
-margin-left: 150px;
-margin-right:150px;
+margin-left: 160px;
+margin-right:160px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 @media all and (max-width:500px) {
@@ -215,10 +218,10 @@ padding: 10px 14px;
 .subtitle {font-size: 24px;}
 .triggeriziModal{
   position: relative;
-margin-left: 120px;
-margin-right:120px;
+margin-left: 125px;
+margin-right:125px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 @media all and (max-width:430px) {
@@ -229,7 +232,7 @@ padding: 10px 14px;
 margin-left: 90px;
 margin-right:90px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 @media all and (max-width:400px) {
@@ -240,7 +243,7 @@ position: relative;
 margin-left: 80px;
 margin-right:80px;
 margin-top:15px;
-padding: 10px 14px;
+
 }
 }
 </style>
