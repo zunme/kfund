@@ -21,11 +21,11 @@
 <style>
 .save-completed{display:none}
 .icon-close {
-    background: #e91e63;
+    background: #b33551;
     margin-bottom: 10px;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 3px;
+    top: 3px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 50%;
@@ -34,7 +34,7 @@
     border: 0;
     color: white;
     cursor: pointer;
-    box-shadow: 1px 5px 18px 3px rgba(0, 0, 0, 0.14), 0 6px 20px 3px rgba(0, 0, 0, 0.12), -4px 5px 18px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.14), 6px 3px 10px 0px rgba(0, 0, 0, 0.12), 5px 1px 13px 0px rgba(0, 0, 0, 0.2);
 }
 </style>
 </head>
