@@ -24,9 +24,17 @@ class Consulting extends CI_Controller {
 
     if( $this->db->insert('z_counsult', $data) ) {
       echo json_encode(array('code'=>200, "msg"=>""));
+      $to = array('filter'=>array( 'key'=>'consult', 'value'=>'on'));
+      $msg= array("send_type"=>"SMS", "to"=>$to, "msg_type"=>"투자상담", "msg"=>"투자상담 신청이 들어왔습니다.");
+      $this->load->helper('rabbit');
+      sendrabbit($msg);
     }else {
       echo json_encode(array('code'=>500, "msg"=>"오류가 발생하였습니다. 잠시후에 시도해주세요"));
     }
 
+  }
+  function admviewlist() {
+    $list = $this->db->query("select * from z_counsult order by idx desc")->result_array();
+    $this->load->view("consulting_list", array("list"=>$list));
   }
 }

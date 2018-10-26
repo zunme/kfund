@@ -75,7 +75,7 @@
         </form>
 
         <div>
-          <a class="popupbtn" href="javascript:;" onClick="test()">상담신청</a>
+          <a class="popupbtn" href="javascript:;" onClick="save()">상담신청</a>
         </div>
       </div>
     </div>
