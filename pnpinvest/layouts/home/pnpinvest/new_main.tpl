@@ -98,6 +98,12 @@ $startloan = 11;
 $sql = "
 select  floor(sum( a.i_pay)/10)*10 into @totalwithvpay from mari_invest a where a.i_pay > 0 and loan_id > $startloan
 ";
+$sql ="
+select  floor(sum( b.i_pay)/10)*10 into @totalwithvpay
+from mari_loan a
+join mari_invest b on a.i_id = b.loan_id
+where a.i_view='Y' and b.i_pay > 0 and a.i_id > $startloan
+";
 sql_query($sql, false);
 $sql = "
 select
@@ -133,12 +139,13 @@ from
 select
   	 loan_id , sum(i_pay) as total
   from mari_invest inva
+  join mari_loan t1_loan on inva.loan_id = t1_loan.i_id
   join(
   	select mari_loan_overdue.fk_loan_id
     from mari_loan_overdue
     where startdate < date_format( DATE_SUB( NOW() , INTERVAL 30 DAY ), '%Y-%m-%d') and startdate >= date_format( DATE_SUB( NOW() , INTERVAL 90 DAY ), '%Y-%m-%d')
   ) ov on inva.loan_id = ov.fk_loan_id
-  where inva.loan_id > $startloan
+  where inva.loan_id > $startloan and t1_loan.i_view='Y'
   group by loan_id
 ) grptmp
 left join (
@@ -153,10 +160,11 @@ from
 select
   	 loan_id , sum(i_pay) as total
   from mari_invest inva
+  join mari_loan t1_loan on inva.loan_id = t1_loan.i_id
   join(
   	select * from mari_loan_overdue where startdate < date_format( DATE_SUB( NOW() , INTERVAL 90 DAY ), '%Y-%m-%d')
   ) ov on inva.loan_id = ov.fk_loan_id
-  where inva.loan_id > $startloan
+  where inva.loan_id > $startloan and t1_loan.i_view='Y'
   group by loan_id
 ) grptmp
 left join (
@@ -180,7 +188,13 @@ $allpay = sql_fetch($sql);
 	where i_view='Y' and i_id > $startloan
 	";
 	$allpay['percent'] = sql_fetch($sql);
-  $sql = " select count(1) as cnt from mari_invest";
+  //$sql = " select count(1) as cnt from mari_invest";
+  $sql = "
+  select count(1) as cnt
+  from mari_loan a
+  join mari_invest b on a.i_id = b.loan_id
+  where a.i_view = 'Y'
+  ";
   $allpay['nujuk'] = sql_fetch($sql);
 
 	//$InstanceCache->set('allpay', $allpay, 100);
