@@ -11,6 +11,7 @@ if( !isset($user['m_id']) ) {
 include (getcwd().'/module/basic.php');
 $sameOwnerCheck = sameOwnerCheck ($user['m_id'], $loan_id);
 $getMemberlimit = getMemberlimit($user['m_id']);
+$memberInvestmentNowProgress = memberInvestmentNowProgress($user['m_id']);
 
 $sql ="
 select ifnull(sum(a.i_pay),0) as total, ifnull(count(1), 0) as cnt, ifnull( sum(a.i_pay * b.i_year_plus) / sum(a.i_pay), 0) as yearplus
@@ -85,11 +86,11 @@ $sanghwan_total = sql_fetch($sql, false);
 									<li class="non_bd pc700">&nbsp;</li>
 									<li class="non_bd clearfix">
 										<span class="fl">투자중인 금액</span>
-										<span class="fr"><?php echo change_pay($invest_total['total'])?>원</span>
+										<span class="fr"><?php echo change_pay($memberInvestmentNowProgress['investProgressTotal'])?>원</span>
 									</li>
 									<li class="non_bd clearfix">
 										<span class="fl">투자가능 금액</span>
-										<span class="fr"><?php echo change_pay($getMemberlimit['insetpay']-$invest_total['total'])?>원</span>
+										<span class="fr"><?php echo change_pay($getMemberlimit['insetpay']-$memberInvestmentNowProgress['investProgressTotal'])?>원</span>
 									</li>
 									<li class="non_bd pc700">&nbsp;</li>
 									<li class="non_bd clearfix">
