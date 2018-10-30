@@ -136,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .navbar-header .navbar-toggle {
           display: block;
           float: right;
-      }
+      } 
       .navbar-collapse {
           position: fixed;
           display: block;

@@ -21,7 +21,7 @@
     padding: 5px 20px;
     border-radius: 40px;
 }
-  
+
 .company_04 dd span {
     border-bottom: 1px solid #061551;
 }
@@ -674,7 +674,7 @@ window.onresize =function(event) {
 		font-weight: normal;
 	}
 	.newcol.second{
-		width:310px;
+		width:320px;
 	}
 	.roundbar{
 		margin-bottom:20px;
