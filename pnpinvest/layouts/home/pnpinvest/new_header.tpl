@@ -136,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .navbar-header .navbar-toggle {
           display: block;
           float: right;
-      } 
+      }
       .navbar-collapse {
           position: fixed;
           display: block;
@@ -435,7 +435,7 @@ footer .footer-alert p{
     font-size: 16px; //13
 }
 .navbar-right{
-  margin-right:15px;
+  margin-right:0px;
 }
 </style>
 
@@ -633,7 +633,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 <!-- / 태기 로더 끝 -->
 
 <nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100">
-  <div class="container-head" style="    padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;">
+  <div class="container-head" style="    padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
