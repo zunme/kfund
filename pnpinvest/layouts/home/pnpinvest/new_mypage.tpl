@@ -103,7 +103,7 @@ function createvirtual() {
 					<div class="my_right clearfix">
 						<p class="name"><span><?php echo $user['m_name']?></span>님</p>
 						<ul class="txt_01">
-							<li>투자중인 금액<span><?php echo change_pay($invest_total['total'])?>원</span></li>
+							<li>투자중인 금액<span><?php echo change_pay($memberInvestmentNowProgress['investProgressTotal'])?>원</span></li>
 							<li>투자가능 금액<span><?php echo change_pay($getMemberlimit['insetpay']-$memberInvestmentNowProgress['investProgressTotal'])?>원</span></li>
 						</ul>
 					</div>
