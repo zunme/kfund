@@ -424,7 +424,7 @@
 .mypage .snb h3 {border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:20px;height:45px;line-height:45px;padding-left:23px;text-transform:uppercase;}
 .mypage .snb ul {border-bottom:1px solid #ccc;padding:15px;font-size:16px;line-height:32px;}
 .mypage .snb ul a:hover,
-.mypage .snb ul a.active {color:#00656a;font-weight:bold;}
+.mypage .snb ul a.active {color:#00656a;font-weight:bold;} 
 
 .mypage .my_content h3 {font-size:20px; }
 .mypage .my_content h4 {font-size:18px;border-bottom:1px solid #2f2f2f;}
