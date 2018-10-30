@@ -72,7 +72,8 @@ if (is_null($bankcode)) {
 span.underline {
     text-decoration: underline;
     padding-bottom: 4px;
-    display: block;
+    display: block;} 
+.mypage .my_content .btn.my_gr{margin-top:5px;}
 }
 </style>
 <div id="container" class="sub mypage">
@@ -490,4 +491,6 @@ $(document).ready(function ()  {
  getlist();
 });
 </script>
+
+.mypage .my_content .btn.my_gr
 {# new_footer}

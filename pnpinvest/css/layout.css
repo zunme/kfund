@@ -422,16 +422,16 @@
 .underline {text-decoration:underline;}
 
 .mypage .snb h3 {border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:20px;height:45px;line-height:45px;padding-left:23px;text-transform:uppercase;}
-.mypage .snb ul {border-bottom:1px solid #ccc;padding:20px;font-size:16px;}
+.mypage .snb ul {border-bottom:1px solid #ccc;padding:15px;font-size:16px;line-height:32px;}
 .mypage .snb ul a:hover,
-.mypage .snb ul a.active {color:#00656a;font-weight:bold;}
+.mypage .snb ul a.active {color:#00656a;font-weight:bold;} 
 
 .mypage .my_content h3 {font-size:20px; }
 .mypage .my_content h4 {font-size:18px;border-bottom:1px solid #2f2f2f;}
 .mypage .my_content h4 span {font-size:13px;margin-left:5px;}
 .mypage .my_content .btn {width:200px;font-size:16px;}
-.mypage .my_content .btn.my_bl {background:#061551;border-color:#061551;color:#fff;border-radius:0;}
-.mypage .my_content .btn.my_gr {background:#00646a;border-color:#00646a;color:#fff;border-radius:0;margin-top:5px;padding:10px 0;}
+.mypage .my_content .btn.my_bl {background:#061551;border-color:#061551;color:#fff;border-radius:0;padding:10px 0;}
+.mypage .my_content .btn.my_gr {background:#00646a;border-color:#00646a;color:#fff;border-radius:0;padding:10px 0;}
 .mypage .my_content .btn.my_gr2 {background:#00646a;border-color:#00646a;color:#fff;border-radius:0;margin-top:-3px;}
 .mypage .my_content .btn.my_wt {background:#fff;border-color:#000;color:#00646a;border-radius:0;margin-top:5px;padding:5px 0;}
 .mypage .my_content .btn_check {text-decoration:underline;}

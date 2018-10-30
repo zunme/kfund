@@ -102,7 +102,7 @@
       margin-right: auto!important;
   }
 
-  @media all and (max-width: 1100px) {
+  @media all and (max-width: 1260px) {
       #bodyClick {
           height: 100%;
           width: 100%;
@@ -133,7 +133,7 @@
           height: 100vh;
           width: 230px;
           right: 0;
-          margin-right: 0 !important;
+          margin-right: 0px !important;
           z-index: 1032;
           visibility: visible;
           background-color: #999;
@@ -208,6 +208,7 @@
       .navbar .navbar-collapse .navbar-nav > li > a {
           color: #3C4858;
           margin: 5px 15px;
+          text-align: left;
       }
       .navbar .navbar-collapse .navbar-nav > li > a:hover, .navbar .navbar-collapse .navbar-nav > li > a:focus {
           color: #3C4858;
@@ -423,7 +424,7 @@ footer .footer-alert p{
   font-size:16px;
 }
 .navbar-right{
-  margin-right:0;
+  margin-right:15px;
 }
 </style>
 
@@ -612,8 +613,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 </div>
 <!-- / 태기 로더 끝 -->
 
-<nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100">
-  <div class="container-head" style="    padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;">
+<nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="20">
+  <div class="container-head" style="    padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
@@ -820,10 +821,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 <style>
 #pageheader .header-title{
   position: absolute;
-    margin-top: 120px;
+    margin-top: 130px;
     width: 100%;
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     z-index: 30;
     color:#cacaca;
 }
@@ -1308,10 +1309,11 @@ left: 50px;
   color: white;
   font-size: 14px;
   font-weight: 200;
+
 }
 </style>
 <footer id="ft">
-	<div style="background-color:#020d2b;border-bottom:1px solid #292929;">
+	<div style="background-color:#020d2b;border-bottom:1px solid #292929;padding-left:14px;">
 		<ul class="footer_line_ul" style="margin: 0 auto;">
 			<li class="modal-link" data-title="서비스 이용 약관" data-url="/pnpinvest/css/con01.htm" >서비스이용약관</li>
 			<li>|</li>
@@ -1325,10 +1327,10 @@ left: 50px;
 
 
 	<style>
-	.newfooter{
-		padding-top :15px;
-		padding-bottom :15px;
-	}
+#ft .container {padding:15px 30px 25px;overflow:hidden;}
+.sub .container {max-width: 1240px;}
+
+	.newfooter{padding-top :15px;padding-bottom :15px;}
 
 	.newfooter .row{
 		margin-top:15px;
@@ -1359,7 +1361,7 @@ left: 50px;
 		font-weight: normal;
 	}
 	.newcol.second{
-		width:310px;
+		width:320px;
 	}
 	.roundbar{
 		margin-bottom:20px;
@@ -1379,15 +1381,15 @@ left: 50px;
 	.splitdiv div{display:inline-block}
 	.splitdiv .splitline{padding-left:10px;padding-right:10px;}
 	.newcol .imgdiv{
-		    text-align: center;
+		    text-align: left;
 		margin-bottom:10px;
 	}
 .newcol .imgdiv img{
 	padding-right:10px;
 }
-@media (max-width: 1034px){
+@media (max-width: 1120px){
 	.newcol.desc{
-		#margin-left:200px;
+		margin-left:203px;
 	}
 }
 @media (max-width: 992px){
@@ -1395,11 +1397,17 @@ left: 50px;
 		margin-left: 204px;
 	}
 }
-	@media (max-width: 560px){
+@media (max-width: 780px){
+	.p2plogo{
+		margin-top: 40px;
+	}
+}
+	@media (max-width: 611px){
+		.footer_time{padding-left:10px;font-size: 16px;}
 		.newfooter .row{
-			width: 450px;
-			margin-left: auto;
-			margin-right: auto;
+			#width: 450px;
+			#margin-left: auto;
+			#margin-right: auto;
 		}
 		.newcol{
 			margin-left:auto;margin-right:auto;width:100%;
@@ -1421,10 +1429,12 @@ left: 50px;
 			margin-left:0;
 		}
 	}
+	.newfooter .row:last-child {margin-top:-30px;}
 .row.lastdesc p{
 	font-size: 14px;
 	font-weight: normal;
 	color : #b5b3b3;
+	padding-left:12px;
 }
 
 	</style>
@@ -1440,10 +1450,9 @@ left: 50px;
 			</div>
 			<div class="newcol second">
 				<div class="imgdiv">
-          <a href="http://pf.kakao.com/_FcJxcC" target="_blank" title="카카오톡"><img class="hvr-buzz-out" src="/pnpinvest/img/new_kakao.png"></a>
-<a href="https://www.facebook.com/kfundingofficial/?modal=admin_todo_tour" target="_blank" title="페이스북"><img class="hvr-buzz-out" src="/pnpinvest/img/new_face.png"></a>
-<a href="https://blog.naver.com/kfundings" target="_blank" title="블로그"><img class="hvr-buzz-out" src="/pnpinvest/img/new_blog.png"></a>
-
+					<a href="http://pf.kakao.com/_FcJxcC" target="_blank" title="카카오톡"><img class="hvr-buzz-out" src="/pnpinvest/img/new_kakao.png"></a>
+					<a href="https://www.facebook.com/kfundingofficial/?modal=admin_todo_tour" target="_blank" title="페이스북"><img class="hvr-buzz-out" src="/pnpinvest/img/new_face.png"></a>
+					<a href="https://blog.naver.com/kfundings" target="_blank" title="블로그"><img class="hvr-buzz-out" src="/pnpinvest/img/new_blog.png"></a>
 				</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
@@ -1452,11 +1461,11 @@ left: 50px;
 				</div>
 				<div>E-mail.help@kfunding.co.kr</div>
 			</div>
-			<div class="newcol desc">
+			<div class="newcol desc" style="text-indent:-8px;padding-left:25px;">
 				<div>
 					<p><i class="far fa-check-circle"></i> 광고 제안은 메일로 보내주시길 바라며, 전화문의는 절대 사절합니다.</p>
 					<p><i class="far fa-check-circle"></i> 주말 및 공휴일은 운영하지 않습니다.</p>
-					<p><i class="far fa-check-circle"></i> 운영시간은 사정에 따라 변돌 될 수 있습니다.</p>
+					<p><i class="far fa-check-circle"></i> 운영시간은 사정에 따라 변동 될 수 있습니다.</p>
 				</div>
 			</div>
 		</div>
@@ -1470,7 +1479,7 @@ left: 50px;
 			</div>
 			<div class="newcol second">
 				<div>(주) 케이펀딩</div>
-				<div>대표이사</div>
+				<div>대표이사 김현철</div>
 				<div>주소 : 서울 강남구 테헤란로 86길 14 윤천빌딩 5층</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
@@ -1481,74 +1490,37 @@ left: 50px;
 			</div>
 			<div class="newcol desc2">
 				<div>(주) 케이크라우드대부</div>
-				<div>대표이사</div>
+				<div>대표이사 김현철</div>
 				<div>주소 : 서울 강남구 테헤란로 86길 14 윤천빌딩 5층</div>
 				<div class="splitdiv last">
 					<div>Tel.02-552-1772</div>
 					<div class="splitline">|</div>
 					<div>FAX.02-552-1773</div>
 				</div>
-				<div>사업자 등록번호 318-81-09046</div>
+				<div>사업자 등록번호 312-88-01185</div>
+				<div>등록번호 2018-금감원-1608(P2P연계대부업)</div>
+				<div>등록기관 : 금융감독원 ( 1332 )</div>
 			</div>
 		</div>
 
-		<div class="row lastdesc" style="text-align: left;">
-			<div style="display:inline-block;margin:0 auto;text-align:left;">
+		<div class="row lastdesc" style="text-align: left;text-indent:-8px;">
+			<div style="display:inline-block;margin:0 auto;text-align:left;  position: relative;padding-left: 15px;float:left;padding-right:10px;">
 				<p><i class="far fa-comment"></i> 대출금리 연 19.9%이내 (연체금리 연 24% 이내) 플랫폼 이용료 외 기타 부대비용은 없습니다.</p>
 				<p><i class="far fa-comment"></i> 중개수수료를 요구하거나 받는 행위는 불법입니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.</p>
 				<p><i class="far fa-comment"></i> 대출 시 귀하의 신용등급이 하락할 수 있습니다.</p>
 				<p><i class="far fa-comment"></i> 채무의 조기상환수수료율 등 조기상환조건 없습니다. 중개수수료를 요구하거나 받는 행위는 불법 입니다.</p>
-				<p class="blue" style="color:white"><i class="far fa-comment"></i> 케이펀딩은 고객님의 투자원금과 수익률을 보장하지 않습니다.</p>
+				<p class="blue" style="color:white"><i class="far fa-comment"></i> 저희 케이펀딩은 투자원금과 수익을 보장하지 않으며 투자 손실에 대한 책임은 모두 투자자에게 있습니다.</p>
 			</div>
-      <div style="float:right;position:relative;">
-        <a href="http://p2plending.or.kr/" target="_blank"><img src="/pnpinvest/img/k_p2p_logo.png" style="width:120px;"></a>
-      </div>
-      <div style="clear:both"></div>
+			<div class="p2plogo"style="float:right;position:relative;">
+				<a href="http://p2plending.or.kr/" target="_blank"><img src="/pnpinvest/img/k_p2p_logo.png" style="width:120px;"></a>
+			</div>
+			<div style="clear:both"></div>
 				<!--a class="kcfa" href="http://crowdfunding.or.kr/" ><img src="/pnpinvest/img/crelogo.png" alt="한국크라우드 펀딩협회"></a-->
 				<p class="copyright" style="padding-top:30px;text-align:center;">Copyrightⓒ 2018 K-FUNDING. All Rights Reserved.</p>
 
 		</div>
 	</div>
 
-
-	<!--div class="container">
-		<div class="ft_wrap">
-			<div class="ft_company clearfix">
-				<ul class="ft_af">
-					<p><span style="font-size: 12pt;"></span></p><p><span style="font-size: 12pt;">(주) K펀딩</span><span style="font-size: 12pt; background-color: rgb(119, 119, 119);">​</span></p><p>대표이사 : 이정희</p><p>주소 : 서울특별시 송파구 송파대로 201, B동 907호(문정동,테라타워2)</p><p>TEL : 02-881-5864 ｜ FAX : 02-881-5865</p><p>사업자등록번호 : 499-87-00889</p>
-				</ul>
-				<ul class="ft_ac">
-					<p><span style="font-size: 12pt;"></span><span style="font-size: 12pt;">(주) 키스톤크라우드대부</span></p><p>대부업등록번호 : 2018-금감원-1386(P2P연계대부업)&nbsp;</p><p>대표이사 : 홍재용</p><p>주소 : 서울특별시 송파구 송파대로 201, B동 907호(문정동,테라타워2)</p><p>TEL : 02-881-5864 ｜ FAX : 02-881-5865</p><p>사업자등록번호 : 499-87-00927​&nbsp;</p>
-				</ul>
-			</div>
-
-
-			<div class="ft_support clearfix">
-				<p class="time">케이펀딩 고객센터<span class="txt">(이용가능 시간:09:30~18:00)</span></p>
-				<p class="ftsi tel">Tel.<a href="tel:02-552-1772" class="ftsi_box">02-111-1111</a></p>
-				<p class="ftsi fax">Fax.<span class="ftsi_box">02-111-1111</span></p>
-				<p class="ftsi email">e-mail.<a href="mailto:contact@kfunding.co.kr" class="ftsi_box">contact@kfunding.co.kr</a></span>
-				<ul class="info">
-					<li>광고 제안은 메일로 보내주시길 바라며, 전화문의는 절대 사절합니다.</li>
-					<li>주말 및 공휴일은 운영하지 않습니다.</li>
-					<li>운영 시간은 사정에 따라 변동 될 수 있습니다.</li>
-				</ul>
-			</div>
-			<ul class="ft_sns">
-				<li><a class="fb" href="https://www.facebook.com/thekfunding" target="_blank"  title="새 창으로 열림">페이스북</a></li>
-				<li><a class="kt" href="http://pf.kakao.com/_FcJxcC" target="_blank" title="새 창으로 열림">카카오톡</a></li>
-				<li><a class="nb" href="https://blog.naver.com/kfundings" target="_blank" title="새 창으로 열림">네이버 블로그</a></li>
-			</ul>
-		</div>
-		<ul class="ft_warning">
-			<li>대출금리 연 20%이내 (연체금리 연 27.9% 이내) 플랫폼 이용료 외 기타 부대비용은 없습니다</li>
-			<li>중개수수료를 요구하거나 받는 행위는 불법입니다 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다</li>
-			<li>대출 시 귀하의 신용등급이 하락할 수 있습니다</li>
-			<li class="blue">케이펀딩은 고객님의 투자원금과 수익률을 보장하지 않습니다.</li>
-		</ul>
-		<a class="kcfa" href="http://crowdfunding.or.kr/" ><img src="/pnpinvest/img/crelogo.png" alt="한국크라우드 펀딩협회"></a>
-		<p class="copyright">Copyrightⓒ 2018 Angel Funding Partners. All Rights Reserved.</p>
-	</div-->
 </footer>
 <!-- /////////////////////////////// 하단 끝 /////////////////////////////// -->
 <div class="alert_wrap">

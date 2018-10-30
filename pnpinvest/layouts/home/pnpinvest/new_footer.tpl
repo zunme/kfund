@@ -87,7 +87,7 @@
 		font-weight: normal;
 	}
 	.newcol.second{
-		width:310px;
+		width:320px;
 	}
 	.roundbar{
 		margin-bottom:20px;
@@ -120,7 +120,7 @@
 }
 @media (max-width: 992px){
 	.newcol.desc2{
-		margin-left: 204px;
+		margin-left: 202px;
 	}
 }
 @media (max-width: 780px){
