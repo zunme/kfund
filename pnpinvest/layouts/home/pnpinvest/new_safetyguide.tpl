@@ -102,7 +102,7 @@
       margin-right: auto!important;
   }
 
-  @media all and (max-width: 1100px) {
+  @media all and (max-width: 1260px) {
       #bodyClick {
           height: 100%;
           width: 100%;
@@ -208,6 +208,7 @@
       .navbar .navbar-collapse .navbar-nav > li > a {
           color: #3C4858;
           margin: 5px 15px;
+          text-align: left;
       }
       .navbar .navbar-collapse .navbar-nav > li > a:hover, .navbar .navbar-collapse .navbar-nav > li > a:focus {
           color: #3C4858;
@@ -612,7 +613,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 </div>
 <!-- / 태기 로더 끝 -->
 
-<nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100">
+<nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="50">
   <div class="container-head" style="    padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
