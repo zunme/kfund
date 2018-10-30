@@ -21,7 +21,7 @@
     padding: 5px 20px;
     border-radius: 40px;
 }
-
+ 
 .company_04 dd span {
     border-bottom: 1px solid #061551;
 }
