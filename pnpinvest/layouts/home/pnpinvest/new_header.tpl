@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
 
-  @media all and (max-width: 1200px) {
+  @media all and (max-width: 1260px) {
       #bodyClick {
           height: 100%;
           width: 100%;
@@ -219,6 +219,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .navbar .navbar-collapse .navbar-nav > li > a {
           color: #3C4858;
           margin: 5px 15px;
+          text-align:left;
       }
       .navbar .navbar-collapse .navbar-nav > li > a:hover, .navbar .navbar-collapse .navbar-nav > li > a:focus {
           color: #3C4858;
@@ -632,7 +633,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#996e8fa0', e
 </div>
 <!-- / 태기 로더 끝 -->
 
-<nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100">
+<nav class="navbar navbar-rose navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="20">
   <div class="container-head" style="    padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">

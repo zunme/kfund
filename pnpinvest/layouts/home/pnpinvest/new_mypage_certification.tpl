@@ -51,7 +51,6 @@ if (is_null($seyfert_bank_code2)) {
     $result_secu = curl_exec($curl_handlebank_secu);
     curl_close($curl_handlebank_secu);
     $seyfert_bank_code2    = json_decode($result_secu, true);
-    var_dump($seyfert_bank_code);
     $InstanceCache->set('seyfert_bank_code2', $seyfert_bank_code2, 300);
   }
 ?>
