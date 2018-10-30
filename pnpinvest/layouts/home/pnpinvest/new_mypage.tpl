@@ -11,6 +11,9 @@ if( !isset($user['m_id']) ) {
 include (getcwd().'/module/basic.php');
 $sameOwnerCheck = sameOwnerCheck ($user['m_id'], $loan_id);
 $getMemberlimit = getMemberlimit($user['m_id']);
+$memberInvestmentNowProgress = memberInvestmentNowProgress($user['m_id']);
+
+//$a_total = $getMemberlimit['avail'];
 
 $sql ="
 select ifnull(sum(a.i_pay),0) as total, ifnull(count(1), 0) as cnt, ifnull( sum(a.i_pay * b.i_year_plus) / sum(a.i_pay), 0) as yearplus
@@ -101,7 +104,7 @@ function createvirtual() {
 						<p class="name"><span><?php echo $user['m_name']?></span>님</p>
 						<ul class="txt_01">
 							<li>투자중인 금액<span><?php echo change_pay($invest_total['total'])?>원</span></li>
-							<li>투자가능 금액<span><?php echo change_pay($getMemberlimit['insetpay']-$invest_total['total'])?>원</span></li>
+							<li>투자가능 금액<span><?php echo change_pay($getMemberlimit['insetpay']-$memberInvestmentNowProgress['investProgressTotal'])?>원</span></li>
 						</ul>
 					</div>
 				</div>
