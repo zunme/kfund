@@ -435,7 +435,7 @@ footer .footer-alert p{
     font-size: 16px; //13
 }
 .navbar-right{
-  margin-right:0;
+  margin-right:15px;
 }
 </style>
 
