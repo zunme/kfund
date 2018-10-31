@@ -1565,7 +1565,7 @@ tl.to(".tt3", 0.2, {fillOpacity:1}, "-=1.2");
                    <div style="    text-align: right;    font-size: 20px;    color: #adacac;">
                      <div>
                        <span style="font-family: 'Pinyon Script', cursive;font-size:30px;font-weight:bold;">K</span>
-                       <span style="margin-left: 20px;">FUNDING PARTNERS</span>
+                       <span style="margin-left: 20px;">FUNDING</span>
                      </div>
                      <p style=" margin-top: 20px;    margin-bottom: -20px;    font-size: 15px;">모든 투자 상품을 투명하게 공개하겠습니다.<p>
                    </div>
@@ -1582,7 +1582,7 @@ tl.to(".tt3", 0.2, {fillOpacity:1}, "-=1.2");
        <div style="padding:40px 0;text-align:center; background-color:#e91e63;color:white;font-size:20px;font-weigh:bold;margin-top:50px;">
        	<div>
        		<p>아직도</p>
-       		<p><span class="logo_k" style="font-size: 25px;padding-right: 14px;position: relative;z-index: 10;">K</span><span class="logo_k_title" style="font-size: 20px;position: relative;z-index: 10;">펀딩파트너스</span>의 회원이</p>
+       		<p><span class="logo_k" style="font-size: 25px;padding-right: 14px;position: relative;z-index: 10;">K</span><span class="logo_k_title" style="font-size: 20px;position: relative;z-index: 10;">펀딩</span>의 회원이</p>
        		<p>아니신가요?</p>
        	</div>
        	<a href="#" class="border-btn hvr-bounce-to-right">회원가입하러가기</a>
