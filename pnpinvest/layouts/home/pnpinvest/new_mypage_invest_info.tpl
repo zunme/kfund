@@ -112,7 +112,7 @@ $sanghwan_total = sql_fetch($sql, false);
 												<tr>
 													<td><?php echo change_pay($e_pay) ?>원</td>
 													<td><?php echo (isset($invest_total['cnt'])) ? $invest_total['cnt']:"0"?>건</td>
-													<td><?php echo change_pay($invest_total['total'])?>원</td>
+													<td><?php echo change_pay($memberInvestmentNowProgress['investProgressTotal'])?>원</td>
 												</tr>
 											</tbody>
 										</table>
@@ -153,7 +153,7 @@ $sanghwan_total = sql_fetch($sql, false);
 											</thead>
 											<tbody>
 												<tr>
-													<td><?php echo change_pay($getMemberlimit['insetpay']-$invest_total['total'])?> 원</td>
+													<td><?php echo change_pay($getMemberlimit['insetpay']-$memberInvestmentNowProgress['investProgressTotal'])?> 원</td>
 													<td><?php echo number_format($invest_total['yearplus'],2);?> %</td>
 												</tr>
 											</tbody>
