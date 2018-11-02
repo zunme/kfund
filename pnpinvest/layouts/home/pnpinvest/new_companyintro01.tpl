@@ -610,6 +610,29 @@ window.onresize =function(event) {
 };
 </script>
 <!-- /////////////////////////////// 하단 시작 /////////////////////////////// -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true" style="color:black;font-size:22px;">&times;</span>
+           </button>
+       </div>
+       <div class="modal-body">
+           ...
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <!--button type="button" class="btn btn-primary">Save changes</button-->
+       </div>
+    </div>
+  </div>
+</div>
+
+
+
 <link href="/api/statics/js/hover-min.css" rel="stylesheet"/>
 <style>
 .footer_line_ul{
@@ -836,3 +859,96 @@ window.onresize =function(event) {
 
 </footer>
 <!-- /////////////////////////////// 하단 끝 /////////////////////////////// -->
+<div class="alert_wrap">
+	<div class="alert login">
+		<strong>Angelfunding Partners</strong>
+		<p class="txt"><i class="icon"></i>로그인 후 사용가능합니다.</p>
+		<a href="/pnpinvest/?mode=login" class="btn t_gray">로그인</a>
+		<button class="close">닫기</button>
+	</div>
+</div>
+
+<!-- 팝업 -->
+<div class="iw_popup">
+	<div class="iwp_sum">
+		<p class="p_logo"><img src="/pnpinvest/img/logo_2.png" alt="Angelfunding Partners"></p>
+		<div id="iw_popup_cont">
+
+	  </div>
+		<p class="right">
+			<button type="button" class="btn close">닫기</button>
+		</p>
+	</div>
+</div>
+<script>
+function ValidateEmail1(mail)
+{
+  console.log(mail);
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return (true)
+  }
+    return (false)
+}
+
+function ajlogin() {
+	console.log($("#fundlogin > #login > input[type=password]").val());
+	if ( !ValidateEmail1($("#fundlogin input[name=m_id]").val()) ){
+		alert('이메일을 확인해주세요.');return false;
+	}
+	else if($("#fundlogin input[type=m_password]").val().trim() == '' ){
+		alert('패스워드를 입력해주세요');return false;
+	}
+	else {
+		//document.f.action='/pnpinvest/?mode=login_ck';
+		//return true;
+		$.ajax({
+			type : 'POST',
+			url : '/pnpinvest/?mode=login_ck',
+			data : $("#fundlogin").serialize(),
+			dataType : 'json',
+			success : function(result) {
+				if(result.code==200){
+					self.location.reload();
+				}else{
+					alert(result.msg);
+				}
+			}
+		});
+	}
+
+}
+function displaylogin() {
+	//$("#fundo").fadeIn();
+}
+function cancellogin() {
+	$("#fundo").fadeOut();
+}
+$("document").ready( function() {
+	$('.modal-link').click(function(e) {
+		if ( typeof $(this).data('img') != 'undefined' ){
+			var dataURL = $(this).data('img');
+		} else {
+		 var dataURL = $(this).data('url');
+	 }
+	 $("#exampleModalLabel").text($(this).data('title') );
+
+	 if ( typeof $(this).data('img') != 'undefined' ){
+		 $('#exampleModal .modal-body').html("<img src='"+ dataURL +"' width=100%>");
+		 $('#exampleModal').modal({show:true});
+	 }else {
+		 $('#exampleModal .modal-body').load(dataURL,function(){
+				 $('#exampleModal').modal({show:true});
+		 });
+	 }
+	 e.preventDefault();
+ });
+});
+</script>
+
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "9d1c0cd58e8b30";
+wcs_do();
+</script>
