@@ -74,6 +74,10 @@ class Sunapprc extends CI_Controller {
     $this->db->insert('mari_emoney', $emoney_data);
     $this->db->set('m_emoney', $emoney_data['p_top_emoney'])->where('m_id',$row['sale_id'])->update('mari_member');
     $this->json( array('code'=>200 ,'msg'=>'', 'data'=>$row) );
+
+    require "../pnpinvest/module/sendkakao.php";
+    $msg = array("code"=>"J0001", "m_id"=>$row['sale_id'], "data"=>array("emoney"=>$row['emoney']));
+    sendkakao($msg);
   }
   protected function seyfert($row){
     $res = $this->db->set(array('paystatus'=>'P'))->where('detail_idx',$row['detail_idx'] )->update('z_invest_sunap_detail');
