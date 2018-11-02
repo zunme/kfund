@@ -222,6 +222,9 @@ class Newhomeapi extends CI_Controller {
   			location.replace('/pnpinvest/?mode=join04');
   		</script>
       <?php
+      require "../pnpinvest/module/sendkakao.php";
+      $msg = array("code"=>"Enter0001", "m_id"=>$savedata['m_id']);
+      sendkakao($msg);
       return;
 
   }
