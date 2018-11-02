@@ -362,7 +362,7 @@ if(!$isauthed) { ?>
       			#background-attachment: fixed;
       			#background-size:  contain;
             #background: #df0956; /* Old browsers */
-            #background: -moz-linear-gradient(left, #df0956 0%, #730f53 44%, #061451 100%); /* FF3.6-18 */
+            #background: -moz-linear-gradient(left, #df0956 0%, #730f53 44%, #061451 100%); /* FF3.6-15 */
             #background: -webkit-linear-gradient(left, #df0956 0%,#730f53 44%,#061451 100%); /* Chrome10-25,Safari5.1-6 */
             #background: linear-gradient(to right, #df0956 0%,#730f53 44%,#061451 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             #filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df0956', endColorstr='#061451',GradientType=1 );
@@ -417,7 +417,7 @@ if(!$isauthed) { ?>
             }
             @keyframes loading {
               0%, 100% {
-                transform: translateY(-18px);
+                transform: translateY(-15px);
                 animation-timing-function: ease-out;
               }
               50% {
@@ -686,10 +686,10 @@ table.product_table tbody tr td:first-child{
 							</tr>
 							<tr>
 								<th>&#9642;&nbsp;자금용도</th>
-								<td class="tdline"><?php echo $loa['i_purpose']?></td>
+								<td><?php echo $loa['i_purpose']?></td>
 							</tr>
 							<tr>
-								<th class="tdline">
+								<th>
                   <?php if($loa['i_security_type']){?>
 										&#9642;&nbsp;담보물 유형
 									<?php }?>
@@ -749,7 +749,7 @@ table.product_table tbody tr td:first-child{
 					</table>
 					</div>
 
-					<h4 class="repayh4">&#9635;&nbsp;상환정보</h4>
+					<h4>&#9635;&nbsp;상환정보</h4>
 					<table class="check_table">
 						<caption>상환정보</caption>
 						<colgroup>
@@ -761,66 +761,25 @@ table.product_table tbody tr td:first-child{
               <?php if($iv['i_repay_plan']<>"0000-00-00"){?>
                 <tr>
   								<th>&#9642;&nbsp;상환예정</th>
-  								<td class="tdline"><?php echo $iv['i_repay_plan'];?>&nbsp;(펀딩일정에 따라 변동가능)</td>
+  								<td><?php echo $iv['i_repay_plan'];?>&nbsp;(펀딩일정에 따라 변동가능)</td>
   							</tr>
 							<?php }?>
 							<?php if($iv['i_repay_way'] !=''){?>
                 <tr>
   								<th>&#9642;&nbsp;상환방식</th>
-  								<td class="tdline"><?php echo $iv['i_repay_way'];?></td>
+  								<td><?php echo $iv['i_repay_way'];?></td>
   							</tr>
 							<?php }?>
 							<?php if($iv['i_repay_info'] !=''){?>
                 <tr>
   								<th>&#9642;&nbsp;상환재원</th>
-  								<td class="tdline"><?php echo $iv['i_repay_info'];?></td>
+  								<td><?php echo $iv['i_repay_info'];?></td>
   							</tr>
 							<?php }?>
 						</tbody>
 					</table>
 
-<style>
-
-@media (max-width: 400px) {
-/*안심플랜*/
-.top_info .guide {margin-bottom:18px;line-height: 22px;margin-top:0px;}
-/*투자정보*/
-.detail_con.product_info .container.first .gp1{padding-bottom: 10px; border-bottom: 1px #c7c7c7 dotted; margin-bottom: 30px;}
-.detail_con.product_info .container h4 {margin-bottom: 15px; display: inline-block; line-height: 20px; height: 30px;vertical-align: top;}
-.detail_con .check_table {width: 100%; font-size: 14px; margin-bottom: 20px; margin-left: 5px;}
-
-.detail_con .check_table .cht_th1 {width: 0px;}
-.detail_con .check_table .cht_th2 {width: 0px;}
-
-.detail_con .check_table th {text-align: left; color: #00656a; line-height: 36px; vertical-align: top; width:100px;}
-.detail_con .check_table td {text-align: left; line-height: 36px; vertical-align: top; word-break:keep-all;}
-
-.detail_con .check_table .tdline {line-height: 20px; padding-top:8px;}
-
-/*상환정보*/
-.repayh4 {margin-top:8px;}
-.invest_view .container {margin-bottom:15px;}
-
-
-/*체크포인트*/
-.checkh4 {margin-top:30px;}
-.detail_con .check_table.check {margin-bottom:30px;}
-.detail_con .check_table .checkno {width:32px;}
-.invest_view .detail_con .check_table .chk_number {text-align: center;display: inline-block;width: 26px;height: 26px;line-height: 26px;background-color: #00656a;color: #fff;}
-.detail_con .check_table .checkth {line-height:20px;width:60px;padding-top:3px;}
-.detail_con .check_table .checktd {line-height:20px; padding-top:3px;}
-
-/*신용등급*/
-.container.clearfix.cbscore {padding:0px;}
-
-
-
-}
-
-
-
-
-
+					<style>
 :after, :before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -842,10 +801,18 @@ table.product_table tbody tr td:first-child{
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
-.col-xs-12 {width: 100%;}
-.col-xs-11 {width: 91.66666667%;}
-.col-xs-10 {width: 83.33333333%;}
-.col-xs-9 {width: 75%;}
+.col-xs-12 {
+  width: 100%;
+}
+.col-xs-11 {
+  width: 91.66666667%;
+}
+.col-xs-10 {
+  width: 83.33333333%;
+}
+.col-xs-9 {
+  width: 75%;
+}
 .col-xs-8 {
   width: 66.66666667%;
 }
@@ -1463,7 +1430,6 @@ table.product_table tbody tr td:first-child{
     margin-left: 0;
   }
 }
-
 </style>
 <style>
 .newevent .row p{
@@ -1475,10 +1441,10 @@ table.product_table tbody tr td:first-child{
 </div>
 <div class="detail_con product_info">
 					<div class="container clearfix">
-						<h4 class="checkh4">&#9635;&nbsp;체크포인트</h4>
+						<h4>&#9635;&nbsp;체크포인트</h4>
 
 						<div class="tgp1">
-						<table class="check_table check">
+						<table class="check_table">
 							<caption>체크포인트</caption>
 							<colgroup>
 								<col class="cht_th1">
@@ -1487,9 +1453,9 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th class="checkno"><span class="chk_number">1</span></th>
-									<th class="checkth">투자개요</th>
-									<td class="checktd"><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ?  tohtmlstring($extinfo['gaeyo']) : ''?></td>
+									<th><span class="chk_number">1</span></th>
+									<th>투자개요</th>
+									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ?  tohtmlstring($extinfo['gaeyo']) : ''?></td>
 								</tr>
 								</tbody>
 								</table>
@@ -1505,9 +1471,9 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th class="checkno"><span class="chk_number">2</span></th>
-									<th class="checkth">영업상황</th>
-									<td class="checktd">
+									<th><span class="chk_number">2</span></th>
+									<th>영업상황</th>
+									<td>
                     <?php echo ( isset($extinfo['sanghwang']) && $extinfo['sanghwang']!='' ) ? ( tohtmlstring($extinfo['sanghwang']) ) : ''?>
                   </td>
 								</tr>
@@ -1524,9 +1490,9 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th class="checkno"><span class="chk_number">3</span></th>
-									<th class="checkth">담보력</th>
-									<td class="checktd">
+									<th><span class="chk_number">3</span></th>
+									<th>담보력</th>
+									<td>
                     <?php echo ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
                   </td>
 								</tr>
@@ -1543,9 +1509,9 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th class="checkno"><span class="chk_number">4</span></th>
-									<th class="checkth">채권회수방안</th>
-									<td class="checktd">
+									<th><span class="chk_number">4</span></th>
+									<th>채권회수방안</th>
+									<td>
                     <?php echo ( isset($extinfo['boho']) && $extinfo['boho']!='' ) ? ( tohtmlstring($extinfo['boho']) ) : ''?>
                   </td>
 								</tr>
@@ -1555,7 +1521,7 @@ table.product_table tbody tr td:first-child{
 					</div>
 					</div>
 <?php } ?>
-<div class="container clearfix cbscore">
+<div class="container clearfix">
 <div class="<?php echo $event_class?>">
                 <!--<p ><strong>특별 이벤트</strong></p>-->
                 <img src="/pnpinvest/data/file/<?php echo $loan_id?>/<?php echo $extinfo['eventfile']?>" alt="이벤트" style="width: 100%;">
@@ -1734,21 +1700,21 @@ table.product_table tbody tr td:first-child{
 <?php } ?>
 <div class="container clearfix">
 <h4>&#9635;&nbsp;투자 시 유의사항</h4>
-<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;해당 상품은 다양한 보호장치를 지니고 있음에도 불구하고, 법률상 원금과 수익률은 보장되지 않습니다.<br></p>
+<dd>&#9642;&nbsp;해당 상품은 다양한 보호장치를 지니고 있음에도 불구하고, 법률상 원금과 수익률은 보장되지 않습니다.<br></p>
 <dd>&nbsp;<br></dd>
-							<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;케이펀딩은 고객에게 직접 투자를 권유하지 않습니다. 온라인을 통한 금융투자상품의 투자는 고객님의 자체적인 판단임을 유의해주세요.<br></dd>
+							<dd>&#9642;&nbsp;케이펀딩은 고객에게 직접 투자를 권유하지 않습니다. 온라인을 통한 금융투자상품의 투자는 고객님의 자체적인 판단임을 유의해주세요.<br></dd>
 							<dd>&nbsp;<br></dd>
-							<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;본 투자상품은 조기 상환이 가능합니다. 따라서 조기 상환 발생 시 투자 원금은 투자자분들께 지급되고 모집 시 고시된 예상 투자수익이 변동됩니다.<br></dd>
+							<dd>&#9642;&nbsp;본 투자상품은 조기 상환이 가능합니다. 따라서 조기 상환 발생 시 투자 원금은 투자자분들께 지급되고 모집 시 고시된 예상 투자수익이 변동됩니다.<br></dd>
 							<dd>&nbsp;<br></dd>
-						<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;투자 모집 마감 후 계획사항 및 선행 조건 이행 상황을 재검토하여 대출을 실행하며, 대출을 실행하지 않을 경우에는 즉시 투자원금을 예치금 계좌로 환불해 드립니다. 또한, 본 투자 상품은 대출 채권에서 발생하는 원리금 수취권 매입 계약에 기반하기 때문에 기표일 이전(투자 모집 기간 포함)의 기간에 대한 이자는 계산되지 않습니다.<br></dd>
+						<dd>&#9642;&nbsp;투자 모집 마감 후 계획사항 및 선행 조건 이행 상황을 재검토하여 대출을 실행하며, 대출을 실행하지 않을 경우에는 즉시 투자원금을 예치금 계좌로 환불해 드립니다. 또한, 본 투자 상품은 대출 채권에서 발생하는 원리금 수취권 매입 계약에 기반하기 때문에 기표일 이전(투자 모집 기간 포함)의 기간에 대한 이자는 계산되지 않습니다.<br></dd>
 						<dd>&nbsp;<br></dd>
-						<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;투자 수수료는 매월 상환일 직전 원금 잔액의 0.1%에 해당하는 금액이며, 해당 금액을 차감한 금액이 상환일에 투자자 분들께 지급됩니다. 중도 상환 시에는 수수료를 일할 계산하여 차감한 뒤 지급합니다.<br></dd>
+						<dd>&#9642;&nbsp;투자 수수료는 매월 상환일 직전 원금 잔액의 0.1%에 해당하는 금액이며, 해당 금액을 차감한 금액이 상환일에 투자자 분들께 지급됩니다. 중도 상환 시에는 수수료를 일할 계산하여 차감한 뒤 지급합니다.<br></dd>
 						<dd>&nbsp;<br></dd>
-						<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;P2P투자의 특성상 투자 모집 마감 이후에는 원칙적으로 투자 취소가 불가합니다.<br></dd>
+						<dd>&#9642;&nbsp;P2P투자의 특성상 투자 모집 마감 이후에는 원칙적으로 투자 취소가 불가합니다.<br></dd>
 						<dd>&nbsp;<br></dd>
-						<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;투자모집이 완료되기 전에는 투자취소를 할 수 있습니다. 고객센터로 문의주시면 정보확인 후 취소처리 해 드립니다. <br></dd>
+						<dd>&#9642;&nbsp;투자모집이 완료되기 전에는 투자취소를 할 수 있습니다. 고객센터로 문의주시면 정보확인 후 취소처리 해 드립니다. <br></dd>
 						<dd>&nbsp;<br></dd>
-						<dd style="text-indent:-18px; margin-left:20px;">&#9642;&nbsp;채권추심과정에서 본 투자상품에 제공된 담보물은 경매, 공매 등 환가절차를 통해 대출원금 이하로 매각 될 가능성이 있고, 이때 투자원금의 일부 손실이 발생할 수 있습니다.<br></dd>
+						<dd>&#9642;&nbsp;채권추심과정에서 본 투자상품에 제공된 담보물은 경매, 공매 등 환가절차를 통해 대출원금 이하로 매각 될 가능성이 있고, 이때 투자원금의 일부 손실이 발생할 수 있습니다.<br></dd>
 
 </div>
 
