@@ -85,6 +85,12 @@ break;
 		$tpl->print_('new_companyintro01');
 		 //$tpl->print_('companyintro01');
 	 break;
+	 case "companyintro02":
+ 		$tpl->define('new_companyintro02', './layouts/home/'.$img[c_home_skin].'/new_companyintro02.tpl');
+ 		$tpl->print_('new_companyintro02');
+ 		 //$tpl->print_('companyintro01');
+ 	 break;
+	 
 	 case "mypageinfo":
  	$tpl->define('new_mypage', './layouts/home/'.$img[c_home_skin].'/new_mypage.tpl');
  	$tpl->print_('new_mypage');

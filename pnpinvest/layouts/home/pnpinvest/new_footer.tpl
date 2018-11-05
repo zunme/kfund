@@ -1,7 +1,7 @@
 <?php
-	include(MARI_VIEW_PATH.'/Common_select_class.php');
-	$sql= "select * from mari_config limit 1";
-	$cfg = sql_fetch($sql);
+	//include(MARI_VIEW_PATH.'/Common_select_class.php');
+	//$sql= "select * from mari_config limit 1";
+	//$cfg = sql_fetch($sql);
 ?>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
