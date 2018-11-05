@@ -440,7 +440,7 @@
 }
 </style>
 
-<link href="http://kfunding.co.kr/assets/css/hover.min.css" rel="stylesheet"/>
+<link href="/assets/css/hover.min.css" rel="stylesheet"/>
 
 <div class="box_wrap">
   <div class="row">
@@ -594,45 +594,7 @@
 	</div>
 </div>
 <!-- /////////////////////////////// 본문 끝 /////////////////////////////// -->
-<script>
-<!-- function mask() {
-	var w = $(".company_03 .img img").width();
-	var h = $(".company_03 .img img").height();
-	var p = 284 * w /1000;
-	var p2 = 156*h/535;
-	document.styleSheets[0].addRule(".company_03 .img:before","content: '';position: absolute;width: 50px;height: 62px;top: "+parseInt(p2)+"px;left: "+parseInt(p)+"px;background-color: rgba(255, 255, 255, 0.4);border-radius: 50%;" );
-} -->
-$(document).ready( function() {
- mask();
-});
-window.onresize =function(event) {
-    mask();
-};
-</script>
 <!-- /////////////////////////////// 하단 시작 /////////////////////////////// -->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-       <div class="modal-header">
-           <h5 class="modal-title" id="exampleModalLabel"></h5>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true" style="color:black;font-size:22px;">&times;</span>
-           </button>
-       </div>
-       <div class="modal-body">
-           ...
-       </div>
-       <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           <!--button type="button" class="btn btn-primary">Save changes</button-->
-       </div>
-    </div>
-  </div>
-</div>
-
-
-
 <link href="/api/statics/js/hover-min.css" rel="stylesheet"/>
 <style>
 .footer_line_ul{
@@ -647,6 +609,7 @@ window.onresize =function(event) {
   font-weight: 200;
 
 }
+.modal-content .modal-body {text-align: left;}
 </style>
 <footer id="ft">
 	<div style="background-color:#020d2b;border-bottom:1px solid #292929;padding-left:14px;">
@@ -869,9 +832,29 @@ window.onresize =function(event) {
 </div>
 
 <!-- 팝업 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true" style="color:black;font-size:22px;">&times;</span>
+           </button>
+       </div>
+       <div class="modal-body">
+           ...
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <!--button type="button" class="btn btn-primary">Save changes</button-->
+       </div>
+    </div>
+  </div>
+</div>
+
 <div class="iw_popup">
 	<div class="iwp_sum">
-		<p class="p_logo"><img src="/pnpinvest/img/logo_2.png" alt="Angelfunding Partners"></p>
+		<p class="p_logo"><img src="/pnpinvest/img/logo_2.png" alt=""></p>
 		<div id="iw_popup_cont">
 
 	  </div>
@@ -881,49 +864,7 @@ window.onresize =function(event) {
 	</div>
 </div>
 <script>
-function ValidateEmail1(mail)
-{
-  console.log(mail);
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
-  {
-    return (true)
-  }
-    return (false)
-}
 
-function ajlogin() {
-	console.log($("#fundlogin > #login > input[type=password]").val());
-	if ( !ValidateEmail1($("#fundlogin input[name=m_id]").val()) ){
-		alert('이메일을 확인해주세요.');return false;
-	}
-	else if($("#fundlogin input[type=m_password]").val().trim() == '' ){
-		alert('패스워드를 입력해주세요');return false;
-	}
-	else {
-		//document.f.action='/pnpinvest/?mode=login_ck';
-		//return true;
-		$.ajax({
-			type : 'POST',
-			url : '/pnpinvest/?mode=login_ck',
-			data : $("#fundlogin").serialize(),
-			dataType : 'json',
-			success : function(result) {
-				if(result.code==200){
-					self.location.reload();
-				}else{
-					alert(result.msg);
-				}
-			}
-		});
-	}
-
-}
-function displaylogin() {
-	//$("#fundo").fadeIn();
-}
-function cancellogin() {
-	$("#fundo").fadeOut();
-}
 $("document").ready( function() {
 	$('.modal-link').click(function(e) {
 		if ( typeof $(this).data('img') != 'undefined' ){
