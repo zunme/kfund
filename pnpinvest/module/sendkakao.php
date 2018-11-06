@@ -37,5 +37,4 @@ function sendkakao($msgarr) {
 		# Send request.
 		$result = curl_exec($ch);
 		curl_close($ch);
-    var_dump($result);
 	}
