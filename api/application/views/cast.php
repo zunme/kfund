@@ -417,7 +417,7 @@ max-width:800px;
   }
 </style>
 <link href="/assets/zcast.css" rel="stylesheet" />
-<div id="pageheader" class="page-header header-filter clear-filter header-small" data-parallax="true" filter-color="center_gradient" style="width:100vw;background-color:#7da4a4;">
+<div id="pageheader" class="page-header header-small" data-parallax="true" style="width:100vw;background-image: url('/assets/img/mainbg_0705.jpg');background-position: bottom center;">
     <div class="center">
       <h2>케이펀딩 캐스트</h2>
     </div>
@@ -507,7 +507,7 @@ max-width:800px;
            </div> <!-- / container-->
 
 
-           <div class="team-5 section-image" style="background-image: url('https://s3.amazonaws.com/creativetim_bucket/products/73/nudr_cover_%281%29.jpg?1518594435');background-position: bottom center; padding: 60px 0;">
+           <div class="team-5 section-image" style="background-image: url('/assets/img/mainbg_0705.jpg');background-position: bottom center; padding: 60px 0;">
                <div class="container">
                    <div style="    text-align: right;    font-size: 20px;    color: #adacac;">
                      <div>
