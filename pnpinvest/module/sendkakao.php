@@ -15,7 +15,7 @@ function sendkakao($msgarr) {
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
 		curl_setopt($ch, CURLOPT_PORT, 15672);
-		curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));.
+		curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 		curl_setopt($ch, CURLOPT_USERPWD, $loginpassw);
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
