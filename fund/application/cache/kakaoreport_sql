@@ -1,0 +1,1 @@
+a:3:{s:4:"time";i:1541543827;s:3:"ttl";i:1800;s:4:"data";s:121:"UPDATE `z_alimitok` SET `resultCode` = '0000', `errorText` = NULL WHERE `messageId` =  'd4139ff4d47f41ad822af36c41c8319d'";}
