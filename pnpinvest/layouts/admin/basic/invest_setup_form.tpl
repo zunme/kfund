@@ -1317,9 +1317,6 @@ margin-top: 5px;
 					<tr>
 						<td style="border:none;text-align:center;padding:30px 20px;vertical-align: top;"><label style="font-size: 14px;font-weight: bold;">투자개요</label></td>
 						<td style="border:none;padding:0 0 20px 30px;">
-							<!-- textarea name="gaeyo" style="height:120px;width:800px;"  onChange="showbt('tujabt')" onKeyDown="showbt('tujabt')">
-							<?php echo isset($loan_ext['fk_mari_loan_id']) ? stripslashes($loan_ext['gaeyo']): ""?>
-							</textarea-->
 								<?php
 								$editor_desctype="gaeyo";
 								if( isset($loan_ext['fk_mari_loan_id']) ) {
