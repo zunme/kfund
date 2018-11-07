@@ -8,6 +8,7 @@
 
 class Welcome extends CI_Controller{
 	function _remap($method) {
+		return;
 		if ( ! session_id() ) @ session_start();
 		$this->session = $_SESSION;
 		$this->member_ck = ( isset($this->session['ss_m_id']) &&  $this->session['ss_m_id'] !='' ) ? true: false;
