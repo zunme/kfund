@@ -17,7 +17,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			{# lnb}<!--메인메뉴-->
 		</div><!-- /lnb_wrap -->
 	</div><!-- /left_container -->
-    
+
 	<div id="container">
 		<div class="title02">e-머니 관리</div>
 		 <div class="local_ov01 local_ov">
@@ -88,7 +88,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			</table>
 		</div>
 		<div class="paging">
-<!--패이징--><?php echo get_paging($config['c_write_pages'], $page, $total_page, '?cms='.$cms.''.$qstr.'&amp;page='); ?>
+<!--패이징--><?php echo get_paging($config['c_write_pages'], $page, $total_page, '?cms='.$cms.'&sfl='.$sfl.'&stx='.$stx.'&amp;page='); ?>
 		</div><!-- /paging -->
 		<div class="btn_list01 btn_list">
 		<?php if($user[m_level]>=10){?>
@@ -169,11 +169,11 @@ function Member_intercept_NO(f)
 	f.submit();
 }
 
-function cnj_comma(cnj_str) { 
+function cnj_comma(cnj_str) {
 		var t_align = "left"; // 텍스트 필드 정렬
 		var t_num = cnj_str.value.substring(0,1); // 첫글자 확인 변수
 		var num =  /^[/,/,0,1,2,3,4,5,6,7,8,9,/]/; // 숫자와 , 만 가능
-		var cnjValue = ""; 
+		var cnjValue = "";
 		var cnjValue2 = "";
 
 		if (!num.test(cnj_str.value)){
@@ -203,19 +203,19 @@ function cnj_comma(cnj_str) {
 
 		}
 
-		for(i=0; i<cnj_str.value.length; i++)      {   
-		if(cnj_str.value.charAt(cnj_str.value.length - i -1) != ",") { 
-		cnjValue2 = cnj_str.value.charAt(cnj_str.value.length - i -1) + cnjValue2; 
-		} 
+		for(i=0; i<cnj_str.value.length; i++)      {
+		if(cnj_str.value.charAt(cnj_str.value.length - i -1) != ",") {
+		cnjValue2 = cnj_str.value.charAt(cnj_str.value.length - i -1) + cnjValue2;
+		}
 		}
 
 		for(i=0; i<cnjValue2.length; i++)         {
 
-		if(i > 0 && (i%3)==0) { 
-		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + "," + cnjValue; 
-		} else { 
-		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + cnjValue; 
-		} 
+		if(i > 0 && (i%3)==0) {
+		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + "," + cnjValue;
+		} else {
+		cnjValue = cnjValue2.charAt(cnjValue2.length - i -1) + cnjValue;
+		}
 		}
 		cnj_str.value = cnjValue;
 		cnj_str.style.textAlign = t_align;
@@ -224,17 +224,10 @@ function cnj_comma(cnj_str) {
 
 /*엑셀다운로드*/
 
-function goto_xlsm_time() 
-{ 
-document.location.href = '{MARI_PLUGIN_URL}/exceldownload/xls/?dwtype=<?php echo $cms?>'; 
+function goto_xlsm_time()
+{
+document.location.href = '{MARI_PLUGIN_URL}/exceldownload/xls/?dwtype=<?php echo $cms?>';
 }
 </script>
 
 {# s_footer}<!--하단-->
-
-
-
-
-
-
-
