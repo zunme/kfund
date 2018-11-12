@@ -75,7 +75,7 @@
               <div class="row form-group">
                 <label class="col-3 col-form-label">보내는 사람</label>
                 <div class="col-9">
-                    엔젤펀딩
+                    케이펀딩
                     <input type="hidden" name="from" value="angelfunding">
                 </div>
               </div>
