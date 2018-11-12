@@ -119,13 +119,13 @@
     <th>상환원금</th>
     <td>
       <input type="text" name='storage_amount_wongum' value="<?php echo $cal['Reimbursement']?>" <?php echo $cal['readonly']==true ? 'readonly=readonly':'' ?> onkeyup="$('#sunapregbutton').hide();">
-      <input type="text" id="calcpcrt" value="<?php echo ($cal['Reimbursement']>0) ? ($cal['Reimbursement'] / $loaninfo['realpay']*100) :"0" ?>" style="width:40px"> <a href="javascript:;" class="btn btn-warning" onClick="calcpcrt()">%</a>
+      <input type="text" id="calcpcrt" value="<?php echo ($cal['Reimbursement']>0) ? ($cal['Reimbursement'] / $loaninfo['realpay']*100) :"0" ?>" style="width:40px"> <!--a href="javascript:;" class="btn btn-warning" onClick="calcpcrt()">%</a-->
     </td>
   </tr>
   <tr>
     <th>정상이자<br>(이자계산총일수)</th>
     <td><?php echo number_format($cal['ija']['정상이자'])?> 원 (<?php echo $cal['ijail']['days']?>)일
-      <input type="text" name="wdays" value="<?php echo ($this->input->get('wdays')>0) ? (int)$this->input->get('wdays'):''?>" style="width:40px;position: relative;float: right;">
+      <input type="hidden" name="wdays" value="<?php echo ($this->input->get('wdays')>0) ? (int)$this->input->get('wdays'):''?>" style="width:40px;position: relative;float: right;">
         <br>(실정상이자일수 : <?php echo $cal['ijail']['days']-$cal['ijail']['inner']-$cal['ijail']['over']?>)
     </td>
     <th></th><td></td>
@@ -133,7 +133,7 @@
   <tr>
     <th>기간내이자<br>(유예기간내이자)</th>
     <td><?php echo number_format($cal['ija']['유예기간내'])?> 원 (<?php echo $cal['ijail']['inner']?>)일
-      <input type="text" name="winner" value="<?php echo ($this->input->get('winner')>0) ? (int)$this->input->get('winner'):''?>" style="width:40px;position: relative;float: right;">
+      <input type="hidden" name="winner" value="<?php echo ($this->input->get('winner')>0) ? (int)$this->input->get('winner'):''?>" style="width:40px;position: relative;float: right;">
       <br>(정상이자<?php echo ($cal['ijail']['days'] - $cal['ijail']['inner'] -  $cal['ijail']['over'])?>일치)</td>
     <th>기간이후이자<br>(유예기간후이자)</th><td>
       <?php echo number_format($cal['ija']['유예기간외'])?>원 (<?php echo $cal['ijail']['over']?>)일
