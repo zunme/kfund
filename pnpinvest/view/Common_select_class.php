@@ -2280,7 +2280,7 @@ faq
 		$face_img = "".MARI_HOMESKIN_URL."/img/invest_img1.png";
 
 		$consortium ='';
-		if($loan_id=='19'){
+		if($loan_id=='22'){
 			$consortium = '<div class="with_companys"><div class="with_companys_head">해당상품은 총 1억원중 케이펀딩(5천)과 펀디드(5천)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.</div><div class="with_companys_bottom"><a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a></div></div>';
 		}
 
