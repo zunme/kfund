@@ -1,9 +1,4 @@
 <?php
-function tohtmlstring($str){
-	if($str != strip_tags($str)) return stripslashes($str);
-	else return nl2br($str);
-}
-
 if ($loa['i_look']=='F'){ return;}
 
 ?>
@@ -20,7 +15,6 @@ $extinfo           = sql_fetch($sql, false);
 $sql = "select ifnull(sum(i_pay),0) as invested from mari_invest where loan_id = ".(int)$loan_id;
 $invested  = sql_fetch($sql, false);
 
-//var_dump($loa);
 /* 회원인증 적용*/
 include_once (getcwd().'/module/basic.php');
 list($isauthed, $authedmsghead,$authedmsgbody) = isauthed($user);
@@ -221,12 +215,8 @@ if(!$isauthed) { ?>
         <?php	} }
         }
         ?>
-
-
-
-
-
 			</div>
+			<?php require("./module/invmode.php");?>
 			<script>
 				$(document).ready(function(){
 					$(window).scroll(function(){
@@ -1464,9 +1454,9 @@ table.product_table tbody tr td:first-child{
 							<tbody>
 								<tr>
 									<th><span class="chk_number">2</span></th>
-									<th>영업상황</th>
+									<th>상품정보</th>
 									<td>
-                    <?php echo ( isset($extinfo['sanghwang']) && $extinfo['sanghwang']!='' ) ? ( tohtmlstring($extinfo['sanghwang']) ) : ''?>
+										<?php echo ( isset($extinfo['sanghwang']) && $extinfo['sanghwang']!='' ) ? ( tohtmlstring($extinfo['sanghwang']) ) : ''?>
                   </td>
 								</tr>
 								</tbody>
@@ -1483,9 +1473,14 @@ table.product_table tbody tr td:first-child{
 							<tbody>
 								<tr>
 									<th><span class="chk_number">3</span></th>
-									<th>담보력</th>
+									<th id="chartitle_th" >담보력</th>
 									<td>
-                    <?php echo ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
+                    <?php ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
+										<script>
+										var chartcolor = ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce','#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+										var linecolor="#000000";
+										</script>
+										<?php cdataz($extinfo);?>
                   </td>
 								</tr>
 								</tbody>
