@@ -154,7 +154,7 @@ if(!$isauthed) { ?>
         -->
         <?php } ?>
 			</div>
-      <?php if ($loa['i_id'] == '18') { ?>
+      <?php if ($consortium != '') { ?>
       <!-- temporary division -->
       <style>
           .with_companys{
@@ -173,16 +173,8 @@ if(!$isauthed) { ?>
             text-align:center;
           }
       </style>
-      <div class="with_companys">
-        <div class="with_companys_head">
-        해당상품은 총 3.2억원중 케이펀딩(1.6억)과 펀디드(1.6억)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.
-        </div>
-        <div class="with_companys_bottom">
-          <a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a>
-        </div>
-      </div>
       <!-- / temporary division -->
-      <?php } ?>
+      <?php echo $consortium; } ?>
 
 			<!-- 따라다니는 영역 -->
 			<div class="aside">
