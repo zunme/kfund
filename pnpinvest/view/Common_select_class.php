@@ -2279,6 +2279,11 @@ faq
 		$face_content = cut_str(strip_tags($loa[i_loan_pose]),22,"…");
 		$face_img = "".MARI_HOMESKIN_URL."/img/invest_img1.png";
 
+		$consortium ='';
+		if($loan_id=='19'){
+			$consortium = '<div class="with_companys"><div class="with_companys_head">해당상품은 총 1억원중 케이펀딩(5천)과 펀디드(5천)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.</div><div class="with_companys_bottom"><a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a></div></div>';
+		}
+
 		/*대출총액의 투자금액 백분율구하기*/
 		$sql="select sum(i_pay) from mari_invest where loan_id='$loan_id'";
 		$top=sql_query($sql, false);
@@ -2440,7 +2445,6 @@ faq
 		/*증빙서류파일*/
 		$sql = "select * from mari_invest_file where loan_id = '$loan_id' and file_type != '' order by file_idx asc" ;
 		$proof_file = sql_query($sql);
-
 
 	break;
 
