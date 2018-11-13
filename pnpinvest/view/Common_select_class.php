@@ -2278,10 +2278,10 @@ faq
 		$face_url= "".MARI_HOME_URL."/?mode=invest_view&loan_id=$iv[i_id]";
 		$face_content = cut_str(strip_tags($loa[i_loan_pose]),22,"…");
 		$face_img = "".MARI_HOMESKIN_URL."/img/invest_img1.png";
-
+//컨소시엄
 		$consortium ='';
 		if($loan_id=='22'){
-			$consortium = '<div class="with_companys"><div class="with_companys_head">해당상품은 총 1억원중 케이펀딩(5천)과 펀디드(5천)가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.</div><div class="with_companys_bottom"><a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a></div></div>';
+			$consortium = '<div class="with_companys"><div class="with_companys_head">해당상품은 케이펀딩과 펀디드가 공동으로 모집하는 컨소시엄 상품으로 각 회사에서 동일한 상품에 투자가 가능 합니다.</div><div class="with_companys_bottom"><a href="https://www.funded.co.kr/investment"><img src="img/pundid.png" style="margin-top:20px;" ></a></div></div>';
 		}
 
 		/*대출총액의 투자금액 백분율구하기*/
