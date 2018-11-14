@@ -418,7 +418,7 @@ margin-left: -35px;
     <li class="event right" data-no="2">
 			<h5>02 계좌검증 진행</h5>
       <p>SMS인증 또는 ARS인증 중 선택하여 세이퍼트 숫자 4자리를 회신 후 계좌 검증을 완료합니다.</p>
- 
+
     </li>
 		<li class="event line line_left_bottom line_right_top">
 			<div class="bottomline"></div>
@@ -479,7 +479,7 @@ margin-left: -35px;
 .timeline__item {
   float: left;
   clear:left;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   position: relative;
   width: 50%;
 }
@@ -704,13 +704,13 @@ div.timeline {
 </li>
 
 </ol>
-			<li class="event"  data-no="" style="text-align:center;margin-top:20px;">
+			<li class="event"  data-no="" style="text-align:center;margin-top:54px;margin-bottom:30px;">
 			<a href="/pnpinvest/?mode=join01" class="btn btn-join btn-rose">회원가입하러가기</a>
 
 		</li>
 </div>
 						<!-- new-->
-			
+
 						</div>
 			  </div>
 				<div class="tabbed-section-4 tabssection hidden" id="tabid04">
