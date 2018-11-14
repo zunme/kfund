@@ -136,6 +136,7 @@
                   <li><span href="/api/index.php/eventcheck" class="triggerModal80 nullmenu">eventcheck</span></li>
                   <li><span href="/api/index.php/consulting/admviewlist" class="triggerModal80 nullmenu">상담리스트</span></li>
                   <li><span href="/api/index.php/design/main" class="triggerModal80 nullmenu">안심케어</span></li>
+                  <li><span href="/api/index.php/consulting/toplist" class="triggerModal80 nullmenu">top list</span></li>
                 </ul>
               </div>
 
@@ -183,7 +184,6 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a onclick="openSsyWindow('angel','src')"><i class="fa fa-hand-o-right pull-right"></i>보낸내역</a></li>
-                    <li><a onclick="openSsyWindow('angel','dst')"><i class="fa fa-hand-o-left pull-right"></i>받은내역</a></li>
                     <li><a data-toggle="modal" data-target="#smodal2" data-backdrop="false"><i class="fa fa-bank pull-right"></i>이체</a></li>
                     <li><a data-toggle="modal" data-target="#unclosemodal" data-backdrop="false"><i class="fa fa-bank pull-right"></i>정산하기</a><li>
                   </ul>

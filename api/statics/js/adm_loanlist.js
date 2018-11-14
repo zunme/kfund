@@ -286,7 +286,7 @@ $(document).ready(function() {
          { "data": "virtualacc",
           "orderable": false ,
           "render": function ( data, type, row, meta ) {
-                 if(data=='Y') return '<a class="linked_class" onClick="openNewWindow(\''+row.m_id+'\')">가상계좌</a><br><a class="linked_class" onclick="openSsyWindow2(\''+row.m_id+'\')" >잔액변동</a>&nbsp/&nbsp<a class="linked_class" onclick="openSsyWindow(\''+row.m_id+'\',\'src\')" >보낸내역</a>&nbsp/&nbsp<a class="linked_class" onclick="openSsyWindow(\''+row.m_id+'\',\'dst\')" >받은내역</a>';
+                 if(data=='Y') return '<a class="linked_class" onClick="openNewWindow(\''+row.m_id+'\')">가상계좌</a><br>&nbsp/&nbsp<a class="linked_class" onclick="openSsyWindow(\''+row.m_id+'\',\'src\')" >보낸내역</a>&nbsp/&nbsp<a class="linked_class" onclick="openSsyWindow(\''+row.m_id+'\',\'dst\')" >받은내역</a>';
                  else return data;
                }
          },

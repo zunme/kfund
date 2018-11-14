@@ -119,7 +119,7 @@
     <th>상환원금</th>
     <td>
       <input type="text" name='storage_amount_wongum' value="<?php echo $cal['Reimbursement']?>" <?php echo $cal['readonly']==true ? 'readonly=readonly':'' ?> onkeyup="$('#sunapregbutton').hide();">
-      <input type="text" id="calcpcrt" value="<?php echo ($cal['Reimbursement']>0) ? ($cal['Reimbursement'] / $loaninfo['realpay']*100) :"0" ?>" style="width:40px"> <!--a href="javascript:;" class="btn btn-warning" onClick="calcpcrt()">%</a-->
+      <input type="hidden" id="calcpcrt" value="<?php echo ($cal['Reimbursement']>0) ? ($cal['Reimbursement'] / $loaninfo['realpay']*100) :"0" ?>" style="width:40px"> <!--a href="javascript:;" class="btn btn-warning" onClick="calcpcrt()">%</a-->
     </td>
   </tr>
   <tr>
@@ -137,7 +137,7 @@
       <br>(정상이자<?php echo ($cal['ijail']['days'] - $cal['ijail']['inner'] -  $cal['ijail']['over'])?>일치)</td>
     <th>기간이후이자<br>(유예기간후이자)</th><td>
       <?php echo number_format($cal['ija']['유예기간외'])?>원 (<?php echo $cal['ijail']['over']?>)일
-      <input type="text" name="wover" value="<?php echo ($this->input->get('wover')>0) ? (int)$this->input->get('wover'):''?>" style="width:40px;position: relative;float: right;">
+      <input type="hidden" name="wover" value="<?php echo ($this->input->get('wover')>0) ? (int)$this->input->get('wover'):''?>" style="width:40px;position: relative;float: right;">
       <?php if ($cal['ijail']['overdate'] !='') echo "<br>[ ".$cal['ijail']['overdate']."]";?>
     </td>
   </tr>

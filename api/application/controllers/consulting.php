@@ -37,4 +37,14 @@ class Consulting extends CI_Controller {
     $list = $this->db->query("select * from z_counsult order by idx desc")->result_array();
     $this->load->view("consulting_list", array("list"=>$list));
   }
+  function toplist() {
+    $sql = "select b.m_id, a.total, m_name, m_hp from
+    (select m_id , sum(i_pay) as total
+    from mari_invest
+    group by m_id
+    order by sum(i_pay) desc) a
+    join mari_member b on a.m_id = b.m_id;";
+    $list = $this->db->query($sql)->result_array();
+    $this->load->view("top_list", array("list"=>$list));
+  }
 }

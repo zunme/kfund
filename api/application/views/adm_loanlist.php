@@ -16,18 +16,8 @@ span.pendingsf_use{text-align: center;color:#337ab7;cursor:pointer;}
                   <div class="x_title">
                     <h2>Userlist <small>회원목록</small>
                       <div style="display:inline">
-                      <a href="/api/index.php/adm/mreferer" class="btn btn-xs btn-success" style="margin-left:100px;">추천인명단 다운<span class="fa fa-download pull-right" style="margin-top: 2px;padding-left: 4px;"></span></a>
                       </div>
-                      <!--form action="/api/index.php/adm/withholdinglist" style="display:inline">
-                        <button class="btn btn-xs btn-success" style="margin-left:20px;">원천징수리스트 다운<span class="fa fa-download pull-right" style="margin-top: 2px;padding-left: 4px;"></span></button>
-                        <input type="text" style="width: 120px;display:inline" name="yearmonth" class="form-control singlepicker" value="" />
-                        <!--~<input type="text" style="width: 120px;display:inline" name="enddate" class="form-control singlepicker" value="" />-->
-                      </form-->
-
-
-
                     </h2>
-
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -40,7 +30,6 @@ span.pendingsf_use{text-align: center;color:#337ab7;cursor:pointer;}
                         <input id="emoneycheck" type="checkbox" name="emoneycheck" value="Y" >emoney자동확인
                       </div>
                       <div style="float:right;margin-right:2em;margin-bottom:5px;">
-                        <input id="isnotauthed" type="checkbox" name="isnotauthed" value="Y" onClick="fnchanged()">확인안된유저
                         <select id="searchlevel" name="level" class="input-sm" style="margin-left: 20px;" onChange="fnchanged()">
                           <option value="" >선택</option>
                         <?php
@@ -89,7 +78,6 @@ span.pendingsf_use{text-align: center;color:#337ab7;cursor:pointer;}
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li><a href="javascript:;" onClick="analfirst( 'limit5' )"><i class="fa fa-bar-chart"></i></a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

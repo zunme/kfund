@@ -8,8 +8,6 @@
           <th>이름</th>
           <th>전화번호</th>
           <th>투자액</th>
-          <th>재투자여부</th>
-          <th style="text-align:center">누적</th>
           <th></th>
       </tr>
   </thead>
@@ -26,8 +24,6 @@
       <td><?php echo $val['m_name']?></td>
       <td><?php echo preg_replace("/(0(?:2|[0-9]{2}))([0-9]+)([0-9]{4}$)/", "\\1-\\2-\\3", $val['m_hp'])?></td>
       <td style="text-align:right;padding-right:20px;"><?php echo number_format($val['i_pay'])?></td>
-      <td style="text-align:center"><?php echo $val['isfirst']== 1 ? '첫투자' :'재투자'?></td>
-      <td style="text-align:right;padding-right:20px;"><?php echo number_format($sum)?> 원</td>
       <td>
         <form>
         <input type="hidden" name="invest_id" value="<?php echo $val['i_id']?>">
