@@ -1421,7 +1421,7 @@ table.product_table tbody tr td:first-child{
 </style>
 
 </div>
-<div class="detail_con product_info">
+<div class="detail_con product_info on">
 					<div class="container clearfix">
 						<h4>&#9635;&nbsp;체크포인트</h4>
 
@@ -1477,7 +1477,7 @@ table.product_table tbody tr td:first-child{
 									<td>
                     <?php ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
 										<script>
-										var chartcolor = ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce','#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+										var chartcolor = ['#67bcd6', '#efce10', '#f7635a', '#00b5a5', '#313942'];
 										var linecolor="#000000";
 										</script>
 										<?php cdataz($extinfo);?>
@@ -2206,6 +2206,12 @@ $(window).resize( resized );
 
 $(document).ready(function(){
   resized();
+  $(".chartdiv_wrap").addClass("row");
+  $("#chart_container").addClass("col-md-6 col-sm-7 col-xs-12");
+  $("#chart_detail").addClass("col-md-6 col-sm-5 col-xs-12");
+  $(".c_d_row").addClass("row");
+  $(".c_d_c1").addClass("col-xs-6");
+  $(".c_d_c2").addClass("col-xs-6");
 
   $('a[rel*=leanModal]').leanModal({ top : 150, closeButton: ".modal_close" });
   $("#openmodal").click();
