@@ -17,7 +17,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 			{# lnb}<!--메인메뉴-->
 		</div><!-- /lnb_wrap -->
 	</div><!-- /left_container -->
-    
+
 	<div id="container">
 		<div class="title02">회원탈퇴 목록</div>
 		 <div class="local_ov01 local_ov">
@@ -25,7 +25,7 @@ include(MARI_VIEW_PATH.'/Common_select_class.php');
 		</div>
 
 		<form id="fsearch" name="fsearch"  method="get" class="local_sch01 local_sch">
-		<input type="hidden" name="cms" value="member_list">
+		<input type="hidden" name="cms" value="leave_list">
 			<label for="" class="sound_only">검색대상</label>
 			<select name="sfl">
 				<option value="s_name"<?php echo get_selected($_GET['sfl'], "s_name"); ?>>이름</option>
@@ -126,5 +126,3 @@ function memberlist_submit(f)
 </script>
 
 {# s_footer}<!--하단-->
-
- 
