@@ -649,7 +649,7 @@ table.product_table tbody tr td:first-child{
 				<!-- 상품정보 탭 -->
 				<h3 class="title product_info"><i class="bg"></i><span class="txt">상품정보</span></h3>
 
-				<div class="detail_con product_info">
+				<div class="detail_con product_info on">
 <?php if ($loan_id >= $startidx ) { ?>
 <div class="container first">
 <div class="gp1">
@@ -1421,11 +1421,11 @@ table.product_table tbody tr td:first-child{
 </style>
 
 </div>
-<div class="detail_con product_info on">
+<div class="detail_con product_info">
 					<div class="container clearfix">
 						<h4>&#9635;&nbsp;체크포인트</h4>
 
-						<div class="tgp1">
+						<div class="tgp1 newtable_01">
 						<table class="check_table">
 							<caption>체크포인트</caption>
 							<colgroup>
@@ -1435,15 +1435,15 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th><span class="chk_number">1</span></th>
-									<th>투자개요</th>
+									<th><span class="chk_number">1</span>투자개요</th>
+                  </tr><tr>
 									<td><?php echo ( isset($extinfo['gaeyo']) && $extinfo['gaeyo']!='' ) ?  tohtmlstring($extinfo['gaeyo']) : ''?></td>
 								</tr>
 								</tbody>
 								</table>
 								</div>
 
-								<div class="tgp2">
+								<div class="tgp2  newtable_01">
 								<table class="check_table">
 							<caption>체크포인트-영업상황</caption>
 							<colgroup>
@@ -1453,8 +1453,8 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th><span class="chk_number">2</span></th>
-									<th>상품정보</th>
+									<th><span class="chk_number">2</span>상품정보</th>
+                </tr><tr>
 									<td>
 										<?php echo ( isset($extinfo['sanghwang']) && $extinfo['sanghwang']!='' ) ? ( tohtmlstring($extinfo['sanghwang']) ) : ''?>
                   </td>
@@ -1462,7 +1462,7 @@ table.product_table tbody tr td:first-child{
 								</tbody>
 								</table>
 								</div>
-								<div class="tgp2">
+								<div class="tgp2 newtable_01">
 									<table class="check_table">
 							<caption>체크포인트-담보력</caption>
 							<colgroup>
@@ -1472,8 +1472,9 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th><span class="chk_number">3</span></th>
-									<th id="chartitle_th" >담보력</th>
+									<th><span class="chk_number">3</span>
+									<span id="chartitle_th" >담보력</span></th>
+                </tr><tr>
 									<td>
                     <?php ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
 										<script>
@@ -1486,7 +1487,7 @@ table.product_table tbody tr td:first-child{
 								</tbody>
 								</table>
 								</div>
-								<div class="tgp3">
+								<div class="tgp3 newtable_01">
 									<table class="check_table">
 							<caption>체크포인트-채권회수</caption>
 							<colgroup>
@@ -1496,8 +1497,9 @@ table.product_table tbody tr td:first-child{
 							</colgroup>
 							<tbody>
 								<tr>
-									<th><span class="chk_number">4</span></th>
-									<th>채권회수방안</th>
+									<th><span class="chk_number">4</span>채권회수방안</th>
+                </tr>
+                <tr>
 									<td>
                     <?php echo ( isset($extinfo['boho']) && $extinfo['boho']!='' ) ? ( tohtmlstring($extinfo['boho']) ) : ''?>
                   </td>

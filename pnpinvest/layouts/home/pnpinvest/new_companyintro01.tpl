@@ -504,18 +504,6 @@
 
 
     <div class="col-sm-4 colimgbox">
- <div class="box">
-	<img src="img/pp07.jpg" alt="임성택">
-
-        <div class="box-title">Chief Technology Officer <br>
-	Lim Sung Taek<br>
-	<p style="font-size:15px;line-height:26px;color:#89afb7">
-- kt cloud Mysql DBA</p></div>
-    </div>
-    </div>
-
-
-    <div class="col-sm-4 colimgbox">
       <div class="box">
  	<img src="img/pp09.jpg" alt="최용원">
         <div class="box-title">NPL Investment <br>
