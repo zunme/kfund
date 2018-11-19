@@ -649,7 +649,7 @@ table.product_table tbody tr td:first-child{
 				<!-- 상품정보 탭 -->
 				<h3 class="title product_info"><i class="bg"></i><span class="txt">상품정보</span></h3>
 
-				<div class="detail_con product_info on">
+				<div class="detail_con product_info">
 <?php if ($loan_id >= $startidx ) { ?>
 <div class="container first">
 <div class="gp1">
