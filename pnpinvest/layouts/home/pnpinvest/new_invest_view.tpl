@@ -645,7 +645,7 @@ table.product_table tbody tr td:first-child{
 
 
 
-
+<link href="/pnpinvest/data/resource/investview.css" rel="stylesheet" />
 				<!-- 상품정보 탭 -->
 				<h3 class="title product_info"><i class="bg"></i><span class="txt">상품정보</span></h3>
 
