@@ -1477,10 +1477,6 @@ table.product_table tbody tr td:first-child{
                 </tr><tr>
 									<td>
                     <?php ( isset($extinfo['dambo']) && $extinfo['dambo']!='' ) ? ( tohtmlstring($extinfo['dambo']) ) : ''?>
-										<script>
-										var chartcolor = ['#67bcd6', '#efce10', '#f7635a', '#00b5a5', '#313942'];
-										var linecolor="#000000";
-										</script>
 										<?php cdataz($extinfo);?>
                   </td>
 								</tr>
@@ -2204,6 +2200,10 @@ function callbackOwl(event) {
     event.relatedTarget.options.loop = false;
   }
 }
+function numberformat(x){
+  console.log( parseFloat(x) );
+  return Number.parseFloat(x).toFixed(0);
+}
 $(window).resize( resized );
 
 $(document).ready(function(){
@@ -2237,6 +2237,9 @@ $(document).ready(function(){
        $(this).val(setComma($(this).val().replace(/[^0-9]/g,"")));
   });
   calc();
+    $(".c_d_c2").each( function () {
+     $(this).text( setComma( $(this).text()) + "원");
+    });
 });
 </script>
 {# new_footer}
