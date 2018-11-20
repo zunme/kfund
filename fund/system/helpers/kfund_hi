@@ -1,0 +1,1000 @@
+  800  sudo docker run -it --rm buildpack-deps:trusty /bin/bash
+  801  sudo docker ps -a
+  802  sudo docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+  803  npm install amqplib
+  804  vi sender.js
+  805  node sender.js 
+  806  vi receiver.php
+  807  php receiver.php 
+  808  vi composer.json
+  809  mkdir rabbitmq
+  810  cd rabbitmq/
+  811  vi composer.json
+  812  composer.phar install
+  813  composer install
+  814  sudo attach fund_prg
+  815  ifconfig
+  816  sudo attach fund_prg
+  817  ll
+  818  cd ..
+  819  ll
+  820  cd ~
+  821  ll
+  822  mkdir docker
+  823  ll
+  824  cd docker
+  825  ll
+  826  mk zeromq
+  827  mkdir zeromq
+  828  cd zeromq/
+  829  ll
+  830  mkdir app
+  831  cd app
+  832  vi server.js
+  833  vi Dockerfile
+  834  sudo docker build
+  835  sudo docker build .
+  836  ll
+  837  mv Dockerfile  ../
+  838  ll
+  839  cd ..
+  840  ll
+  841  vi Dockerfile 
+  842  sudo docker build .
+  843  docker images
+  844  sudo docker images
+  845  sudo docker -it e56804af0ff0 bash
+  846  sudo docker run -it e56804af0ff0 bash
+  847  sudo docker  ps -a
+  848  sudo su
+  849  docker run -it -t node-zmq:rebuild bash
+  850  sudo docker run -it -t node-zmq:rebuild bash
+  851  sudo docker run -it ubuntu:18.04 bash
+  852  docker ps -a
+  853  sudo su
+  854  history |grep node
+  855  ll
+  856  cd ~
+  857  ll
+  858  cd docker/
+  859  ll
+  860  cd zeromq/
+  861  ll
+  862  cd ..
+  863  cd /data
+  864  ll
+  865  cd docker/
+  866  ll
+  867  cd zeromq/
+  868  ll
+  869  cd ..
+  870  rm -fr zeromq/
+  871  sudo rm -fr zeromq/
+  872  ll
+  873  cd ..
+  874  ll
+  875  cd backup/
+  876  ll
+  877  cd kfund/
+  878  ll
+  879  cd ..
+  880  ll
+  881  cd serversource/
+  882  ll
+  883  cd kfund/
+  884  ll
+  885  cd ..
+  886  ll
+  887  cd temp
+  888  ll
+  889  cd rabbitmq/
+  890  ll
+  891  cd ..
+  892  node broker.js 
+  893  vi sender.js 
+  894  cd rabbitmq/
+  895  ll
+  896  vi composer.json 
+  897  cd ..
+  898  ll
+  899  cd node_modules/
+  900  ll
+  901  cd ..
+  902  cd vendor/
+  903  ll
+  904  cd ..
+  905  ll
+  906  cd rabbitmq/
+  907  ll
+  908  rm *
+  909  npm install -s amqplib
+  910  ll
+  911  vi worker.js
+  912  vi task.js
+  913  vi task.js 
+  914  cd ..
+  915  ll
+  916  vi sender.js 
+  917  cd rabbitmq/
+  918  ll
+  919  vi task.js 
+  920  rm task.js 
+  921  vi new-task.js
+  922  node new-task.js 
+  923  rm worker.js 
+  924  vi worker.js
+  925  node new-task.js 
+  926  php
+  927  ll
+  928  cd ..
+  929  cp -r ./rabbitmq/ /data/docker/
+  930  cd /data/docker/
+  931  ll
+  932  sudo su
+  933  exit
+  934  cd /data/temp
+  935  cd rabbitmq/
+  936  node worker.js 
+  937  cd ..
+  938  cd docker/
+  939  ll
+  940  cd basephp/
+  941  ll
+  942  cd application/
+  943  ll
+  944  cd public/
+  945  ll
+  946  vi worker.js
+  947  ll
+  948  mkdir rabbitmq
+  949  mv worker.js ./rabbitmq/
+  950  vi /usr/local/bin/attach 
+  951  vi /usr/local/bin/dockerphp
+  952  sudo vi /usr/local/bin/dockerphp
+  953  sudo chmod 777 /usr/local/bin/dockerphp
+  954  ll
+  955  cd rabbitmq/
+  956  ll
+  957  docker run -it --rm -v "$PWD":/application base-php bash
+  958  docker images
+  959  sudo docker images
+  960  sudo docker run -it --rm -v "$PWD":/application base_php-fpm bash
+  961  sudo docker run -it --rm -v "$PWD":/application basephp-fpm bash
+  962  sudo docker run -it --rm -v "$PWD":/application basephp_php-fpm bash
+  963  ll
+  964  dockerphp worker.js 
+  965  sudo dockerphp worker.js 
+  966  ll
+  967  ll ./
+  968  cd ..
+  969  ll
+  970  cd rabbitmq/
+  971  ll
+  972  vi worker.js 
+  973  mv worker.js worker.php
+  974  ll
+  975  sudo dockerphp worker.php 
+  976  ll
+  977  vi worker.php 
+  978  vi new_task.php
+  979  sudo dockerphp new_task.php 
+  980  vi new_task.php
+  981  vi worker.php 
+  982  vi new_task.php
+  983  sudo dockerphp worker.php 
+  984  sudo dockerphp new_task.php 
+  985  vi new_task.php
+  986  vi /usr/local/bin/dockerphp 
+  987  docker ps -a
+  988  sudo docker ps -a
+  989  sudo docker images
+  990  sudo vi /usr/local/bin/dockerphp 
+  991  sudo dockerphp new_task.php 
+  992  cd ..
+  993  ll
+  994  cd phpdocker/
+  995  ll
+  996  cd php-fpm/
+  997  ll
+  998  vi Dockerfile 
+  999  cd ..
+ 1000  sudo docker images
+ 1001  docker rmi basephp_php-fpm
+ 1002  sudo docker rmi basephp_php-fpm
+ 1003  sudo docker-composer build .
+ 1004  history|grep docker
+ 1005  sudo docker-compose build .
+ 1006  sudo docker-compose build
+ 1007  ll
+ 1008  cd application/
+ 1009  ll
+ 1010  cd public/
+ 1011  ll
+ 1012  cd rabbitmq/
+ 1013  ll
+ 1014  sudo dockerphp worker.php 
+ 1015  ps aux
+ 1016  docker ps -a
+ 1017  sudo docker ps -a
+ 1018  sudo docker rm c0d273975e6e
+ 1019  attach c0d273975e6e
+ 1020  sudo attach c0d273975e6e
+ 1021  sudo docker ps -a
+ 1022  sudo docker stop c0d273975e6e
+ 1023  sudo docker ps -a
+ 1024  sudo docker stop c0d273975e6e
+ 1025  sudo docker ps -a
+ 1026  sudo docker stop 307d1fd62a64
+ 1027  sudo docker rm 307d1fd62a64
+ 1028  cd ..
+ 1029  ll
+ 1030  cd application/
+ 1031  ll
+ 1032  mkdir app
+ 1033  cp -r ../../rabbitmq ./app
+ 1034  ll
+ 1035  cd app
+ 1036  ll
+ 1037  cd rabbitmq/
+ 1038  ll
+ 1039  cd ..
+ 1040  ll
+ 1041  vi docker-compose.yml 
+ 1042  ll
+ 1043  cd application/
+ 1044  ll
+ 1045  cd ..
+ 1046  ll
+ 1047  mkdir rabbitmq
+ 1048  ll
+ 1049  cd rabbitmq/
+ 1050  vi enabled_plugins
+ 1051  ll
+ 1052  vi erlang.cookie
+ 1053  cd ..
+ 1054  vi docker-compose.yml 
+ 1055  sudo docker-compose build
+ 1056  vi docker-compose.yml 
+ 1057  sudo docker-compose build
+ 1058  vi docker-compose.yml 
+ 1059  sudo docker-compose build
+ 1060  sudo docker-compose up
+ 1061  cd /data/temp
+ 1062  cd rabbitmq/
+ 1063  node worker.js 
+ 1064  sudo docker ps -a
+ 1065  attach 307d1fd62a64
+ 1066  sudo attach 307d1fd62a64
+ 1067  ifconfig
+ 1068  sudo docker ps -a
+ 1069  node worker.js 
+ 1070  ll
+ 1071  mv * /data/docker/rabbitmq/
+ 1072  cd /data/docker/rabbitmq/
+ 1073  ll
+ 1074  node new-task.js 
+ 1075  mkdir node
+ 1076  ll
+ 1077  mv *.js node/
+ 1078  cd node
+ 1079  npm install new-task.js 
+ 1080  ll
+ 1081  vi worker.js 
+ 1082  npm install amqplib
+ 1083  ll
+ 1084  node new-task.js 
+ 1085  ps aux
+ 1086  sudo su
+ 1087  ll
+ 1088  node new-task.js 
+ 1089  sudo docker ps -a
+ 1090  attach basephp_php-fpm
+ 1091  sudo attach basephp_php-fpm
+ 1092  sudo docker ps -a
+ 1093  sudo attach basephp-php-fpm
+ 1094  docker ps -a
+ 1095  sudo su
+ 1096  service apache2 stop
+ 1097  sudo service apache2 stop
+ 1098  sudo service nginx start
+ 1099  sudo docker ps -a
+ 1100  sudo su
+ 1101  free -m
+ 1102  sudo docker ps -a
+ 1103  sudo attach zunme-php
+ 1104  cd ..
+ 1105  cd /data/docker/zunme-base/conf/
+ 1106  ll
+ 1107  cd nginx
+ 1108  ll
+ 1109  vi nginx.conf 
+ 1110  sudo attach zunme-php
+ 1111  vi /usr/local/bin/dockerphp 
+ 1112  sudo attach zunme-php
+ 1113  vi /usr/local/bin/dockerphp 
+ 1114  cd ..
+ 1115  ll
+ 1116  cd ..
+ 1117  cd application/public/
+ 1118  ll
+ 1119  cd ..
+ 1120  ll
+ 1121  cd ..
+ 1122  ll
+ 1123  cd php-docker/
+ 1124  vi Dockerfile.php7.2
+ 1125  sudo vi Dockerfile.php7.2
+ 1126  make
+ 1127  sudo make
+ 1128  sudo docker-compose build
+ 1129  sudo docker-compose up &
+ 1130  sudo cp /usr/local/bin/dockerphp /usr/local/bin/dockercomposer
+ 1131  vi /usr/local/bin/dockercomposer 
+ 1132  sudo vi /usr/local/bin/dockercomposer 
+ 1133  cd ../application/public/
+ 1134  ll
+ 1135  sudo attach zunme-php
+ 1136  ll
+ 1137  sudo cp /usr/local/bin/dockerphp /usr/local/bin/lalavel
+ 1138  sudo vi /usr/local/bin/lalavel 
+ 1139  lalavel fund
+ 1140  sudo lalavel fund
+ 1141  sudo attach zunme-php
+ 1142  sudo docker ps -a
+ 1143  php
+ 1144  service apache2 start
+ 1145  service httpd start
+ 1146  apt-get install httpd
+ 1147  sudo apt-get install httpd
+ 1148  sudo apt-get install apache2
+ 1149  ll
+ 1150  cd /etc/httpd
+ 1151  cd /etc/apache2/
+ 1152  ll
+ 1153  php -V
+ 1154  php -v
+ 1155  ll
+ 1156  cd conf-enabled
+ 1157  ll
+ 1158  cd /data/docker/laradock/
+ 1159  ll
+ 1160  cd laradock/
+ 1161  ll
+ 1162  cd workspace/
+ 1163  ;;
+ 1164  ll
+ 1165  docker ps -a
+ 1166  sudo docker ps -a
+ 1167  docker-compose exec --user=laradock workspace bash
+ 1168  sudo docker-compose exec --user=laradock workspace bash
+ 1169  sudo docker-compose -down
+ 1170  sudo docker-compose down
+ 1171  sudo su
+ 1172  cd /data/zunme/
+ 1173  ll
+ 1174  rm index.js
+ 1175  mv node ~/
+ 1176  cd ~
+ 1177  ll
+ 1178  cd node
+ 1179  ll
+ 1180  nohup node index.js &
+ 1181  ll
+ 1182  hostory |grep workspace
+ 1183  history |grep workspace
+ 1184  sudo docker-compose exec --user=laradock workspace bash
+ 1185  cd /data/docker/laradock/laradock/
+ 1186  sudo docker-compose exec --user=laradock workspace bash
+ 1187  sudo docker-compose exec workspace bash
+ 1188  sudo docker-compose exec --user=laradock workspace bash
+ 1189  vi .env
+ 1190  sudo su
+ 1191  vi attach
+ 1192  chmod 777 attach 
+ 1193  ./attach
+ 1194  docker-compose down
+ 1195  sudo docker-compose down
+ 1196  sudo su
+ 1197  cd ../public/rabbitmq/
+ 1198  cp receive.php jsonreceive.php
+ 1199  vi jsonreceive.php 
+ 1200  cd ../..
+ 1201  ./attach
+ 1202  cd -
+ 1203  cd ..
+ 1204  cd ../laradock/
+ 1205  ./attach 
+ 1206  vi ./startpush.sh 
+ 1207  cd /data
+ 1208  cd docker
+ 1209  ll
+ 1210  cd zunme-base/
+ 1211  ll
+ 1212  cd php-docker/
+ 1213  ll
+ 1214  vi Dockerfile.php7.2
+ 1215  cd ..
+ 1216  cd appl
+ 1217  cd application/
+ 1218  ll 
+ 1219  cd public/
+ 1220  ll
+ 1221  sudo docker ps -a
+ 1222  docker-compose down
+ 1223  sudo docker-compose down
+ 1224  sudo docker ps -a
+ 1225  cd ..
+ 1226  sudo docker-compose down
+ 1227  docker ps -a
+ 1228  sudo docker ps -a
+ 1229  docker rm 418c55bfbfe9 1ef83f1a2b9f
+ 1230  sudo docker rm 418c55bfbfe9 1ef83f1a2b9f
+ 1231  sudo su
+ 1232  cd ..
+ 1233  mkdir laradock
+ 1234  cd laradock/
+ 1235  git clone https://github.com/Laradock/laradock.git
+ 1236  ll
+ 1237  cd laradock/
+ 1238  ll
+ 1239  cp env-example .env
+ 1240  vi .env
+ 1241  docker-compose up -d nginx php-fpm php-worker workspace mariadb redis rabbitmq memcached
+ 1242  sudo docker-compose up -d nginx php-fpm php-worker workspace mariadb redis rabbitmq memcached
+ 1243  sudo docker-compose down
+ 1244  vi .env
+ 1245  sudo su
+ 1246  cd ..
+ 1247  mkdir public
+ 1248  cd public 
+ 1249  touch index.php
+ 1250  cd ../
+ 1251  vi laradock/nginx/nginx.conf 
+ 1252  cd laradock/nginx/
+ 1253  ll
+ 1254  cd sites
+ 1255  ll
+ 1256  vi default.conf 
+ 1257  sudo docker-compose nginx restart
+ 1258  sudo docker-compose restart nginx
+ 1259  sudo su
+ 1260  cd /data/zunme
+ 1261  mkdir node
+ 1262  cd node 
+ 1263  vi cd ..
+ 1264  cd ..
+ 1265  mll
+ 1266  ll
+ 1267  node index.js
+ 1268  cd node
+ 1269  ll
+ 1270  npm install amqplib
+ 1271  cd ..
+ 1272  cd docker/
+ 1273  ll
+ 1274  cd laradock/
+ 1275  sudo docker-compose up -d rabbitmq
+ 1276  cd laradock/
+ 1277  sudo docker-compose up -d rabbitmq
+ 1278  history |grep curl
+ 1279  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/userinfo -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiJvTmtnZWJ4ekpIb2tkYkk2IiwidXVpYXQiOjE1NDAyNzE0MjYsInVpZCI6InJpZ2h0YXJtMDFAaG90bWFpbC5jb20iLCJleHAiOjE1NDAyNzUwMjZ9.d-QbBg2V8H90MyZazyAO0qzifCQ08pgCtGd2bdoJDhw'
+ 1280  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiJvTmtnZWJ4ekpIb2tkYkk2IiwidXVpYXQiOjE1NDAyNzE0MjYsInVpZCI6InJpZ2h0YXJtMDFAaG90bWFpbC5jb20iLCJleHAiOjE1NDAyNzUwMjZ9.d-QbBg2V8H90MyZazyAO0qzifCQ08pgCtGd2bdoJDhw'
+ 1281  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1282  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule&refId=12 -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1283  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/schedule&refId=12 -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1284  curl -v  https://www.kfunding.co.kr/fund/bankq/schedule&refId=12 -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1285  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1286  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/schedule -d 'refId=12' -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1287  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/schedule?refId=12 -d 'refId=12' -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1288  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/schedule?refId=12 -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1289  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/productlist -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1290  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/tokenexpire -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3THRTVmM3ckZPODJHdkYyIiwidXVpYXQiOjE1NDAyNzE2NjAsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NTI2MH0.m4mR2e8-abFqJ5Kt_r-ZnLwDNucauTagcMpPu_ZqGaQ'
+ 1291  curl -v -X GET https://www.kfunding.co.kr/fund/bankq/tokenexpire -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiJvTmtnZWJ4ekpIb2tkYkk2IiwidXVpYXQiOjE1NDAyNzE0MjYsInVpZCI6InJpZ2h0YXJtMDFAaG90bWFpbC5jb20iLCJleHAiOjE1NDAyNzUwMjZ9.d-QbBg2V8H90MyZazyAO0qzifCQ08pgCtGd2bdoJDhw'
+ 1292  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3U2d4UkFkdkR1dHpDdEJZIiwidXVpYXQiOjE1NDAyNzM2NTUsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NzI1NX0.WqnyZu30bFNXL5I13zSnoyNJ6jZh9ft7TvahHSEw9NQ'
+ 1293  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3U2d4UkFkdkR1dHpDdEJZIiwidXVpYXQiOjE1NDAyNzM2NTUsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NzI1NX0.WqnyZu30bFNXL5I13zSnoyNJ6jZh9ft7TvahHSEw9NQ'
+ 1294  curl -v -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3U2d4UkFkdkR1dHpDdEJZIiwidXVpYXQiOjE1NDAyNzM2NTUsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NzI1NX0.WqnyZu30bFNXL5I13zSnoyNJ6jZh9ft7TvahHSEw9NQ'
+ 1295  curl -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3U2d4UkFkdkR1dHpDdEJZIiwidXVpYXQiOjE1NDAyNzM2NTUsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NzI1NX0.WqnyZu30bFNXL5I13zSnoyNJ6jZh9ft7TvahHSEw9NQ'
+ 1296  clear
+ 1297  curl -X POST https://www.kfunding.co.kr/fund/bankq/schedule -H 'token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhYWEiOiI3U2d4UkFkdkR1dHpDdEJZIiwidXVpYXQiOjE1NDAyNzM2NTUsInVpZCI6ImNzazk5MkBuYXRlLmNvbSIsImV4cCI6MTU0MDI3NzI1NX0.WqnyZu30bFNXL5I13zSnoyNJ6jZh9ft7TvahHSEw9NQ'
+ 1298  sudo docker ps -a
+ 1299  cd ..
+ 1300  ll
+ 1301  cd ..
+ 1302  ll
+ 1303  cd zunme-base/
+ 1304  ll
+ 1305  cd application/
+ 1306  ll
+ 1307  cd app/
+ 1308  ll
+ 1309  cd rabbitmq/
+ 1310  ll
+ 1311  cd node
+ 1312  ll
+ 1313  cd ..
+ 1314  ll
+ 1315  cd public/
+ 1316  ll
+ 1317  cd rabbitmq/
+ 1318  ll
+ 1319  vi worker.php 
+ 1320  cd ~
+ 1321  ll
+ 1322  cd node
+ 1323  ll
+ 1324  vi index.js 
+ 1325  node index.js 
+ 1326  vi index.js 
+ 1327  node index.js 
+ 1328  vi index.js 
+ 1329  node index.js 
+ 1330  vi index.js 
+ 1331  ps aux|grep node
+ 1332  kill 5673
+ 1333  ps aux|grep node
+ 1334  kill -9 5373
+ 1335  node index.js
+ 1336  vi index.js 
+ 1337  node index.js
+ 1338  vi index.js 
+ 1339  node index.js
+ 1340  vi index.js 
+ 1341  node index.js
+ 1342  vi index.js 
+ 1343  node index.js
+ 1344  vi index.js 
+ 1345  node index.js
+ 1346  vi index.js 
+ 1347  node index.js
+ 1348  vi index.js 
+ 1349  node index.js
+ 1350  vi index.js 
+ 1351  node index.js
+ 1352  vi index.js 
+ 1353  node index.js
+ 1354  vi index.js 
+ 1355  node index.js
+ 1356  pwd
+ 1357  cp -r ./node /data/docker/laradock/public/rabbitmq/
+ 1358  cd ..
+ 1359  cp -r ./node /data/docker/laradock/public/rabbitmq/
+ 1360  sudo su
+ 1361  cp -r ./node /data/docker/laradock/public/rabbitmq/
+ 1362  curl -XPOST -d'{"properties":{},"routing_key":"sms","payload":"my body","payload_encoding":"string"}' -u guest:guest http://localhost:15672/api/exchanges/vhost/amq.default/publish
+ 1363  curl -u guest:guest -H "content-type:application/json" -X POST -d'{"properties":{"delivery_mode":2},"routing_key":"SMS","payload":"HI","payload_encoding":"string"}' http://localhost:15672/api/exchanges/%2f/amq.default/publish
+ 1364  curl 
+ 1365  curl --help
+ 1366  cd node
+ 1367  node index.js 
+ 1368  cd ..
+ 1369  cd /data/docker/laradock/public/
+ 1370  ll
+ 1371  cd rabbitmq/
+ 1372  ll
+ 1373  cd ..
+ 1374  ./attach
+ 1375  ./attach.sh
+ 1376  ll
+ 1377  cd laradock/
+ 1378  ll
+ 1379  ./attach
+ 1380  ll
+ 1381  cp attach startpush.sh
+ 1382  vi startpush.sh
+ 1383  ./startpush.sh
+ 1384  kfund
+ 1385  sudo su
+ 1386  ./startpush.sh
+ 1387  ps aux |grep jsonre
+ 1388  ps aux |grep php
+ 1389  vi ./startpush.sh 
+ 1390  sudo docker-compose exec --user=laradock workspace php /var/www/public/rabbitmq/jsonreceive.php
+ 1391  sudo docker-compose exec -d --user=laradock workspace php /var/www/public/rabbitmq/jsonreceive.php
+ 1392  ps aux |grep php
+ 1393  vi ./startpush.sh 
+ 1394  exit
+ 1395  ps aux|grep php
+ 1396  sudo attach fund-prg
+ 1397  sudo attach fund_prg
+ 1398  history|grep curl
+ 1399  cd /data/
+ 1400  ll
+ 1401  cd serversource/
+ 1402  ll
+ 1403  cd kfund
+ 1404  kk
+ 1405  ll
+ 1406  cd pnpinvest/css
+ 1407  vi layout.css
+ 1408  ll
+ 1409  cd ..
+ 1410  cd ..,
+ 1411  cd ..
+ 1412  ll
+ 1413  cd backup/
+ 1414  ll
+ 1415  cd kfund
+ 1416  ll
+ 1417  cd pnpinvest/
+ 1418  ll
+ 1419  cd css
+ 1420  vi layout.css
+ 1421  curl -v -X POST http://kfund.co.kr/fund/index.php/kakaoreport:80 -h 'X-MessageType: AL' -d '{"messageId": "e7fd2b6124aa4630b5592463595c1e5c", "resultCode": "0000", "reportTime": "2018-01-16 15:22:56", "errorText": null}'
+ 1422  history |grep curl
+ 1423  curl -X POST http://kfund.co.kr/fund/index.php/kakaoreport:80
+ 1424  curl -X POST http://kfunding.co.kr/fund/index.php/kakaoreport:80
+ 1425  curl -X POST http://kfunding.co.kr/fund/index.php/kakaoreport:80 -h 'X-MessageType: AL'
+ 1426  cd /data/docker/laradock/laradock/
+ 1427  ./attach 
+ 1428  sudo docker ps -a
+ 1429  sudo docker start fund_master
+ 1430  sudo docker ps -a
+ 1431  sudo attach fund_master
+ 1432  sudo docker ps -a
+ 1433  history > kfundhistory
+ 1434  history|grep mount
+ 1435  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund,file_mode=0777,dir_mode=0777,noperm //172.30.1.34/source.git /data/zunme/www_z
+ 1436  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund,file_mode=0777,dir_mode=0777,noperm //172.30.1.52/kfund /data/som/kfund2
+ 1437  sudo docker start f4ce116914b3 80df3a30a78a 7ac8310437a6 11c996ab589b
+ 1438  ll
+ 1439  vi cifs.sh
+ 1440  rm cifs.sh 
+ 1441  vi kakao.sh 
+ 1442  rm kakao.sh
+ 1443  cd kakao/
+ 1444  ll
+ 1445  cd ..
+ 1446  cd docker/
+ 1447  ll
+ 1448  cd ..
+ 1449  rm -fr docker/ http2/ kakao/
+ 1450  ll node/
+ 1451  ll
+ 1452  tar cvzf ./node node.tgz
+ 1453  tar cvzf node.tgz ./node
+ 1454  ll
+ 1455  mv node.tgz /data/zunme/node_amqp.tgz
+ 1456  sudo rm -fr docker/ http2/ kakao/
+ 1457  ll
+ 1458  vi kfundhistory 
+ 1459  rm -fr kfundhistory 
+ 1460  sudo rm -fr node/
+ 1461  ll
+ 1462  sudo su
+ 1463  /data/docker/laradock/laradock/check2.sh
+ 1464  vi /data/docker/laradock/laradock/check2.sh
+ 1465  cd /data/docker/laradock/laradock/
+ 1466  sudo su
+ 1467  exit
+ 1468  ps aux|grep php
+ 1469  kill 6579
+ 1470  sudo su
+ 1471  ps aux|grep php
+ 1472  sudo docker ps -a
+ 1473  cd /data/docker/laradock/laradock/
+ 1474  ll
+ 1475  vi check.sh
+ 1476  chmod 777 check.sh 
+ 1477  crontab -e
+ 1478  sudo su
+ 1479  exit
+ 1480  cd /data/dock
+ 1481  cd /data/docker/
+ 1482  ll
+ 1483  cd laradock/
+ 1484  ll
+ 1485  rm -fr .git
+ 1486  ll
+ 1487  cd laradock/
+ 1488  ll
+ 1489  cd mysql
+ 1490  ll
+ 1491  cd ..
+ 1492  ll
+ 1493  rm -fr .git
+ 1494  rm -fr .github/
+ 1495  vi .gitignore 
+ 1496  rm -fr .gitignore
+ 1497  vi .gitlab-ci.yml 
+ 1498  cd gitlab/
+ 1499  ll
+ 1500  cd ..
+ 1501  ll
+ 1502  cd ..
+ 1503  ll
+ 1504  git init
+ 1505  ll
+ 1506  rm fr .git
+ 1507  rm -fr .git
+ 1508  sudo docker ps -a
+ 1509  attach fund_prg
+ 1510  sudo attach fund_prg
+ 1511  df -h
+ 1512  sudo docker stop fund_prg
+ 1513  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund //172.30.1.34/source.git /data/zunme/www_z
+ 1514  ll /data/zunme
+ 1515  ll /data/zunme/www_z
+ 1516  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=dlatjdtk //172.30.1.34/source.git /data/zunme/www_z
+ 1517  sudo docker start fund_prg
+ 1518  sudo attach fund_prg
+ 1519  cd ..
+ 1520  ll
+ 1521  cd zunme/
+ 1522  ll
+ 1523  mv zunme-php-base.tgz /data/docker/laradock/
+ 1524  cd /data/docker
+ 1525  ll
+ 1526  cd laradock/
+ 1527  ll
+ 1528  mv zunme-php-base.tgz ../
+ 1529  ll
+ 1530  cd ..
+ 1531  ll
+ 1532  tar xvzf zunme-php-base.tgz 
+ 1533  ll
+ 1534  rm zunme-php-base.tgz 
+ 1535  ll
+ 1536  cd zunme-base/
+ 1537  ll
+ 1538  git init
+ 1539  git add .
+ 1540  git commit -m "first"
+ 1541  ll
+ 1542  rm -fr .git/
+ 1543  ps aux|grep php
+ 1544  df -h
+ 1545  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund //172.30.1.34/source.git /data/zunme/www_z
+ 1546  df -h
+ 1547  sudo docker stop fund_prg
+ 1548  sudo docker start fund_prg
+ 1549  attach fund_prg
+ 1550  sudo attach fund_prg
+ 1551  docker-compose ps
+ 1552  sudo docker-compose ps
+ 1553  cd ../laradock/laradock/
+ 1554  sudo docker-compose ps
+ 1555  ./attach 
+ 1556  docker ps -a
+ 1557  sudo docker ps -a
+ 1558  ll
+ 1559  cd ..
+ 1560  ll
+ 1561  cd public/
+ 1562  ll
+ 1563  cd blog
+ 1564  ll
+ 1565  ls -al
+ 1566  ./attach 
+ 1567  cd ../../laradock/
+ 1568  ./attach
+ 1569  sudo docker ps -a
+ 1570  sudo docker restart laradock_nginx_1 laradock_php-fpm_1
+ 1571  sudo docker ps -a
+ 1572  ps aux |grep php
+ 1573  kill 9247
+ 1574  sudo kill 9247
+ 1575  sudo kill 9296
+ 1576  sudo kill 17180
+ 1577  ps aux |grep php
+ 1578  date
+ 1579  ps aux |grep php
+ 1580  cd ../public/blog/
+ 1581  ll
+ 1582  php artisan serve
+ 1583  cd -
+ 1584  ./attach
+ 1585  ll
+ 1586  cd nginx/
+ 1587  ll
+ 1588  vi nginx.conf 
+ 1589  cd sites
+ 1590  ll
+ 1591  vi laravel.conf.example 
+ 1592  vi default.conf 
+ 1593  sudo docker ps -a
+ 1594  sudo docker restart laradock_nginx_1
+ 1595  vi default.conf 
+ 1596  sudo docker restart laradock_nginx_1
+ 1597  vi default.conf 
+ 1598  sudo docker restart laradock_nginx_1
+ 1599  sudo attach laradock_nginx_1
+ 1600  sudo docker restart laradock_nginx_1
+ 1601  vi default.conf 
+ 1602  sudo docker restart laradock_nginx_1
+ 1603  vi default.conf 
+ 1604  sudo docker restart laradock_nginx_1
+ 1605  vi default.conf 
+ 1606  sudo docker restart laradock_nginx_1
+ 1607  vi default.conf 
+ 1608  sudo docker restart laradock_nginx_1
+ 1609  vi default.conf 
+ 1610  sudo docker restart laradock_nginx_1
+ 1611  vi default.conf 
+ 1612  sudo docker restart laradock_nginx_1
+ 1613  cd ../../
+ 1614  cd ..
+ 1615  cd public/
+ 1616  ll
+ 1617  mv index.php phpinfo.php
+ 1618  cd ../laradock/nginx/
+ 1619  ll
+ 1620  cd ..
+ 1621  ll
+ 1622  cd logs
+ 1623  ll
+ 1624  cd nginx/
+ 1625  ll
+ 1626  tail -f error.log 
+ 1627  cd ..
+ 1628  ll
+ 1629  cd nginx/
+ 1630  ll
+ 1631  vi nginx.conf 
+ 1632  cd sites/
+ 1633  ll
+ 1634  vi default.conf 
+ 1635  cd ../../../public/
+ 1636  ll
+ 1637  cd blog/
+ 1638  ll
+ 1639  ../../laradock/attach 
+ 1640  cd ../../laradock/
+ 1641  ./attach 
+ 1642  cd nginx/sites/
+ 1643  vi default.conf 
+ 1644  sudo docker restart laradock_nginx_1
+ 1645  ll
+ 1646  cd ../../../public/
+ 1647  ll
+ 1648  chown kfund:kfund blog
+ 1649  sudo chown kfund:kfund blog
+ 1650  ll
+ 1651  cd blog
+ 1652  ll
+ 1653  cd ..
+ 1654  sudo chown -R kfund:kfund blog
+ 1655  cd ../laradock/
+ 1656  ./attach 
+ 1657  cd ../public/
+ 1658  ll
+ 1659  chmod 777 blog
+ 1660  cd -
+ 1661  cat attach
+ 1662  ./attach 
+ 1663  ll
+ 1664  cd ../public/
+ 1665  ll
+ 1666  cd blog
+ 1667  ll
+ 1668  cd ..
+ 1669  chown -R blog 1000:1000
+ 1670  sudo chown -R 1000:1000 ./blog
+ 1671  cd ../laradock/
+ 1672  ./attach 
+ 1673  ll
+ 1674  cd ../public
+ 1675  ll
+ 1676  cd blog
+ 1677  ll
+ 1678  cd ..
+ 1679  sudo chown -R 1000:kfund ./blog
+ 1680  ll
+ 1681  sudo chmod -R g+w ./blog
+ 1682  cd blog
+ 1683  ll
+ 1684  cd ..
+ 1685  ll
+ 1686  mv blog home
+ 1687  mv home blog
+ 1688  cd blog
+ 1689  ll
+ 1690  cd config
+ 1691  ll
+ 1692  ls al
+ 1693  cd ..
+ 1694  ll
+ 1695  vi .gitignore 
+ 1696  vi .env
+ 1697  sudo docker ps -a
+ 1698  sudo docker start laradock_mariadb_1
+ 1699  vi .env
+ 1700  cd ../../laradock/
+ 1701  ll
+ 1702  sudo su
+ 1703  cd /data/docker/laradock/laradock/
+ 1704  ./attach 
+ 1705  df -h
+ 1706  sudo su
+ 1707  history|grep mount
+ 1708  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund //172.30.1.34/source.git /data/zunme/www_z
+ 1709  ll /data/zunme/www_z 
+ 1710  ll /data/zunme/
+ 1711  umount /data/zunme/www_z 
+ 1712  reboot now
+ 1713  sudo reboot now
+ 1714  sudo su
+ 1715  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund //172.30.1.34/source.git /data/zunme/www_z
+ 1716  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund //172.30.1.57/source.git /data/zunme/www_z
+ 1717  sudo docker restart fund_prg
+ 1718  ll /data/zunme/www_z/
+ 1719  ps aux|grep apache
+ 1720  ps aux|grep nginx
+ 1721  cd /etc/nginx/
+ 1722  ll
+ 1723  cd sites-enabled/
+ 1724  ll
+ 1725  vi default 
+ 1726  cd /etc/apache2/
+ 1727  ll
+ 1728  cd sites-enabled/
+ 1729  ll
+ 1730  vi 000-default.conf
+ 1731  service apache2 stop
+ 1732  sudo service nginx stop
+ 1733  sudo attach fund_prg
+ 1734  cd /data/zunme/www_z/
+ 1735  ll
+ 1736  cd pnpinvest/
+ 1737  ll
+ 1738  history|grep mount
+ 1739  umount /data/zunme/www_z 
+ 1740  sudo umount /data/zunme/www_z 
+ 1741  sudo docker stop fund_prg 
+ 1742  sudo umount /data/zunme/www_z 
+ 1743  exit
+ 1744  sudo umount /data/zunme/www_z 
+ 1745  history |grep mount
+ 1746  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund //172.30.1.57/source.git /data/zunme/www_z
+ 1747  sudo docker start fund_prg
+ 1748  attach fund_prg
+ 1749  sudo attach fund_prg
+ 1750  sudo docker stop fun_prg
+ 1751  sudo umount /data/zunme/www_z 
+ 1752  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund,file_mode=0777,dir_mode=0777,noperm //172.30.1.57/source.git /data/zunme/www_z
+ 1753  sudo docker start fund_prg
+ 1754  sudo attach fund_prg
+ 1755  sudo docker restart fund_prg
+ 1756  sudo attach fund_prg
+ 1757  ps aux|grep php
+ 1758  kill 5172
+ 1759  sudo kill 5172
+ 1760  sudo kill 6481
+ 1761  ps aux|grep php
+ 1762  sudo docker ps -a
+ 1763  cd /data/docker/laradock/laradock/
+ 1764  vi .env 
+ 1765  ./attach
+ 1766  sudo attach laradock_mariadb_1 
+ 1767  vi .env 
+ 1768  sudo attach laradock_mariadb_1 
+ 1769  vi .env 
+ 1770  sudo attach laradock_mariadb_1 
+ 1771  history
+ 1772  history|grep mount
+ 1773  sudo umount /data/zunme/www_z
+ 1774  sudo mount -t cifs -o uid=kfund,gid=48,username=kfund,password=kfund,file_mode=0777,dir_mode=0777,noperm //172.30.1.57/source.git /data/zunme/www_z
+ 1775  sudo docker ps -a
+ 1776  sudo docker restart fund_prg
+ 1777  sudo attach fund_prg
+ 1778  cd /data
+ 1779  cd zunme/
+ 1780  cd www_z/
+ 1781  vi .htaccess 
+ 1782  sudo docker stop fund_dsg
+ 1783  cd /data
+ 1784  ll
+ 1785  grep "201cat /proc/self/mountinfo
+ 1786  exit
+ 1787  cd /data/
+ 1788  ll
+ 1789  cd master
+ 1790  ll
+ 1791  cd www
+ 1792  ll
+ 1793  cd pnpinvest/
+ 1794  ll
+ 1795  cd layouts/home/
+ 1796  sudo docker start fund_master
+ 1797  sudo attach fund_master
+ 1798  sudo docker ps -a
+ 1799  history > /data/zunme/kfund_hi

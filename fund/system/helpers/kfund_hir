@@ -1,0 +1,1000 @@
+  652  git clone https://github.com/zunme/kfund.git
+  653  cd ..
+  654  cd /data
+  655  ll
+  656  cd -
+  657  cd zunme/
+  658  ll
+  659  rm -rf kfund/
+  660  cd kfund/pnpinvest/layouts/admin/basic/img
+  661  ll
+  662  rm fr *
+  663  rm -fr *
+  664  cd /mnt
+  665  ll
+  666  cd zunme/
+  667  ll
+  668  mv kfund/ old
+  669  cd ..
+  670  umount /mnt/zunme
+  671  ps aux
+  672  umount /mnt/zunme
+  673  fuser
+  674  fuser -m /mnt/zunme
+  675  fuser -vm /mnt/zunme
+  676  exit
+  677  cd ..
+  678  cd /data
+  679  ll
+  680  exit
+  681  history
+  682  exit
+  683  cd /data/zunme
+  684  ll
+  685  docker ps
+  686  docker stop fund_prg
+  687  ll
+  688  mv www_z www_old
+  689  mkdir www_z
+  690  chown kfund:kfund www_z
+  691  chmod 777 www_z
+  692  exit
+  693  docker ps a
+  694  docker ps -a
+  695  docker start fund_prg
+  696  cd ..
+  697  ll
+  698  cd ..
+  699  ll
+  700  vi .htaccess 
+  701  attach fund_prg
+  702  ll
+  703  cd pnpinvest/
+  704  layouts/
+  705  cd layouts/
+  706  ll
+  707  tar xvzf data.tar 
+  708  ll
+  709  rm -fr ./*
+  710  ll
+  711  cd ..
+  712  cd .. 
+  713  cd ..
+  714  ll
+  715  cd www_z
+  716  ll
+  717  cd pnpinvest/
+  718  ll
+  719  exit
+  720  attach fund_prg
+  721  cd /data
+  722  cd zunme
+  723  ll
+  724  cd www_z
+  725  ll
+  726  cd pnpinvest/
+  727  ll
+  728  chmod 777 _compile
+  729  ll
+  730  chmod 777 _compile/
+  731  ll
+  732  exit
+  733  docker fund_dsg stop
+  734  docker stop fund_dsg
+  735  docker start fund_dsg
+  736  docker ps -a
+  737  docker stop fund_dsg
+  738  history
+  739  exit
+  740  docker ps -a
+  741  cd /data/docker
+  742  ll
+  743  cd basephp
+  744  docker-composer stop
+  745  docker-composer down
+  746  history | grep docker
+  747  exit
+  748  docker ps -a
+  749  docekr start transmission upbeat_euler fund_prg fund_dsg
+  750  exit
+  751  docker ps -a
+  752  docker rm e56804af0ff0
+  753  docker rm 92f0bd445fc6
+  754  sudo docker images
+  755  docker rmi e56804af0ff0
+  756  sudo docker images
+  757  ll
+  758  cd ..
+  759  ll
+  760  cd ..
+  761  ll
+  762  cd ~
+  763  ll
+  764  cd .docker/
+  765  ll
+  766  cd ..
+  767  cd /data
+  768  ll
+  769  cd docker
+  770  ls
+  771  ll
+  772  cd basephp
+  773  ll
+  774  cd ..
+  775  cd src
+  776  ll
+  777  cd ..
+  778  attach fund_prg
+  779  ll
+  780  mkdir zeromq
+  781  cd zeromq
+  782  vi Dockerfile
+  783  mkdir onbuild
+  784  cd onbuild
+  785  vi Dockerfile
+  786  cd ..
+  787  ll
+  788  docker -t build node-zeromq
+  789  docker build -t node-zeromq
+  790  docker build -t node-zeromq .
+  791  docker run -it --rm node-zeromq bash
+  792  docker run -it --rm node-zeromq sh
+  793  ll
+  794  cd onbuild/
+  795  ll
+  796  docker build -t node-zeromq:onbuild .
+  797  docker images
+  798  docker run -it --rm node-zeromq:onbuild sh
+  799  docker pull ubuntu:18.04
+  800  cd ..
+  801  ll
+  802  rm -fr zeromq/
+  803  mkdir zeromq
+  804  vi Dockerfile
+  805  docker build -t nodetest .
+  806  docker run -it ubuntu:18.04 bash
+  807  vi Dockerfile 
+  808  docker ps -a
+  809  dockder rm 29d91f97ed6c 23bb3e5e0722
+  810  docker rm 29d91f97ed6c 23bb3e5e0722
+  811  docker images
+  812  docker rmi 15687aab11a5 c034a8e544d9 f2b08c559faf
+  813  docker build -t node-zmq .
+  814  vi Dockerfile 
+  815  docker build -t node-zmq .
+  816  docker run -it --rm node-zmq bash
+  817  vi Dockerfile 
+  818  docker build -t node-zmq .
+  819  docker run -it --rm node-zmq bash
+  820  vi Dockerfile 
+  821  docker build -t node-zmq .
+  822  docker images
+  823  docker ps -a
+  824  docker rm 9e4b8aaaec9d 401c5f759fa4
+  825  docker rm cd9e3079b349 02449199cf62
+  826  ll
+  827  cd zeromq/
+  828  ll
+  829  mv ../Dockerfile ./
+  830  mkdir app
+  831  cd app
+  832  vi server.js
+  833  docker run -d -v ./app:app -p 3000:3000 node-zmq 
+  834  cd ..
+  835  docker run -d -v ./app:app -p 3000:3000 node-zmq 
+  836  docker run -d -v ./app:/app -p 3000:3000 node-zmq 
+  837  pwd
+  838  docker run -d -v /data/docker/zeromq/app:/app -p 3000:3000 node-zmq 
+  839  docker ps -a
+  840  docker run -it 4f2610ef7b77 bash
+  841  docker run -it -v /data/docker/zeromq/app:/app  zeromq bash
+  842  docker run -it -v /data/docker/zeromq/app:/app  node-zmq bash
+  843  exit
+  844  docker ps -a
+  845  docker rm  fb42774add2c 18adb29a6d8e 4f2610ef7b77
+  846  ll
+  847  mv Dockerfile Dockerfile_
+  848  cd ..
+  849  ll
+  850  cd ..
+  851  ll
+  852  history |grep node
+  853  exit
+  854  docker images
+  855  docker rmi 4aa1eec077f8 ea4c82dcd15a
+  856  docker ps -a
+  857  docker rm e496f70e75da
+  858  docker images
+  859  docekr rmi 3e713369f019 9e4b8aaaec9d
+  860  docker rmi 3e713369f019 9e4b8aaaec9d
+  861  docker rmi ea4c82dcd15a
+  862  docker images
+  863  docker run -it --rm basephp_php-fpm bash
+  864  exit
+  865  ps aux|grep work
+  866  kill 7995
+  867  pkill -9 7995
+  868  ps aux|grep work
+  869  pkill -9 7945
+  870  ps aux|grep worker.ph
+  871  kill -9 7946
+  872  exit
+  873  docker ps -a
+  874  cd ../..
+  875  ll
+  876  cd basephp
+  877  ll
+  878  cd phpdocker/
+  879  ll
+  880  cd php-fpm/
+  881  ll
+  882  cd Dockerfile 
+  883  vi Dockerfile 
+  884  cd /data/docker/
+  885  ll
+  886  mkdir testdocker
+  887  cd testdocker/
+  888  vi Dockerfile
+  889  docker build -t testphp .
+  890  docker ps -a
+  891  docker images
+  892  docker run -it --rm testphp bash
+  893  docker ps -a
+  894  ll
+  895  vi Dockerfile 
+  896  ll
+  897  git clone https://github.com/wpengine/php-docker.git
+  898  ll
+  899  cd ..
+  900  ll
+  901  cd -
+  902  mv php-docker/ ../
+  903  ll
+  904  cd ..
+  905  ll
+  906  cd php-docker/
+  907  cd basephp
+  908  cd ../basephp
+  909  ll
+  910  cd ..
+  911  ll
+  912  cd rabbitmq/
+  913  ll
+  914  cd node
+  915  ll
+  916  cd ..
+  917  cd src
+  918  cd ..
+  919  cd src
+  920  ll
+  921  cd ..
+  922  rm -fr src
+  923  ll
+  924  rm -fr testdocker/
+  925  ll
+  926  cd basephp
+  927  ll
+  928  cd phpdocker/
+  929  ll
+  930  cd php-fpm
+  931  ll
+  932  vi php-ini-overrides.ini 
+  933  vi Dockerfile 
+  934  cd ..
+  935  ll
+  936  cd ..
+  937  ll
+  938  cd php-docker/
+  939  ll
+  940  vi Makefile 
+  941  docker images
+  942  docker rmi 4d86176dc75e 789aaccef800
+  943  make
+  944  ll
+  945  rm -fr .git
+  946  vi Dockerfile.php7.2
+  947  make
+  948  docker images
+  949  cd ..
+  950  ll
+  951  cd basephp
+  952  ll
+  953  docker-compose down
+  954  free -m
+  955  ll
+  956  vi docker-compose.yml 
+  957  cd ..
+  958  ll
+  959  cp -r basephp zunme-base
+  960  ll
+  961  mv php-docker ./zunme-base/
+  962  cd zunme-base/
+  963  ll
+  964  mv phpdocker/ phpdocker_olc/
+  965  cd phpdocker_old
+  966  cd phpdocker_olc/
+  967  ll
+  968  cd nginx/
+  969  ll
+  970  cd php-fpm
+  971  ll
+  972  cd ..
+  973  vi php-fpm/
+  974  cd php-fpm/
+  975  ll
+  976  vi Dockerfile 
+  977  ll
+  978  cd ..
+  979  mv phpdocker_olc/ phpdocker_old/
+  980  ll
+  981  cd phpdocker_old/
+  982  ll
+  983  cd ..
+  984  cd php-docker/
+  985  ll
+  986  cd ..
+  987  ll rabbitmq/
+  988  ll zeromq/
+  989  rm -fr zeromq/
+  990  ll
+  991  cd phpdocker_old/
+  992  ll
+  993  cd ..
+  994  vi docker-compose.yml 
+  995  ll
+  996  cd phpdocker_old/
+  997  ll
+  998  mv nginx ../
+  999  mv php-fpm/ ../
+ 1000  ll
+ 1001  cd ..
+ 1002  ll
+ 1003  cd php-fpm
+ 1004  ll
+ 1005  mv Dockerfile Dockerfile_old
+ 1006  cd ..
+ 1007  ll
+ 1008  mkdir conf
+ 1009  mv nginx/ ./conf/
+ 1010  mv php-fpm/ ./conf/
+ 1011  mv rabbitmq/ ./conf/
+ 1012  ll
+ 1013  rm -fr phpdocker_old/
+ 1014  ll
+ 1015  vi docker-compose.yml 
+ 1016  cd application/
+ 1017  ll
+ 1018  cd app
+ 1019  ll
+ 1020  cd ..
+ 1021  ll
+ 1022  cd ..
+ 1023  ll
+ 1024  vi auto.sh
+ 1025  ll
+ 1026  docker.compose build
+ 1027  docker-compose build
+ 1028  docker-compose build .
+ 1029  vi docker-compose.yml 
+ 1030  docker ps -a
+ 1031  vi docker-compose.yml 
+ 1032  docker images
+ 1033  docker rmi basephp_php-fpm node php php node 
+ 1034  docker images
+ 1035  docker rmi  2657319eef49 df1b7c730f91 ed0b0360ebbc 86327673dd99 1a27bb341f3f
+ 1036  docker images
+ 1037  docker rmi 5e35cc1cc416
+ 1038  docker-compose build
+ 1039  docker-compose up
+ 1040  docker ps -a
+ 1041  service httpd stop
+ 1042  service nginx  stop
+ 1043  cd ..
+ 1044  ll
+ 1045  mkdir laradock
+ 1046  cd laradock/
+ 1047  cd ..
+ 1048  rm -fr laradock/
+ 1049  exit
+ 1050  docker-compose build php-fpm
+ 1051  vi .env
+ 1052  docker-compose build php-fpm
+ 1053  docker-compose build --no-cache php-fpm
+ 1054  docker-compose up php-fpm
+ 1055  cd ..
+ 1056  ll
+ 1057  exit
+ 1058  docker-compose restart nginx
+ 1059  cd ..
+ 1060  docker-compose restart nginx
+ 1061  docker ps -a
+ 1062  docker-compose up -d nginx php-fpm rabbitmq memcached workspace
+ 1063  ll
+ 1064  cd ..
+ 1065  cd public 
+ 1066  ll
+ 1067  vi index.php
+ 1068  cd ../laradock/
+ 1069  docker-compose stop nginx
+ 1070  service apache start
+ 1071  service apache2 start
+ 1072  which httpd
+ 1073  whreis httpd
+ 1074  httpd
+ 1075  ps aux
+ 1076  cd /data/zunme/
+ 1077  ll
+ 1078  cd -
+ 1079  cd /data/docker
+ 1080  ll
+ 1081  cd basephp
+ 1082  ll
+ 1083  cd application/
+ 1084  ll
+ 1085  cd app
+ 1086  ll
+ 1087  cd rabbitmq/
+ 1088  ll
+ 1089  cd node
+ 1090  ll
+ 1091  vi new-task.js
+ 1092  cd /data/zunme/
+ 1093  mkdir node 
+ 1094  rm -fr node
+ 1095  exit
+ 1096  docker-compose down
+ 1097  docker ps -a
+ 1098  docker stop ac5349ae17ac a9e41e607263 940c1304479b 70e13d7c0bc2 ac0371a5ecff c2c3adf5379a 0eabc8ef038d c9d05a3a47ac ed8ae1098b1c 57a6c4889159 ab207a26f340 5e5e050cabec 0b3a566a0ded
+ 1099  docker rm ac5349ae17ac a9e41e607263 940c1304479b 70e13d7c0bc2 ac0371a5ecff c2c3adf5379a 0eabc8ef038d c9d05a3a47ac ed8ae1098b1c 57a6c4889159 ab207a26f340 5e5e050cabec 0b3a566a0ded
+ 1100  docker ps -a
+ 1101  cd ..
+ 1102  docker-compose -d nginx php-fpm memcached rabbitmq
+ 1103  docker-compose up -d nginx php-fpm memcached rabbitmq
+ 1104  docker-compose down
+ 1105  docker-compose up -d php-fpm memcached rabbitmq
+ 1106  docker-compose exec --user=laradock workspace bash
+ 1107  vi .env
+ 1108  service httpd stop
+ 1109  service apache2 stop
+ 1110  docker-compose up -d nginx php-fpm memcached rabbitmq
+ 1111  docker ps -a
+ 1112  ll
+ 1113  cd nginx
+ 1114  ll
+ 1115  cd sites
+ 1116  ll
+ 1117  cd ..
+ 1118  vi nginx/sites/default.conf 
+ 1119  dockerc-ompose retart nginx
+ 1120  docker-ompose retart nginx
+ 1121  docker-compose restart
+ 1122  ll
+ 1123  cd workspace/
+ 1124  ll
+ 1125  cd mc
+ 1126  ll
+ 1127  cd ..
+ 1128  ll
+ 1129  cd ..
+ 1130  ll
+ 1131  cd nginx
+ 1132  ll
+ 1133  vi Dockerfile 
+ 1134  composer create-project --prefer-dist laravel/laravel docker-laravel -vvv
+ 1135  ll
+ 1136  cd ..
+ 1137  composer create-project --prefer-dist laravel/laravel docker-laravel -vvv
+ 1138  ll
+ 1139  cd docker-laravel/
+ 1140  ll
+ 1141  cd ..
+ 1142  ll
+ 1143  rm -fr docker-laravel/
+ 1144  ll
+ 1145  docker-compose down
+ 1146  vi docker-compose.yml 
+ 1147  vi .env
+ 1148  cd /data/zunme/node/
+ 1149  node index.js
+ 1150  ll
+ 1151  ll ~
+ 1152  ll /home/kfund
+ 1153  ll /home/kfund/docker
+ 1154  cd ..
+ 1155  exit
+ 1156  docker-compose down
+ 1157  docker-compose up -d nginx php-fpm memcached rabbitmq mariadb workspace
+ 1158  history|grep docker-compose
+ 1159  exit
+ 1160  cd /data/docker/
+ 1161  ll
+ 1162  cd laradock/
+ 1163  ll
+ 1164  cd public/
+ 1165  ll
+ 1166  chmod 777 rabbitmq/
+ 1167  exit
+ 1168  cd ~/test
+ 1169  ll
+ 1170  cd vendor
+ 1171  ll
+ 1172  docker-compose rebuild workspace
+ 1173  docker-compose build --rebuild workspace
+ 1174  docker-compose build workspace
+ 1175  docker-compose build php-fpm
+ 1176  docker-compose up -d nginx php-fpm memcached rabbitmq mariadb workspace
+ 1177  docker stat
+ 1178  docker stats
+ 1179  docker pull ubuntu:trusty
+ 1180  cd ~
+ 1181  ll
+ 1182  cd /temp
+ 1183  cd /tmp
+ 1184  ll
+ 1185  cd ..
+ 1186  cd ~
+ 1187  ll
+ 1188  mkdir test
+ 1189  cd test
+ 1190  echo "$pwd"
+ 1191  pwd
+ 1192  docker run -it --rm -v /root/test:/app ubuntu:trusty bash
+ 1193  ll
+ 1194  chown -R kfund:kfund ./
+ 1195  ll
+ 1196  cd ..
+ 1197  ll
+ 1198  cd test
+ 1199  ll
+ 1200  cd ..
+ 1201  mv test 5.3
+ 1202  ll
+ 1203  mv 5.3 /data/zunme/
+ 1204  cd /data/docker/laradock/public/
+ 1205  ll
+ 1206  cd rabbitmq/
+ 1207  ll
+ 1208  vi receive.php 
+ 1209  exit
+ 1210  cd ~
+ 1211  ll
+ 1212  history|grep docker-compose
+ 1213  cd /data
+ 1214  ll
+ 1215  rm -fr backup/
+ 1216  rm -fr data.tar
+ 1217  rm -fr kfund181030.sql 
+ 1218  cd kfund_git_data/
+ 1219  ll
+ 1220  cd ..
+ 1221  ll
+ 1222  rm -fr kfund_git_data/
+ 1223  ll www
+ 1224  rm -fr ./www
+ 1225  ll
+ 1226  ll cron/
+ 1227  vi cron/cron.sh 
+ 1228  cd docker/
+ 1229  ll
+ 1230  rm -fr rabbitmq/
+ 1231  cd zunme-base/
+ 1232  ll
+ 1233  cd php-docker/
+ 1234  ll
+ 1235  cd ..
+ 1236  ll
+ 1237  cd ..
+ 1238  ll
+ 1239  tar cvxf zunme-php-base.tgz zunme-base/
+ 1240  tar cvzf zunme-php-base.tgz zunme-base/
+ 1241  ll
+ 1242  rm -fr zunme-base/
+ 1243  rm -fr basephp
+ 1244  rm -fr basephp.zip 
+ 1245  ll
+ 1246  mv zunme-php-base.tgz /data/zunme/
+ 1247  ll
+ 1248  cd laradock/
+ 1249  ll
+ 1250  cd laradock/
+ 1251  ll
+ 1252  rm -fr nohup.out 
+ 1253  ll
+ 1254  cd ..
+ 1255  ll
+ 1256  cd public/
+ 1257  ll
+ 1258  cd ..
+ 1259  ll
+ 1260  cd ..
+ 1261  tar cvzf laradock.tgz laradock/
+ 1262  ll
+ 1263  mv laradock.tgz /data/zunme/
+ 1264  ll
+ 1265  cd laradock/
+ 1266  docker compose start
+ 1267  docker-compose start
+ 1268  docker-compose stop
+ 1269  docker ps -a
+ 1270  docker-compose up
+ 1271  
+ 1272  ll
+ 1273  docker ps -a
+ 1274  docker start 0936a30c90cf 0b28df822c60 ef0baa71bfe2 b5c38b43390d 56ee50845c0d
+ 1275  docker ps -a
+ 1276  ps aux
+ 1277  netstat
+ 1278  service nginx stop
+ 1279  service nginx start
+ 1280  service httpd stop
+ 1281  service apache stop
+ 1282  service apache2 stop
+ 1283  ./attach 
+ 1284  ps aux
+ 1285  ps aux|grep php
+ 1286  attach fund-prg
+ 1287  attach fund_prg
+ 1288  attach fund_dsg
+ 1289  ll
+ 1290  sudo docker ps -a
+ 1291  docker start 0b28df822c60
+ 1292  docker ps -a
+ 1293  docker images
+ 1294  docker rmi e8a78af225f9 291aa5c9c979 291aa5c9c979 f7aa498d673c c74a67ff19ed 1babb1dde7e1 a79e4e5fbd5d 50dca813ba5c dcd4ffa30477 2657319eef49 abe2097e5e01 aae476eee77d 05097a3a0549
+ 1295  docker images
+ 1296  docker rmi 199cc294e316 fb0df03da449 ce95301b0e16 aae476eee77d 291aa5c9c979
+ 1297  docker images
+ 1298  docker rmi 291aa5c9c979
+ 1299  docker rmi zunme/php-default:7.2
+ 1300  docker rmi zunme/php-default:7.2.11
+ 1301  docker rmi zunme/php-default:7.2
+ 1302  docker images
+ 1303  docker rmi f216cfb59484 f216cfb59484
+ 1304  docker rmi ubuntu:14.04
+ 1305  docker rmi ubuntu:trusty
+ 1306  docker images
+ 1307  docker rmi 50dca813ba5c dcd4ffa30477 2657319eef49 abe2097e5e01 acfec9788376 aae476eee77d 199cc294e316
+ 1308  docker images
+ 1309  docker ps -a
+ 1310  df -h
+ 1311  ./attach
+ 1312  ps aux|grep php
+ 1313  ./attach
+ 1314  ps aux|grep alimtok
+ 1315  apt-get list |grep php
+ 1316  apt list |grep php
+ 1317  apt-get remoce php*
+ 1318  apt-get remove php*
+ 1319  dpkg -l|grep php
+ 1320  apt-get purge php-common
+ 1321  dpkg -l|grep php
+ 1322  history |grep node
+ 1323  cd /data/zunme/
+ 1324  ll
+ 1325  rm -fr www_old
+ 1326  rm -fr 5.3
+ 1327  ll
+ 1328  cd ..
+ 1329  ll
+ 1330  cd som
+ 1331  ll
+ 1332  cd kfund2
+ 1333  ll
+ 1334  rm -fr kfund181030.sql 
+ 1335  cd ..
+ 1336  ll
+ 1337  rm -fr kfund_old/
+ 1338  ll 
+ 1339  cd www
+ 1340  ll
+ 1341  rm -fr kfund181030.sql 
+ 1342  ll
+ 1343  cd ..
+ 1344  ll
+ 1345  cd ..
+ 1346  ll
+ 1347  history |grep mount
+ 1348  cd serversource/
+ 1349  ll
+ 1350  cd kfund/
+ 1351  ll
+ 1352  cd ..
+ 1353  ll
+ 1354  cd ..
+ 1355  ll
+ 1356  cd master
+ 1357  ll
+ 1358  cd ..
+ 1359  ll
+ 1360  ps aux|grep php
+ 1361  cd docker/laradock/laradock/
+ 1362  ll
+ 1363  vi startpush.sh 
+ 1364  check.sh
+ 1365  vi check.sh
+ 1366  sh check.sh 
+ 1367  vi startpush.sh 
+ 1368  vi check.sh
+ 1369  chmod 777 check.sh
+ 1370  ll
+ 1371  ./check.sh
+ 1372  ps -a|grep alimtok
+ 1373  ps -aux|grep alimtok
+ 1374  kill 15287
+ 1375  ps -aux|grep alimtok
+ 1376  ./check.sh 
+ 1377  ps -aux|grep alimtok
+ 1378  vi check.sh 
+ 1379  ./check.sh 
+ 1380  ps aux|grep alimtok
+ 1381  vi check.sh 
+ 1382  ./check.sh 
+ 1383  ps aux|grep php
+ 1384  kill 20080 20122 20200 20287
+ 1385  ps aux|grep php
+ 1386  vi check.sh 
+ 1387  ./check.sh 
+ 1388  ps aux|grep php
+ 1389  vi check.sh 
+ 1390  ./check.sh 
+ 1391  ps aux|grep alimtok
+ 1392  cp check.sh check2.sh 
+ 1393  vi check2.sh
+ 1394  ./check2
+ 1395  ./check2.sh
+ 1396  vi check2.sh
+ 1397  ./check2.sh
+ 1398  vi check2.sh
+ 1399  ./check2.sh
+ 1400  vi check2.sh
+ 1401  ./check2.sh
+ 1402  vi check2.sh
+ 1403  ./check2.sh
+ 1404  ps aux|grep alimtok
+ 1405  vi check2.sh
+ 1406  ./check2.sh
+ 1407  vi check2.sh
+ 1408  ps -aux|grep alimtok|grep -v grep
+ 1409  ps -aux|grep alimtok|grep -v grep|wc -l
+ 1410  vi check2.sh 
+ 1411  ./check2.sh
+ 1412  vi check2.sh 
+ 1413  ./check2.sh
+ 1414  vi check2.sh 
+ 1415  ./check2.sh
+ 1416  vi check2.sh 
+ 1417  ./check2.sh
+ 1418  ps aux|grep alim
+ 1419  kill 20569
+ 1420  ps aux|grep alim
+ 1421  ./check2.sh
+ 1422  ps aux|grep alim
+ 1423  vi check2.sh 
+ 1424  pwd
+ 1425  rm check.sh
+ 1426  crontab -e
+ 1427  kill 20532
+ 1428  kill 21865
+ 1429  ps aux|grep alim
+ 1430  ps aux|grep jsonreceive
+ 1431  kill 9958
+ 1432  ps aux|grep php
+ 1433  crontab -e
+ 1434  touch /tmp/log
+ 1435  chmod 777 /tmp/log
+ 1436  ll tmp/log
+ 1437  ll /tmp/log
+ 1438  crontab -e
+ 1439  ll /tmp/log
+ 1440  grep cron /var/log/syslog
+ 1441  date
+ 1442  crontab -e -u root
+ 1443  /data/docker/laradock/laradock/check2.sh >> /tmp/log
+ 1444  ll /tmp/log
+ 1445  /data/docker/laradock/laradock/check2.sh
+ 1446  ps aux|grep php
+ 1447  kill 23173
+ 1448  kill 23251
+ 1449  kill 23203
+ 1450  vi check2.sh 
+ 1451  ll /tmp/log
+ 1452  vi /tmp/log
+ 1453  grep cron /var/log/syslog
+ 1454  vi /tmp/log
+ 1455  crontab -e
+ 1456  vi /tmp/log
+ 1457  rm -fr /tmp/log
+ 1458  vi /tmp/log
+ 1459  ll /tmp/log
+ 1460  ps aux|grep php
+ 1461  cd /
+ 1462  /data/docker/laradock/laradock/check2.sh
+ 1463  vi /data/docker/laradock/laradock/check2.sh
+ 1464  ps aux|grep php
+ 1465  /data/docker/laradock/laradock/check2.sh
+ 1466  ps aux|grep php
+ 1467  cat /tmp/log
+ 1468  which docker-compose
+ 1469  vi /data/docker/laradock/laradock/check2.sh
+ 1470  cat /tmp/log
+ 1471  ll /tmp/log
+ 1472  ps aux|grep php
+ 1473  kill 24410
+ 1474  kill 24440
+ 1475  ps aux|grep php
+ 1476  cat /tmp/log
+ 1477  rm /tmp/log
+ 1478  cat /tmp/log
+ 1479  sudo -u root crontab -e
+ 1480  ll /tmp/log
+ 1481  exit
+ 1482  tail -f cd /var/log/syslog
+ 1483  sudo apt-get install postfix
+ 1484  tail -f cd /var/log/syslog
+ 1485  cat /tmp/log
+ 1486  vi /data/docker/laradock/laradock/check2.sh
+ 1487  tail -f cd /var/log/syslog
+ 1488  cat /tmp/log 
+ 1489  ll *.yml
+ 1490  vi /data/docker/laradock/laradock/check2.sh [B
+ 1491  cd ~
+ 1492  /usr/local/bin/docker-compose exec -d --user=laradock -f /data/docker/laradock/laradock/docker-compose.yml  workspace php /var/www/public/rabbitmq/alimtok.php &
+ 1493  /usr/local/bin/docker-compose exec -d -f --user=laradock workspace php /var/www/public/rabbitmq/alimtok.php &
+ 1494  docker-compose --help
+ 1495  cd -
+ 1496  ll
+ 1497  cd ~
+ 1498  /usr/local/bin/docker-compose exec -d -f /data/docker/laradock/laradock/docker-compose.yml --user=laradock workspace php /var/www/public/rabbitmq/alimtok.php &
+ 1499  docker-compose --help
+ 1500  ll /data/docker/laradock/laradock/docker-compose.yml
+ 1501  ll /data/docker/laradock/laradock/*.yml
+ 1502  /usr/local/bin/docker-compose exec -d -f /data/docker/laradock/laradock/docker-compose.yml -f /data/docker/laradock/laradock/docker-sync.yml -f /data/docker/laradock/laradock/docker-compose.sync.yml --user=laradock workspace php /var/www/public/rabbitmq/alimtok.php &
+ 1503  /usr/local/bin/docker-compose exec -d -f /data/docker/laradock/laradock/docker-compose.yml
+ 1504  /usr/local/bin/docker-compose exec -d -f /data/docker/laradock/laradock/docker-compose.yml workspace php
+ 1505  cd -
+ 1506  /usr/local/bin/docker-compose exec -d -f /data/docker/laradock/laradock/docker-compose.yml workspace php
+ 1507  /usr/local/bin/docker-compose exec workspace php
+ 1508  /usr/local/bin/docker-compose exec workspace bash
+ 1509  /usr/local/bin/docker-compose exec -f docker-compose.yml workspace bash
+ 1510  /usr/local/bin/docker-compose -f docker-compose.yml exec workspace bash
+ 1511  cd ~
+ 1512  /usr/local/bin/docker-compose -f /data/docker/laradock/laradock/docker-compose.yml exec -d --user=laradock workspace php /var/www/public/rabbitmq/alimtok.php &
+ 1513  cd -
+ 1514  ll *.yml
+ 1515  /usr/local/bin/docker-compose -f /data/docker/laradock/laradock/docker-compose.yml exec -d --user=laradock workspace php
+ 1516  cd -
+ 1517  /usr/local/bin/docker-compose -f /data/docker/laradock/laradock/docker-compose.yml exec -d --user=laradock workspace php
+ 1518  crontab -e
+ 1519  cd -
+ 1520  cd workspace/crontab/
+ 1521  ll
+ 1522  vi laradock 
+ 1523  cd ..
+ 1524  ll
+ 1525  ./attach
+ 1526  echo "" > check2.sh 
+ 1527  vi check2.sh 
+ 1528  ./attach
+ 1529  vi check2.sh 
+ 1530  ./attach
+ 1531  cd workspace/crontab/
+ 1532  ll
+ 1533  vi laradock 
+ 1534  ps aux|grep php
+ 1535  vi laradock 
+ 1536  ./attach
+ 1537  cd ../../
+ 1538  ./attach
+ 1539  docker ps -a
+ 1540  docker restart b5c38b43390d
+ 1541  ./attach
+ 1542  cd crontab
+ 1543  cd workspace/crontab/
+ 1544  ll
+ 1545  ps aux|grep php
+ 1546  cd ..
+ 1547  ll
+ 1548  ./startpush.sh 
+ 1549  ps aux|grep php
+ 1550  ./attach
+ 1551  ps aux|grep php
+ 1552  exit
+ 1553  kill 6579
+ 1554  ll
+ 1555  ps aux
+ 1556  ps aux|grep php
+ 1557  cd /data/docker/laradock/
+ 1558  ll
+ 1559  cd laradock/
+ 1560  ll
+ 1561  vi startpush.sh 
+ 1562  docker-compose exec --user=laradock workspace php /var/www/public/rabbitmq/alimtok.php
+ 1563  vi startpush.sh 
+ 1564  sudo docker-compose exec -d --user=laradock workspace php /var/www/public/rabbitmq/alimtok.php &
+ 1565  ps aux|grep php
+ 1566  crontab -e
+ 1567  time
+ 1568  date
+ 1569  ll /tmp
+ 1570  cat /tmp/c1.log 
+ 1571  crontab -e
+ 1572  date
+ 1573  cat /tmp/c1.log 
+ 1574  ps aux|grep php
+ 1575  vi check.sh
+ 1576  ps aux|grep php
+ 1577  exit
+ 1578  history|gerp workspace
+ 1579  history|grep workspace
+ 1580  docker-compose up -d nginx php-fpm redis rabbitmq mariadb workspace
+ 1581  docker ps -a
+ 1582  ll
+ 1583  vi .env
+ 1584  cd ../public/blog/
+ 1585  vi .env
+ 1586  cd ../../laradock/
+ 1587  ./attach
+ 1588  ll
+ 1589  cd nginx/
+ 1590  cd sites/
+ 1591  vi default.conf 
+ 1592  cd ../../attach 
+ 1593  history|grep composer
+ 1594  history
+ 1595  cd ..
+ 1596  ./attach
+ 1597  vi nginx/sites/default.conf 
+ 1598  vi nginx/sites/laravel.conf.example 
+ 1599  ./attach 
+ 1600  docker ps -a
+ 1601  attach laradock_nginx_1
+ 1602  vi nginx/sites/laravel.conf.example 
+ 1603  ll nginx/
+ 1604  history|grep mount
+ 1605  exit
+ 1606  service nginx stop
+ 1607  service apache2 stop
+ 1608  docker ps -a
+ 1609  cd /data/docker/laradock/laradock/
+ 1610  docker-compose start
+ 1611  docker ps -a
+ 1612  docker start fund_prg fund_dsg transmission upbeat_euler
+ 1613  service apache2 start
+ 1614  service nginx start
+ 1615  docker ps -a
+ 1616  exit
+ 1617  crontab -e
+ 1618  ll
+ 1619  cd ..
+ 1620  cd laradock/
+ 1621  ll
+ 1622  vi check2.sh 
+ 1623  vi check.sh 
+ 1624  crontab -e
+ 1625  vi check.sh
+ 1626  vi startpush.sh 
+ 1627  rm startpush.sh 
+ 1628  rm -fr caddy/ certbot/ docker-web-ui/ elasticsearch/ grafana/ haproxy/ hhvm/ jenkins/ jupyterhub/ kibana/ laravel-echo-server/ maildev/ mailhog/
+ 1629  rm -fr mariadb/ minio/ mongo/ mssql/ mysql/ nginx/ neo4j/
+ 1630  rm -fr percona/ phpmyadmin/ postgres/ postgres-postgis/ redis/ rethinkdb/ selenium/ solr/ thumbor/ rabbitmq/
+ 1631  ll
+ 1632  rm -fr adminer/ aerospike/ apache2/ aws/ beanstalkd/ beanstalkd-console/ gitlab/ ide-*
+ 1633  rm -fr ipython/ memcached/ php-worker/ varnish/
+ 1634  ll
+ 1635  rm -fr mongo-webui/ pgadmin/ portainer/
+ 1636  ll
+ 1637  rm attach 
+ 1638  cd ..
+ 1639  ll
+ 1640  cd ..
+ 1641  ll
+ 1642  cd docker/
+ 1643  ll
+ 1644  cd laradock/
+ 1645  ll
+ 1646  rm -fr .git/
+ 1647  ll
+ 1648  cd ..
+ 1649  cd ~
+ 1650  ll
+ 1651  exit
